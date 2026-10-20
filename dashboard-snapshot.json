@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
   "strategy_version": "aggressive-fee-spike-fast-v1.2",
-  "generated_at": "2026-10-20T12:57:00.448927+00:00",
+  "generated_at": "2026-10-20T13:12:00.447880+00:00",
   "health": "ok",
   "status": {
     "state": "STABLE_IDLE",
     "reason": "no_eligible_aggressive_candidate",
-    "updated_at": "2026-10-20T12:52:01.035289+00:00",
+    "updated_at": "2026-10-20T13:07:01.502262+00:00",
     "strategy_version": "aggressive-fee-spike-fast-v1.2"
   },
   "authority": {
@@ -32,20 +32,20 @@
   },
   "freshness": {
     "discovery": {
-      "finished_at": "2026-10-20T12:43:28.654594+00:00",
-      "age_seconds": 811.794333,
+      "finished_at": "2026-10-20T12:57:01.688030+00:00",
+      "age_seconds": 898.75985,
       "limit_seconds": 1200,
       "fresh": true
     },
     "risk_monitor": {
-      "finished_at": "2026-10-20T12:52:01.038997+00:00",
-      "age_seconds": 299.40993,
+      "finished_at": "2026-10-20T13:07:01.506059+00:00",
+      "age_seconds": 298.941821,
       "limit_seconds": 1200,
       "fresh": true
     },
     "legacy_scan": {
-      "finished_at": "2026-10-20T11:58:41.882371+00:00",
-      "age_seconds": 3498.566556,
+      "finished_at": "2026-10-20T12:58:33.569154+00:00",
+      "age_seconds": 806.878726,
       "limit_seconds": 4500,
       "fresh": true
     }
@@ -1621,7 +1621,7 @@
   ],
   "forward": {
     "strategy_version": "aggressive-fee-spike-fast-v1.2",
-    "total_windows": 88,
+    "total_windows": 95,
     "aggressive_a_plus_scored_windows": 0,
     "aggressive_a_plus_independent_days": 0,
     "aggressive_fast_exit_scored_windows": 0,
@@ -1633,28 +1633,28 @@
     "groups": [
       {
         "horizon_minutes": 15,
-        "total": 33,
-        "scored": 32,
+        "total": 35,
+        "scored": 34,
         "unresolved": 1,
-        "average_pnl_usd": -12.797256668774065,
+        "average_pnl_usd": -13.185443995108972,
         "median_pnl_usd": -6.8286147882363935,
-        "positive_rate": 0.15625,
-        "total_pnl_usd": -409.51221340077007,
+        "positive_rate": 0.14705882352941177,
+        "total_pnl_usd": -448.3050958337051,
         "fee_beats_losses_rate": 0.0,
         "exit_reasons": {
-          "soft_loss_stop": 4,
-          "hard_loss_stop": 5
+          "hard_loss_stop": 6,
+          "soft_loss_stop": 4
         }
       },
       {
         "horizon_minutes": 30,
-        "total": 29,
-        "scored": 28,
+        "total": 30,
+        "scored": 29,
         "unresolved": 1,
-        "average_pnl_usd": -11.936437001287487,
-        "median_pnl_usd": -6.842004002637793,
-        "positive_rate": 0.21428571428571427,
-        "total_pnl_usd": -334.22023603604964,
+        "average_pnl_usd": -11.087983600145341,
+        "median_pnl_usd": -6.542832467612243,
+        "positive_rate": 0.2413793103448276,
+        "total_pnl_usd": -321.5515244042149,
         "fee_beats_losses_rate": 0.0,
         "exit_reasons": {
           "soft_loss_stop": 4,
@@ -1664,13 +1664,13 @@
       },
       {
         "horizon_minutes": 60,
-        "total": 21,
-        "scored": 21,
+        "total": 23,
+        "scored": 23,
         "unresolved": 0,
-        "average_pnl_usd": -11.558805445320834,
-        "median_pnl_usd": -4.971955838352869,
-        "positive_rate": 0.19047619047619047,
-        "total_pnl_usd": -242.73491435173753,
+        "average_pnl_usd": -7.576089800139881,
+        "median_pnl_usd": -4.703716131158444,
+        "positive_rate": 0.2608695652173913,
+        "total_pnl_usd": -174.25006540321726,
         "fee_beats_losses_rate": 0.0,
         "exit_reasons": {
           "soft_loss_stop": 2,
@@ -1680,17 +1680,18 @@
       },
       {
         "horizon_minutes": 180,
-        "total": 5,
-        "scored": 4,
+        "total": 7,
+        "scored": 6,
         "unresolved": 1,
-        "average_pnl_usd": 12.6308094824453,
-        "median_pnl_usd": 13.843575713896485,
-        "positive_rate": 0.75,
-        "total_pnl_usd": 50.5232379297812,
-        "fee_beats_losses_rate": 0.25,
+        "average_pnl_usd": 21.482242258570427,
+        "median_pnl_usd": 28.212694450371714,
+        "positive_rate": 0.8333333333333334,
+        "total_pnl_usd": 128.89345355142257,
+        "fee_beats_losses_rate": 0.5,
         "exit_reasons": {
-          "soft_loss_stop": 1,
-          "max_hold": 3
+          "max_hold": 4,
+          "range_breach": 1,
+          "soft_loss_stop": 1
         }
       }
     ],
@@ -1710,7 +1711,7 @@
         "sub_state": "running",
         "result": "success",
         "unit_file_state": "enabled",
-        "last_trigger": "Tue 2026-10-20 21:55:04 KST",
+        "last_trigger": "Tue 2026-10-20 22:10:08 KST",
         "next_trigger": null
       },
       "risk_monitor": {
@@ -1721,30 +1722,66 @@
         "sub_state": "waiting",
         "result": "success",
         "unit_file_state": "enabled",
-        "last_trigger": "Tue 2026-10-20 21:52:00 KST",
-        "next_trigger": "Tue 2026-10-20 22:07:00 KST"
+        "last_trigger": "Tue 2026-10-20 22:07:00 KST",
+        "next_trigger": "Tue 2026-10-20 22:22:00 KST"
       },
       "legacy_scan": {
         "unit": "lp-hunter.timer",
         "ok": true,
         "load_state": "loaded",
         "active_state": "active",
-        "sub_state": "running",
+        "sub_state": "waiting",
         "result": "success",
         "unit_file_state": "enabled",
         "last_trigger": "Tue 2026-10-20 21:57:00 KST",
-        "next_trigger": null
+        "next_trigger": "Tue 2026-10-20 22:57:00 KST"
       }
     },
     "latest_runs": [
       {
         "component": "discovery",
-        "started_at": "2026-10-20T12:55:05.957499+00:00",
+        "started_at": "2026-10-20T13:10:09.246136+00:00",
         "finished_at": null,
         "strategy_version": "aggressive-fee-spike-fast-v1.2",
         "status": "running",
         "state_before": "STABLE_IDLE",
         "state_after": null,
+        "live_enabled": 0,
+        "entry_enabled": 0,
+        "error_present": false
+      },
+      {
+        "component": "risk_monitor",
+        "started_at": "2026-10-20T13:07:01.471846+00:00",
+        "finished_at": "2026-10-20T13:07:01.506059+00:00",
+        "strategy_version": "aggressive-fee-spike-fast-v1.2",
+        "status": "ok",
+        "state_before": "STABLE_IDLE",
+        "state_after": "STABLE_IDLE",
+        "live_enabled": 0,
+        "entry_enabled": 0,
+        "error_present": false
+      },
+      {
+        "component": "legacy_scan",
+        "started_at": "2026-10-20T12:57:01.300403+00:00",
+        "finished_at": "2026-10-20T12:58:33.569154+00:00",
+        "strategy_version": "aggressive-fee-spike-fast-v1.2",
+        "status": "ok",
+        "state_before": "STABLE_IDLE",
+        "state_after": "STABLE_IDLE",
+        "live_enabled": 0,
+        "entry_enabled": 0,
+        "error_present": false
+      },
+      {
+        "component": "discovery",
+        "started_at": "2026-10-20T12:55:05.957499+00:00",
+        "finished_at": "2026-10-20T12:57:01.688030+00:00",
+        "strategy_version": "aggressive-fee-spike-fast-v1.2",
+        "status": "ok",
+        "state_before": "STABLE_IDLE",
+        "state_after": "STABLE_IDLE",
         "live_enabled": 0,
         "entry_enabled": 0,
         "error_present": false
@@ -2060,48 +2097,12 @@
         "live_enabled": 0,
         "entry_enabled": 0,
         "error_present": false
-      },
-      {
-        "component": "discovery",
-        "started_at": "2026-10-20T09:55:01.349729+00:00",
-        "finished_at": "2026-10-20T09:59:12.762834+00:00",
-        "strategy_version": "aggressive-fee-spike-fast-v1.2",
-        "status": "ok",
-        "state_before": "STABLE_IDLE",
-        "state_after": "STABLE_IDLE",
-        "live_enabled": 0,
-        "entry_enabled": 0,
-        "error_present": false
-      },
-      {
-        "component": "risk_monitor",
-        "started_at": "2026-10-20T09:52:02.123961+00:00",
-        "finished_at": "2026-10-20T09:52:02.177890+00:00",
-        "strategy_version": "aggressive-fee-spike-fast-v1.2",
-        "status": "ok",
-        "state_before": "STABLE_IDLE",
-        "state_after": "STABLE_IDLE",
-        "live_enabled": 0,
-        "entry_enabled": 0,
-        "error_present": false
-      },
-      {
-        "component": "discovery",
-        "started_at": "2026-10-20T09:40:04.620870+00:00",
-        "finished_at": "2026-10-20T09:41:03.281537+00:00",
-        "strategy_version": "aggressive-fee-spike-fast-v1.2",
-        "status": "ok",
-        "state_before": "STABLE_IDLE",
-        "state_after": "STABLE_IDLE",
-        "live_enabled": 0,
-        "entry_enabled": 0,
-        "error_present": false
       }
     ],
     "active_runs": [
       {
         "component": "discovery",
-        "started_at": "2026-10-20T12:55:05.957499+00:00",
+        "started_at": "2026-10-20T13:10:09.246136+00:00",
         "finished_at": null,
         "strategy_version": "aggressive-fee-spike-fast-v1.2",
         "status": "running",
@@ -2168,11 +2169,11 @@
         "strategy_version": "aggressive-fee-spike-fast-v1.2",
         "is_current": true,
         "observation_count": 2805,
-        "forward_outcome_count": 88,
+        "forward_outcome_count": 95,
         "first_observed_at": "2026-10-20T09:18:55.547290+00:00",
         "last_observed_at": "2026-10-20T12:55:06.308980+00:00",
         "first_forward_entry_at": "2026-10-20T09:18:55.547290+00:00",
-        "last_forward_outcome_at": "2026-10-20T12:40:04.132792+00:00"
+        "last_forward_outcome_at": "2026-10-20T12:55:06.308980+00:00"
       },
       {
         "strategy_version": "aggressive-fee-spike-v1.0",
