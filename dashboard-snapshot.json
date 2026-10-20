@@ -18,12 +18,12 @@
       "legacy_scan"
     ]
   },
-  "generated_at": "2026-10-20T15:27:00.509960+00:00",
+  "generated_at": "2026-10-20T15:27:18.795724+00:00",
   "health": "ok",
   "status": {
     "state": "RESEARCH",
     "reason": "fee_spike_strategies_produced_no_repeatable_entry_candidates",
-    "updated_at": "2026-10-20T15:22:05.826199+00:00",
+    "updated_at": "2026-10-20T15:27:00.952508+00:00",
     "strategy_version": null
   },
   "authority": {
@@ -1746,19 +1746,19 @@
         "sub_state": "waiting",
         "result": "success",
         "unit_file_state": "enabled",
-        "last_trigger": "Wed 2026-10-21 00:26:15 KST",
-        "next_trigger": "Wed 2026-10-21 00:27:15 KST"
+        "last_trigger": "Wed 2026-10-21 00:27:17 KST",
+        "next_trigger": "Wed 2026-10-21 00:28:15 KST"
       },
       "dashboard_publish": {
         "unit": "lp-dashboard-pages-publish.timer",
         "ok": true,
         "load_state": "loaded",
         "active_state": "active",
-        "sub_state": "running",
+        "sub_state": "waiting",
         "result": "success",
         "unit_file_state": "enabled",
         "last_trigger": "Wed 2026-10-21 00:27:00 KST",
-        "next_trigger": null
+        "next_trigger": "Wed 2026-10-21 00:42:00 KST"
       },
       "dashboard_web": {
         "unit": "lp-dashboard-web.service",
@@ -2149,6 +2149,14 @@
       }
     ],
     "recent_events": [
+      {
+        "occurred_at": "2026-10-20T15:27:00.952508+00:00",
+        "strategy_version": "aggressive-fee-spike-fast-v1.2",
+        "category": "state_transition",
+        "state_from": "STABLE_IDLE",
+        "state_to": "RESEARCH",
+        "reason": "status_reconciliation"
+      },
       {
         "occurred_at": "2026-10-20T09:19:55.420023+00:00",
         "strategy_version": "aggressive-fee-spike-fast-v1.2",
