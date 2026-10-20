@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
   "strategy_version": "aggressive-fee-spike-v1.0",
-  "generated_at": "2026-10-20T06:27:00.452506+00:00",
+  "generated_at": "2026-10-20T06:42:00.447988+00:00",
   "health": "ok",
   "status": {
     "state": "STABLE_IDLE",
     "reason": "no_eligible_aggressive_candidate",
-    "updated_at": "2026-10-20T06:22:08.917548+00:00",
+    "updated_at": "2026-10-20T06:37:02.250372+00:00",
     "strategy_version": "aggressive-fee-spike-v1.0"
   },
   "authority": {
@@ -32,20 +32,20 @@
   },
   "freshness": {
     "discovery": {
-      "finished_at": "2026-10-20T06:13:33.553197+00:00",
-      "age_seconds": 806.899309,
+      "finished_at": "2026-10-20T06:27:22.131483+00:00",
+      "age_seconds": 878.316505,
       "limit_seconds": 1200,
       "fresh": true
     },
     "risk_monitor": {
-      "finished_at": "2026-10-20T06:22:08.919161+00:00",
-      "age_seconds": 291.533345,
+      "finished_at": "2026-10-20T06:37:02.253222+00:00",
+      "age_seconds": 298.194766,
       "limit_seconds": 1200,
       "fresh": true
     },
     "legacy_scan": {
       "finished_at": "2026-10-20T05:58:34.614432+00:00",
-      "age_seconds": 1705.838074,
+      "age_seconds": 2605.833556,
       "limit_seconds": 4500,
       "fresh": true
     }
@@ -1563,7 +1563,7 @@
   ],
   "forward": {
     "strategy_version": "aggressive-fee-spike-v1.0",
-    "total_windows": 8920,
+    "total_windows": 8936,
     "aggressive_a_plus_scored_windows": 0,
     "aggressive_a_plus_independent_days": 0,
     "validation_gate_passed": false,
@@ -1572,17 +1572,17 @@
     "groups": [
       {
         "horizon_minutes": 15,
-        "total": 3342,
-        "scored": 3123,
+        "total": 3349,
+        "scored": 3130,
         "unresolved": 219,
-        "average_pnl_usd": -94.27376893771574,
-        "median_pnl_usd": -11.400873305035361,
-        "positive_rate": 0.09798270893371758,
-        "total_pnl_usd": -294416.98039248626,
-        "fee_beats_losses_rate": 0.007044508485430675,
+        "average_pnl_usd": -94.10767229854177,
+        "median_pnl_usd": -11.400812726077845,
+        "positive_rate": 0.09776357827476038,
+        "total_pnl_usd": -294557.01429443574,
+        "fee_beats_losses_rate": 0.007028753993610224,
         "exit_reasons": {
-          "hard_loss_stop": 805,
-          "soft_loss_stop": 494,
+          "hard_loss_stop": 806,
+          "soft_loss_stop": 496,
           "risky_inventory_skew": 609,
           "fee_velocity_decay": 48,
           "range_breach": 34
@@ -1590,17 +1590,17 @@
       },
       {
         "horizon_minutes": 30,
-        "total": 2503,
-        "scored": 2306,
-        "unresolved": 197,
-        "average_pnl_usd": -114.97581753912232,
+        "total": 2506,
+        "scored": 2308,
+        "unresolved": 198,
+        "average_pnl_usd": -114.88866626660968,
         "median_pnl_usd": -11.687053343266086,
-        "positive_rate": 0.12792714657415438,
-        "total_pnl_usd": -265134.23524521606,
-        "fee_beats_losses_rate": 0.012142237640936688,
+        "positive_rate": 0.1278162911611785,
+        "total_pnl_usd": -265163.04174333514,
+        "fee_beats_losses_rate": 0.012131715771230503,
         "exit_reasons": {
+          "soft_loss_stop": 339,
           "fee_velocity_decay": 76,
-          "soft_loss_stop": 338,
           "hard_loss_stop": 654,
           "risky_inventory_skew": 407,
           "range_breach": 45
@@ -1608,16 +1608,16 @@
       },
       {
         "horizon_minutes": 60,
-        "total": 1788,
-        "scored": 1615,
-        "unresolved": 173,
-        "average_pnl_usd": -146.24016788576694,
-        "median_pnl_usd": -13.1610427031153,
-        "positive_rate": 0.19071207430340556,
-        "total_pnl_usd": -236177.8711355136,
-        "fee_beats_losses_rate": 0.03281733746130031,
+        "total": 1792,
+        "scored": 1617,
+        "unresolved": 175,
+        "average_pnl_usd": -146.1086602226605,
+        "median_pnl_usd": -13.188379938859612,
+        "positive_rate": 0.19047619047619047,
+        "total_pnl_usd": -236257.703580042,
+        "fee_beats_losses_rate": 0.03277674706246135,
         "exit_reasons": {
-          "hard_loss_stop": 552,
+          "hard_loss_stop": 554,
           "soft_loss_stop": 209,
           "risky_inventory_skew": 282,
           "fee_velocity_decay": 68,
@@ -1626,9 +1626,9 @@
       },
       {
         "horizon_minutes": 180,
-        "total": 1287,
+        "total": 1289,
         "scored": 1159,
-        "unresolved": 128,
+        "unresolved": 130,
         "average_pnl_usd": -197.03393985073845,
         "median_pnl_usd": -20.522719634851455,
         "positive_rate": 0.2553925798101812,
@@ -1660,7 +1660,7 @@
         "sub_state": "running",
         "result": "success",
         "unit_file_state": "enabled",
-        "last_trigger": "Tue 2026-10-20 15:25:02 KST",
+        "last_trigger": "Tue 2026-10-20 15:40:05 KST",
         "next_trigger": null
       },
       "risk_monitor": {
@@ -1671,8 +1671,8 @@
         "sub_state": "waiting",
         "result": "success",
         "unit_file_state": "enabled",
-        "last_trigger": "Tue 2026-10-20 15:22:07 KST",
-        "next_trigger": "Tue 2026-10-20 15:37:00 KST"
+        "last_trigger": "Tue 2026-10-20 15:37:01 KST",
+        "next_trigger": "Tue 2026-10-20 15:52:00 KST"
       },
       "legacy_scan": {
         "unit": "lp-hunter.timer",
@@ -1689,12 +1689,36 @@
     "latest_runs": [
       {
         "component": "discovery",
-        "started_at": "2026-10-20T06:25:03.641048+00:00",
+        "started_at": "2026-10-20T06:40:06.858777+00:00",
         "finished_at": null,
         "strategy_version": "aggressive-fee-spike-v1.0",
         "status": "running",
         "state_before": "STABLE_IDLE",
         "state_after": null,
+        "live_enabled": 0,
+        "entry_enabled": 0,
+        "error_present": false
+      },
+      {
+        "component": "risk_monitor",
+        "started_at": "2026-10-20T06:37:02.222805+00:00",
+        "finished_at": "2026-10-20T06:37:02.253222+00:00",
+        "strategy_version": "aggressive-fee-spike-v1.0",
+        "status": "ok",
+        "state_before": "STABLE_IDLE",
+        "state_after": "STABLE_IDLE",
+        "live_enabled": 0,
+        "entry_enabled": 0,
+        "error_present": false
+      },
+      {
+        "component": "discovery",
+        "started_at": "2026-10-20T06:25:03.641048+00:00",
+        "finished_at": "2026-10-20T06:27:22.131483+00:00",
+        "strategy_version": "aggressive-fee-spike-v1.0",
+        "status": "ok",
+        "state_before": "STABLE_IDLE",
+        "state_after": "STABLE_IDLE",
         "live_enabled": 0,
         "entry_enabled": 0,
         "error_present": false
@@ -2022,36 +2046,12 @@
         "live_enabled": 0,
         "entry_enabled": 0,
         "error_present": false
-      },
-      {
-        "component": "risk_monitor",
-        "started_at": "2026-10-20T03:22:07.774443+00:00",
-        "finished_at": "2026-10-20T03:22:07.796691+00:00",
-        "strategy_version": "aggressive-fee-spike-v1.0",
-        "status": "ok",
-        "state_before": "STABLE_IDLE",
-        "state_after": "STABLE_IDLE",
-        "live_enabled": 0,
-        "entry_enabled": 0,
-        "error_present": false
-      },
-      {
-        "component": "discovery",
-        "started_at": "2026-10-20T03:10:06.459171+00:00",
-        "finished_at": "2026-10-20T03:13:15.340931+00:00",
-        "strategy_version": "aggressive-fee-spike-v1.0",
-        "status": "ok",
-        "state_before": "STABLE_IDLE",
-        "state_after": "STABLE_IDLE",
-        "live_enabled": 0,
-        "entry_enabled": 0,
-        "error_present": false
       }
     ],
     "active_runs": [
       {
         "component": "discovery",
-        "started_at": "2026-10-20T06:25:03.641048+00:00",
+        "started_at": "2026-10-20T06:40:06.858777+00:00",
         "finished_at": null,
         "strategy_version": "aggressive-fee-spike-v1.0",
         "status": "running",
@@ -2102,11 +2102,11 @@
         "strategy_version": "aggressive-fee-spike-v1.0",
         "is_current": true,
         "observation_count": 95753,
-        "forward_outcome_count": 8920,
+        "forward_outcome_count": 8936,
         "first_observed_at": "2026-10-12T16:19:43.450296+00:00",
         "last_observed_at": "2026-10-20T06:25:03.971796+00:00",
         "first_forward_entry_at": "2026-10-12T16:19:43.450296+00:00",
-        "last_forward_outcome_at": "2026-10-20T05:55:08.281989+00:00"
+        "last_forward_outcome_at": "2026-10-20T06:25:03.971796+00:00"
       },
       {
         "strategy_version": "legacy-unversioned",
