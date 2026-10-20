@@ -43,6 +43,12 @@ function renderHeader(snapshot) {
   }
 }
 
+function programLabel(snapshot) {
+  const program = snapshot.program || {};
+  if (program.phase === "research") return `연구 ${program.research_program || "진행 중"}`;
+  return `전략 ${snapshot.strategy_version || "-"}`;
+}
+
 function renderOverview(snapshot) {
   const capital = snapshot.capital || {};
   const forward = snapshot.forward || {};
@@ -61,7 +67,8 @@ function renderOverview(snapshot) {
   ].join("");
   const authority = snapshot.authority || {};
   $("authority-strip").innerHTML = [
-    `<span>전략 ${safe(snapshot.strategy_version)}</span>`,
+    `<span>${safe(programLabel(snapshot))}</span>`,
+    `<span>활성 전략 ${safe(snapshot.program?.active_strategy || "없음")}</span>`,
     `<span>실거래 ${authority.live_enabled ? "활성" : "비활성"}</span>`,
     `<span>신규 페이퍼 진입 ${authority.paper_entries_enabled ? "활성" : "비활성"}</span>`,
     `<span>관제 ${authority.dashboard_read_only ? "읽기 전용" : "권한 확인 필요"}</span>`,
@@ -100,7 +107,8 @@ function qualityText(quality = {}) {
 function renderCandidates(snapshot) {
   const candidates = snapshot.candidates || {};
   const items = candidates.items || [];
-  $("candidate-summary").textContent = `${number(candidates.total_observed, 0)}개 관측 · 경제성 검증 ${number(candidates.reliable_count, 0)}개 · 상위 ${number(items.length, 0)}개 표시`;
+  const archived = snapshot.program?.phase === "research" ? "퇴역 전략의 마지막 관측 · " : "";
+  $("candidate-summary").textContent = `${archived}${number(candidates.total_observed, 0)}개 관측 · 경제성 검증 ${number(candidates.reliable_count, 0)}개 · 상위 ${number(items.length, 0)}개 표시`;
   $("candidate-table").innerHTML = items.length ? items.slice(0, 30).map((item) => {
     const blockers = item.blockers || [];
     const pass = Boolean(item.aggressive_eligible);
