@@ -18,7 +18,7 @@
       "legacy_scan"
     ]
   },
-  "generated_at": "2026-10-20T15:42:03.957000+00:00",
+  "generated_at": "2026-10-20T15:57:06.198950+00:00",
   "health": "ok",
   "status": {
     "state": "RESEARCH",
@@ -1746,8 +1746,8 @@
         "sub_state": "waiting",
         "result": "success",
         "unit_file_state": "enabled",
-        "last_trigger": "Wed 2026-10-21 00:41:17 KST",
-        "next_trigger": "Wed 2026-10-21 00:42:15 KST"
+        "last_trigger": "Wed 2026-10-21 00:56:17 KST",
+        "next_trigger": "Wed 2026-10-21 00:57:15 KST"
       },
       "dashboard_publish": {
         "unit": "lp-dashboard-pages-publish.timer",
@@ -1757,7 +1757,7 @@
         "sub_state": "running",
         "result": "success",
         "unit_file_state": "enabled",
-        "last_trigger": "Wed 2026-10-21 00:42:03 KST",
+        "last_trigger": "Wed 2026-10-21 00:57:06 KST",
         "next_trigger": null
       },
       "dashboard_web": {
