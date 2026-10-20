@@ -142,8 +142,8 @@ function renderForward(snapshot) {
   const forward = snapshot.forward || {};
   const groups = forward.groups || [];
   const list = Array.isArray(groups) ? groups : Object.entries(groups).map(([horizon, value]) => ({horizon, ...value}));
-  $("validation-gate").textContent = forward.validation_gate_passed
-    ? "Forward 승격 표본 조건 충족" : `승격 미충족 · 필요 ${number(forward.required_windows || 30, 0)}창 / ${number(forward.required_independent_days || 20, 0)}일`;
+  const required = `${number(forward.required_windows || 30, 0)}창 / ${number(forward.required_independent_days || 20, 0)}일`;
+  $("validation-gate").textContent = `A+ ${forward.validation_gate_passed ? "충족" : "미충족"} · 30분 Shadow ${forward.fast_exit_validation_gate_passed ? "충족" : "미충족"} (${number(forward.aggressive_fast_exit_scored_windows || 0, 0)}창) · 필요 ${required}`;
   $("forward-cards").innerHTML = list.length ? list.map((item) => metric(
     `${safe(item.horizon || item.horizon_minutes + "m")}`,
     `${percent(item.positive_rate || 0)} 양수`,
