@@ -128,6 +128,76 @@ function renderCandidates(snapshot) {
   }).join("") : `<tr><td colspan="7" class="empty">최근 후보가 없습니다.</td></tr>`;
 }
 
+const globalStrategyLabels = {
+  stable_carry: "Stable Carry",
+  bluechip_cl: "Blue-chip CL",
+  gauge_farm: "Gauge Farm"
+};
+
+function renderGlobalResearch(snapshot) {
+  const research = snapshot.global_research || {};
+  const strategies = research.strategies || {};
+  const allocations = research.allocations || [];
+  const portfolio = research.portfolio || {};
+  const audit = research.audit || {};
+  const authority = research.authority || {};
+
+  if (!research.available) {
+    $("global-research-status").textContent = "글로벌 연구 스냅샷 없음";
+    $("global-research-summary").innerHTML = metric("글로벌 연구", "증거 없음", `예상 버전 ${research.expected_version || "-"}`);
+    $("global-strategies").innerHTML = `<div class="empty">글로벌 전략별 연구 결과가 없습니다.</div>`;
+    $("global-allocation-table").innerHTML = `<tr><td colspan="7" class="empty">연구 배정이 없습니다.</td></tr>`;
+    $("global-limitations").innerHTML = `<div>· 실제·가상 진입 권한은 비활성입니다.</div>`;
+    return;
+  }
+
+  const versionOk = Boolean(audit.snapshot_version_matches);
+  $("global-research-status").textContent = `${research.program || "-"} · ${research.status || "-"} · 생성 ${when(research.generated_at)}`;
+  $("global-research-summary").innerHTML = [
+    metric("전체 소스 풀", number(research.source?.pool_count || 0, 0), safe(research.source?.provider || "-")),
+    metric("선별 후보", number(research.run?.screened_pool_count ?? research.run?.screened_candidates ?? 0, 0), `실행 ${safe(research.run?.run_id || "-")}`),
+    metric("연구 배정", money(portfolio.allocated_usd ?? allocations.reduce((sum, item) => sum + Number(item.notional_usd || 0), 0)), `${number(allocations.length, 0)}개 풀`),
+    metric("현금 대기", money(portfolio.idle_cash_usd ?? portfolio.idle_usd ?? portfolio.cash_idle_usd ?? 0), `목표 ${money(portfolio.target_notional_usd ?? portfolio.target_usd ?? portfolio.total_usd)}`),
+    metric("성숙 Forward", number(audit.versioned_forward_count || 0, 0), "완성 전 수익 주장 금지"),
+    metric("버전 격리", versionOk ? "일치" : "불일치", `${safe(research.program)} / ${safe(research.expected_version)}`, versionOk ? "positive" : "negative"),
+  ].join("");
+
+  $("global-strategies").innerHTML = Object.entries(strategies).map(([key, item]) => {
+    const budget = Number(item.target_notional_usd ?? item.budget_usd ?? item.notional_usd ?? 0);
+    const allocated = Number(item.allocated_usd ?? allocations.filter((allocation) => allocation.strategy === key).reduce((sum, allocation) => sum + Number(allocation.notional_usd || 0), 0));
+    const idle = Number(item.idle_cash_usd ?? item.idle_usd ?? Math.max(0, budget - allocated));
+    return `<article class="position-card research-card">
+      <strong>${safe(globalStrategyLabels[key] || key)}</strong>
+      <div class="kv"><span>예산</span><b>${money(budget)}</b></div>
+      <div class="kv"><span>연구 배정</span><b>${money(allocated)}</b></div>
+      <div class="kv"><span>현금 대기</span><b>${money(idle)}</b></div>
+      <div class="kv"><span>적격 후보</span><b>${number(item.eligible_candidate_count ?? item.eligible_count ?? item.candidate_count ?? 0, 0)}</b></div>
+      <div class="kv"><span>평가 기간</span><b>${safe((item.horizons_days || []).map((value) => `${value}d`).join(" · ") || "-")}</b></div>
+    </article>`;
+  }).join("") || `<div class="empty">전략별 연구 결과가 없습니다.</div>`;
+
+  $("global-allocation-table").innerHTML = allocations.length ? allocations.map((item) => {
+    const persistence = Number(item.persistence_30d);
+    const evidence = item.evidence_status === "eligible_screening_proxy";
+    return `<tr>
+      <td>${safe(globalStrategyLabels[item.strategy] || item.strategy)}</td>
+      <td><span class="pool-name">${safe(item.symbol || item.pool_id)}</span><span class="pool-key" title="${safe(item.pool_id)}">${safe(item.pool_id)}</span></td>
+      <td>${safe(item.chain)}<br><span class="muted">${safe(item.project)}</span></td>
+      <td>${money(item.notional_usd)}</td>
+      <td>${percent(item.robust_apy_30d, true)}<br><span class="muted">유효 ${percent(item.effective_apy, true)}</span></td>
+      <td>${number(item.history_sample_count || 0, 0)}개<br><span class="muted">지속 ${Number.isFinite(persistence) ? percent(persistence) : "-"}</span></td>
+      <td><span class="verdict ${evidence ? "pass" : "blocked"}">${evidence ? "스크리닝 적격" : "미해결"}</span><span class="quality">${safe(item.status || "-")}</span></td>
+    </tr>`;
+  }).join("") : `<tr><td colspan="7" class="empty">현재 조건을 통과한 연구 배정이 없습니다. 해당 예산은 현금 대기입니다.</td></tr>`;
+
+  const permissionsOff = !authority.entry_enabled && !authority.live_trading && !authority.paper_entries && !authority.wallet_access;
+  const limitations = [
+    permissionsOff ? "권한: 실거래·페이퍼 진입·지갑 접근 모두 비활성" : "권한 상태 확인 필요",
+    ...(research.limitations || []),
+  ];
+  $("global-limitations").innerHTML = limitations.map((item) => `<div>· ${safe(item)}</div>`).join("");
+}
+
 function renderPositions(snapshot) {
   const positions = snapshot.positions || [];
   $("positions").innerHTML = positions.length ? positions.map((item) => {
@@ -192,6 +262,7 @@ function render(snapshot) {
   renderOverview(snapshot);
   renderFunnel(snapshot);
   renderCandidates(snapshot);
+  renderGlobalResearch(snapshot);
   renderPositions(snapshot);
   renderForward(snapshot);
   renderOperations(snapshot);
