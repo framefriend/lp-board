@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
   "strategy_version": "aggressive-fee-spike-v1.1",
-  "generated_at": "2026-10-20T07:02:06.758667+00:00",
+  "generated_at": "2026-10-20T07:12:03.210047+00:00",
   "health": "ok",
   "status": {
     "state": "STABLE_IDLE",
     "reason": "no_eligible_aggressive_candidate",
-    "updated_at": "2026-10-20T07:01:30.996796+00:00",
+    "updated_at": "2026-10-20T07:10:17.290142+00:00",
     "strategy_version": "aggressive-fee-spike-v1.1"
   },
   "authority": {
@@ -32,20 +32,20 @@
   },
   "freshness": {
     "discovery": {
-      "finished_at": "2026-10-20T07:01:31.000664+00:00",
-      "age_seconds": 35.758003,
+      "finished_at": "2026-10-20T07:10:17.293886+00:00",
+      "age_seconds": 105.916161,
       "limit_seconds": 1200,
       "fresh": true
     },
     "risk_monitor": {
-      "finished_at": "2026-10-20T06:52:04.274444+00:00",
-      "age_seconds": 602.484223,
+      "finished_at": "2026-10-20T07:07:01.736222+00:00",
+      "age_seconds": 301.473825,
       "limit_seconds": 1200,
       "fresh": true
     },
     "legacy_scan": {
       "finished_at": "2026-10-20T06:59:05.439315+00:00",
-      "age_seconds": 181.319352,
+      "age_seconds": 777.770732,
       "limit_seconds": 4500,
       "fresh": true
     }
@@ -107,7 +107,7 @@
     "forward_fees": "proxy"
   },
   "funnel": {
-    "observed_at": "2026-10-20T07:01:30.232842+00:00",
+    "observed_at": "2026-10-20T07:10:01.482606+00:00",
     "raw": 172,
     "observed": 172,
     "reported_limit": 30,
@@ -144,14 +144,14 @@
     "failures": []
   },
   "candidates": {
-    "observed_at": "2026-10-20T07:01:30.232842+00:00",
+    "observed_at": "2026-10-20T07:10:01.482606+00:00",
     "total_observed": 172,
     "reported_limit": 30,
     "displayed_count": 30,
     "reliable_count": 2,
     "items": [
       {
-        "observed_at": "2026-10-20T07:01:30.232842+00:00",
+        "observed_at": "2026-10-20T07:10:01.482606+00:00",
         "pool_key": "solana:JAe55Dx5TRR1oXBEs8ergXGCsP6MpuDLQwwBF5dveVsZ",
         "network": "solana",
         "dex": "raydium-clmm",
@@ -163,16 +163,16 @@
         "volume_acceleration": 2.4360569966846906,
         "applied_lp_fee_rate": 0.00168,
         "estimated_fee_share": 0.011561216280717818,
-        "expected_net_3h_usd": -2.7267371908449682,
-        "expected_net_3h_rate": -0.002726737190844968,
-        "stressed_net_3h_usd": -4.370908190844968,
-        "fee_to_risk_ratio": 0.7085397437633606,
+        "expected_net_3h_usd": -2.8200191908449685,
+        "expected_net_3h_rate": -0.0028200191908449687,
+        "stressed_net_3h_usd": -4.487510690844969,
+        "fee_to_risk_ratio": 0.7015447187908951,
         "economics_status": "reliable",
         "raw_economics": {
-          "expected_net_3h_usd": -2.7267371908449682,
-          "expected_net_3h_rate": -0.002726737190844968,
-          "stressed_net_3h_usd": -4.370908190844968,
-          "fee_to_risk_ratio": 0.7085397437633606
+          "expected_net_3h_usd": -2.8200191908449685,
+          "expected_net_3h_rate": -0.0028200191908449687,
+          "stressed_net_3h_usd": -4.487510690844969,
+          "fee_to_risk_ratio": 0.7015447187908951
         },
         "aggressive_eligible": false,
         "stageable": false,
@@ -193,7 +193,7 @@
         }
       },
       {
-        "observed_at": "2026-10-20T07:01:30.232842+00:00",
+        "observed_at": "2026-10-20T07:10:01.482606+00:00",
         "pool_key": "solana:F3DAAusn8mob9swWaX4ehaRrhi2Q3XJScKkuUpXdvn2i",
         "network": "solana",
         "dex": "raydium-clmm",
@@ -205,16 +205,16 @@
         "volume_acceleration": 0.6186142446041814,
         "applied_lp_fee_rate": 0.000336,
         "estimated_fee_share": 0.05575142540165169,
-        "expected_net_3h_usd": -9.292902555364254,
-        "expected_net_3h_rate": -0.009292902555364253,
-        "stressed_net_3h_usd": -10.868561555364256,
-        "fee_to_risk_ratio": 0.4478004928333192,
+        "expected_net_3h_usd": -8.964522555364255,
+        "expected_net_3h_rate": -0.008964522555364255,
+        "stressed_net_3h_usd": -10.458086555364254,
+        "fee_to_risk_ratio": 0.45671226352911515,
         "economics_status": "reliable",
         "raw_economics": {
-          "expected_net_3h_usd": -9.292902555364254,
-          "expected_net_3h_rate": -0.009292902555364253,
-          "stressed_net_3h_usd": -10.868561555364256,
-          "fee_to_risk_ratio": 0.4478004928333192
+          "expected_net_3h_usd": -8.964522555364255,
+          "expected_net_3h_rate": -0.008964522555364255,
+          "stressed_net_3h_usd": -10.458086555364254,
+          "fee_to_risk_ratio": 0.45671226352911515
         },
         "aggressive_eligible": false,
         "stageable": false,
@@ -236,7 +236,7 @@
         }
       },
       {
-        "observed_at": "2026-10-20T07:01:30.232842+00:00",
+        "observed_at": "2026-10-20T07:10:01.482606+00:00",
         "pool_key": "robinhood:0xa8f330994e5832b499e1c82921846f423a20ba7601fe9b42340715d2f81c8bd0",
         "network": "robinhood",
         "dex": "uniswap-v4-robinhood",
@@ -279,7 +279,7 @@
         }
       },
       {
-        "observed_at": "2026-10-20T07:01:30.232842+00:00",
+        "observed_at": "2026-10-20T07:10:01.482606+00:00",
         "pool_key": "robinhood:0x32e3c856ca985e19fb0705b6c1e5d0e30515c815837adaa30e0404e677273ede",
         "network": "robinhood",
         "dex": "uniswap-v4-robinhood",
@@ -323,7 +323,7 @@
         }
       },
       {
-        "observed_at": "2026-10-20T07:01:30.232842+00:00",
+        "observed_at": "2026-10-20T07:10:01.482606+00:00",
         "pool_key": "robinhood:0x9fdc3a41cec5ab5d86fb420a9fa32a1b980f15c400a0f7cb7461b61b342a3a08",
         "network": "robinhood",
         "dex": "uniswap-v4-robinhood",
@@ -368,7 +368,7 @@
         }
       },
       {
-        "observed_at": "2026-10-20T07:01:30.232842+00:00",
+        "observed_at": "2026-10-20T07:10:01.482606+00:00",
         "pool_key": "solana:7aansmhdmve7pLESZVjoBr69juF9PqZXBKZVauRU19Xe",
         "network": "solana",
         "dex": "pumpswap",
@@ -414,7 +414,7 @@
         }
       },
       {
-        "observed_at": "2026-10-20T07:01:30.232842+00:00",
+        "observed_at": "2026-10-20T07:10:01.482606+00:00",
         "pool_key": "robinhood:0x20d652f93ff6abbc66ed1836af3c6bbafd5a50244bcab1874af8a9d753ff1e80",
         "network": "robinhood",
         "dex": "uniswap-v4-robinhood",
@@ -459,7 +459,7 @@
         }
       },
       {
-        "observed_at": "2026-10-20T07:01:30.232842+00:00",
+        "observed_at": "2026-10-20T07:10:01.482606+00:00",
         "pool_key": "solana:6YPBGw5j3oeuL3uSmP9QDc4FrpQzF1SHMdfx4fwsBPFi",
         "network": "solana",
         "dex": "pumpswap",
@@ -505,7 +505,7 @@
         }
       },
       {
-        "observed_at": "2026-10-20T07:01:30.232842+00:00",
+        "observed_at": "2026-10-20T07:10:01.482606+00:00",
         "pool_key": "robinhood:0x3dea75029b79e59cf8b522d1c90e564fb0a87e1e0017f8f9d4e7a818f5124dc1",
         "network": "robinhood",
         "dex": "uniswap-v4-robinhood",
@@ -551,7 +551,7 @@
         }
       },
       {
-        "observed_at": "2026-10-20T07:01:30.232842+00:00",
+        "observed_at": "2026-10-20T07:10:01.482606+00:00",
         "pool_key": "solana:EDWd9jU9XtSbXkSLqmfyzLVGeu74T366KuADvTvkYwRW",
         "network": "solana",
         "dex": "orca",
@@ -598,7 +598,7 @@
         }
       },
       {
-        "observed_at": "2026-10-20T07:01:30.232842+00:00",
+        "observed_at": "2026-10-20T07:10:01.482606+00:00",
         "pool_key": "solana:J4KyPGT6RSw2VvrYHFEUWuHNChR6SMY8AjCGJsm1eJob",
         "network": "solana",
         "dex": "pumpswap",
@@ -644,7 +644,7 @@
         }
       },
       {
-        "observed_at": "2026-10-20T07:01:30.232842+00:00",
+        "observed_at": "2026-10-20T07:10:01.482606+00:00",
         "pool_key": "robinhood:0x2355a59f54ed7c528e9ddedb7373fb10ef7fa899319ce1e0cbbdbbcb4c0c2ab5",
         "network": "robinhood",
         "dex": "uniswap-v4-robinhood",
@@ -694,7 +694,7 @@
         }
       },
       {
-        "observed_at": "2026-10-20T07:01:30.232842+00:00",
+        "observed_at": "2026-10-20T07:10:01.482606+00:00",
         "pool_key": "robinhood:0x9be7ab27227e115085b0949a819a73f6963ddc6da0c6204d37757c24297706e8",
         "network": "robinhood",
         "dex": "uniswap-v4-robinhood",
@@ -739,7 +739,7 @@
         }
       },
       {
-        "observed_at": "2026-10-20T07:01:30.232842+00:00",
+        "observed_at": "2026-10-20T07:10:01.482606+00:00",
         "pool_key": "solana:HnhpJPJgBG2KwniMTNW8cVBHvk1hFog3RC3kjnyc23tD",
         "network": "solana",
         "dex": "raydium-clmm",
@@ -786,7 +786,7 @@
         }
       },
       {
-        "observed_at": "2026-10-20T07:01:30.232842+00:00",
+        "observed_at": "2026-10-20T07:10:01.482606+00:00",
         "pool_key": "robinhood:0x3416b8d8aa6ae642ffdc2f65165ff479d4bd3007",
         "network": "robinhood",
         "dex": "uniswap-v2-robinhood",
@@ -834,7 +834,7 @@
         }
       },
       {
-        "observed_at": "2026-10-20T07:01:30.232842+00:00",
+        "observed_at": "2026-10-20T07:10:01.482606+00:00",
         "pool_key": "solana:8FJYcF8AW3Gin2QqsL8dCB2tCXhd8BxW7sgaLmvVN4mF",
         "network": "solana",
         "dex": "raydium-clmm",
@@ -879,7 +879,7 @@
         }
       },
       {
-        "observed_at": "2026-10-20T07:01:30.232842+00:00",
+        "observed_at": "2026-10-20T07:10:01.482606+00:00",
         "pool_key": "solana:AEZjoUACNSpmYHHRNbfknjL8oiBDw6GhtrMm7tZgBfca",
         "network": "solana",
         "dex": "raydium",
@@ -928,7 +928,7 @@
         }
       },
       {
-        "observed_at": "2026-10-20T07:01:30.232842+00:00",
+        "observed_at": "2026-10-20T07:10:01.482606+00:00",
         "pool_key": "solana:3ndjN1nJVUKGrJBc1hhVpER6kWTZKHdyDrPyCJyX3CXK",
         "network": "solana",
         "dex": "orca",
@@ -973,7 +973,7 @@
         }
       },
       {
-        "observed_at": "2026-10-20T07:01:30.232842+00:00",
+        "observed_at": "2026-10-20T07:10:01.482606+00:00",
         "pool_key": "robinhood:0x2e8a3c74bc95866aa5f436ff2d025bc095cd481c",
         "network": "robinhood",
         "dex": "uniswap-v2-robinhood",
@@ -1024,7 +1024,7 @@
         }
       },
       {
-        "observed_at": "2026-10-20T07:01:30.232842+00:00",
+        "observed_at": "2026-10-20T07:10:01.482606+00:00",
         "pool_key": "solana:9p7abUFv31ycgu9kckvnoqMMvBy67dqTDM2m6HP9xokN",
         "network": "solana",
         "dex": "orca",
@@ -1069,7 +1069,7 @@
         }
       },
       {
-        "observed_at": "2026-10-20T07:01:30.232842+00:00",
+        "observed_at": "2026-10-20T07:10:01.482606+00:00",
         "pool_key": "robinhood:0xed50bdeea8adc232f159486192a4157281d722ff",
         "network": "robinhood",
         "dex": "uniswap-v3-robinhood",
@@ -1114,7 +1114,7 @@
         }
       },
       {
-        "observed_at": "2026-10-20T07:01:30.232842+00:00",
+        "observed_at": "2026-10-20T07:10:01.482606+00:00",
         "pool_key": "robinhood:0x139dfde6ec32c870055848419c0250b67ecb09f9",
         "network": "robinhood",
         "dex": "uniswap-v3-robinhood",
@@ -1159,7 +1159,7 @@
         }
       },
       {
-        "observed_at": "2026-10-20T07:01:30.232842+00:00",
+        "observed_at": "2026-10-20T07:10:01.482606+00:00",
         "pool_key": "solana:83v8iPyZihDEjDdY8RdZddyZNyUtXngz69Lgo9Kt5d6d",
         "network": "solana",
         "dex": "orca",
@@ -1204,7 +1204,7 @@
         }
       },
       {
-        "observed_at": "2026-10-20T07:01:30.232842+00:00",
+        "observed_at": "2026-10-20T07:10:01.482606+00:00",
         "pool_key": "robinhood:0x8803c117ccae7b5146297876c2a25df135141c4d",
         "network": "robinhood",
         "dex": "uniswap-v2-robinhood",
@@ -1252,7 +1252,7 @@
         }
       },
       {
-        "observed_at": "2026-10-20T07:01:30.232842+00:00",
+        "observed_at": "2026-10-20T07:10:01.482606+00:00",
         "pool_key": "solana:749YMsoFHiDX484YRqsXEV4bVq7PskdTWsfCZcKAUmU7",
         "network": "solana",
         "dex": "pumpswap",
@@ -1298,7 +1298,7 @@
         }
       },
       {
-        "observed_at": "2026-10-20T07:01:30.232842+00:00",
+        "observed_at": "2026-10-20T07:10:01.482606+00:00",
         "pool_key": "solana:Esvfxt3jMDdtTZqLF1fqRhDjzM8Bpr7fZxJMrK69PB7e",
         "network": "solana",
         "dex": "orca",
@@ -1343,7 +1343,7 @@
         }
       },
       {
-        "observed_at": "2026-10-20T07:01:30.232842+00:00",
+        "observed_at": "2026-10-20T07:10:01.482606+00:00",
         "pool_key": "solana:GTHKH8s82ZR8GTSFZ1dUu6wfdxhy59wpMShxzG5zjiPm",
         "network": "solana",
         "dex": "orca",
@@ -1388,7 +1388,7 @@
         }
       },
       {
-        "observed_at": "2026-10-20T07:01:30.232842+00:00",
+        "observed_at": "2026-10-20T07:10:01.482606+00:00",
         "pool_key": "robinhood:0x5ff9c197c33db543e5ed4bb37bec8aa77837d3e4b8bba25e6532ba5f25e3656f",
         "network": "robinhood",
         "dex": "uniswap-v4-robinhood",
@@ -1432,7 +1432,7 @@
         }
       },
       {
-        "observed_at": "2026-10-20T07:01:30.232842+00:00",
+        "observed_at": "2026-10-20T07:10:01.482606+00:00",
         "pool_key": "solana:Czfq3xZZDmsdGdUyrNLtRhGc47cXcZtLG4crryfu44zE",
         "network": "solana",
         "dex": "orca",
@@ -1477,7 +1477,7 @@
         }
       },
       {
-        "observed_at": "2026-10-20T07:01:30.232842+00:00",
+        "observed_at": "2026-10-20T07:10:01.482606+00:00",
         "pool_key": "robinhood:0x574596ca78e0ec91044f9c72d3a07c952892ee3219e6a2fb0f85d4e424d62237",
         "network": "robinhood",
         "dex": "uniswap-v4-robinhood",
@@ -1620,13 +1620,26 @@
   ],
   "forward": {
     "strategy_version": "aggressive-fee-spike-v1.1",
-    "total_windows": 0,
+    "total_windows": 1,
     "aggressive_a_plus_scored_windows": 0,
     "aggressive_a_plus_independent_days": 0,
     "validation_gate_passed": false,
     "required_windows": 30,
     "required_independent_days": 20,
-    "groups": [],
+    "groups": [
+      {
+        "horizon_minutes": 15,
+        "total": 1,
+        "scored": 1,
+        "unresolved": 0,
+        "average_pnl_usd": -4.337011118359214,
+        "median_pnl_usd": -4.337011118359214,
+        "positive_rate": 0.0,
+        "total_pnl_usd": -4.337011118359214,
+        "fee_beats_losses_rate": 0.0,
+        "exit_reasons": {}
+      }
+    ],
     "limitations": [
       "Fee income is an interval proxy, not feeGrowthInside or claimed-fee truth.",
       "Exit quotes are live minimum-received evidence at observation time, not fills.",
@@ -1643,8 +1656,8 @@
         "sub_state": "waiting",
         "result": "success",
         "unit_file_state": "enabled",
-        "last_trigger": "Tue 2026-10-20 15:55:06 KST",
-        "next_trigger": "Tue 2026-10-20 16:10:00 KST"
+        "last_trigger": "Tue 2026-10-20 16:10:00 KST",
+        "next_trigger": "Tue 2026-10-20 16:25:00 KST"
       },
       "risk_monitor": {
         "unit": "lp-hunter-risk.timer",
@@ -1654,8 +1667,8 @@
         "sub_state": "waiting",
         "result": "success",
         "unit_file_state": "enabled",
-        "last_trigger": "Tue 2026-10-20 15:52:03 KST",
-        "next_trigger": "Tue 2026-10-20 16:07:00 KST"
+        "last_trigger": "Tue 2026-10-20 16:07:00 KST",
+        "next_trigger": "Tue 2026-10-20 16:22:00 KST"
       },
       "legacy_scan": {
         "unit": "lp-hunter.timer",
@@ -1670,6 +1683,30 @@
       }
     },
     "latest_runs": [
+      {
+        "component": "discovery",
+        "started_at": "2026-10-20T07:10:01.146340+00:00",
+        "finished_at": "2026-10-20T07:10:17.293886+00:00",
+        "strategy_version": "aggressive-fee-spike-v1.1",
+        "status": "ok",
+        "state_before": "STABLE_IDLE",
+        "state_after": "STABLE_IDLE",
+        "live_enabled": 0,
+        "entry_enabled": 0,
+        "error_present": false
+      },
+      {
+        "component": "risk_monitor",
+        "started_at": "2026-10-20T07:07:01.699507+00:00",
+        "finished_at": "2026-10-20T07:07:01.736222+00:00",
+        "strategy_version": "aggressive-fee-spike-v1.1",
+        "status": "ok",
+        "state_before": "STABLE_IDLE",
+        "state_after": "STABLE_IDLE",
+        "live_enabled": 0,
+        "entry_enabled": 0,
+        "error_present": false
+      },
       {
         "component": "discovery",
         "started_at": "2026-10-20T07:01:30.017659+00:00",
@@ -2005,30 +2042,6 @@
         "live_enabled": 0,
         "entry_enabled": 0,
         "error_present": false
-      },
-      {
-        "component": "risk_monitor",
-        "started_at": "2026-10-20T04:07:01.641838+00:00",
-        "finished_at": "2026-10-20T04:07:01.698239+00:00",
-        "strategy_version": "aggressive-fee-spike-v1.0",
-        "status": "ok",
-        "state_before": "STABLE_IDLE",
-        "state_after": "STABLE_IDLE",
-        "live_enabled": 0,
-        "entry_enabled": 0,
-        "error_present": false
-      },
-      {
-        "component": "legacy_scan",
-        "started_at": "2026-10-20T03:57:08.819280+00:00",
-        "finished_at": "2026-10-20T03:58:41.899429+00:00",
-        "strategy_version": "aggressive-fee-spike-v1.0",
-        "status": "ok",
-        "state_before": "STABLE_IDLE",
-        "state_after": "STABLE_IDLE",
-        "live_enabled": 0,
-        "entry_enabled": 0,
-        "error_present": false
       }
     ],
     "active_runs": [],
@@ -2071,12 +2084,12 @@
       {
         "strategy_version": "aggressive-fee-spike-v1.1",
         "is_current": true,
-        "observation_count": 526,
-        "forward_outcome_count": 0,
+        "observation_count": 698,
+        "forward_outcome_count": 1,
         "first_observed_at": "2026-10-20T06:50:00.546446+00:00",
-        "last_observed_at": "2026-10-20T07:01:30.232842+00:00",
-        "first_forward_entry_at": null,
-        "last_forward_outcome_at": null
+        "last_observed_at": "2026-10-20T07:10:01.482606+00:00",
+        "first_forward_entry_at": "2026-10-20T06:50:00.546446+00:00",
+        "last_forward_outcome_at": "2026-10-20T07:10:01.482606+00:00"
       },
       {
         "strategy_version": "aggressive-fee-spike-v1.0",
