@@ -1,85 +1,125 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="300">
-<title>LP 헌터 상태 (페이퍼)</title><style>
-body{font-family:-apple-system,"Apple SD Gothic Neo","Noto Sans KR","NanumGothic",sans-serif;margin:0;background:#f6f7f9;color:#111;line-height:1.45}
-header{background:#0f172a;color:#fff;padding:14px 16px} header h1{margin:0;font-size:18px} header .sub{opacity:.75;font-size:13px}
-main{padding:12px;max-width:980px;margin:auto} .card{background:#fff;border-radius:12px;padding:14px;margin:10px 0;box-shadow:0 1px 3px rgba(0,0,0,.08)}
-h2{font-size:15px;margin:0 0 8px} .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px}
-.kpi{background:#f1f5f9;border-radius:10px;padding:10px} .kpi b{display:block;font-size:18px} .kpi span{font-size:12px;color:#555}
-table{width:100%;border-collapse:collapse;font-size:12.5px} th,td{padding:6px 4px;border-bottom:1px solid #eee;text-align:left;vertical-align:top}
-th{color:#555;font-weight:600} .scroll{overflow-x:auto} .pos{color:#16a34a} .neg{color:#dc2626} .muted{color:#777;font-size:13px}
-.ok{color:#16a34a} .warn{color:#d97706} .tag{display:inline-block;background:#eef2ff;border-radius:6px;padding:1px 6px;margin:1px;font-size:11.5px}
-.bar{height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden} .bar i{display:block;height:100%;background:#2563eb}
-.chart{width:100%;height:auto} a{color:#2563eb;text-decoration:none} .chg{color:#7c3aed;font-weight:600}
-</style></head><body>
-<header><h1>LP 스파이크 헌터 · 페이퍼 트레이딩</h1><div class="sub">실제 자금 없음 · 매시간 갱신 · 생성 2026-10-18 08:03 KST</div></header><main>
-<div class="card"><h2>상태</h2><div class="grid">
-<div class="kpi"><span>마지막 실행</span><b>10-18 08:01</b><span>2분 전</span></div>
-<div class="kpi"><span>건강 상태</span><b class="ok">정상</b><span>연속 실패 0회</span></div>
-<div class="kpi"><span>실행 시간</span><b>141초</b><span>24시간 실행 2회</span></div>
-<div class="kpi"><span>이번 실행 풀</span><b>244</b><span>점수 매긴 후보 40 (σ 6)</span></div>
-</div><div class="muted" style="margin-top:6px">공개 링크 사용 불가 (박스 네트워크가 Cloudflare 터널 포트 7844 차단)</div></div>
-<div class="card"><h2>실전 전환 기준 진행</h2>
-<div style="margin:6px 0"><b class="warn">…</b> 청산 거래 수: <b>1 / 20</b><div class="bar"><i style="width:5%"></i></div></div>
-<div style="margin:6px 0"><b class="ok">✔</b> 순손익 &gt; 0: <b>+0.55$</b></div>
-<div style="margin:6px 0"><b class="ok">✔</b> 중앙값 &gt; 0: <b>+0.55$</b></div>
-<div style="margin:6px 0"><b class="ok">✔</b> 함정 비율 ≤ 10%: <b>0%</b></div>
-<div class="muted">모두 충족 시 200달러 1슬롯 소액 실전을 <b>제안</b>합니다(자동 실거래 없음). 현재: 미충족</div></div>
-<div class="card"><h2>페이퍼 원장</h2><div class="grid">
-<div class="kpi"><span>청산</span><b>1건</b><span>승 1 · 승률 100%</span></div>
-<div class="kpi"><span>청산 누적 손익</span><b><span class="pos">+0.55$</span></b><span>중앙값 <span class="pos">+0.55$</span></span></div>
-<div class="kpi"><span>보유 중</span><b>0건</b><span>평가손익 <span class="">+0.00$</span></span></div>
-</div><svg viewBox="0 0 640 180" class="chart"><line x1="24" x2="616" y1="156.0" y2="156.0" stroke="#999" stroke-dasharray="4"/><path d="M24.0,156.0 L616.0,24.0" fill="none" stroke="#16a34a" stroke-width="2.5"/><text x="24" y="14" font-size="12" fill="#666">누적 +0.55$ · 1건</text></svg>
-<h2 style="margin-top:12px">청산 거래</h2><div class="scroll"><table><tr><th>청산</th><th>페어</th><th>체인</th><th>사유</th><th>보유</th><th>손익</th><th>수익률</th></tr>
-<tr><td>10-14 01:18</td><td>SOL/$WIF</td><td>solana</td><td>security:security_unchecked</td><td>3h</td><td><span class="pos">+0.55$</span></td><td><span class="pos">+0.3%</span></td></tr>
-</table></div>
-</div>
-<div class="card"><h2>현재 상위 후보 (WATCH)</h2><div class="scroll"><table><tr><th>페어</th><th>체인/DEX</th><th>TVL</th><th>거래량/TVL</th><th>엣지24</th><th>엣지6</th><th>진입 안 하는 이유</th></tr>
-<tr><td><a href='https://www.geckoterminal.com/solana/pools/9DMCBmDYtHbiuL1ctf3M4txTV5ZmdqXipkTgQ1LdFYyv'>RSGP/SOL</a> <span class='muted'>WATCH</span></td><td>solana/펌프스왑(PumpSwap)</td><td>$352k</td><td>194.51</td><td>57.88</td><td>0.00</td><td><span class="tag">6h 엣지 부족 (edge6&lt;5)</span><span class="tag">보안 플래그 (security:top10_holders=98%)</span></td></tr>
-<tr><td><a href='https://www.geckoterminal.com/bsc/pools/0x02eda8dbc97a0c9adfbbfab589430d76a7c7f5b6'>FXION/WBNB</a> <span class='muted'>WATCH</span></td><td>bsc/pancakeswap-v3-bsc</td><td>$298k</td><td>5.57</td><td>1.60</td><td>1.67</td><td><span class="tag">24h 엣지 부족 (edge24&lt;5)</span><span class="tag">6h 엣지 부족 (edge6&lt;5)</span><span class="tag">보안 플래그 (security:security_unchecked)</span><span class="tag">수수료&lt;비용 (fee24&lt;2x_cost)</span><span class="tag">유동성 이력 부족(&lt;3h) (k_unsettled(&lt;3h liquidity history))</span></td></tr>
-<tr><td><a href='https://www.geckoterminal.com/bsc/pools/0xf2688fb5b81049dfb7703ada5e770543770612c4'>USDC/WBNB</a> <span class='muted'>WATCH</span></td><td>bsc/pancakeswap-v3-bsc</td><td>$1,987k</td><td>6.31</td><td>1.50</td><td>1.28</td><td><span class="tag">24h 엣지 부족 (edge24&lt;5)</span><span class="tag">6h 엣지 부족 (edge6&lt;5)</span><span class="tag">수수료&lt;비용 (fee24&lt;2x_cost)</span><span class="tag">유동성 이력 부족(&lt;3h) (k_unsettled(&lt;3h liquidity history))</span></td></tr>
-<tr><td><a href='https://www.geckoterminal.com/robinhood/pools/0x62ab521f71431f78ac374cdbadc6cda3c8916b6c'>NVDA/WETH</a> <span class='muted'>WATCH</span></td><td>robinhood/uniswap-v3-robinhood</td><td>$881k</td><td>1.26</td><td>1.36</td><td>2.34</td><td><span class="tag">24h 엣지 부족 (edge24&lt;5)</span><span class="tag">6h 엣지 부족 (edge6&lt;5)</span><span class="tag">보안 플래그 (security:security_unchecked)</span><span class="tag">수수료&lt;비용 (fee24&lt;2x_cost)</span><span class="tag">유동성 이력 부족(&lt;3h) (k_unsettled(&lt;3h liquidity history))</span></td></tr>
-<tr><td><a href='https://www.geckoterminal.com/robinhood/pools/0x435ea42b2792a22de296bee4e8013f4fa102f0cc04983443ff79549f847db577'>VRAX/USDG</a> <span class='muted'>WATCH</span></td><td>robinhood/uniswap-v4-robinhood</td><td>$300k</td><td>1.74</td><td>0.85</td><td>1.24</td><td><span class="tag">24h 엣지 부족 (edge24&lt;5)</span><span class="tag">6h 엣지 부족 (edge6&lt;5)</span><span class="tag">유동성 이력 부족(&lt;3h) (k_unsettled(&lt;3h liquidity history))</span></td></tr>
-<tr><td><a href='https://www.geckoterminal.com/solana/pools/DA4pM4xSDY4M9V4CgAKKBVH1pw1yscTQQa5nEkGHuKpt'>OTC/SOL</a> <span class='muted'>WATCH</span></td><td>solana/펌프스왑(PumpSwap)</td><td>$510k</td><td>1.20</td><td>0.68</td><td>0.40</td><td><span class="tag">24h 엣지 부족 (edge24&lt;5)</span><span class="tag">6h 엣지 부족 (edge6&lt;5)</span><span class="tag">수수료&lt;비용 (fee24&lt;2x_cost)</span></td></tr>
-<tr><td><a href='https://www.geckoterminal.com/robinhood/pools/0xc3c9f0171490ef0f4536fe493f3b0ebb5ee0cb5e'>SPCX/WETH</a> <span class='muted'>WATCH</span></td><td>robinhood/uniswap-v3-robinhood</td><td>$501k</td><td>2.12</td><td>–</td><td>–</td><td><span class="tag">변동성 데이터 없음</span><span class="tag">24h 엣지 부족 (edge24&lt;5)</span><span class="tag">6h 엣지 부족 (edge6&lt;5)</span><span class="tag">유동성 이력 부족(&lt;3h) (k_unsettled(&lt;3h liquidity history))</span></td></tr>
-<tr><td><a href='https://www.geckoterminal.com/solana/pools/6EVgUURuvprazVdpd717E9uqruHcqRPbhRKDm5Czdidu'>BABA/USDC</a> <span class='muted'>WATCH</span></td><td>solana/오르카 웨일풀(Orca)</td><td>$208k</td><td>1.31</td><td>–</td><td>–</td><td><span class="tag">변동성 데이터 없음</span><span class="tag">24h 엣지 부족 (edge24&lt;5)</span><span class="tag">6h 엣지 부족 (edge6&lt;5)</span><span class="tag">보안 플래그 (security:mintable|freezable|balance_mutable_authority|transfer_hook_upgradable|top10_holders=58%)</span><span class="tag">유동성 이력 부족(&lt;3h) (k_unsettled(&lt;3h liquidity history))</span><span class="tag">토큰-2022 위험 확장 (t22:BABA.pausableConfig|BABA.permanentDelegate)</span></td></tr>
-<tr><td><a href='https://www.geckoterminal.com/bsc/pools/0x58171ada82c38397d1620388fef9b526ca16ec77'>TSLAB/USDT</a> <span class='muted'>WATCH</span></td><td>bsc/pancakeswap_v2</td><td>$2,922k</td><td>195.48</td><td>–</td><td>–</td><td><span class="tag">변동성 데이터 없음</span><span class="tag">24h 엣지 부족 (edge24&lt;5)</span><span class="tag">6h 엣지 부족 (edge6&lt;5)</span><span class="tag">너무 신규</span><span class="tag">보안 플래그 (security:security_unchecked)</span></td></tr>
-<tr><td><a href='https://www.geckoterminal.com/robinhood/pools/0x3416b8d8aa6ae642ffdc2f65165ff479d4bd3007'>ASTRO/WETH</a> <span class='muted'>WATCH</span></td><td>robinhood/uniswap-v2-robinhood</td><td>$184k</td><td>4.86</td><td>–</td><td>–</td><td><span class="tag">변동성 데이터 없음</span><span class="tag">24h 엣지 부족 (edge24&lt;5)</span><span class="tag">6h 엣지 부족 (edge6&lt;5)</span></td></tr>
-<tr><td><a href='https://www.geckoterminal.com/solana/pools/2TAgfogn8JRwwTnsGKUa6WUT5Xdv1iMEzfEDMor68X9C'>SOL/ZEC</a> <span class='muted'>WATCH</span></td><td>solana/오르카 웨일풀(Orca)</td><td>$3,923k</td><td>1.79</td><td>–</td><td>–</td><td><span class="tag">변동성 데이터 없음</span><span class="tag">24h 엣지 부족 (edge24&lt;5)</span><span class="tag">6h 엣지 부족 (edge6&lt;5)</span><span class="tag">보안 플래그 (security:security_unchecked)</span><span class="tag">유동성 이력 부족(&lt;3h) (k_unsettled(&lt;3h liquidity history))</span></td></tr>
-<tr><td><a href='https://www.geckoterminal.com/bsc/pools/0x14ca9d552ed2cf0d5dfd1f89bc6793a464e2ed16'>MARSCOIN/USDT</a> <span class='muted'>WATCH</span></td><td>bsc/pancakeswap-v3-bsc</td><td>$214k</td><td>1.71</td><td>–</td><td>–</td><td><span class="tag">변동성 데이터 없음</span><span class="tag">24h 엣지 부족 (edge24&lt;5)</span><span class="tag">6h 엣지 부족 (edge6&lt;5)</span><span class="tag">보안 플래그 (security:security_unchecked)</span><span class="tag">유동성 이력 부족(&lt;3h) (k_unsettled(&lt;3h liquidity history))</span></td></tr>
-<tr><td><a href='https://www.geckoterminal.com/robinhood/pools/0x69bfaf19c9f377bb306a89aed9f6b07e2c1a8d9a'>USDG/WETH</a> <span class='muted'>WATCH</span></td><td>robinhood/uniswap-v3-robinhood</td><td>$5,481k</td><td>1.43</td><td>–</td><td>–</td><td><span class="tag">변동성 데이터 없음</span><span class="tag">24h 엣지 부족 (edge24&lt;5)</span><span class="tag">6h 엣지 부족 (edge6&lt;5)</span><span class="tag">유동성 이력 부족(&lt;3h) (k_unsettled(&lt;3h liquidity history))</span></td></tr>
-<tr><td><a href='https://www.geckoterminal.com/solana/pools/ASAxmEaTT1HFe3mVC3zbKDE4tuB28W7732XQrEMBM5W2'>SPCXX/USDC</a> <span class='muted'>WATCH</span></td><td>solana/오르카 웨일풀(Orca)</td><td>$188k</td><td>2.63</td><td>–</td><td>–</td><td><span class="tag">변동성 데이터 없음</span><span class="tag">24h 엣지 부족 (edge24&lt;5)</span><span class="tag">6h 엣지 부족 (edge6&lt;5)</span><span class="tag">보안 플래그 (security:security_unchecked)</span><span class="tag">유동성 이력 부족(&lt;3h) (k_unsettled(&lt;3h liquidity history))</span><span class="tag">토큰-2022 위험 확장 (t22:SPCXX.pausableConfig|SPCXX.permanentDelegate)</span></td></tr>
-<tr><td><a href='https://www.geckoterminal.com/bsc/pools/0xafb2da14056725e3ba3a30dd846b6bbbd7886c56'>CAKE/WBNB</a> <span class='muted'>WATCH</span></td><td>bsc/pancakeswap-v3-bsc</td><td>$1,023k</td><td>3.09</td><td>–</td><td>–</td><td><span class="tag">변동성 데이터 없음</span><span class="tag">24h 엣지 부족 (edge24&lt;5)</span><span class="tag">6h 엣지 부족 (edge6&lt;5)</span><span class="tag">보안 플래그 (security:security_unchecked)</span><span class="tag">유동성 이력 부족(&lt;3h) (k_unsettled(&lt;3h liquidity history))</span></td></tr>
-</table></div></div>
-<div class="card"><h2>탐색 범위 (이번 실행)</h2><table><tr><th>체인</th><th>DEX별 풀 수</th></tr>
-<tr><td>bsc</td><td>pancakeswap-infinity-clmm 6 · pancakeswap-v3-bsc 44 · pancakeswap_v2 37</td></tr>
-<tr><td>robinhood</td><td>uniswap-v2-robinhood 23 · uniswap-v3-robinhood 22 · uniswap-v4-robinhood 29</td></tr>
-<tr><td>solana</td><td>오르카 웨일풀(Orca) 16 · 펌프스왑(PumpSwap) 67</td></tr>
-</table></div>
-<div class="card"><h2>현재 규칙 (자동 튜닝 대상)</h2><table>
-<tr><td>진입 엣지 기준</td><td><b>5</b></td></tr>
-<tr><td>구간 폭 ±</td><td><b>0.15</b></td></tr>
-<tr><td>최대 보유(시간)</td><td><b>48</b></td></tr>
-<tr><td>청산 엣지 기준</td><td><b>1.0</b></td></tr>
-<tr><td>손실 한도</td><td><b>0.3</b></td></tr>
-<tr><td>거래량/TVL 최소</td><td><b>1.0</b></td></tr>
-<tr><td>수수료/비용 배수</td><td><b>2</b></td></tr>
-<tr><td>급증 필터</td><td><b>0</b></td></tr>
-</table><h2 style="margin-top:12px">튜닝 기록 (최근)</h2>
-<div style="margin:6px 0;font-size:13px"><b class="muted">2026-10-18 08:03 KST</b> 유지 2026-10-18 08:03 KST: {&#x27;E&#x27;: 5, &#x27;W&#x27;: 0.15, &#x27;H&#x27;: 48, &#x27;X&#x27;: 1.0, &#x27;LL&#x27;: 0.3, &#x27;T&#x27;: 1.0, &#x27;FC&#x27;: 2} 유지. 이유: no improve (mean +7.11%→+7.06%, median +3.21%→+3.08%). 현재 OOS n=53 hit 81% mean +7.11% median +3.21% Σ $+753 / 후보 {&#x27;E&#x27;: 5, &#x27;W&#x27;: 0.15, &#x27;H&#x27;: 48, &#x27;X&#x27;: 0.5, &#x27;LL&#x27;: 0.3, &#x27;T&#x27;: 1.0, &#x27;FC&#x27;: 1} OOS n=53 hit 81% mean +7.06% median +3.08% Σ $+748. 페이퍼 청산 1건 Σ $+0.55. (3.6s)</div>
-<div style="margin:6px 0;font-size:13px"><b class="muted">2026-10-17 15:09 KST</b> 유지 2026-10-17 15:09 KST: {&#x27;E&#x27;: 5, &#x27;W&#x27;: 0.15, &#x27;H&#x27;: 48, &#x27;X&#x27;: 1.0, &#x27;LL&#x27;: 0.3, &#x27;T&#x27;: 1.0, &#x27;FC&#x27;: 2} 유지. 이유: no improve (mean +7.11%→+7.06%, median +3.21%→+3.08%). 현재 OOS n=53 hit 81% mean +7.11% median +3.21% Σ $+753 / 후보 {&#x27;E&#x27;: 5, &#x27;W&#x27;: 0.15, &#x27;H&#x27;: 48, &#x27;X&#x27;: 0.5, &#x27;LL&#x27;: 0.3, &#x27;T&#x27;: 1.0, &#x27;FC&#x27;: 1} OOS n=53 hit 81% mean +7.06% median +3.08% Σ $+748. 페이퍼 청산 1건 Σ $+0.55. (3.8s)</div>
-<div style="margin:6px 0;font-size:13px"><b class="muted">2026-10-16 08:41 KST</b> 유지 2026-10-16 08:41 KST: {&#x27;E&#x27;: 5, &#x27;W&#x27;: 0.15, &#x27;H&#x27;: 48, &#x27;X&#x27;: 1.0, &#x27;LL&#x27;: 0.3, &#x27;T&#x27;: 1.0, &#x27;FC&#x27;: 2} 유지. 이유: no improve (mean +7.11%→+7.06%, median +3.21%→+3.08%). 현재 OOS n=53 hit 81% mean +7.11% median +3.21% Σ $+753 / 후보 {&#x27;E&#x27;: 5, &#x27;W&#x27;: 0.15, &#x27;H&#x27;: 48, &#x27;X&#x27;: 0.5, &#x27;LL&#x27;: 0.3, &#x27;T&#x27;: 1.0, &#x27;FC&#x27;: 1} OOS n=53 hit 81% mean +7.06% median +3.08% Σ $+748. 페이퍼 청산 1건 Σ $+0.55. (3.7s)</div>
-<div style="margin:6px 0;font-size:13px"><b class="muted">2026-10-15 20:01 KST</b> 유지 2026-10-15 20:01 KST: {&#x27;E&#x27;: 5, &#x27;W&#x27;: 0.15, &#x27;H&#x27;: 48, &#x27;X&#x27;: 1.0, &#x27;LL&#x27;: 0.3, &#x27;T&#x27;: 1.0, &#x27;FC&#x27;: 2} 유지. 이유: no improve (mean +7.11%→+7.06%, median +3.21%→+3.08%). 현재 OOS n=53 hit 81% mean +7.11% median +3.21% Σ $+753 / 후보 {&#x27;E&#x27;: 5, &#x27;W&#x27;: 0.15, &#x27;H&#x27;: 48, &#x27;X&#x27;: 0.5, &#x27;LL&#x27;: 0.3, &#x27;T&#x27;: 1.0, &#x27;FC&#x27;: 1} OOS n=53 hit 81% mean +7.06% median +3.08% Σ $+748. 페이퍼 청산 1건 Σ $+0.55. (3.6s)</div>
-<div style="margin:6px 0;font-size:13px"><b class="muted">2026-10-15 16:23 KST</b> 유지 2026-10-15 16:23 KST: {&#x27;E&#x27;: 5, &#x27;W&#x27;: 0.15, &#x27;H&#x27;: 48, &#x27;X&#x27;: 1.0, &#x27;LL&#x27;: 0.3, &#x27;T&#x27;: 1.0, &#x27;FC&#x27;: 2} 유지. 이유: no improve (mean +7.11%→+7.06%, median +3.21%→+3.08%). 현재 OOS n=53 hit 81% mean +7.11% median +3.21% Σ $+753 / 후보 {&#x27;E&#x27;: 5, &#x27;W&#x27;: 0.15, &#x27;H&#x27;: 48, &#x27;X&#x27;: 0.5, &#x27;LL&#x27;: 0.3, &#x27;T&#x27;: 1.0, &#x27;FC&#x27;: 1} OOS n=53 hit 81% mean +7.06% median +3.08% Σ $+748. 페이퍼 청산 1건 Σ $+0.55. (4.1s)</div>
-<div style="margin:6px 0;font-size:13px"><b class="muted">2026-10-14 17:26 KST</b> 유지 2026-10-14 17:26 KST: {&#x27;E&#x27;: 5, &#x27;W&#x27;: 0.15, &#x27;H&#x27;: 48, &#x27;X&#x27;: 1.0, &#x27;LL&#x27;: 0.3, &#x27;T&#x27;: 1.0, &#x27;FC&#x27;: 2} 유지. 이유: no improve (mean +7.11%→+7.06%, median +3.21%→+3.08%). 현재 OOS n=53 hit 81% mean +7.11% median +3.21% Σ $+753 / 후보 {&#x27;E&#x27;: 5, &#x27;W&#x27;: 0.15, &#x27;H&#x27;: 48, &#x27;X&#x27;: 0.5, &#x27;LL&#x27;: 0.3, &#x27;T&#x27;: 1.0, &#x27;FC&#x27;: 1} OOS n=53 hit 81% mean +7.06% median +3.08% Σ $+748. 페이퍼 청산 1건 Σ $+0.55. (3.6s)</div>
-<div style="margin:6px 0;font-size:13px"><b class="muted">2026-10-14 13:13 KST</b> 유지 2026-10-14 13:13 KST: {&#x27;E&#x27;: 5, &#x27;W&#x27;: 0.15, &#x27;H&#x27;: 48, &#x27;X&#x27;: 1.0, &#x27;LL&#x27;: 0.3, &#x27;T&#x27;: 1.0, &#x27;FC&#x27;: 2} 유지. 이유: no improve (mean +7.11%→+7.06%, median +3.21%→+3.08%). 현재 OOS n=53 hit 81% mean +7.11% median +3.21% Σ $+753 / 후보 {&#x27;E&#x27;: 5, &#x27;W&#x27;: 0.15, &#x27;H&#x27;: 48, &#x27;X&#x27;: 0.5, &#x27;LL&#x27;: 0.3, &#x27;T&#x27;: 1.0, &#x27;FC&#x27;: 1} OOS n=53 hit 81% mean +7.06% median +3.08% Σ $+748. 페이퍼 청산 1건 Σ $+0.55. (3.9s)</div>
-<div style="margin:6px 0;font-size:13px"><b class="muted">2026-10-14 07:01 KST</b> 유지 2026-10-14 07:01 KST: {&#x27;E&#x27;: 5, &#x27;W&#x27;: 0.15, &#x27;H&#x27;: 48, &#x27;X&#x27;: 1.0, &#x27;LL&#x27;: 0.3, &#x27;T&#x27;: 1.0, &#x27;FC&#x27;: 2} 유지. 이유: no improve (mean +7.11%→+7.06%, median +3.21%→+3.08%). 현재 OOS n=53 hit 81% mean +7.11% median +3.21% Σ $+753 / 후보 {&#x27;E&#x27;: 5, &#x27;W&#x27;: 0.15, &#x27;H&#x27;: 48, &#x27;X&#x27;: 0.5, &#x27;LL&#x27;: 0.3, &#x27;T&#x27;: 1.0, &#x27;FC&#x27;: 1} OOS n=53 hit 81% mean +7.06% median +3.08% Σ $+748. 페이퍼 청산 1건 Σ $+0.55. (4.4s)</div>
-<div style="margin:6px 0;font-size:13px"><b class="muted">2026-10-14 04:17 KST</b> 유지 2026-10-14 04:17 KST: {&#x27;E&#x27;: 5, &#x27;W&#x27;: 0.15, &#x27;H&#x27;: 48, &#x27;X&#x27;: 1.0, &#x27;LL&#x27;: 0.3, &#x27;T&#x27;: 1.0, &#x27;FC&#x27;: 2} 유지. 이유: no improve (mean +7.11%→+7.06%, median +3.21%→+3.08%). 현재 OOS n=53 hit 81% mean +7.11% median +3.21% Σ $+753 / 후보 {&#x27;E&#x27;: 5, &#x27;W&#x27;: 0.15, &#x27;H&#x27;: 48, &#x27;X&#x27;: 0.5, &#x27;LL&#x27;: 0.3, &#x27;T&#x27;: 1.0, &#x27;FC&#x27;: 1} OOS n=53 hit 81% mean +7.06% median +3.08% Σ $+748. 페이퍼 청산 1건 Σ $+0.55. (3.9s)</div>
-<div style="margin:6px 0;font-size:13px"><b class="muted">2026-10-14 01:21 KST</b> 유지 2026-10-14 01:21 KST: {&#x27;E&#x27;: 5, &#x27;W&#x27;: 0.15, &#x27;H&#x27;: 48, &#x27;X&#x27;: 1.0, &#x27;LL&#x27;: 0.3, &#x27;T&#x27;: 1.0, &#x27;FC&#x27;: 2} 유지. 이유: no improve (mean +7.11%→+7.06%, median +3.21%→+3.08%). 현재 OOS n=53 hit 81% mean +7.11% median +3.21% Σ $+753 / 후보 {&#x27;E&#x27;: 5, &#x27;W&#x27;: 0.15, &#x27;H&#x27;: 48, &#x27;X&#x27;: 0.5, &#x27;LL&#x27;: 0.3, &#x27;T&#x27;: 1.0, &#x27;FC&#x27;: 1} OOS n=53 hit 81% mean +7.06% median +3.08% Σ $+748. 페이퍼 청산 1건 Σ $+0.55. (3.8s)</div>
-<div style="margin:6px 0;font-size:13px"><b class="muted">2026-10-13 22:12 KST</b> 유지 2026-10-13 22:12 KST: {&#x27;E&#x27;: 5, &#x27;W&#x27;: 0.15, &#x27;H&#x27;: 48, &#x27;X&#x27;: 1.0, &#x27;LL&#x27;: 0.3, &#x27;T&#x27;: 1.0, &#x27;FC&#x27;: 2} 유지. 이유: no improve (mean +7.11%→+7.06%, median +3.21%→+3.08%). 현재 OOS n=53 hit 81% mean +7.11% median +3.21% Σ $+753 / 후보 {&#x27;E&#x27;: 5, &#x27;W&#x27;: 0.15, &#x27;H&#x27;: 48, &#x27;X&#x27;: 0.5, &#x27;LL&#x27;: 0.3, &#x27;T&#x27;: 1.0, &#x27;FC&#x27;: 1} OOS n=53 hit 81% mean +7.06% median +3.08% Σ $+748. 페이퍼 청산 0건 Σ $+0.00. (3.8s)</div>
-<div style="margin:6px 0;font-size:13px"><b class="muted">2026-10-13 19:03 KST</b> 유지 2026-10-13 19:03 KST: {&#x27;E&#x27;: 5, &#x27;W&#x27;: 0.15, &#x27;H&#x27;: 48, &#x27;X&#x27;: 1.0, &#x27;LL&#x27;: 0.3, &#x27;T&#x27;: 1.0, &#x27;FC&#x27;: 2} 유지. 이유: no improve (mean +7.11%→+7.06%, median +3.21%→+3.08%). 현재 OOS n=53 hit 81% mean +7.11% median +3.21% Σ $+753 / 후보 {&#x27;E&#x27;: 5, &#x27;W&#x27;: 0.15, &#x27;H&#x27;: 48, &#x27;X&#x27;: 0.5, &#x27;LL&#x27;: 0.3, &#x27;T&#x27;: 1.0, &#x27;FC&#x27;: 1} OOS n=53 hit 81% mean +7.06% median +3.08% Σ $+748. 페이퍼 청산 0건 Σ $+0.00. (3.9s)</div>
-<div style="margin:6px 0;font-size:13px"><b class="muted">2026-10-13 16:00 KST</b> 유지 2026-10-13 16:00 KST: {&#x27;E&#x27;: 5, &#x27;W&#x27;: 0.15, &#x27;H&#x27;: 48, &#x27;X&#x27;: 1.0, &#x27;LL&#x27;: 0.3, &#x27;T&#x27;: 1.0, &#x27;FC&#x27;: 2} 유지. 이유: no improve (mean +7.11%→+7.06%, median +3.21%→+3.08%). 현재 OOS n=53 hit 81% mean +7.11% median +3.21% Σ $+753 / 후보 {&#x27;E&#x27;: 5, &#x27;W&#x27;: 0.15, &#x27;H&#x27;: 48, &#x27;X&#x27;: 0.5, &#x27;LL&#x27;: 0.3, &#x27;T&#x27;: 1.0, &#x27;FC&#x27;: 1} OOS n=53 hit 81% mean +7.06% median +3.08% Σ $+748. 페이퍼 청산 0건 Σ $+0.00. (3.6s)</div>
-<div style="margin:6px 0;font-size:13px"><b class="muted">2026-10-13 13:05 KST</b> 유지 2026-10-13 13:05 KST: {&#x27;E&#x27;: 5, &#x27;W&#x27;: 0.15, &#x27;H&#x27;: 48, &#x27;X&#x27;: 1.0, &#x27;LL&#x27;: 0.3, &#x27;T&#x27;: 1.0, &#x27;FC&#x27;: 2} 유지. 이유: no improve (mean +7.11%→+7.06%, median +3.21%→+3.08%). 현재 OOS n=53 hit 81% mean +7.11% median +3.21% Σ $+753 / 후보 {&#x27;E&#x27;: 5, &#x27;W&#x27;: 0.15, &#x27;H&#x27;: 48, &#x27;X&#x27;: 0.5, &#x27;LL&#x27;: 0.3, &#x27;T&#x27;: 1.0, &#x27;FC&#x27;: 1} OOS n=53 hit 81% mean +7.06% median +3.08% Σ $+748. 페이퍼 청산 0건 Σ $+0.00. (4.1s)</div>
-<div style="margin:6px 0;font-size:13px"><b class="muted">2026-10-13 11:48 KST</b> 유지 2026-10-13 11:48 KST: {&#x27;E&#x27;: 5, &#x27;W&#x27;: 0.15, &#x27;H&#x27;: 48, &#x27;X&#x27;: 1.0, &#x27;LL&#x27;: 0.3, &#x27;T&#x27;: 1.0, &#x27;FC&#x27;: 2} 유지. 이유: no improve (mean +7.11%→+7.06%, median +3.21%→+3.08%). 현재 OOS n=53 hit 81% mean +7.11% median +3.21% Σ $+753 / 후보 {&#x27;E&#x27;: 5, &#x27;W&#x27;: 0.15, &#x27;H&#x27;: 48, &#x27;X&#x27;: 0.5, &#x27;LL&#x27;: 0.3, &#x27;T&#x27;: 1.0, &#x27;FC&#x27;: 1} OOS n=53 hit 81% mean +7.06% median +3.08% Σ $+748. 페이퍼 청산 0건 Σ $+0.00. (4.0s)</div>
-</div>
-<div class="muted" style="text-align:center;margin:16px">페이퍼(가상) 결과만 표시합니다. 지갑·키·자금 정보는 포함하지 않습니다. 5분마다 자동 새로고침.</div></main></body></html>
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>LP Hunter 관제 콘솔</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">본문으로 이동</a>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">READ-ONLY OPERATIONS CONSOLE</p>
+      <h1>LP Hunter</h1>
+      <p class="subtitle">공격형 Fee Spike 전략의 후보·포지션·Forward 증거를 준실시간으로 추적합니다.</p>
+    </div>
+    <div class="header-status" aria-live="polite">
+      <span id="health-badge" class="badge neutral">연결 중</span>
+      <span id="state-badge" class="badge neutral">상태 확인 중</span>
+      <span class="badge locked">읽기 전용</span>
+    </div>
+  </header>
+
+  <main id="main" class="layout">
+    <section class="hero panel" aria-labelledby="overview-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">SYSTEM OVERVIEW</p>
+          <h2 id="overview-title">운영 상태</h2>
+        </div>
+        <p id="generated-at" class="muted">스냅샷 대기 중</p>
+      </div>
+      <div id="alert-banner" class="alert hidden" role="alert"></div>
+      <div id="overview-cards" class="metrics metrics-wide"></div>
+      <div id="authority-strip" class="authority-strip"></div>
+    </section>
+
+    <section class="panel" aria-labelledby="funnel-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">SELECTION FUNNEL</p>
+          <h2 id="funnel-title">후보 선별 퍼널</h2>
+        </div>
+        <p class="muted">왜 진입하지 않았는지 단계별로 확인합니다.</p>
+      </div>
+      <div id="funnel" class="funnel"></div>
+      <div id="blockers" class="blockers"></div>
+    </section>
+
+    <section class="panel" aria-labelledby="candidate-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">CANDIDATES</p>
+          <h2 id="candidate-title">최근 정밀 후보</h2>
+        </div>
+        <p id="candidate-summary" class="muted"></p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <caption class="sr-only">최근 LP 후보와 경제성 및 차단 사유</caption>
+          <thead><tr><th>풀</th><th>체인·DEX</th><th>TVL</th><th>가속</th><th>예상 3h</th><th>Fee/Risk</th><th>판정</th></tr></thead>
+          <tbody id="candidate-table"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="position-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">PAPER POSITIONS</p>
+          <h2 id="position-title">가상 포지션</h2>
+        </div>
+        <p class="muted">실자금·지갑·서명 경로가 없습니다.</p>
+      </div>
+      <div id="positions" class="position-grid"></div>
+    </section>
+
+    <section class="panel" aria-labelledby="forward-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">FORWARD / OOS</p>
+          <h2 id="forward-title">후행 청산 성과</h2>
+        </div>
+        <p id="validation-gate" class="muted"></p>
+      </div>
+      <div id="forward-cards" class="metrics"></div>
+      <div id="forward-limitations" class="note-list"></div>
+    </section>
+
+    <section class="panel" aria-labelledby="operations-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">OPERATIONS & AUDIT</p>
+          <h2 id="operations-title">서비스·신선도·감사</h2>
+        </div>
+        <p class="muted">예상 systemd 단위와 실제 상태를 대조합니다.</p>
+      </div>
+      <div id="service-cards" class="service-grid"></div>
+      <div class="split">
+        <div>
+          <h3>최근 실행</h3>
+          <div class="table-wrap compact">
+            <table>
+              <caption class="sr-only">최근 운영 실행 기록</caption>
+              <thead><tr><th>구성요소</th><th>상태</th><th>종료시각</th><th>오류</th></tr></thead>
+              <tbody id="run-table"></tbody>
+            </table>
+          </div>
+        </div>
+        <div>
+          <h3>무결성·대조</h3>
+          <div id="integrity" class="check-list"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>LP Hunter · 준실시간 · 서버 스냅샷 기반</span>
+    <span id="refresh-status">30초마다 갱신</span>
+  </footer>
+  <script src="./app.js" defer></script>
+</body>
+</html>
