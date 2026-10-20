@@ -63,7 +63,7 @@ function renderOverview(snapshot) {
     metric("오늘 실현손익", money(dayPnl), "스테이블 환산", dayPnl >= 0 ? "positive" : "negative"),
     metric("A+ 후보", number(funnel.stages?.aggressive_a_plus || 0, 0), `${number(funnel.observed || 0, 0)}개 관측`),
     metric("30분 Shadow", number(funnel.stages?.aggressive_fast_exit || 0, 0), "진입 비활성"),
-    metric("Forward 창", number(forward.total || forward.total_windows || 0, 0), `승격 ${forward.validation_gate_passed ? "충족" : "미충족"}`),
+    metric("Forward 창", number(forward.total || forward.total_windows || 0, 0), snapshot.program?.phase === "research" ? "퇴역 전략 보관 증거" : `승격 ${forward.validation_gate_passed ? "충족" : "미충족"}`),
   ].join("");
   const authority = snapshot.authority || {};
   $("authority-strip").innerHTML = [
@@ -151,7 +151,9 @@ function renderForward(snapshot) {
   const groups = forward.groups || [];
   const list = Array.isArray(groups) ? groups : Object.entries(groups).map(([horizon, value]) => ({horizon, ...value}));
   const required = `${number(forward.required_windows || 30, 0)}창 / ${number(forward.required_independent_days || 20, 0)}일`;
-  $("validation-gate").textContent = `A+ ${forward.validation_gate_passed ? "충족" : "미충족"} · 30분 Shadow ${forward.fast_exit_validation_gate_passed ? "충족" : "미충족"} (${number(forward.aggressive_fast_exit_scored_windows || 0, 0)}창) · 필요 ${required}`;
+  $("validation-gate").textContent = snapshot.program?.phase === "research"
+    ? `퇴역 전략 보관 증거 · 신규 글로벌 LP 전략 검증은 다음 단계에서 시작`
+    : `A+ ${forward.validation_gate_passed ? "충족" : "미충족"} · 30분 Shadow ${forward.fast_exit_validation_gate_passed ? "충족" : "미충족"} (${number(forward.aggressive_fast_exit_scored_windows || 0, 0)}창) · 필요 ${required}`;
   $("forward-cards").innerHTML = list.length ? list.map((item) => metric(
     `${safe(item.horizon || item.horizon_minutes + "m")}`,
     `${percent(item.positive_rate || 0)} 양수`,
