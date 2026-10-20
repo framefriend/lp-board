@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
   "strategy_version": "aggressive-fee-spike-v1.0",
-  "generated_at": "2026-10-20T06:00:27.669850+00:00",
+  "generated_at": "2026-10-20T06:12:00.442723+00:00",
   "health": "ok",
   "status": {
     "state": "STABLE_IDLE",
     "reason": "no_eligible_aggressive_candidate",
-    "updated_at": "2026-10-20T05:58:34.612008+00:00",
+    "updated_at": "2026-10-20T06:07:01.475836+00:00",
     "strategy_version": "aggressive-fee-spike-v1.0"
   },
   "authority": {
@@ -33,19 +33,19 @@
   "freshness": {
     "discovery": {
       "finished_at": "2026-10-20T05:57:00.000440+00:00",
-      "age_seconds": 207.66941,
+      "age_seconds": 900.442283,
       "limit_seconds": 1200,
       "fresh": true
     },
     "risk_monitor": {
-      "finished_at": "2026-10-20T05:52:03.347769+00:00",
-      "age_seconds": 504.322081,
+      "finished_at": "2026-10-20T06:07:01.491841+00:00",
+      "age_seconds": 298.950882,
       "limit_seconds": 1200,
       "fresh": true
     },
     "legacy_scan": {
       "finished_at": "2026-10-20T05:58:34.614432+00:00",
-      "age_seconds": 113.055418,
+      "age_seconds": 805.828291,
       "limit_seconds": 4500,
       "fresh": true
     }
@@ -1674,11 +1674,11 @@
         "ok": true,
         "load_state": "loaded",
         "active_state": "active",
-        "sub_state": "waiting",
+        "sub_state": "running",
         "result": "success",
         "unit_file_state": "enabled",
-        "last_trigger": "Tue 2026-10-20 14:55:06 KST",
-        "next_trigger": "Tue 2026-10-20 15:10:00 KST"
+        "last_trigger": "Tue 2026-10-20 15:10:00 KST",
+        "next_trigger": null
       },
       "risk_monitor": {
         "unit": "lp-hunter-risk.timer",
@@ -1688,8 +1688,8 @@
         "sub_state": "waiting",
         "result": "success",
         "unit_file_state": "enabled",
-        "last_trigger": "Tue 2026-10-20 14:52:02 KST",
-        "next_trigger": "Tue 2026-10-20 15:07:00 KST"
+        "last_trigger": "Tue 2026-10-20 15:07:00 KST",
+        "next_trigger": "Tue 2026-10-20 15:22:00 KST"
       },
       "legacy_scan": {
         "unit": "lp-hunter.timer",
@@ -1704,6 +1704,30 @@
       }
     },
     "latest_runs": [
+      {
+        "component": "discovery",
+        "started_at": "2026-10-20T06:10:01.061372+00:00",
+        "finished_at": null,
+        "strategy_version": "aggressive-fee-spike-v1.0",
+        "status": "running",
+        "state_before": "STABLE_IDLE",
+        "state_after": null,
+        "live_enabled": 0,
+        "entry_enabled": 0,
+        "error_present": false
+      },
+      {
+        "component": "risk_monitor",
+        "started_at": "2026-10-20T06:07:01.431950+00:00",
+        "finished_at": "2026-10-20T06:07:01.491841+00:00",
+        "strategy_version": "aggressive-fee-spike-v1.0",
+        "status": "ok",
+        "state_before": "STABLE_IDLE",
+        "state_after": "STABLE_IDLE",
+        "live_enabled": 0,
+        "entry_enabled": 0,
+        "error_present": false
+      },
       {
         "component": "legacy_scan",
         "started_at": "2026-10-20T05:57:01.014242+00:00",
@@ -2039,33 +2063,22 @@
         "live_enabled": 0,
         "entry_enabled": 0,
         "error_present": false
-      },
+      }
+    ],
+    "active_runs": [
       {
         "component": "discovery",
-        "started_at": "2026-10-20T02:55:06.761396+00:00",
-        "finished_at": "2026-10-20T02:57:39.364742+00:00",
+        "started_at": "2026-10-20T06:10:01.061372+00:00",
+        "finished_at": null,
         "strategy_version": "aggressive-fee-spike-v1.0",
-        "status": "ok",
+        "status": "running",
         "state_before": "STABLE_IDLE",
-        "state_after": "STABLE_IDLE",
-        "live_enabled": 0,
-        "entry_enabled": 0,
-        "error_present": false
-      },
-      {
-        "component": "risk_monitor",
-        "started_at": "2026-10-20T02:52:02.630857+00:00",
-        "finished_at": "2026-10-20T02:52:02.662865+00:00",
-        "strategy_version": "aggressive-fee-spike-v1.0",
-        "status": "ok",
-        "state_before": "STABLE_IDLE",
-        "state_after": "STABLE_IDLE",
+        "state_after": null,
         "live_enabled": 0,
         "entry_enabled": 0,
         "error_present": false
       }
     ],
-    "active_runs": [],
     "recent_events": [
       {
         "occurred_at": "2026-10-12T17:07:01.350856+00:00",
