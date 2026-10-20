@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
   "strategy_version": "aggressive-fee-spike-fast-v1.2",
-  "generated_at": "2026-10-20T10:57:07.615426+00:00",
+  "generated_at": "2026-10-20T11:12:00.450346+00:00",
   "health": "ok",
   "status": {
     "state": "STABLE_IDLE",
     "reason": "no_eligible_aggressive_candidate",
-    "updated_at": "2026-10-20T10:55:50.357457+00:00",
+    "updated_at": "2026-10-20T11:07:01.420564+00:00",
     "strategy_version": "aggressive-fee-spike-fast-v1.2"
   },
   "authority": {
@@ -33,19 +33,19 @@
   "freshness": {
     "discovery": {
       "finished_at": "2026-10-20T10:55:50.360717+00:00",
-      "age_seconds": 77.254709,
+      "age_seconds": 970.089629,
       "limit_seconds": 1200,
       "fresh": true
     },
     "risk_monitor": {
-      "finished_at": "2026-10-20T10:52:02.776738+00:00",
-      "age_seconds": 304.838688,
+      "finished_at": "2026-10-20T11:07:01.423220+00:00",
+      "age_seconds": 299.027126,
       "limit_seconds": 1200,
       "fresh": true
     },
     "legacy_scan": {
-      "finished_at": "2026-10-20T09:58:49.592923+00:00",
-      "age_seconds": 3498.022503,
+      "finished_at": "2026-10-20T10:58:40.306086+00:00",
+      "age_seconds": 800.14426,
       "limit_seconds": 4500,
       "fresh": true
     }
@@ -1704,11 +1704,11 @@
         "ok": true,
         "load_state": "loaded",
         "active_state": "active",
-        "sub_state": "waiting",
+        "sub_state": "running",
         "result": "success",
         "unit_file_state": "enabled",
-        "last_trigger": "Tue 2026-10-20 19:55:06 KST",
-        "next_trigger": "Tue 2026-10-20 20:10:00 KST"
+        "last_trigger": "Tue 2026-10-20 20:10:08 KST",
+        "next_trigger": null
       },
       "risk_monitor": {
         "unit": "lp-hunter-risk.timer",
@@ -1718,22 +1718,58 @@
         "sub_state": "waiting",
         "result": "success",
         "unit_file_state": "enabled",
-        "last_trigger": "Tue 2026-10-20 19:52:01 KST",
-        "next_trigger": "Tue 2026-10-20 20:07:00 KST"
+        "last_trigger": "Tue 2026-10-20 20:07:00 KST",
+        "next_trigger": "Tue 2026-10-20 20:22:00 KST"
       },
       "legacy_scan": {
         "unit": "lp-hunter.timer",
         "ok": true,
         "load_state": "loaded",
         "active_state": "active",
-        "sub_state": "running",
+        "sub_state": "waiting",
         "result": "success",
         "unit_file_state": "enabled",
         "last_trigger": "Tue 2026-10-20 19:57:07 KST",
-        "next_trigger": null
+        "next_trigger": "Tue 2026-10-20 20:57:00 KST"
       }
     },
     "latest_runs": [
+      {
+        "component": "discovery",
+        "started_at": "2026-10-20T11:10:09.322862+00:00",
+        "finished_at": null,
+        "strategy_version": "aggressive-fee-spike-fast-v1.2",
+        "status": "running",
+        "state_before": "STABLE_IDLE",
+        "state_after": null,
+        "live_enabled": 0,
+        "entry_enabled": 0,
+        "error_present": false
+      },
+      {
+        "component": "risk_monitor",
+        "started_at": "2026-10-20T11:07:01.395813+00:00",
+        "finished_at": "2026-10-20T11:07:01.423220+00:00",
+        "strategy_version": "aggressive-fee-spike-fast-v1.2",
+        "status": "ok",
+        "state_before": "STABLE_IDLE",
+        "state_after": "STABLE_IDLE",
+        "live_enabled": 0,
+        "entry_enabled": 0,
+        "error_present": false
+      },
+      {
+        "component": "legacy_scan",
+        "started_at": "2026-10-20T10:57:08.443129+00:00",
+        "finished_at": "2026-10-20T10:58:40.306086+00:00",
+        "strategy_version": "aggressive-fee-spike-fast-v1.2",
+        "status": "ok",
+        "state_before": "STABLE_IDLE",
+        "state_after": "STABLE_IDLE",
+        "live_enabled": 0,
+        "entry_enabled": 0,
+        "error_present": false
+      },
       {
         "component": "discovery",
         "started_at": "2026-10-20T10:55:07.159301+00:00",
@@ -2057,45 +2093,22 @@
         "live_enabled": 0,
         "entry_enabled": 0,
         "error_present": false
-      },
-      {
-        "component": "risk_monitor",
-        "started_at": "2026-10-20T08:07:01.586678+00:00",
-        "finished_at": "2026-10-20T08:07:01.655554+00:00",
-        "strategy_version": "aggressive-fee-spike-v1.1",
-        "status": "ok",
-        "state_before": "STABLE_IDLE",
-        "state_after": "STABLE_IDLE",
-        "live_enabled": 0,
-        "entry_enabled": 0,
-        "error_present": false
-      },
-      {
-        "component": "legacy_scan",
-        "started_at": "2026-10-20T07:57:01.061745+00:00",
-        "finished_at": "2026-10-20T07:58:34.430179+00:00",
-        "strategy_version": "aggressive-fee-spike-v1.1",
-        "status": "ok",
-        "state_before": "STABLE_IDLE",
-        "state_after": "STABLE_IDLE",
-        "live_enabled": 0,
-        "entry_enabled": 0,
-        "error_present": false
-      },
+      }
+    ],
+    "active_runs": [
       {
         "component": "discovery",
-        "started_at": "2026-10-20T07:55:08.502918+00:00",
-        "finished_at": "2026-10-20T07:55:40.777584+00:00",
-        "strategy_version": "aggressive-fee-spike-v1.1",
-        "status": "ok",
+        "started_at": "2026-10-20T11:10:09.322862+00:00",
+        "finished_at": null,
+        "strategy_version": "aggressive-fee-spike-fast-v1.2",
+        "status": "running",
         "state_before": "STABLE_IDLE",
-        "state_after": "STABLE_IDLE",
+        "state_after": null,
         "live_enabled": 0,
         "entry_enabled": 0,
         "error_present": false
       }
     ],
-    "active_runs": [],
     "recent_events": [
       {
         "occurred_at": "2026-10-20T09:19:55.420023+00:00",
