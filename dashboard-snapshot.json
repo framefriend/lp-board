@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "strategy_version": "aggressive-fee-spike-v1.1",
-  "generated_at": "2026-10-20T08:57:07.617975+00:00",
-  "health": "ok",
+  "strategy_version": "aggressive-fee-spike-fast-v1.2",
+  "generated_at": "2026-10-20T09:12:00.203644+00:00",
+  "health": "warning",
   "status": {
     "state": "STABLE_IDLE",
     "reason": "no_eligible_aggressive_candidate",
-    "updated_at": "2026-10-20T08:56:20.525127+00:00",
+    "updated_at": "2026-10-20T09:07:01.604761+00:00",
     "strategy_version": "aggressive-fee-spike-v1.1"
   },
   "authority": {
@@ -27,31 +27,33 @@
     }
   },
   "completeness": {
-    "status": "full",
-    "warnings": []
+    "status": "partial",
+    "warnings": [
+      "reconciliation_failed"
+    ]
   },
   "freshness": {
     "discovery": {
       "finished_at": "2026-10-20T08:56:20.528385+00:00",
-      "age_seconds": 47.08959,
+      "age_seconds": 939.675259,
       "limit_seconds": 1200,
       "fresh": true
     },
     "risk_monitor": {
-      "finished_at": "2026-10-20T08:52:02.723668+00:00",
-      "age_seconds": 304.894307,
+      "finished_at": "2026-10-20T09:07:01.610729+00:00",
+      "age_seconds": 298.592915,
       "limit_seconds": 1200,
       "fresh": true
     },
     "legacy_scan": {
-      "finished_at": "2026-10-20T07:58:34.430179+00:00",
-      "age_seconds": 3513.187796,
+      "finished_at": "2026-10-20T08:58:39.864908+00:00",
+      "age_seconds": 800.338736,
       "limit_seconds": 4500,
       "fresh": true
     }
   },
   "reconciliation": {
-    "ok": true,
+    "ok": false,
     "checks": [
       {
         "name": "open_position_count",
@@ -61,8 +63,8 @@
       },
       {
         "name": "strategy_version",
-        "ok": true,
-        "expected": "aggressive-fee-spike-v1.1",
+        "ok": false,
+        "expected": "aggressive-fee-spike-fast-v1.2",
         "actual": "aggressive-fee-spike-v1.1"
       },
       {
@@ -117,6 +119,7 @@
       "active_liquidity_verified": 80,
       "round_trip_verified": 2,
       "aggressive_a_plus": 0,
+      "aggressive_fast_exit": 0,
       "economics_reliable": 2
     },
     "blockers": {
@@ -175,6 +178,7 @@
           "fee_to_risk_ratio": 0.20572964921002856
         },
         "aggressive_eligible": false,
+        "fast_exit_eligible": false,
         "stageable": false,
         "blockers": [
           "volume_acceleration_below_minimum",
@@ -215,6 +219,7 @@
           "fee_to_risk_ratio": 0.09783691431301497
         },
         "aggressive_eligible": false,
+        "fast_exit_eligible": false,
         "stageable": false,
         "blockers": [
           "volume_acceleration_below_minimum",
@@ -256,6 +261,7 @@
           "fee_to_risk_ratio": 13.44554560470924
         },
         "aggressive_eligible": false,
+        "fast_exit_eligible": false,
         "stageable": false,
         "blockers": [
           "tvl_below_discovery_minimum",
@@ -298,6 +304,7 @@
           "fee_to_risk_ratio": 0.30859725480704137
         },
         "aggressive_eligible": false,
+        "fast_exit_eligible": false,
         "stageable": false,
         "blockers": [
           "tvl_below_discovery_minimum",
@@ -341,6 +348,7 @@
           "fee_to_risk_ratio": 0.26866387898171046
         },
         "aggressive_eligible": false,
+        "fast_exit_eligible": false,
         "stageable": false,
         "blockers": [
           "tvl_below_discovery_minimum",
@@ -384,6 +392,7 @@
           "fee_to_risk_ratio": 0.24892597196743102
         },
         "aggressive_eligible": false,
+        "fast_exit_eligible": false,
         "stageable": false,
         "blockers": [
           "tvl_below_discovery_minimum",
@@ -427,6 +436,7 @@
           "fee_to_risk_ratio": 1.955891401527772
         },
         "aggressive_eligible": false,
+        "fast_exit_eligible": false,
         "stageable": false,
         "blockers": [
           "tvl_below_discovery_minimum",
@@ -471,6 +481,7 @@
           "fee_to_risk_ratio": 0.0028932768058924497
         },
         "aggressive_eligible": false,
+        "fast_exit_eligible": false,
         "stageable": false,
         "blockers": [
           "tvl_below_discovery_minimum",
@@ -516,6 +527,7 @@
           "fee_to_risk_ratio": 0.028761651193498484
         },
         "aggressive_eligible": false,
+        "fast_exit_eligible": false,
         "stageable": false,
         "blockers": [
           "tvl_below_discovery_minimum",
@@ -559,6 +571,7 @@
           "fee_to_risk_ratio": 0.015856341112515177
         },
         "aggressive_eligible": false,
+        "fast_exit_eligible": false,
         "stageable": false,
         "blockers": [
           "tvl_below_discovery_minimum",
@@ -608,6 +621,7 @@
           "fee_to_risk_ratio": 0.26686673042417874
         },
         "aggressive_eligible": false,
+        "fast_exit_eligible": false,
         "stageable": false,
         "blockers": [
           "volume_acceleration_below_minimum",
@@ -651,6 +665,7 @@
           "fee_to_risk_ratio": 0.0053500164108655325
         },
         "aggressive_eligible": false,
+        "fast_exit_eligible": false,
         "stageable": false,
         "blockers": [
           "pool_too_young",
@@ -700,6 +715,7 @@
           "fee_to_risk_ratio": 0.007230938588274058
         },
         "aggressive_eligible": false,
+        "fast_exit_eligible": false,
         "stageable": false,
         "blockers": [
           "tvl_below_discovery_minimum",
@@ -746,6 +762,7 @@
           "fee_to_risk_ratio": 2.281680121856295
         },
         "aggressive_eligible": false,
+        "fast_exit_eligible": false,
         "stageable": false,
         "blockers": [
           "volume_acceleration_below_minimum",
@@ -788,6 +805,7 @@
           "fee_to_risk_ratio": 0.01763289537843654
         },
         "aggressive_eligible": false,
+        "fast_exit_eligible": false,
         "stageable": false,
         "blockers": [
           "fee_velocity_below_minimum",
@@ -835,6 +853,7 @@
           "fee_to_risk_ratio": 0.02379442086443609
         },
         "aggressive_eligible": false,
+        "fast_exit_eligible": false,
         "stageable": false,
         "blockers": [
           "transactions_1h_below_minimum",
@@ -883,6 +902,7 @@
           "fee_to_risk_ratio": 0.0
         },
         "aggressive_eligible": false,
+        "fast_exit_eligible": false,
         "stageable": false,
         "blockers": [
           "fee_velocity_below_minimum",
@@ -929,6 +949,7 @@
           "fee_to_risk_ratio": 0.018167040836835444
         },
         "aggressive_eligible": false,
+        "fast_exit_eligible": false,
         "stageable": false,
         "blockers": [
           "tvl_below_discovery_minimum",
@@ -973,6 +994,7 @@
           "fee_to_risk_ratio": 0.030357564996108283
         },
         "aggressive_eligible": false,
+        "fast_exit_eligible": false,
         "stageable": false,
         "blockers": [
           "fee_velocity_below_minimum",
@@ -1020,6 +1042,7 @@
           "fee_to_risk_ratio": 0.0027364424399318236
         },
         "aggressive_eligible": false,
+        "fast_exit_eligible": false,
         "stageable": false,
         "blockers": [
           "fee_velocity_below_minimum",
@@ -1067,6 +1090,7 @@
           "fee_to_risk_ratio": 0.022933077213393892
         },
         "aggressive_eligible": false,
+        "fast_exit_eligible": false,
         "stageable": false,
         "blockers": [
           "fee_velocity_below_minimum",
@@ -1114,6 +1138,7 @@
           "fee_to_risk_ratio": 0.0
         },
         "aggressive_eligible": false,
+        "fast_exit_eligible": false,
         "stageable": false,
         "blockers": [
           "pool_too_young",
@@ -1157,6 +1182,7 @@
           "fee_to_risk_ratio": 0.353195671233188
         },
         "aggressive_eligible": false,
+        "fast_exit_eligible": false,
         "stageable": false,
         "blockers": [
           "volume_acceleration_below_minimum",
@@ -1204,6 +1230,7 @@
           "fee_to_risk_ratio": 0.07622050058544216
         },
         "aggressive_eligible": false,
+        "fast_exit_eligible": false,
         "stageable": false,
         "blockers": [
           "tvl_below_discovery_minimum",
@@ -1253,6 +1280,7 @@
           "fee_to_risk_ratio": 0.2719820658395655
         },
         "aggressive_eligible": false,
+        "fast_exit_eligible": false,
         "stageable": false,
         "blockers": [
           "tvl_below_discovery_minimum",
@@ -1303,6 +1331,7 @@
           "fee_to_risk_ratio": 0.156237664025206
         },
         "aggressive_eligible": false,
+        "fast_exit_eligible": false,
         "stageable": false,
         "blockers": [
           "tvl_below_discovery_minimum",
@@ -1352,6 +1381,7 @@
           "fee_to_risk_ratio": 0.016369892280719764
         },
         "aggressive_eligible": false,
+        "fast_exit_eligible": false,
         "stageable": false,
         "blockers": [
           "volume_acceleration_below_minimum",
@@ -1400,6 +1430,7 @@
           "fee_to_risk_ratio": 0.03154692229143595
         },
         "aggressive_eligible": false,
+        "fast_exit_eligible": false,
         "stageable": false,
         "blockers": [
           "volume_acceleration_below_minimum",
@@ -1444,6 +1475,7 @@
           "fee_to_risk_ratio": 0.14004705857441596
         },
         "aggressive_eligible": false,
+        "fast_exit_eligible": false,
         "stageable": false,
         "blockers": [
           "tvl_below_discovery_minimum",
@@ -1493,6 +1525,7 @@
           "fee_to_risk_ratio": 0.013284402684137095
         },
         "aggressive_eligible": false,
+        "fast_exit_eligible": false,
         "stageable": false,
         "blockers": [
           "volume_acceleration_below_minimum",
@@ -1613,60 +1646,16 @@
     }
   ],
   "forward": {
-    "strategy_version": "aggressive-fee-spike-v1.1",
-    "total_windows": 34,
+    "strategy_version": "aggressive-fee-spike-fast-v1.2",
+    "total_windows": 0,
     "aggressive_a_plus_scored_windows": 0,
     "aggressive_a_plus_independent_days": 0,
+    "aggressive_fast_exit_scored_windows": 0,
+    "aggressive_fast_exit_independent_days": 0,
     "validation_gate_passed": false,
     "required_windows": 30,
     "required_independent_days": 20,
-    "groups": [
-      {
-        "horizon_minutes": 15,
-        "total": 18,
-        "scored": 8,
-        "unresolved": 10,
-        "average_pnl_usd": -13.150675307840828,
-        "median_pnl_usd": -8.18641635339867,
-        "positive_rate": 0.125,
-        "total_pnl_usd": -105.20540246272662,
-        "fee_beats_losses_rate": 0.0,
-        "exit_reasons": {
-          "hard_loss_stop": 1,
-          "soft_loss_stop": 2
-        }
-      },
-      {
-        "horizon_minutes": 30,
-        "total": 11,
-        "scored": 6,
-        "unresolved": 5,
-        "average_pnl_usd": -26.389796837180466,
-        "median_pnl_usd": -21.060137941973892,
-        "positive_rate": 0.0,
-        "total_pnl_usd": -158.3387810230828,
-        "fee_beats_losses_rate": 0.0,
-        "exit_reasons": {
-          "hard_loss_stop": 2,
-          "soft_loss_stop": 1
-        }
-      },
-      {
-        "horizon_minutes": 60,
-        "total": 5,
-        "scored": 3,
-        "unresolved": 2,
-        "average_pnl_usd": -41.191988796726456,
-        "median_pnl_usd": -25.397669180603543,
-        "positive_rate": 0.0,
-        "total_pnl_usd": -123.57596639017936,
-        "fee_beats_losses_rate": 0.0,
-        "exit_reasons": {
-          "hard_loss_stop": 1,
-          "soft_loss_stop": 2
-        }
-      }
-    ],
+    "groups": [],
     "limitations": [
       "Fee income is an interval proxy, not feeGrowthInside or claimed-fee truth.",
       "Exit quotes are live minimum-received evidence at observation time, not fills.",
@@ -1680,11 +1669,11 @@
         "ok": true,
         "load_state": "loaded",
         "active_state": "active",
-        "sub_state": "waiting",
+        "sub_state": "running",
         "result": "success",
         "unit_file_state": "enabled",
-        "last_trigger": "Tue 2026-10-20 17:55:06 KST",
-        "next_trigger": "Tue 2026-10-20 18:10:00 KST"
+        "last_trigger": "Tue 2026-10-20 18:10:08 KST",
+        "next_trigger": null
       },
       "risk_monitor": {
         "unit": "lp-hunter-risk.timer",
@@ -1694,22 +1683,58 @@
         "sub_state": "waiting",
         "result": "success",
         "unit_file_state": "enabled",
-        "last_trigger": "Tue 2026-10-20 17:52:01 KST",
-        "next_trigger": "Tue 2026-10-20 18:07:00 KST"
+        "last_trigger": "Tue 2026-10-20 18:07:00 KST",
+        "next_trigger": "Tue 2026-10-20 18:22:00 KST"
       },
       "legacy_scan": {
         "unit": "lp-hunter.timer",
         "ok": true,
         "load_state": "loaded",
         "active_state": "active",
-        "sub_state": "running",
+        "sub_state": "waiting",
         "result": "success",
         "unit_file_state": "enabled",
         "last_trigger": "Tue 2026-10-20 17:57:07 KST",
-        "next_trigger": null
+        "next_trigger": "Tue 2026-10-20 18:57:00 KST"
       }
     },
     "latest_runs": [
+      {
+        "component": "discovery",
+        "started_at": "2026-10-20T09:10:09.318274+00:00",
+        "finished_at": null,
+        "strategy_version": "aggressive-fee-spike-fast-v1.2",
+        "status": "running",
+        "state_before": "STABLE_IDLE",
+        "state_after": null,
+        "live_enabled": 0,
+        "entry_enabled": 0,
+        "error_present": false
+      },
+      {
+        "component": "risk_monitor",
+        "started_at": "2026-10-20T09:07:01.573085+00:00",
+        "finished_at": "2026-10-20T09:07:01.610729+00:00",
+        "strategy_version": "aggressive-fee-spike-v1.1",
+        "status": "ok",
+        "state_before": "STABLE_IDLE",
+        "state_after": "STABLE_IDLE",
+        "live_enabled": 0,
+        "entry_enabled": 0,
+        "error_present": false
+      },
+      {
+        "component": "legacy_scan",
+        "started_at": "2026-10-20T08:57:08.378115+00:00",
+        "finished_at": "2026-10-20T08:58:39.864908+00:00",
+        "strategy_version": "aggressive-fee-spike-v1.1",
+        "status": "ok",
+        "state_before": "STABLE_IDLE",
+        "state_after": "STABLE_IDLE",
+        "live_enabled": 0,
+        "entry_enabled": 0,
+        "error_present": false
+      },
       {
         "component": "discovery",
         "started_at": "2026-10-20T08:55:07.067414+00:00",
@@ -2033,45 +2058,22 @@
         "live_enabled": 0,
         "entry_enabled": 0,
         "error_present": false
-      },
+      }
+    ],
+    "active_runs": [
       {
         "component": "discovery",
-        "started_at": "2026-10-20T06:10:01.061372+00:00",
-        "finished_at": "2026-10-20T06:13:33.553197+00:00",
-        "strategy_version": "aggressive-fee-spike-v1.0",
-        "status": "ok",
+        "started_at": "2026-10-20T09:10:09.318274+00:00",
+        "finished_at": null,
+        "strategy_version": "aggressive-fee-spike-fast-v1.2",
+        "status": "running",
         "state_before": "STABLE_IDLE",
-        "state_after": "STABLE_IDLE",
-        "live_enabled": 0,
-        "entry_enabled": 0,
-        "error_present": false
-      },
-      {
-        "component": "risk_monitor",
-        "started_at": "2026-10-20T06:07:01.431950+00:00",
-        "finished_at": "2026-10-20T06:07:01.491841+00:00",
-        "strategy_version": "aggressive-fee-spike-v1.0",
-        "status": "ok",
-        "state_before": "STABLE_IDLE",
-        "state_after": "STABLE_IDLE",
-        "live_enabled": 0,
-        "entry_enabled": 0,
-        "error_present": false
-      },
-      {
-        "component": "legacy_scan",
-        "started_at": "2026-10-20T05:57:01.014242+00:00",
-        "finished_at": "2026-10-20T05:58:34.614432+00:00",
-        "strategy_version": "aggressive-fee-spike-v1.0",
-        "status": "ok",
-        "state_before": "STABLE_IDLE",
-        "state_after": "STABLE_IDLE",
+        "state_after": null,
         "live_enabled": 0,
         "entry_enabled": 0,
         "error_present": false
       }
     ],
-    "active_runs": [],
     "recent_events": [
       {
         "occurred_at": "2026-10-12T17:07:01.350856+00:00",
@@ -2106,18 +2108,8 @@
     }
   },
   "versions": {
-    "current": "aggressive-fee-spike-v1.1",
+    "current": "aggressive-fee-spike-fast-v1.2",
     "observed": [
-      {
-        "strategy_version": "aggressive-fee-spike-v1.1",
-        "is_current": true,
-        "observation_count": 2095,
-        "forward_outcome_count": 34,
-        "first_observed_at": "2026-10-20T06:50:00.546446+00:00",
-        "last_observed_at": "2026-10-20T08:55:07.320696+00:00",
-        "first_forward_entry_at": "2026-10-20T06:50:00.546446+00:00",
-        "last_forward_outcome_at": "2026-10-20T08:55:07.320696+00:00"
-      },
       {
         "strategy_version": "aggressive-fee-spike-v1.0",
         "is_current": false,
@@ -2127,6 +2119,16 @@
         "last_observed_at": "2026-10-20T06:40:07.114922+00:00",
         "first_forward_entry_at": "2026-10-12T16:19:43.450296+00:00",
         "last_forward_outcome_at": "2026-10-20T06:40:07.114922+00:00"
+      },
+      {
+        "strategy_version": "aggressive-fee-spike-v1.1",
+        "is_current": false,
+        "observation_count": 2095,
+        "forward_outcome_count": 34,
+        "first_observed_at": "2026-10-20T06:50:00.546446+00:00",
+        "last_observed_at": "2026-10-20T08:55:07.320696+00:00",
+        "first_forward_entry_at": "2026-10-20T06:50:00.546446+00:00",
+        "last_forward_outcome_at": "2026-10-20T08:55:07.320696+00:00"
       },
       {
         "strategy_version": "legacy-unversioned",

@@ -56,6 +56,7 @@ function renderOverview(snapshot) {
     metric("스테이블 대기", money(capital.stable_reserve_usd)),
     metric("오늘 실현손익", money(dayPnl), "스테이블 환산", dayPnl >= 0 ? "positive" : "negative"),
     metric("A+ 후보", number(funnel.stages?.aggressive_a_plus || 0, 0), `${number(funnel.observed || 0, 0)}개 관측`),
+    metric("30분 Shadow", number(funnel.stages?.aggressive_fast_exit || 0, 0), "진입 비활성"),
     metric("Forward 창", number(forward.total || forward.total_windows || 0, 0), `승격 ${forward.validation_gate_passed ? "충족" : "미충족"}`),
   ].join("");
   const authority = snapshot.authority || {};
@@ -70,7 +71,7 @@ function renderOverview(snapshot) {
 
 const stageLabels = {
   observed: "원시 관측", market_filtered: "시장조건", fee_verified: "LP 수수료", active_liquidity_verified: "활성유동성",
-  round_trip_verified: "왕복경로", risk_verified: "보안·위험", aggressive_a_plus: "A+ 공격형"
+  round_trip_verified: "왕복경로", risk_verified: "보안·위험", aggressive_a_plus: "A+ 공격형", aggressive_fast_exit: "30분 Shadow"
 };
 
 function renderFunnel(snapshot) {
