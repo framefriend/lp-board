@@ -104,44 +104,50 @@ function renderGaugeLab(research) {
   if (!lab.enabled || !Number(lab.lane_count || 0)) {
     $("gauge-lab-updated").textContent = "Candidate Lab 비활성 또는 데이터 없음";
     cards.innerHTML = metric("상태", "데이터 없음", "자동 관측 대기");
-    policyTable.innerHTML = `<tr><td colspan="7" class="empty">정책별 손익 데이터가 없습니다.</td></tr>`;
-    laneTable.innerHTML = `<tr><td colspan="7" class="empty">Gauge 레인 데이터가 없습니다.</td></tr>`;
+    policyTable.innerHTML = `<tr><td colspan="8" class="empty">정책별 손익 데이터가 없습니다.</td></tr>`;
+    laneTable.innerHTML = `<tr><td colspan="8" class="empty">Gauge 레인 데이터가 없습니다.</td></tr>`;
     return;
   }
   const minimumClosed = Number(lab.minimum_closed_samples_for_winner || 0);
   const winnerConfirmed = lab.winner_status === "confirmed";
+  const verifiedCount = Number(lab.verified_lane_count || 0);
+  const verifiedAverage = lab.average_verified_marked_net_usd;
   $("gauge-lab-updated").textContent = `최근 관측 ${when(lab.updated_at)} · 15분 자동 갱신`;
   cards.innerHTML = [
     metric("실험 레인", number(lab.lane_count, 0), `${number(lab.policy_count, 0)}개 정책 · 후보당 ${money(lab.notional_per_candidate_usd)}`),
-    metric("레인당 평균 평가손익", signedMoney(lab.average_marked_net_usd), "프록시·즉시 청산비용 반영", pnlTone(lab.average_marked_net_usd)),
-    metric("실현 순수익", signedMoney(lab.total_realized_net_usd), `${number(lab.closed_count, 0)}개 종료 레인`, pnlTone(lab.total_realized_net_usd)),
+    metric("검증 손익", verifiedCount ? signedMoney(verifiedAverage) : "산출 불가", `진입 검증 ${number(verifiedCount, 0)}/${number(lab.lane_count, 0)}개`, verifiedCount ? pnlTone(verifiedAverage) : ""),
+    metric("프록시 평균 손익", signedMoney(lab.average_marked_net_usd), "APY·가격 경로 기반 정책 비교용", pnlTone(lab.average_marked_net_usd)),
+    metric("실현 순수익", signedMoney(lab.total_realized_net_usd), `검증 종료 ${number(lab.verified_closed_count || 0, 0)}개 · 전체 종료 ${number(lab.closed_count, 0)}개`, pnlTone(lab.total_realized_net_usd)),
     metric("현금화 보상", money(lab.total_harvested_usd), `수확비용 ${money(lab.total_harvest_cost_usd)}`),
     metric("누적 관측", number(lab.observation_count, 0), `${number(lab.open_count, 0)}개 레인 운용 중`),
-    metric("정책 판정", winnerConfirmed ? "확정 가능" : "예비", `종료 ${number(lab.closed_count, 0)}/${number(minimumClosed, 0)}개`, winnerConfirmed ? "positive" : ""),
+    metric("정책 판정", winnerConfirmed ? "확정 가능" : "예비", `검증 종료 ${number(lab.verified_closed_count || 0, 0)}/${number(minimumClosed, 0)}개`, winnerConfirmed ? "positive" : ""),
   ].join("");
   const summaries = lab.policy_summaries || [];
   policyTable.innerHTML = summaries.length ? summaries.map((item) => `<tr>
     <td><span class="pool-name">${safe(policyLabels[item.policy_id] || item.policy_id)}</span><span class="quality">${safe(item.policy_id)}</span></td>
     <td>${number(item.lane_count, 0)}개<br><span class="muted">운용 ${number(item.open_count, 0)}</span></td>
+    <td class="${pnlTone(item.average_verified_net_usd)}">${Number(item.verified_lane_count || 0) ? signedMoney(item.average_verified_net_usd) : "산출 불가"}<br><span class="muted">검증 ${number(item.verified_lane_count || 0, 0)}개</span></td>
     <td class="${pnlTone(item.average_net_usd)}">${signedMoney(item.average_net_usd)}</td>
     <td><span class="positive">${signedMoney(item.best_net_usd)}</span><br><span class="negative">${signedMoney(item.worst_net_usd)}</span></td>
     <td class="${pnlTone(item.realized_net_usd)}">${signedMoney(item.realized_net_usd)}</td>
     <td>${money(item.harvested_usd)}<br><span class="muted">비용 ${money(item.harvest_cost_usd)}</span></td>
-    <td>${number(item.closed_count, 0)}개<br><span class="muted">승률 ${item.win_rate == null ? "표본 없음" : percent(item.win_rate, true)}</span></td>
-  </tr>`).join("") : `<tr><td colspan="7" class="empty">정책별 집계가 없습니다.</td></tr>`;
+    <td>${number(item.closed_count, 0)}개<br><span class="muted">검증 종료 ${number(item.verified_closed_count || 0, 0)} · 승률 ${item.win_rate == null ? "표본 없음" : percent(item.win_rate, true)}</span></td>
+  </tr>`).join("") : `<tr><td colspan="8" class="empty">정책별 집계가 없습니다.</td></tr>`;
   const lanes = lab.leaderboard || [];
   laneTable.innerHTML = lanes.length ? lanes.slice(0, 12).map((item) => {
-    const currentNet = item.status === "closed" ? item.realized_net_usd : item.marked_net_usd;
+    const currentNet = item.status === "closed" ? item.realized_net_usd : item.verified_marked_net_usd;
+    const blockers = item.evidence_blockers || [];
     return `<tr>
       <td><span class="pool-name">${safe(item.symbol || item.pool_id)}</span><span class="quality">${safe(item.chain)} · ${safe(item.project)}</span></td>
       <td>${safe(policyLabels[item.policy_id] || item.policy_id)}</td>
-      <td class="${pnlTone(currentNet)}">${signedMoney(currentNet)}<span class="quality">${item.evidence_status === "proxy_complete" ? "프록시" : safe(item.evidence_status)}</span></td>
+      <td class="${pnlTone(currentNet)}">${item.position_verified ? signedMoney(currentNet) : "산출 불가"}<span class="quality">${item.position_verified ? "진입·수수료·보상·철수 검증" : `진입 미검증 · 누락 ${number(blockers.length, 0)}개`}</span></td>
+      <td class="${pnlTone(item.marked_net_usd)}">${signedMoney(item.marked_net_usd)}<span class="quality">정책 비교 프록시</span></td>
       <td class="${pnlTone(item.realized_net_usd)}">${item.realized_net_usd == null ? "미종료" : signedMoney(item.realized_net_usd)}</td>
       <td>${money(item.harvested_usd)}<span class="quality">대기보상 ${money(item.pending_reward_value_usd)}</span></td>
       <td><span class="verdict ${item.status === "closed" ? "blocked" : "pass"}">${item.status === "closed" ? "종료" : "운용 중"}</span><span class="quality">${safe(item.last_action || "-")}</span></td>
       <td>${when(item.latest_observed_at)}</td>
     </tr>`;
-  }).join("") : `<tr><td colspan="7" class="empty">현재 레인이 없습니다.</td></tr>`;
+  }).join("") : `<tr><td colspan="8" class="empty">현재 레인이 없습니다.</td></tr>`;
 }
 
 function renderAllocations(research) {
