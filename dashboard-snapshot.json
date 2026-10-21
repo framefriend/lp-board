@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "strategy_version": "global-lp-strategy-research-v0.2",
+  "strategy_version": "global-lp-strategy-research-v0.4",
   "program": {
     "phase": "research",
-    "research_program": "global-lp-strategy-research-v0.2",
+    "research_program": "global-lp-strategy-research-v0.4",
     "active_strategy": null,
     "retired_at": "2026-10-21T00:26:42+09:00",
     "retirement_reason": "fee_spike_strategies_produced_no_repeatable_entry_candidates",
@@ -18,7 +18,7 @@
       "legacy_scan"
     ]
   },
-  "generated_at": "2026-10-21T01:12:05.201617+00:00",
+  "generated_at": "2026-10-21T01:14:55.375451+00:00",
   "health": "ok",
   "status": {
     "state": "RESEARCH",
@@ -1708,53 +1708,55 @@
   "global_research": {
     "available": true,
     "schema_version": 3,
-    "expected_version": "global-lp-strategy-research-v0.2",
-    "program": "global-lp-strategy-research-v0.2",
+    "expected_version": "global-lp-strategy-research-v0.4",
+    "program": "global-lp-strategy-research-v0.4",
     "status": "RESEARCH_ONLY",
-    "generated_at": "2026-10-21T01:04:44.477202Z",
+    "generated_at": "2026-10-21T01:14:36.988261Z",
     "source": {
       "pool_count": 16140,
+      "price_lookup_errors": 0,
+      "price_provider": "DefiLlama Coins",
       "provider": "DefiLlama Yields",
       "screening_only": true
     },
     "run": {
       "bucket_seconds": 21600,
       "bucket_started_at": "2026-10-21T00:00:00Z",
-      "eligible_candidates": 19,
-      "run_id": "5ceefaa61de9844d2d096397",
+      "eligible_candidates": 8,
+      "run_id": "38a73f7f14348e56904050e9",
       "screened_candidates": 30,
       "settled_outcomes": 0
     },
     "portfolio": {
-      "allocated_usd": 2000.0,
-      "idle_cash_usd": 0.0,
-      "status": "fully_allocated",
+      "allocated_usd": 800.0,
+      "idle_cash_usd": 1200.0,
+      "status": "partially_allocated",
       "target_notional_usd": 2000.0
     },
     "strategies": {
       "bluechip_cl": {
-        "allocated_usd": 800.0,
+        "allocated_usd": 0.0,
         "candidate_count": 10,
-        "eligible_candidate_count": 10,
+        "eligible_candidate_count": 0,
         "horizons_days": [
           1,
           3,
           7
         ],
-        "idle_cash_usd": 0.0,
+        "idle_cash_usd": 800.0,
         "target_notional_usd": 800.0
       },
       "gauge_farm": {
-        "allocated_usd": 400.0,
+        "allocated_usd": 0.0,
         "candidate_count": 10,
-        "eligible_candidate_count": 1,
+        "eligible_candidate_count": 0,
         "horizons_days": [
           3,
           7,
           14,
           30
         ],
-        "idle_cash_usd": 0.0,
+        "idle_cash_usd": 400.0,
         "target_notional_usd": 400.0
       },
       "stable_carry": {
@@ -1773,7 +1775,7 @@
     },
     "allocations": [
       {
-        "allocation_id": "aaa441695a4c5f908e9537f9",
+        "allocation_id": "26c6fb5ea0fe2d5eb19e94f8",
         "strategy": "stable_carry",
         "pool_id": "847c874f-d4e7-47ed-8870-97d2f24a8767",
         "symbol": "EURC-USDC",
@@ -1784,36 +1786,6 @@
         "effective_apy": 9.79596,
         "history_sample_count": 31,
         "persistence_30d": 0.6774193548387096,
-        "status": "illustrative_shadow_only",
-        "evidence_status": "eligible_screening_proxy"
-      },
-      {
-        "allocation_id": "e9e8d6a13b34d35aebf2081f",
-        "strategy": "bluechip_cl",
-        "pool_id": "1328ac9d-9939-4719-a85a-114935209e08",
-        "symbol": "WETH-USDC",
-        "chain": "Base",
-        "project": "aerodrome-slipstream",
-        "notional_usd": 800.0,
-        "robust_apy_30d": 73.64052,
-        "effective_apy": 85.22638,
-        "history_sample_count": 31,
-        "persistence_30d": 0.8709677419354839,
-        "status": "illustrative_shadow_only",
-        "evidence_status": "eligible_screening_proxy"
-      },
-      {
-        "allocation_id": "6aecfa635bb5210611cd2033",
-        "strategy": "gauge_farm",
-        "pool_id": "1328ac9d-9939-4719-a85a-114935209e08",
-        "symbol": "WETH-USDC",
-        "chain": "Base",
-        "project": "aerodrome-slipstream",
-        "notional_usd": 400.0,
-        "robust_apy_30d": 76.3884,
-        "effective_apy": 200.10025,
-        "history_sample_count": 31,
-        "persistence_30d": 0.7741935483870968,
         "status": "illustrative_shadow_only",
         "evidence_status": "eligible_screening_proxy"
       }
@@ -1832,7 +1804,8 @@
       "DefiLlama APY is a screening proxy, not realized PnL.",
       "Stable Carry and Gauge Farm forward values integrate observed APY paths but remain non-realized proxies until reward-sale, depeg and exit-quote adapters are implemented.",
       "Blue-chip CL requires price, range, inventory, IL and exit-quote adapters before any profitability claim.",
-      "Version v0.1 observations remain in the audit ledger but are excluded from v0.2 allocation and forward-performance aggregates.",
+      "Earlier-version observations remain in the audit ledger but are excluded from global-lp-strategy-research-v0.4 allocation and forward-performance aggregates.",
+      "Address-bound token and reward prices are persisted at every scan; they support depeg and price-path analysis but do not replace exact pool inventory or executable exit quotes.",
       "Capital without an eligible candidate remains explicit idle cash; the engine never force-allocates it.",
       "No paper or live entry authority is granted by this research ledger."
     ],
@@ -1842,10 +1815,10 @@
         "ok": true,
         "status": "ok"
       },
-      "versioned_run_count": 2,
-      "versioned_allocation_count": 6,
+      "versioned_run_count": 1,
+      "versioned_allocation_count": 1,
       "versioned_forward_count": 0,
-      "last_run_at": "2026-10-21T01:04:44.477202Z"
+      "last_run_at": "2026-10-21T01:14:36.988261Z"
     }
   },
   "operations": {
@@ -1891,19 +1864,19 @@
         "sub_state": "waiting",
         "result": "success",
         "unit_file_state": "enabled",
-        "last_trigger": "Wed 2026-10-21 10:11:17 KST",
-        "next_trigger": "Wed 2026-10-21 10:12:15 KST"
+        "last_trigger": "Wed 2026-10-21 10:14:17 KST",
+        "next_trigger": "Wed 2026-10-21 10:15:15 KST"
       },
       "dashboard_publish": {
         "unit": "lp-dashboard-pages-publish.timer",
         "ok": true,
         "load_state": "loaded",
         "active_state": "active",
-        "sub_state": "running",
+        "sub_state": "waiting",
         "result": "success",
         "unit_file_state": "enabled",
         "last_trigger": "Wed 2026-10-21 10:12:05 KST",
-        "next_trigger": null
+        "next_trigger": "Wed 2026-10-21 10:27:00 KST"
       },
       "dashboard_web": {
         "unit": "lp-dashboard-web.service",
@@ -2366,7 +2339,7 @@
     }
   },
   "versions": {
-    "current": "global-lp-strategy-research-v0.2",
+    "current": "global-lp-strategy-research-v0.4",
     "active_strategy": null,
     "observed": [
       {
