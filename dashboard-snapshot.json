@@ -18,7 +18,7 @@
       "legacy_scan"
     ]
   },
-  "generated_at": "2026-10-21T13:42:03.480192+00:00",
+  "generated_at": "2026-10-21T13:43:39.258648+00:00",
   "health": "ok",
   "status": {
     "state": "RESEARCH",
@@ -3823,19 +3823,19 @@
         "sub_state": "waiting",
         "result": "success",
         "unit_file_state": "enabled",
-        "last_trigger": "Wed 2026-10-21 22:41:17 KST",
-        "next_trigger": "Wed 2026-10-21 22:42:15 KST"
+        "last_trigger": "Wed 2026-10-21 22:43:15 KST",
+        "next_trigger": "Wed 2026-10-21 22:44:15 KST"
       },
       "dashboard_publish": {
         "unit": "lp-dashboard-pages-publish.timer",
         "ok": true,
         "load_state": "loaded",
         "active_state": "active",
-        "sub_state": "running",
+        "sub_state": "waiting",
         "result": "success",
         "unit_file_state": "enabled",
         "last_trigger": "Wed 2026-10-21 22:42:03 KST",
-        "next_trigger": null
+        "next_trigger": "Wed 2026-10-21 22:57:00 KST"
       },
       "dashboard_web": {
         "unit": "lp-dashboard-web.service",

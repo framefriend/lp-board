@@ -55,8 +55,8 @@ function renderOverview(research) {
   $("overview-cards").innerHTML = [
     metric("연구 상태", research.status === "RESEARCH_ONLY" ? "연구 중" : (research.status || "-"), research.program || "-"),
     metric("총 연구자금", money(target), "실제 투자 아님"),
-    metric("연구 배정", money(allocated), `${number(research.allocations?.length || 0, 0)}개 풀`),
-    metric("현금 대기", money(idle), "조건 미달 자금"),
+    metric("모델 포트폴리오", money(allocated), `${number(research.allocations?.length || 0, 0)}개 풀 · Candidate Lab과 별도`),
+    metric("모델 미배정", money(idle), "Candidate Lab 가상 진입액과 별도"),
     metric("적격 후보", number(run.eligible_candidates || research.candidate_watchlist?.length || 0, 0), `${number(run.screened_candidates || 0, 0)}개 선별`),
     metric("성숙 Forward", number(audit.versioned_forward_count || 0, 0), "완성 전 수익 주장 금지"),
   ].join("");
@@ -73,6 +73,7 @@ function renderOverview(research) {
 function renderStrategies(research) {
   const strategies = research.strategies || {};
   const evaluations = research.strategy_evaluations || [];
+  const gaugeLab = research.gauge_candidate_lab || {};
   $("global-research-status").textContent = `${research.program || "-"} · ${research.status || "-"}`;
   $("global-strategies").innerHTML = Object.entries(strategies).map(([key, item]) => {
     const strategyEvaluations = evaluations.filter((evaluation) => evaluation.strategy === key);
@@ -81,8 +82,9 @@ function renderStrategies(research) {
     return `<article class="position-card research-card">
     <strong>${safe(strategyLabels[key] || key)}</strong>
     <div class="kv"><span>예산</span><b>${money(item.target_notional_usd)}</b></div>
-    <div class="kv"><span>연구 배정</span><b>${money(item.allocated_usd)}</b></div>
-    <div class="kv"><span>현금 대기</span><b>${money(item.idle_cash_usd)}</b></div>
+    <div class="kv"><span>모델 포트폴리오</span><b>${money(item.allocated_usd)}</b></div>
+    <div class="kv"><span>모델 미배정</span><b>${money(item.idle_cash_usd)}</b></div>
+    ${key === "gauge_farm" ? `<div class="kv"><span>Candidate Lab 가상 진입</span><b>${money(gaugeLab.total_test_notional_usd)}</b></div>` : ""}
     <div class="kv"><span>적격 후보</span><b>${number(item.eligible_candidate_count || 0, 0)}</b></div>
     <div class="kv"><span>전략 모델 통과</span><b>${number(modelEligible, 0)}</b></div>
     <div class="kv"><span>목적함수</span><b>${safe(objectives[0] || "기본 후보 선별")}</b></div>
@@ -120,6 +122,7 @@ function renderGaugeLab(research) {
     metric("가정 수수료·보상", money(Number(lab.total_modeled_base_fee_usd || 0) + Number(lab.total_modeled_pending_reward_usd || 0) + Number(lab.total_harvested_usd || 0)), `수수료 ${money(lab.total_modeled_base_fee_usd)} · 대기보상 ${money(lab.total_modeled_pending_reward_usd)}`),
     metric("예상 철수비용", money(lab.total_modeled_exit_cost_usd), `수확비용 ${money(lab.total_harvest_cost_usd)}`),
     metric("실제 검증", `${number(verifiedCount, 0)}/${number(lab.lane_count, 0)}개`, verifiedCount ? `실제 평균 ${signedMoney(verifiedAverage)}` : "가정 손익과 별도"),
+    metric("실제 실현손익", signedMoney(lab.total_realized_net_usd), `실제 검증 종료 ${number(lab.verified_closed_count || 0, 0)}개`, pnlTone(lab.total_realized_net_usd)),
     metric("누적 관측", number(lab.observation_count, 0), `${number(lab.open_count, 0)}개 레인 운용 중`),
     metric("정책 판정", winnerConfirmed ? "확정 가능" : "예비", `종료 ${number(lab.closed_count || 0, 0)}개 · 실제 검증 종료 ${number(lab.verified_closed_count || 0, 0)}/${number(minimumClosed, 0)}개`, winnerConfirmed ? "positive" : ""),
   ].join("");
