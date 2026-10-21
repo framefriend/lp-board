@@ -18,7 +18,7 @@
       "legacy_scan"
     ]
   },
-  "generated_at": "2026-10-21T14:27:00.721593+00:00",
+  "generated_at": "2026-10-21T14:29:56.618119+00:00",
   "health": "ok",
   "status": {
     "state": "RESEARCH",
@@ -3902,18 +3902,18 @@
             "horizon_days": 7,
             "policy_id": "daily_defensive",
             "sample_count": 10,
-            "average_operating_net_usd": 0.18159894042300948,
-            "average_immediate_exit_net_usd": -0.3184010595769905,
-            "closed_count": 3,
+            "average_operating_net_usd": 0.20268220001507445,
+            "average_immediate_exit_net_usd": -0.2973177999849256,
+            "closed_count": 2,
             "evidence_status": "yield_tvl_only"
           },
           {
             "horizon_days": 7,
             "policy_id": "threshold_balanced",
             "sample_count": 10,
-            "average_operating_net_usd": 0.3172944977884143,
-            "average_immediate_exit_net_usd": -0.1827055022115857,
-            "closed_count": 1,
+            "average_operating_net_usd": 0.3363753763079259,
+            "average_immediate_exit_net_usd": -0.16362462369207406,
+            "closed_count": 0,
             "evidence_status": "yield_tvl_only"
           },
           {
@@ -3956,8 +3956,8 @@
             "horizon_days": 30,
             "policy_id": "daily_defensive",
             "sample_count": 10,
-            "average_operating_net_usd": 0.0957885581110034,
-            "average_immediate_exit_net_usd": -0.4042114418889966,
+            "average_operating_net_usd": 0.12705820248470445,
+            "average_immediate_exit_net_usd": -0.37294179751529555,
             "closed_count": 10,
             "evidence_status": "yield_tvl_only"
           },
@@ -3965,8 +3965,8 @@
             "horizon_days": 30,
             "policy_id": "threshold_balanced",
             "sample_count": 10,
-            "average_operating_net_usd": 0.2701410954382567,
-            "average_immediate_exit_net_usd": -0.22985890456174332,
+            "average_operating_net_usd": 0.2766282820536077,
+            "average_immediate_exit_net_usd": -0.22337171794639232,
             "closed_count": 10,
             "evidence_status": "yield_tvl_only"
           },
@@ -3974,8 +3974,8 @@
             "horizon_days": 30,
             "policy_id": "weekly_aggressive",
             "sample_count": 10,
-            "average_operating_net_usd": 1.1831590839936552,
-            "average_immediate_exit_net_usd": 0.6831590839936552,
+            "average_operating_net_usd": 1.185605779692348,
+            "average_immediate_exit_net_usd": 0.685605779692348,
             "closed_count": 1,
             "evidence_status": "yield_tvl_only"
           }
@@ -4523,13 +4523,13 @@
           },
           {
             "horizon_days": 7,
-            "covered_days": 4.999377835648148,
+            "covered_days": 5.9994962152777775,
             "sample_count": 8,
             "status": "closed",
             "exit_reason": "reward_apy_stop",
-            "operating_net_usd": 0.4358520482571322,
-            "immediate_exit_net_usd": -0.0641479517428678,
-            "modeled_realized_net_usd": -0.0641479517428678,
+            "operating_net_usd": 0.5600681511728709,
+            "immediate_exit_net_usd": 0.0600681511728709,
+            "modeled_realized_net_usd": 0.0600681511728709,
             "evidence_status": "yield_tvl_only",
             "missing_dimensions": [
               "reward_token_price_path",
@@ -4563,13 +4563,13 @@
           },
           {
             "horizon_days": 30,
-            "covered_days": 3.0008866319444447,
+            "covered_days": 7.0001331944444445,
             "sample_count": 31,
             "status": "closed",
-            "exit_reason": "reward_apy_stop",
-            "operating_net_usd": 0.21732117275688267,
-            "immediate_exit_net_usd": -0.2826788272431173,
-            "modeled_realized_net_usd": -0.2826788272431173,
+            "exit_reason": "maximum_hold",
+            "operating_net_usd": 0.3969874005487952,
+            "immediate_exit_net_usd": -0.10301259945120478,
+            "modeled_realized_net_usd": -0.10301259945120478,
             "evidence_status": "yield_tvl_only",
             "missing_dimensions": [
               "reward_token_price_path",
@@ -4583,13 +4583,13 @@
           },
           {
             "horizon_days": 7,
-            "covered_days": 4.999377835648148,
+            "covered_days": 6.5830733564814805,
             "sample_count": 8,
-            "status": "closed",
-            "exit_reason": "reward_apy_stop",
-            "operating_net_usd": 0.635852048257135,
-            "immediate_exit_net_usd": 0.13585204825713504,
-            "modeled_realized_net_usd": 0.13585204825713504,
+            "status": "open",
+            "exit_reason": null,
+            "operating_net_usd": 0.8266608334522516,
+            "immediate_exit_net_usd": 0.3266608334522516,
+            "modeled_realized_net_usd": null,
             "evidence_status": "yield_tvl_only",
             "missing_dimensions": [
               "reward_token_price_path",
@@ -5063,13 +5063,13 @@
           },
           {
             "horizon_days": 7,
-            "covered_days": 4.99982462962963,
+            "covered_days": 6.588061689814815,
             "sample_count": 8,
-            "status": "closed",
-            "exit_reason": "tvl_stop",
-            "operating_net_usd": 0.24091562402905708,
-            "immediate_exit_net_usd": -0.2590843759709429,
-            "modeled_realized_net_usd": -0.2590843759709429,
+            "status": "open",
+            "exit_reason": null,
+            "operating_net_usd": 0.2864851247836526,
+            "immediate_exit_net_usd": -0.21351487521634738,
+            "modeled_realized_net_usd": null,
             "evidence_status": "yield_tvl_only",
             "missing_dimensions": [
               "reward_token_price_path",
@@ -5243,13 +5243,13 @@
           },
           {
             "horizon_days": 7,
-            "covered_days": 3.999992523148148,
+            "covered_days": 4.99982462962963,
             "sample_count": 8,
             "status": "closed",
             "exit_reason": "reward_apy_stop",
-            "operating_net_usd": 0.06964757717689452,
-            "immediate_exit_net_usd": -0.4303524228231055,
-            "modeled_realized_net_usd": -0.4303524228231055,
+            "operating_net_usd": 0.1106945694272099,
+            "immediate_exit_net_usd": -0.3893054305727901,
+            "modeled_realized_net_usd": -0.3893054305727901,
             "evidence_status": "yield_tvl_only",
             "missing_dimensions": [
               "reward_token_price_path",
@@ -5283,13 +5283,13 @@
           },
           {
             "horizon_days": 30,
-            "covered_days": 3.0003153703703704,
+            "covered_days": 3.999953761574074,
             "sample_count": 31,
             "status": "closed",
             "exit_reason": "reward_apy_stop",
-            "operating_net_usd": 0.03861011835348904,
-            "immediate_exit_net_usd": -0.46138988164651096,
-            "modeled_realized_net_usd": -0.46138988164651096,
+            "operating_net_usd": 0.05971307225053124,
+            "immediate_exit_net_usd": -0.44028692774946876,
+            "modeled_realized_net_usd": -0.44028692774946876,
             "evidence_status": "yield_tvl_only",
             "missing_dimensions": [
               "reward_token_price_path",
@@ -5343,13 +5343,13 @@
           },
           {
             "horizon_days": 30,
-            "covered_days": 3.0003153703703704,
+            "covered_days": 3.999953761574074,
             "sample_count": 31,
             "status": "closed",
             "exit_reason": "reward_apy_stop",
-            "operating_net_usd": 0.03861011835348904,
-            "immediate_exit_net_usd": -0.46138988164651096,
-            "modeled_realized_net_usd": -0.46138988164651096,
+            "operating_net_usd": 0.05971307225053124,
+            "immediate_exit_net_usd": -0.44028692774946876,
+            "modeled_realized_net_usd": -0.44028692774946876,
             "evidence_status": "yield_tvl_only",
             "missing_dimensions": [
               "reward_token_price_path",
@@ -5463,13 +5463,13 @@
           },
           {
             "horizon_days": 30,
-            "covered_days": 3.0003153703703704,
+            "covered_days": 7.99982787037037,
             "sample_count": 31,
             "status": "closed",
-            "exit_reason": "reward_apy_stop",
-            "operating_net_usd": 0.02773020844809082,
-            "immediate_exit_net_usd": -0.4722697915519092,
-            "modeled_realized_net_usd": -0.4722697915519092,
+            "exit_reason": "maximum_hold",
+            "operating_net_usd": 0.0958885582396789,
+            "immediate_exit_net_usd": -0.4041114417603211,
+            "modeled_realized_net_usd": -0.4041114417603211,
             "evidence_status": "yield_tvl_only",
             "missing_dimensions": [
               "reward_token_price_path",
@@ -5643,13 +5643,13 @@
           },
           {
             "horizon_days": 30,
-            "covered_days": 3.0003153703703704,
+            "covered_days": 3.999953761574074,
             "sample_count": 31,
             "status": "closed",
             "exit_reason": "reward_apy_stop",
-            "operating_net_usd": 0.06773860346187632,
-            "immediate_exit_net_usd": -0.4322613965381237,
-            "modeled_realized_net_usd": -0.4322613965381237,
+            "operating_net_usd": 0.11150751571834405,
+            "immediate_exit_net_usd": -0.38849248428165595,
+            "modeled_realized_net_usd": -0.38849248428165595,
             "evidence_status": "yield_tvl_only",
             "missing_dimensions": [
               "reward_token_price_path",
@@ -5703,13 +5703,13 @@
           },
           {
             "horizon_days": 30,
-            "covered_days": 3.0003153703703704,
+            "covered_days": 3.999953761574074,
             "sample_count": 31,
             "status": "closed",
             "exit_reason": "reward_apy_stop",
-            "operating_net_usd": 0.16773860346187064,
-            "immediate_exit_net_usd": -0.33226139653812936,
-            "modeled_realized_net_usd": -0.33226139653812936,
+            "operating_net_usd": 0.21150751571833837,
+            "immediate_exit_net_usd": -0.28849248428166163,
+            "modeled_realized_net_usd": -0.28849248428166163,
             "evidence_status": "yield_tvl_only",
             "missing_dimensions": [
               "reward_token_price_path",
@@ -5763,13 +5763,13 @@
           },
           {
             "horizon_days": 30,
-            "covered_days": 9.999882430555555,
+            "covered_days": 11.000100810185184,
             "sample_count": 31,
             "status": "closed",
             "exit_reason": "reward_apy_stop",
-            "operating_net_usd": 0.44491386414540557,
-            "immediate_exit_net_usd": -0.05508613585459443,
-            "modeled_realized_net_usd": -0.05508613585459443,
+            "operating_net_usd": 0.4693808211323329,
+            "immediate_exit_net_usd": -0.030619178867667074,
+            "modeled_realized_net_usd": -0.030619178867667074,
             "evidence_status": "yield_tvl_only",
             "missing_dimensions": [
               "reward_token_price_path",
@@ -5859,19 +5859,19 @@
         "sub_state": "waiting",
         "result": "success",
         "unit_file_state": "enabled",
-        "last_trigger": "Wed 2026-10-21 23:26:16 KST",
-        "next_trigger": "Wed 2026-10-21 23:27:15 KST"
+        "last_trigger": "Wed 2026-10-21 23:29:17 KST",
+        "next_trigger": "Wed 2026-10-21 23:30:15 KST"
       },
       "dashboard_publish": {
         "unit": "lp-dashboard-pages-publish.timer",
         "ok": true,
         "load_state": "loaded",
         "active_state": "active",
-        "sub_state": "running",
+        "sub_state": "waiting",
         "result": "success",
         "unit_file_state": "enabled",
         "last_trigger": "Wed 2026-10-21 23:27:00 KST",
-        "next_trigger": null
+        "next_trigger": "Wed 2026-10-21 23:42:00 KST"
       },
       "dashboard_web": {
         "unit": "lp-dashboard-web.service",
@@ -5904,7 +5904,7 @@
         "result": "success",
         "unit_file_state": "enabled",
         "last_trigger": "Wed 2026-10-21 23:17:16 KST",
-        "next_trigger": "Wed 2026-10-21 23:32:05 KST"
+        "next_trigger": "Wed 2026-10-21 23:32:10 KST"
       }
     },
     "latest_runs": [
