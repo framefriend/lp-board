@@ -18,7 +18,7 @@
       "legacy_scan"
     ]
   },
-  "generated_at": "2026-10-21T00:57:03.203383+00:00",
+  "generated_at": "2026-10-21T01:12:05.201617+00:00",
   "health": "ok",
   "status": {
     "state": "RESEARCH",
@@ -1711,17 +1711,17 @@
     "expected_version": "global-lp-strategy-research-v0.2",
     "program": "global-lp-strategy-research-v0.2",
     "status": "RESEARCH_ONLY",
-    "generated_at": "2026-10-20T23:54:17.633750Z",
+    "generated_at": "2026-10-21T01:04:44.477202Z",
     "source": {
-      "pool_count": 16145,
+      "pool_count": 16140,
       "provider": "DefiLlama Yields",
       "screening_only": true
     },
     "run": {
       "bucket_seconds": 21600,
-      "bucket_started_at": "2026-10-20T18:00:00Z",
-      "eligible_candidates": 20,
-      "run_id": "70fdebb9b83dd79e1d418b61",
+      "bucket_started_at": "2026-10-21T00:00:00Z",
+      "eligible_candidates": 19,
+      "run_id": "5ceefaa61de9844d2d096397",
       "screened_candidates": 30,
       "settled_outcomes": 0
     },
@@ -1747,7 +1747,7 @@
       "gauge_farm": {
         "allocated_usd": 400.0,
         "candidate_count": 10,
-        "eligible_candidate_count": 2,
+        "eligible_candidate_count": 1,
         "horizons_days": [
           3,
           7,
@@ -1773,47 +1773,47 @@
     },
     "allocations": [
       {
-        "allocation_id": "2a8eaded9322b7b4395f12a6",
+        "allocation_id": "aaa441695a4c5f908e9537f9",
         "strategy": "stable_carry",
         "pool_id": "847c874f-d4e7-47ed-8870-97d2f24a8767",
         "symbol": "EURC-USDC",
         "chain": "Base",
         "project": "aerodrome-slipstream",
         "notional_usd": 800.0,
-        "robust_apy_30d": 28.808844999999998,
-        "effective_apy": 9.85428,
-        "history_sample_count": 30,
-        "persistence_30d": 0.7,
+        "robust_apy_30d": 27.47062,
+        "effective_apy": 9.79596,
+        "history_sample_count": 31,
+        "persistence_30d": 0.6774193548387096,
         "status": "illustrative_shadow_only",
         "evidence_status": "eligible_screening_proxy"
       },
       {
-        "allocation_id": "f6d5df5fdb54a0a21b69d43a",
+        "allocation_id": "e9e8d6a13b34d35aebf2081f",
         "strategy": "bluechip_cl",
         "pool_id": "1328ac9d-9939-4719-a85a-114935209e08",
         "symbol": "WETH-USDC",
         "chain": "Base",
         "project": "aerodrome-slipstream",
         "notional_usd": 800.0,
-        "robust_apy_30d": 72.884185,
-        "effective_apy": 45.46958,
-        "history_sample_count": 30,
-        "persistence_30d": 0.8666666666666667,
+        "robust_apy_30d": 73.64052,
+        "effective_apy": 85.22638,
+        "history_sample_count": 31,
+        "persistence_30d": 0.8709677419354839,
         "status": "illustrative_shadow_only",
         "evidence_status": "eligible_screening_proxy"
       },
       {
-        "allocation_id": "32f4876572289fbb17bd7491",
+        "allocation_id": "6aecfa635bb5210611cd2033",
         "strategy": "gauge_farm",
-        "pool_id": "f07ec582-f302-5fab-9531-eabc3f8f291c",
-        "symbol": "USDC-NVDAC",
+        "pool_id": "1328ac9d-9939-4719-a85a-114935209e08",
+        "symbol": "WETH-USDC",
         "chain": "Base",
         "project": "aerodrome-slipstream",
         "notional_usd": 400.0,
-        "robust_apy_30d": 109.23613,
-        "effective_apy": 203.15343,
-        "history_sample_count": 30,
-        "persistence_30d": 0.9333333333333333,
+        "robust_apy_30d": 76.3884,
+        "effective_apy": 200.10025,
+        "history_sample_count": 31,
+        "persistence_30d": 0.7741935483870968,
         "status": "illustrative_shadow_only",
         "evidence_status": "eligible_screening_proxy"
       }
@@ -1842,10 +1842,10 @@
         "ok": true,
         "status": "ok"
       },
-      "versioned_run_count": 1,
-      "versioned_allocation_count": 3,
+      "versioned_run_count": 2,
+      "versioned_allocation_count": 6,
       "versioned_forward_count": 0,
-      "last_run_at": "2026-10-20T23:54:17.633750Z"
+      "last_run_at": "2026-10-21T01:04:44.477202Z"
     }
   },
   "operations": {
@@ -1891,8 +1891,8 @@
         "sub_state": "waiting",
         "result": "success",
         "unit_file_state": "enabled",
-        "last_trigger": "Wed 2026-10-21 09:56:17 KST",
-        "next_trigger": "Wed 2026-10-21 09:57:15 KST"
+        "last_trigger": "Wed 2026-10-21 10:11:17 KST",
+        "next_trigger": "Wed 2026-10-21 10:12:15 KST"
       },
       "dashboard_publish": {
         "unit": "lp-dashboard-pages-publish.timer",
@@ -1902,7 +1902,7 @@
         "sub_state": "running",
         "result": "success",
         "unit_file_state": "enabled",
-        "last_trigger": "Wed 2026-10-21 09:57:03 KST",
+        "last_trigger": "Wed 2026-10-21 10:12:05 KST",
         "next_trigger": null
       },
       "dashboard_web": {
@@ -1924,7 +1924,7 @@
         "sub_state": "waiting",
         "result": "success",
         "unit_file_state": "enabled",
-        "last_trigger": "Wed 2026-10-21 08:54:17 KST",
+        "last_trigger": "Wed 2026-10-21 10:04:44 KST",
         "next_trigger": "Wed 2026-10-21 12:05:00 KST"
       }
     },
