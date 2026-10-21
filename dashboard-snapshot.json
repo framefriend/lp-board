@@ -18,7 +18,7 @@
       "legacy_scan"
     ]
   },
-  "generated_at": "2026-10-21T13:44:36.687711+00:00",
+  "generated_at": "2026-10-21T13:45:37.443253+00:00",
   "health": "ok",
   "status": {
     "state": "RESEARCH",
@@ -3823,8 +3823,8 @@
         "sub_state": "waiting",
         "result": "success",
         "unit_file_state": "enabled",
-        "last_trigger": "Wed 2026-10-21 22:44:16 KST",
-        "next_trigger": "Wed 2026-10-21 22:45:15 KST"
+        "last_trigger": "Wed 2026-10-21 22:45:15 KST",
+        "next_trigger": "Wed 2026-10-21 22:46:15 KST"
       },
       "dashboard_publish": {
         "unit": "lp-dashboard-pages-publish.timer",
