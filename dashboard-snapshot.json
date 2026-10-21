@@ -18,8 +18,8 @@
       "legacy_scan"
     ]
   },
-  "generated_at": "2026-10-21T06:27:05.462753+00:00",
-  "health": "warning",
+  "generated_at": "2026-10-21T06:30:24.961789+00:00",
+  "health": "ok",
   "status": {
     "state": "RESEARCH",
     "reason": "fee_spike_strategies_produced_no_repeatable_entry_candidates",
@@ -44,10 +44,8 @@
     }
   },
   "completeness": {
-    "status": "partial",
-    "warnings": [
-      "global_research_version_mismatch"
-    ]
+    "status": "full",
+    "warnings": []
   },
   "freshness": {
     "discovery": {
@@ -1711,11 +1709,11 @@
     "available": true,
     "schema_version": 3,
     "expected_version": "global-lp-strategy-research-v0.5",
-    "program": "global-lp-strategy-research-v0.4",
+    "program": "global-lp-strategy-research-v0.5",
     "status": "RESEARCH_ONLY",
-    "generated_at": "2026-10-21T01:14:36.988261Z",
+    "generated_at": "2026-10-21T06:29:15.494446Z",
     "source": {
-      "pool_count": 16140,
+      "pool_count": 16163,
       "price_lookup_errors": 0,
       "price_provider": "DefiLlama Coins",
       "provider": "DefiLlama Yields",
@@ -1723,35 +1721,36 @@
     },
     "run": {
       "bucket_seconds": 21600,
-      "bucket_started_at": "2026-10-21T00:00:00Z",
-      "eligible_candidates": 8,
-      "run_id": "38a73f7f14348e56904050e9",
+      "bucket_started_at": "2026-10-21T06:00:00Z",
+      "eligible_candidates": 23,
+      "run_id": "fd798a1656245c3709dfbdcb",
       "screened_candidates": 30,
-      "settled_outcomes": 0
+      "settled_outcomes": 0,
+      "strategy_settled_outcomes": 0
     },
     "portfolio": {
-      "allocated_usd": 800.0,
-      "idle_cash_usd": 1200.0,
+      "allocated_usd": 1600.0,
+      "idle_cash_usd": 400.0,
       "status": "partially_allocated",
       "target_notional_usd": 2000.0
     },
     "strategies": {
       "bluechip_cl": {
-        "allocated_usd": 0.0,
+        "allocated_usd": 800.0,
         "candidate_count": 10,
-        "eligible_candidate_count": 0,
+        "eligible_candidate_count": 6,
         "horizons_days": [
           1,
           3,
           7
         ],
-        "idle_cash_usd": 800.0,
+        "idle_cash_usd": 0.0,
         "target_notional_usd": 800.0
       },
       "gauge_farm": {
         "allocated_usd": 0.0,
         "candidate_count": 10,
-        "eligible_candidate_count": 0,
+        "eligible_candidate_count": 10,
         "horizons_days": [
           3,
           7,
@@ -1764,7 +1763,7 @@
       "stable_carry": {
         "allocated_usd": 800.0,
         "candidate_count": 10,
-        "eligible_candidate_count": 8,
+        "eligible_candidate_count": 7,
         "horizons_days": [
           3,
           7,
@@ -1777,19 +1776,299 @@
     },
     "candidate_watchlist": [
       {
-        "strategy": "stable_carry",
-        "pool_id": "847c874f-d4e7-47ed-8870-97d2f24a8767",
-        "symbol": "EURC-USDC",
+        "strategy": "gauge_farm",
+        "pool_id": "d32f9c01-47d1-4077-8c73-8b91b08d1e91",
+        "symbol": "USDC-AERO",
+        "chain": "Base",
+        "project": "aerodrome-v1",
+        "tvl_usd": 38486315.0,
+        "robust_apy_30d": 31.49654,
+        "effective_apy": 35.1571,
+        "history_sample_count": 31,
+        "persistence_30d": 1.0,
+        "risk_flags": [
+          "reward_token_price_risk",
+          "emission_decay_risk",
+          "reward_sale_cost_unmeasured"
+        ],
+        "valuation_inputs": {
+          "underlying_prices_expected": 2,
+          "underlying_prices_resolved": 2,
+          "reward_prices_expected": 1,
+          "reward_prices_resolved": 1
+        }
+      },
+      {
+        "strategy": "gauge_farm",
+        "pool_id": "9652fa5a-8b82-4b48-b1b8-5a5d41ddcc42",
+        "symbol": "MSUSD-USDC",
+        "chain": "Base",
+        "project": "aerodrome-v1",
+        "tvl_usd": 1787292.0,
+        "robust_apy_30d": 25.50652,
+        "effective_apy": 51.39039,
+        "history_sample_count": 31,
+        "persistence_30d": 0.9032258064516129,
+        "risk_flags": [
+          "reward_token_price_risk",
+          "emission_decay_risk",
+          "reward_sale_cost_unmeasured",
+          "depeg_risk"
+        ],
+        "valuation_inputs": {
+          "underlying_prices_expected": 2,
+          "underlying_prices_resolved": 2,
+          "reward_prices_expected": 1,
+          "reward_prices_resolved": 1
+        }
+      },
+      {
+        "strategy": "bluechip_cl",
+        "pool_id": "7127db96-afba-4089-8c9d-daa93c116856",
+        "symbol": "WBTC-USDC",
+        "chain": "Arbitrum",
+        "project": "uniswap-v3",
+        "tvl_usd": 8013163.0,
+        "robust_apy_30d": 23.34762,
+        "effective_apy": 22.75256,
+        "history_sample_count": 31,
+        "persistence_30d": 0.7419354838709677,
+        "risk_flags": [
+          "directional_inventory_risk",
+          "impermanent_loss_unmeasured",
+          "range_management_unmeasured"
+        ],
+        "valuation_inputs": {
+          "underlying_prices_expected": 2,
+          "underlying_prices_resolved": 2,
+          "reward_prices_expected": 0,
+          "reward_prices_resolved": 0
+        }
+      },
+      {
+        "strategy": "bluechip_cl",
+        "pool_id": "9c3c95ef-5e04-4c75-b7ec-6a59a9ea904b",
+        "symbol": "USDC-CBBTC",
+        "chain": "Base",
+        "project": "uniswap-v3",
+        "tvl_usd": 9913880.0,
+        "robust_apy_30d": 20.70347,
+        "effective_apy": 18.74972,
+        "history_sample_count": 31,
+        "persistence_30d": 0.8064516129032258,
+        "risk_flags": [
+          "directional_inventory_risk",
+          "impermanent_loss_unmeasured",
+          "range_management_unmeasured"
+        ],
+        "valuation_inputs": {
+          "underlying_prices_expected": 2,
+          "underlying_prices_resolved": 2,
+          "reward_prices_expected": 0,
+          "reward_prices_resolved": 0
+        }
+      },
+      {
+        "strategy": "bluechip_cl",
+        "pool_id": "12edc6f3-4926-4b4f-b97c-38ef6a458574",
+        "symbol": "WSOL-USDC",
+        "chain": "Solana",
+        "project": "raydium-amm",
+        "tvl_usd": 19693310.0,
+        "robust_apy_30d": 20.54,
+        "effective_apy": 20.08,
+        "history_sample_count": 31,
+        "persistence_30d": 1.0,
+        "risk_flags": [
+          "directional_inventory_risk",
+          "impermanent_loss_unmeasured",
+          "range_management_unmeasured"
+        ],
+        "valuation_inputs": {
+          "underlying_prices_expected": 2,
+          "underlying_prices_resolved": 2,
+          "reward_prices_expected": 0,
+          "reward_prices_resolved": 0
+        }
+      },
+      {
+        "strategy": "bluechip_cl",
+        "pool_id": "5f229682-5d41-4330-9b50-9bf2d2f1af79",
+        "symbol": "USDC-CBBTC",
+        "chain": "Base",
+        "project": "uniswap-v3",
+        "tvl_usd": 2270559.0,
+        "robust_apy_30d": 20.00716,
+        "effective_apy": 20.00716,
+        "history_sample_count": 31,
+        "persistence_30d": 0.8064516129032258,
+        "risk_flags": [
+          "directional_inventory_risk",
+          "impermanent_loss_unmeasured",
+          "range_management_unmeasured"
+        ],
+        "valuation_inputs": {
+          "underlying_prices_expected": 2,
+          "underlying_prices_resolved": 2,
+          "reward_prices_expected": 0,
+          "reward_prices_resolved": 0
+        }
+      },
+      {
+        "strategy": "gauge_farm",
+        "pool_id": "af1b872b-af09-511d-8124-2faa2c57b9b5",
+        "symbol": "USDC-ALUSDB",
+        "chain": "Base",
+        "project": "aerodrome-v1",
+        "tvl_usd": 2403773.0,
+        "robust_apy_30d": 19.65669,
+        "effective_apy": 18.83704,
+        "history_sample_count": 27,
+        "persistence_30d": 1.0,
+        "risk_flags": [
+          "reward_token_price_risk",
+          "emission_decay_risk",
+          "reward_sale_cost_unmeasured",
+          "depeg_risk"
+        ],
+        "valuation_inputs": {
+          "underlying_prices_expected": 2,
+          "underlying_prices_resolved": 2,
+          "reward_prices_expected": 1,
+          "reward_prices_resolved": 1
+        }
+      },
+      {
+        "strategy": "gauge_farm",
+        "pool_id": "8af246ee-cf26-4c8e-88f8-f2021a69e44d",
+        "symbol": "WETH-WELL",
+        "chain": "Base",
+        "project": "aerodrome-v1",
+        "tvl_usd": 1193369.0,
+        "robust_apy_30d": 17.51392,
+        "effective_apy": 18.30737,
+        "history_sample_count": 31,
+        "persistence_30d": 1.0,
+        "risk_flags": [
+          "reward_token_price_risk",
+          "emission_decay_risk",
+          "reward_sale_cost_unmeasured"
+        ],
+        "valuation_inputs": {
+          "underlying_prices_expected": 2,
+          "underlying_prices_resolved": 2,
+          "reward_prices_expected": 1,
+          "reward_prices_resolved": 1
+        }
+      },
+      {
+        "strategy": "gauge_farm",
+        "pool_id": "2669bac4-c8c1-4436-b00c-0b9287681b3f",
+        "symbol": "VIRTUAL-WETH",
+        "chain": "Base",
+        "project": "aerodrome-v1",
+        "tvl_usd": 4694956.0,
+        "robust_apy_30d": 16.13705,
+        "effective_apy": 16.83093,
+        "history_sample_count": 31,
+        "persistence_30d": 1.0,
+        "risk_flags": [
+          "reward_token_price_risk",
+          "emission_decay_risk",
+          "reward_sale_cost_unmeasured"
+        ],
+        "valuation_inputs": {
+          "underlying_prices_expected": 2,
+          "underlying_prices_resolved": 2,
+          "reward_prices_expected": 1,
+          "reward_prices_resolved": 1
+        }
+      },
+      {
+        "strategy": "gauge_farm",
+        "pool_id": "69c0fc74-dee5-4c60-9aed-a593661d54ea",
+        "symbol": "WETH-AERO",
+        "chain": "Base",
+        "project": "aerodrome-v1",
+        "tvl_usd": 3341329.0,
+        "robust_apy_30d": 15.77024,
+        "effective_apy": 16.34446,
+        "history_sample_count": 31,
+        "persistence_30d": 0.967741935483871,
+        "risk_flags": [
+          "reward_token_price_risk",
+          "emission_decay_risk",
+          "reward_sale_cost_unmeasured"
+        ],
+        "valuation_inputs": {
+          "underlying_prices_expected": 2,
+          "underlying_prices_resolved": 2,
+          "reward_prices_expected": 1,
+          "reward_prices_resolved": 1
+        }
+      },
+      {
+        "strategy": "gauge_farm",
+        "pool_id": "3fea9aec-48b6-4ad3-bd04-f69188bead1d",
+        "symbol": "MSUSD-MSETH",
         "chain": "Base",
         "project": "aerodrome-slipstream",
-        "tvl_usd": 1390351.0,
-        "robust_apy_30d": 27.47062,
-        "effective_apy": 9.79596,
+        "tvl_usd": 3498780.0,
+        "robust_apy_30d": 15.25221,
+        "effective_apy": 26.01932,
         "history_sample_count": 31,
-        "persistence_30d": 0.6774193548387096,
+        "persistence_30d": 0.8064516129032258,
         "risk_flags": [
-          "eur_usd_fx_risk",
+          "reward_token_price_risk",
+          "emission_decay_risk",
+          "reward_sale_cost_unmeasured"
+        ],
+        "valuation_inputs": {
+          "underlying_prices_expected": 2,
+          "underlying_prices_resolved": 2,
+          "reward_prices_expected": 1,
+          "reward_prices_resolved": 1
+        }
+      },
+      {
+        "strategy": "gauge_farm",
+        "pool_id": "aae6cc3a-783b-4a76-bea7-c3edccd28d62",
+        "symbol": "MSUSD-USDC",
+        "chain": "Base",
+        "project": "aerodrome-slipstream",
+        "tvl_usd": 1923429.0,
+        "robust_apy_30d": 13.46885,
+        "effective_apy": 9.09519,
+        "history_sample_count": 31,
+        "persistence_30d": 1.0,
+        "risk_flags": [
+          "reward_token_price_risk",
+          "emission_decay_risk",
+          "reward_sale_cost_unmeasured",
           "depeg_risk"
+        ],
+        "valuation_inputs": {
+          "underlying_prices_expected": 2,
+          "underlying_prices_resolved": 2,
+          "reward_prices_expected": 1,
+          "reward_prices_resolved": 1
+        }
+      },
+      {
+        "strategy": "gauge_farm",
+        "pool_id": "0af161e4-7127-4f87-89c3-fd0b1175532e",
+        "symbol": "WETH-MSETH",
+        "chain": "Base",
+        "project": "aerodrome-v1",
+        "tvl_usd": 2560162.0,
+        "robust_apy_30d": 11.64771,
+        "effective_apy": 26.01023,
+        "history_sample_count": 31,
+        "persistence_30d": 0.9032258064516129,
+        "risk_flags": [
+          "reward_token_price_risk",
+          "emission_decay_risk",
+          "reward_sale_cost_unmeasured"
         ],
         "valuation_inputs": {
           "underlying_prices_expected": 2,
@@ -1804,13 +2083,59 @@
         "symbol": "USDG-USDE",
         "chain": "Solana",
         "project": "orca-dex",
-        "tvl_usd": 1689636.0,
-        "robust_apy_30d": 10.6224,
-        "effective_apy": 11.83318,
+        "tvl_usd": 1689619.0,
+        "robust_apy_30d": 10.29801,
+        "effective_apy": 7.28507,
         "history_sample_count": 31,
-        "persistence_30d": 0.8387096774193549,
+        "persistence_30d": 0.8709677419354839,
         "risk_flags": [
           "depeg_risk"
+        ],
+        "valuation_inputs": {
+          "underlying_prices_expected": 2,
+          "underlying_prices_resolved": 2,
+          "reward_prices_expected": 0,
+          "reward_prices_resolved": 0
+        }
+      },
+      {
+        "strategy": "gauge_farm",
+        "pool_id": "a79fd5ae-6507-4190-88b1-5032c43bf7cc",
+        "symbol": "YFI-WSTETH",
+        "chain": "Base",
+        "project": "aerodrome-v1",
+        "tvl_usd": 1228920.0,
+        "robust_apy_30d": 8.83107,
+        "effective_apy": 9.95065,
+        "history_sample_count": 31,
+        "persistence_30d": 1.0,
+        "risk_flags": [
+          "reward_token_price_risk",
+          "emission_decay_risk",
+          "reward_sale_cost_unmeasured"
+        ],
+        "valuation_inputs": {
+          "underlying_prices_expected": 2,
+          "underlying_prices_resolved": 2,
+          "reward_prices_expected": 1,
+          "reward_prices_resolved": 1
+        }
+      },
+      {
+        "strategy": "bluechip_cl",
+        "pool_id": "55c24466-7169-4b51-97f0-025ab1c34b0d",
+        "symbol": "SOL-USDG",
+        "chain": "Solana",
+        "project": "orca-dex",
+        "tvl_usd": 4322285.0,
+        "robust_apy_30d": 7.90511,
+        "effective_apy": 8.02,
+        "history_sample_count": 31,
+        "persistence_30d": 0.8709677419354839,
+        "risk_flags": [
+          "directional_inventory_risk",
+          "impermanent_loss_unmeasured",
+          "range_management_unmeasured"
         ],
         "valuation_inputs": {
           "underlying_prices_expected": 2,
@@ -1825,9 +2150,9 @@
         "symbol": "USDC-USDT",
         "chain": "Polygon",
         "project": "uniswap-v3",
-        "tvl_usd": 1041067.0,
+        "tvl_usd": 1037138.0,
         "robust_apy_30d": 5.6324,
-        "effective_apy": 5.32915,
+        "effective_apy": 5.0092,
         "history_sample_count": 31,
         "persistence_30d": 0.9032258064516129,
         "risk_flags": [
@@ -1846,9 +2171,9 @@
         "symbol": "USDC-USDT",
         "chain": "Arbitrum",
         "project": "uniswap-v3",
-        "tvl_usd": 1252349.0,
+        "tvl_usd": 1252067.0,
         "robust_apy_30d": 4.85594,
-        "effective_apy": 6.4355,
+        "effective_apy": 5.82648,
         "history_sample_count": 31,
         "persistence_30d": 0.7741935483870968,
         "risk_flags": [
@@ -1867,9 +2192,9 @@
         "symbol": "PYUSD-USDE",
         "chain": "Solana",
         "project": "orca-dex",
-        "tvl_usd": 2199837.0,
+        "tvl_usd": 2198820.0,
         "robust_apy_30d": 4.11144,
-        "effective_apy": 2.79899,
+        "effective_apy": 2.4504,
         "history_sample_count": 31,
         "persistence_30d": 0.8064516129032258,
         "risk_flags": [
@@ -1888,53 +2213,11 @@
         "symbol": "USDC-USDT",
         "chain": "Solana",
         "project": "raydium-amm",
-        "tvl_usd": 1746007.0,
+        "tvl_usd": 1747306.0,
         "robust_apy_30d": 2.91,
-        "effective_apy": 5.45,
+        "effective_apy": 4.28,
         "history_sample_count": 31,
         "persistence_30d": 0.8709677419354839,
-        "risk_flags": [
-          "depeg_risk"
-        ],
-        "valuation_inputs": {
-          "underlying_prices_expected": 2,
-          "underlying_prices_resolved": 2,
-          "reward_prices_expected": 0,
-          "reward_prices_resolved": 0
-        }
-      },
-      {
-        "strategy": "stable_carry",
-        "pool_id": "ac225670-41bc-48fa-b8d7-32011abc58fe",
-        "symbol": "USDG-USDC",
-        "chain": "Solana",
-        "project": "orca-dex",
-        "tvl_usd": 18128015.0,
-        "robust_apy_30d": 0.22372,
-        "effective_apy": 0.02993,
-        "history_sample_count": 31,
-        "persistence_30d": 0.7419354838709677,
-        "risk_flags": [
-          "depeg_risk"
-        ],
-        "valuation_inputs": {
-          "underlying_prices_expected": 2,
-          "underlying_prices_resolved": 2,
-          "reward_prices_expected": 0,
-          "reward_prices_resolved": 0
-        }
-      },
-      {
-        "strategy": "stable_carry",
-        "pool_id": "99203560-4a69-4a67-9dbc-70b78a68a2b9",
-        "symbol": "PYUSD-USDC",
-        "chain": "Solana",
-        "project": "orca-dex",
-        "tvl_usd": 16699156.0,
-        "robust_apy_30d": 0.18845,
-        "effective_apy": 0.02734,
-        "history_sample_count": 31,
-        "persistence_30d": 0.7419354838709677,
         "risk_flags": [
           "depeg_risk"
         ],
@@ -1948,19 +2231,340 @@
     ],
     "allocations": [
       {
-        "allocation_id": "26c6fb5ea0fe2d5eb19e94f8",
+        "allocation_id": "e9fe9ad50f13de36574516ea",
         "strategy": "stable_carry",
-        "pool_id": "847c874f-d4e7-47ed-8870-97d2f24a8767",
-        "symbol": "EURC-USDC",
-        "chain": "Base",
-        "project": "aerodrome-slipstream",
+        "pool_id": "ae8e306b-a55d-48ce-afea-420d177c9272",
+        "symbol": "USDG-USDE",
+        "chain": "Solana",
+        "project": "orca-dex",
         "notional_usd": 800.0,
-        "robust_apy_30d": 27.47062,
-        "effective_apy": 9.79596,
+        "robust_apy_30d": 10.29801,
+        "effective_apy": 7.28507,
         "history_sample_count": 31,
-        "persistence_30d": 0.6774193548387096,
+        "persistence_30d": 0.8709677419354839,
         "status": "illustrative_shadow_only",
         "evidence_status": "eligible_screening_proxy"
+      },
+      {
+        "allocation_id": "d716699f8217451003ba1e95",
+        "strategy": "bluechip_cl",
+        "pool_id": "7127db96-afba-4089-8c9d-daa93c116856",
+        "symbol": "WBTC-USDC",
+        "chain": "Arbitrum",
+        "project": "uniswap-v3",
+        "notional_usd": 800.0,
+        "robust_apy_30d": 23.34762,
+        "effective_apy": 22.75256,
+        "history_sample_count": 31,
+        "persistence_30d": 0.7419354838709677,
+        "status": "illustrative_shadow_only",
+        "evidence_status": "eligible_screening_proxy"
+      }
+    ],
+    "strategy_evaluations": [
+      {
+        "strategy": "bluechip_cl",
+        "cohort": "bluechip_stable_cl",
+        "review_status": "rejected",
+        "objective_name": "maximize_worst_directional_net_usd",
+        "objective_score": -20.964889197129082,
+        "eligible_for_allocation": false,
+        "blockers": [
+          "quality_gate_failed",
+          "exact_tick_range",
+          "exact_pool_inventory",
+          "executable_exit_quote",
+          "monitoring_latency"
+        ]
+      },
+      {
+        "strategy": "bluechip_cl",
+        "cohort": "bluechip_stable_cl",
+        "review_status": "rejected",
+        "objective_name": "maximize_worst_directional_net_usd",
+        "objective_score": -24.8440344026086,
+        "eligible_for_allocation": false,
+        "blockers": [
+          "quality_gate_failed",
+          "exact_tick_range",
+          "exact_pool_inventory",
+          "executable_exit_quote",
+          "monitoring_latency"
+        ]
+      },
+      {
+        "strategy": "bluechip_cl",
+        "cohort": "bluechip_stable_cl",
+        "review_status": "rejected",
+        "objective_name": "maximize_worst_directional_net_usd",
+        "objective_score": -24.929835388909964,
+        "eligible_for_allocation": false,
+        "blockers": [
+          "quality_gate_failed",
+          "exact_tick_range",
+          "exact_pool_inventory",
+          "executable_exit_quote",
+          "monitoring_latency"
+        ]
+      },
+      {
+        "strategy": "bluechip_cl",
+        "cohort": "bluechip_stable_cl",
+        "review_status": "rejected",
+        "objective_name": "maximize_worst_directional_net_usd",
+        "objective_score": -25.198304868362015,
+        "eligible_for_allocation": false,
+        "blockers": [
+          "quality_gate_failed",
+          "exact_tick_range",
+          "exact_pool_inventory",
+          "executable_exit_quote",
+          "monitoring_latency"
+        ]
+      },
+      {
+        "strategy": "bluechip_cl",
+        "cohort": "bluechip_stable_cl",
+        "review_status": "model_eligible",
+        "objective_name": "maximize_worst_directional_net_usd",
+        "objective_score": -25.94634453959486,
+        "eligible_for_allocation": true,
+        "blockers": [
+          "exact_tick_range",
+          "exact_pool_inventory",
+          "executable_exit_quote",
+          "monitoring_latency"
+        ]
+      },
+      {
+        "strategy": "bluechip_cl",
+        "cohort": "bluechip_stable_cl",
+        "review_status": "model_eligible",
+        "objective_name": "maximize_worst_directional_net_usd",
+        "objective_score": -26.00429851219758,
+        "eligible_for_allocation": true,
+        "blockers": [
+          "exact_tick_range",
+          "exact_pool_inventory",
+          "executable_exit_quote",
+          "monitoring_latency"
+        ]
+      },
+      {
+        "strategy": "bluechip_cl",
+        "cohort": "bluechip_stable_cl",
+        "review_status": "model_eligible",
+        "objective_name": "maximize_worst_directional_net_usd",
+        "objective_score": -26.007881416307214,
+        "eligible_for_allocation": true,
+        "blockers": [
+          "exact_tick_range",
+          "exact_pool_inventory",
+          "executable_exit_quote",
+          "monitoring_latency"
+        ]
+      },
+      {
+        "strategy": "bluechip_cl",
+        "cohort": "bluechip_stable_cl",
+        "review_status": "model_eligible",
+        "objective_name": "maximize_worst_directional_net_usd",
+        "objective_score": -26.019560101238767,
+        "eligible_for_allocation": true,
+        "blockers": [
+          "exact_tick_range",
+          "exact_pool_inventory",
+          "executable_exit_quote",
+          "monitoring_latency"
+        ]
+      },
+      {
+        "strategy": "bluechip_cl",
+        "cohort": "bluechip_stable_cl",
+        "review_status": "model_eligible",
+        "objective_name": "maximize_worst_directional_net_usd",
+        "objective_score": -26.284810512197623,
+        "eligible_for_allocation": true,
+        "blockers": [
+          "exact_tick_range",
+          "exact_pool_inventory",
+          "executable_exit_quote",
+          "monitoring_latency"
+        ]
+      },
+      {
+        "strategy": "bluechip_cl",
+        "cohort": "bluechip_stable_cl",
+        "review_status": "model_eligible",
+        "objective_name": "maximize_worst_directional_net_usd",
+        "objective_score": -26.444584320416766,
+        "eligible_for_allocation": true,
+        "blockers": [
+          "exact_tick_range",
+          "exact_pool_inventory",
+          "executable_exit_quote",
+          "monitoring_latency"
+        ]
+      },
+      {
+        "strategy": "gauge_farm",
+        "cohort": "volatile_gauge",
+        "review_status": "rejected",
+        "objective_name": "maximize_joint_stress_net_usd",
+        "objective_score": -4.364664773972603,
+        "eligible_for_allocation": false,
+        "blockers": [
+          "gauge_cohort_not_allocatable",
+          "joint_stress_net_below_minimum",
+          "actual_reward_quantity",
+          "emission_schedule",
+          "executable_reward_sale_quote",
+          "fee_attribution"
+        ]
+      },
+      {
+        "strategy": "gauge_farm",
+        "cohort": "volatile_gauge",
+        "review_status": "rejected",
+        "objective_name": "maximize_joint_stress_net_usd",
+        "objective_score": -4.216786173287671,
+        "eligible_for_allocation": false,
+        "blockers": [
+          "gauge_cohort_not_allocatable",
+          "joint_stress_net_below_minimum",
+          "actual_reward_quantity",
+          "emission_schedule",
+          "executable_reward_sale_quote",
+          "fee_attribution"
+        ]
+      },
+      {
+        "strategy": "gauge_farm",
+        "cohort": "volatile_gauge",
+        "review_status": "rejected",
+        "objective_name": "maximize_joint_stress_net_usd",
+        "objective_score": -4.51333381369863,
+        "eligible_for_allocation": false,
+        "blockers": [
+          "gauge_cohort_not_allocatable",
+          "joint_stress_net_below_minimum",
+          "actual_reward_quantity",
+          "emission_schedule",
+          "executable_reward_sale_quote",
+          "fee_attribution"
+        ]
+      },
+      {
+        "strategy": "gauge_farm",
+        "cohort": "volatile_gauge",
+        "review_status": "rejected",
+        "objective_name": "maximize_joint_stress_net_usd",
+        "objective_score": -4.518158889726028,
+        "eligible_for_allocation": false,
+        "blockers": [
+          "gauge_cohort_not_allocatable",
+          "joint_stress_net_below_minimum",
+          "actual_reward_quantity",
+          "emission_schedule",
+          "executable_reward_sale_quote",
+          "fee_attribution"
+        ]
+      },
+      {
+        "strategy": "gauge_farm",
+        "cohort": "volatile_gauge",
+        "review_status": "rejected",
+        "objective_name": "maximize_joint_stress_net_usd",
+        "objective_score": -4.531608651369863,
+        "eligible_for_allocation": false,
+        "blockers": [
+          "gauge_cohort_not_allocatable",
+          "joint_stress_net_below_minimum",
+          "actual_reward_quantity",
+          "emission_schedule",
+          "executable_reward_sale_quote",
+          "fee_attribution"
+        ]
+      },
+      {
+        "strategy": "gauge_farm",
+        "cohort": "volatile_gauge",
+        "review_status": "rejected",
+        "objective_name": "maximize_joint_stress_net_usd",
+        "objective_score": -4.536040193150685,
+        "eligible_for_allocation": false,
+        "blockers": [
+          "gauge_cohort_not_allocatable",
+          "joint_stress_net_below_minimum",
+          "actual_reward_quantity",
+          "emission_schedule",
+          "executable_reward_sale_quote",
+          "fee_attribution"
+        ]
+      },
+      {
+        "strategy": "gauge_farm",
+        "cohort": "volatile_gauge",
+        "review_status": "rejected",
+        "objective_name": "maximize_joint_stress_net_usd",
+        "objective_score": -4.447906194520549,
+        "eligible_for_allocation": false,
+        "blockers": [
+          "gauge_cohort_not_allocatable",
+          "joint_stress_net_below_minimum",
+          "actual_reward_quantity",
+          "emission_schedule",
+          "executable_reward_sale_quote",
+          "fee_attribution"
+        ]
+      },
+      {
+        "strategy": "gauge_farm",
+        "cohort": "volatile_gauge",
+        "review_status": "rejected",
+        "objective_name": "maximize_joint_stress_net_usd",
+        "objective_score": -4.60207806369863,
+        "eligible_for_allocation": false,
+        "blockers": [
+          "gauge_cohort_not_allocatable",
+          "joint_stress_net_below_minimum",
+          "actual_reward_quantity",
+          "emission_schedule",
+          "executable_reward_sale_quote",
+          "fee_attribution"
+        ]
+      },
+      {
+        "strategy": "gauge_farm",
+        "cohort": "volatile_gauge",
+        "review_status": "rejected",
+        "objective_name": "maximize_joint_stress_net_usd",
+        "objective_score": -4.447989000684931,
+        "eligible_for_allocation": false,
+        "blockers": [
+          "gauge_cohort_not_allocatable",
+          "joint_stress_net_below_minimum",
+          "actual_reward_quantity",
+          "emission_schedule",
+          "executable_reward_sale_quote",
+          "fee_attribution"
+        ]
+      },
+      {
+        "strategy": "gauge_farm",
+        "cohort": "volatile_gauge",
+        "review_status": "rejected",
+        "objective_name": "maximize_joint_stress_net_usd",
+        "objective_score": -4.594285174657534,
+        "eligible_for_allocation": false,
+        "blockers": [
+          "gauge_cohort_not_allocatable",
+          "joint_stress_net_below_minimum",
+          "actual_reward_quantity",
+          "emission_schedule",
+          "executable_reward_sale_quote",
+          "fee_attribution"
+        ]
       }
     ],
     "forward": {
@@ -1977,21 +2581,21 @@
       "DefiLlama APY is a screening proxy, not realized PnL.",
       "Stable Carry and Gauge Farm forward values integrate observed APY paths but remain non-realized proxies until reward-sale, depeg and exit-quote adapters are implemented.",
       "Blue-chip CL requires price, range, inventory, IL and exit-quote adapters before any profitability claim.",
-      "Earlier-version observations remain in the audit ledger but are excluded from global-lp-strategy-research-v0.4 allocation and forward-performance aggregates.",
+      "Earlier-version observations remain in the audit ledger but are excluded from global-lp-strategy-research-v0.5 allocation and forward-performance aggregates.",
       "Address-bound token and reward prices are persisted at every scan; they support depeg and price-path analysis but do not replace exact pool inventory or executable exit quotes.",
       "Capital without an eligible candidate remains explicit idle cash; the engine never force-allocates it.",
       "No paper or live entry authority is granted by this research ledger."
     ],
     "audit": {
-      "snapshot_version_matches": false,
+      "snapshot_version_matches": true,
       "database_integrity": {
         "ok": true,
         "status": "ok"
       },
-      "versioned_run_count": 0,
-      "versioned_allocation_count": 0,
+      "versioned_run_count": 1,
+      "versioned_allocation_count": 2,
       "versioned_forward_count": 0,
-      "last_run_at": null
+      "last_run_at": "2026-10-21T06:29:15.494446Z"
     }
   },
   "operations": {
@@ -2037,19 +2641,19 @@
         "sub_state": "waiting",
         "result": "success",
         "unit_file_state": "enabled",
-        "last_trigger": "Wed 2026-10-21 15:26:17 KST",
-        "next_trigger": "Wed 2026-10-21 15:27:15 KST"
+        "last_trigger": "Wed 2026-10-21 15:30:15 KST",
+        "next_trigger": "Wed 2026-10-21 15:31:15 KST"
       },
       "dashboard_publish": {
         "unit": "lp-dashboard-pages-publish.timer",
         "ok": true,
         "load_state": "loaded",
         "active_state": "active",
-        "sub_state": "running",
+        "sub_state": "waiting",
         "result": "success",
         "unit_file_state": "enabled",
         "last_trigger": "Wed 2026-10-21 15:27:05 KST",
-        "next_trigger": null
+        "next_trigger": "Wed 2026-10-21 15:42:00 KST"
       },
       "dashboard_web": {
         "unit": "lp-dashboard-web.service",

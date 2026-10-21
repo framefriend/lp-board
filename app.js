@@ -66,15 +66,23 @@ function renderOverview(research) {
 
 function renderStrategies(research) {
   const strategies = research.strategies || {};
+  const evaluations = research.strategy_evaluations || [];
   $("global-research-status").textContent = `${research.program || "-"} · ${research.status || "-"}`;
-  $("global-strategies").innerHTML = Object.entries(strategies).map(([key, item]) => `<article class="position-card research-card">
+  $("global-strategies").innerHTML = Object.entries(strategies).map(([key, item]) => {
+    const strategyEvaluations = evaluations.filter((evaluation) => evaluation.strategy === key);
+    const modelEligible = strategyEvaluations.filter((evaluation) => evaluation.eligible_for_allocation).length;
+    const objectives = [...new Set(strategyEvaluations.map((evaluation) => evaluation.objective_name).filter(Boolean))];
+    return `<article class="position-card research-card">
     <strong>${safe(strategyLabels[key] || key)}</strong>
     <div class="kv"><span>예산</span><b>${money(item.target_notional_usd)}</b></div>
     <div class="kv"><span>연구 배정</span><b>${money(item.allocated_usd)}</b></div>
     <div class="kv"><span>현금 대기</span><b>${money(item.idle_cash_usd)}</b></div>
     <div class="kv"><span>적격 후보</span><b>${number(item.eligible_candidate_count || 0, 0)}</b></div>
+    <div class="kv"><span>전략 모델 통과</span><b>${number(modelEligible, 0)}</b></div>
+    <div class="kv"><span>목적함수</span><b>${safe(objectives[0] || "기본 후보 선별")}</b></div>
     <div class="kv"><span>평가 기간</span><b>${safe((item.horizons_days || []).map((day) => `${day}일`).join(" · ") || "-")}</b></div>
-  </article>`).join("") || `<div class="empty">전략별 연구 결과가 없습니다.</div>`;
+  </article>`;
+  }).join("") || `<div class="empty">전략별 연구 결과가 없습니다.</div>`;
 }
 
 function renderAllocations(research) {
