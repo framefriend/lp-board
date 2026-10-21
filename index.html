@@ -4,145 +4,55 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
-  <title>LP Hunter 관제 콘솔</title>
+  <title>Global LP Research</title>
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main">본문으로 이동</a>
   <header class="topbar">
     <div>
-      <p class="eyebrow">READ-ONLY OPERATIONS CONSOLE</p>
-      <h1>LP Hunter</h1>
-      <p class="subtitle">글로벌 LP 전략의 연구 단계와 과거 후보·포지션·Forward 증거를 추적합니다.</p>
+      <p class="eyebrow">GLOBAL LP RESEARCH CONSOLE</p>
+      <h1>Global LP Research</h1>
+      <p class="subtitle">현재 추적 중인 글로벌 LP 후보와 검증 진행률만 표시합니다.</p>
     </div>
     <div class="header-status" aria-live="polite">
       <span id="health-badge" class="badge neutral">연결 중</span>
       <span id="state-badge" class="badge neutral">상태 확인 중</span>
-      <span class="badge locked">읽기 전용</span>
+      <span class="badge locked">연구 전용</span>
     </div>
   </header>
-
   <main id="main" class="layout">
     <section class="hero panel" aria-labelledby="overview-title">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">SYSTEM OVERVIEW</p>
-          <h2 id="overview-title">운영 상태</h2>
-        </div>
-        <p id="generated-at" class="muted">스냅샷 대기 중</p>
-      </div>
+      <div class="section-heading"><div><p class="eyebrow">CURRENT STATUS</p><h2 id="overview-title">현재 연구 상태</h2></div><p id="generated-at" class="muted">스냅샷 대기 중</p></div>
       <div id="alert-banner" class="alert hidden" role="alert"></div>
       <div id="overview-cards" class="metrics metrics-wide"></div>
       <div id="authority-strip" class="authority-strip"></div>
     </section>
-
-    <section class="panel" aria-labelledby="funnel-title">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">SELECTION FUNNEL</p>
-          <h2 id="funnel-title">후보 선별 퍼널</h2>
-        </div>
-        <p class="muted">왜 진입하지 않았는지 단계별로 확인합니다.</p>
-      </div>
-      <div id="funnel" class="funnel"></div>
-      <div id="blockers" class="blockers"></div>
-    </section>
-
-    <section class="panel" aria-labelledby="candidate-title">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">CANDIDATES</p>
-          <h2 id="candidate-title">최근 정밀 후보</h2>
-        </div>
-        <p id="candidate-summary" class="muted"></p>
-      </div>
-      <div class="table-wrap">
-        <table>
-          <caption class="sr-only">최근 LP 후보와 경제성 및 차단 사유</caption>
-          <thead><tr><th>풀</th><th>체인·DEX</th><th>TVL</th><th>가속</th><th>예상 3h</th><th>Fee/Risk</th><th>판정</th></tr></thead>
-          <tbody id="candidate-table"></tbody>
-        </table>
-      </div>
-    </section>
-
-    <section class="panel full" aria-labelledby="global-research-title">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">GLOBAL LP RESEARCH</p>
-          <h2 id="global-research-title">글로벌 LP v0.4 연구</h2>
-        </div>
-        <p id="global-research-status" class="muted">연구 스냅샷 대기 중</p>
-      </div>
-      <div class="research-disclaimer">
-        강건 APY는 후보 선별용 프록시이며 실현수익이 아닙니다. 아래 연구 배정은 실제·가상 포지션이 아니고, 조건 미달 예산은 현금 대기로 남습니다.
-      </div>
-      <div id="global-research-summary" class="metrics metrics-wide"></div>
+    <section class="panel full" aria-labelledby="strategy-title">
+      <div class="section-heading"><div><p class="eyebrow">STRATEGY STATUS</p><h2 id="strategy-title">전략별 연구 현황</h2></div><p id="global-research-status" class="muted">연구 스냅샷 대기 중</p></div>
+      <div class="research-disclaimer">강건 APY는 후보 선별용 프록시이며 실현수익이 아닙니다. 연구 배정은 실제·가상 포지션이 아니며, 조건 미달 예산은 현금으로 대기합니다.</div>
       <div id="global-strategies" class="position-grid"></div>
-      <div class="table-wrap global-allocation-wrap">
-        <table>
-          <caption class="sr-only">글로벌 LP 연구 후보의 전략별 배정과 강건 APY 프록시</caption>
-          <thead><tr><th>전략</th><th>풀</th><th>체인·DEX</th><th>연구 배정</th><th>강건 APY 프록시</th><th>표본·지속성</th><th>증거</th></tr></thead>
-          <tbody id="global-allocation-table"></tbody>
-        </table>
-      </div>
+    </section>
+    <section class="panel full" aria-labelledby="allocation-title">
+      <div class="section-heading"><div><p class="eyebrow">CURRENT TRACKING</p><h2 id="allocation-title">현재 연구 배정</h2></div><p class="muted">실제 투자가 아닌 성과 추적용 가상 배정입니다.</p></div>
+      <div class="table-wrap"><table><caption class="sr-only">현재 글로벌 LP 연구 배정</caption><thead><tr><th>전략</th><th>풀</th><th>체인·DEX</th><th>연구 배정</th><th>강건 APY</th><th>표본·지속성</th><th>상태</th></tr></thead><tbody id="global-allocation-table"></tbody></table></div>
+    </section>
+    <section class="panel full" aria-labelledby="watchlist-title">
+      <div class="section-heading"><div><p class="eyebrow">ELIGIBLE WATCHLIST</p><h2 id="watchlist-title">검증 중인 적격 후보</h2></div><p id="watchlist-summary" class="muted">후보 데이터 대기 중</p></div>
+      <div class="table-wrap"><table><caption class="sr-only">현재 검증 중인 글로벌 LP 적격 후보</caption><thead><tr><th>전략</th><th>풀</th><th>체인·DEX</th><th>TVL</th><th>강건 APY</th><th>가격 증거</th><th>위험</th></tr></thead><tbody id="watchlist-table"></tbody></table></div>
+    </section>
+    <section class="panel full" aria-labelledby="validation-title">
+      <div class="section-heading"><div><p class="eyebrow">VALIDATION PROGRESS</p><h2 id="validation-title">수익 검증 진행률</h2></div><p class="muted">비용·가격·IL·청산 증거가 완성되기 전에는 수익으로 판정하지 않습니다.</p></div>
+      <div id="validation-cards" class="metrics"></div>
       <div id="global-limitations" class="note-list"></div>
     </section>
-
-    <section class="panel" aria-labelledby="position-title">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">PAPER POSITIONS</p>
-          <h2 id="position-title">가상 포지션</h2>
-        </div>
-        <p class="muted">실자금·지갑·서명 경로가 없습니다.</p>
-      </div>
-      <div id="positions" class="position-grid"></div>
-    </section>
-
-    <section class="panel" aria-labelledby="forward-title">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">FORWARD / OOS</p>
-          <h2 id="forward-title">후행 청산 성과</h2>
-        </div>
-        <p id="validation-gate" class="muted"></p>
-      </div>
-      <div id="forward-cards" class="metrics"></div>
-      <div id="forward-limitations" class="note-list"></div>
-    </section>
-
-    <section class="panel" aria-labelledby="operations-title">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">OPERATIONS & AUDIT</p>
-          <h2 id="operations-title">서비스·신선도·감사</h2>
-        </div>
-        <p class="muted">예상 systemd 단위와 실제 상태를 대조합니다.</p>
-      </div>
+    <section class="panel full" aria-labelledby="operations-title">
+      <div class="section-heading"><div><p class="eyebrow">SYSTEM HEALTH</p><h2 id="operations-title">자동 검증 상태</h2></div><p class="muted">현재 연구와 상황판에 필요한 서비스만 표시합니다.</p></div>
       <div id="service-cards" class="service-grid"></div>
-      <div class="split">
-        <div>
-          <h3>최근 실행</h3>
-          <div class="table-wrap compact">
-            <table>
-              <caption class="sr-only">최근 운영 실행 기록</caption>
-              <thead><tr><th>구성요소</th><th>상태</th><th>종료시각</th><th>오류</th></tr></thead>
-              <tbody id="run-table"></tbody>
-            </table>
-          </div>
-        </div>
-        <div>
-          <h3>무결성·대조</h3>
-          <div id="integrity" class="check-list"></div>
-        </div>
-      </div>
+      <details class="technical-details"><summary>기술 상태 자세히 보기</summary><div id="integrity" class="check-list"></div></details>
     </section>
   </main>
-
-  <footer>
-    <span>LP Hunter · 준실시간 · 서버 스냅샷 기반</span>
-    <span id="refresh-status">30초마다 갱신</span>
-  </footer>
+  <footer><span>Global LP Research · 읽기 전용 · 정적 스냅샷</span><span id="refresh-status">30초마다 갱신</span></footer>
   <script src="./app.js" defer></script>
 </body>
 </html>

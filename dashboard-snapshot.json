@@ -18,7 +18,7 @@
       "legacy_scan"
     ]
   },
-  "generated_at": "2026-10-21T01:42:07.601078+00:00",
+  "generated_at": "2026-10-21T01:52:29.834215+00:00",
   "health": "ok",
   "status": {
     "state": "RESEARCH",
@@ -1773,6 +1773,177 @@
         "target_notional_usd": 800.0
       }
     },
+    "candidate_watchlist": [
+      {
+        "strategy": "stable_carry",
+        "pool_id": "847c874f-d4e7-47ed-8870-97d2f24a8767",
+        "symbol": "EURC-USDC",
+        "chain": "Base",
+        "project": "aerodrome-slipstream",
+        "tvl_usd": 1390351.0,
+        "robust_apy_30d": 27.47062,
+        "effective_apy": 9.79596,
+        "history_sample_count": 31,
+        "persistence_30d": 0.6774193548387096,
+        "risk_flags": [
+          "eur_usd_fx_risk",
+          "depeg_risk"
+        ],
+        "valuation_inputs": {
+          "underlying_prices_expected": 2,
+          "underlying_prices_resolved": 2,
+          "reward_prices_expected": 1,
+          "reward_prices_resolved": 1
+        }
+      },
+      {
+        "strategy": "stable_carry",
+        "pool_id": "ae8e306b-a55d-48ce-afea-420d177c9272",
+        "symbol": "USDG-USDE",
+        "chain": "Solana",
+        "project": "orca-dex",
+        "tvl_usd": 1689636.0,
+        "robust_apy_30d": 10.6224,
+        "effective_apy": 11.83318,
+        "history_sample_count": 31,
+        "persistence_30d": 0.8387096774193549,
+        "risk_flags": [
+          "depeg_risk"
+        ],
+        "valuation_inputs": {
+          "underlying_prices_expected": 2,
+          "underlying_prices_resolved": 2,
+          "reward_prices_expected": 0,
+          "reward_prices_resolved": 0
+        }
+      },
+      {
+        "strategy": "stable_carry",
+        "pool_id": "afc658d8-6c0b-4ac5-a46b-1bb611bf5234",
+        "symbol": "USDC-USDT",
+        "chain": "Polygon",
+        "project": "uniswap-v3",
+        "tvl_usd": 1041067.0,
+        "robust_apy_30d": 5.6324,
+        "effective_apy": 5.32915,
+        "history_sample_count": 31,
+        "persistence_30d": 0.9032258064516129,
+        "risk_flags": [
+          "depeg_risk"
+        ],
+        "valuation_inputs": {
+          "underlying_prices_expected": 2,
+          "underlying_prices_resolved": 2,
+          "reward_prices_expected": 0,
+          "reward_prices_resolved": 0
+        }
+      },
+      {
+        "strategy": "stable_carry",
+        "pool_id": "ba3fb5f5-684e-4834-afca-d58668395b02",
+        "symbol": "USDC-USDT",
+        "chain": "Arbitrum",
+        "project": "uniswap-v3",
+        "tvl_usd": 1252349.0,
+        "robust_apy_30d": 4.85594,
+        "effective_apy": 6.4355,
+        "history_sample_count": 31,
+        "persistence_30d": 0.7741935483870968,
+        "risk_flags": [
+          "depeg_risk"
+        ],
+        "valuation_inputs": {
+          "underlying_prices_expected": 2,
+          "underlying_prices_resolved": 2,
+          "reward_prices_expected": 0,
+          "reward_prices_resolved": 0
+        }
+      },
+      {
+        "strategy": "stable_carry",
+        "pool_id": "8298e97f-83bf-4bc2-a853-f0735aab802d",
+        "symbol": "PYUSD-USDE",
+        "chain": "Solana",
+        "project": "orca-dex",
+        "tvl_usd": 2199837.0,
+        "robust_apy_30d": 4.11144,
+        "effective_apy": 2.79899,
+        "history_sample_count": 31,
+        "persistence_30d": 0.8064516129032258,
+        "risk_flags": [
+          "depeg_risk"
+        ],
+        "valuation_inputs": {
+          "underlying_prices_expected": 2,
+          "underlying_prices_resolved": 2,
+          "reward_prices_expected": 0,
+          "reward_prices_resolved": 0
+        }
+      },
+      {
+        "strategy": "stable_carry",
+        "pool_id": "8ad76d42-6247-42f2-8281-5d59cb77b8b3",
+        "symbol": "USDC-USDT",
+        "chain": "Solana",
+        "project": "raydium-amm",
+        "tvl_usd": 1746007.0,
+        "robust_apy_30d": 2.91,
+        "effective_apy": 5.45,
+        "history_sample_count": 31,
+        "persistence_30d": 0.8709677419354839,
+        "risk_flags": [
+          "depeg_risk"
+        ],
+        "valuation_inputs": {
+          "underlying_prices_expected": 2,
+          "underlying_prices_resolved": 2,
+          "reward_prices_expected": 0,
+          "reward_prices_resolved": 0
+        }
+      },
+      {
+        "strategy": "stable_carry",
+        "pool_id": "ac225670-41bc-48fa-b8d7-32011abc58fe",
+        "symbol": "USDG-USDC",
+        "chain": "Solana",
+        "project": "orca-dex",
+        "tvl_usd": 18128015.0,
+        "robust_apy_30d": 0.22372,
+        "effective_apy": 0.02993,
+        "history_sample_count": 31,
+        "persistence_30d": 0.7419354838709677,
+        "risk_flags": [
+          "depeg_risk"
+        ],
+        "valuation_inputs": {
+          "underlying_prices_expected": 2,
+          "underlying_prices_resolved": 2,
+          "reward_prices_expected": 0,
+          "reward_prices_resolved": 0
+        }
+      },
+      {
+        "strategy": "stable_carry",
+        "pool_id": "99203560-4a69-4a67-9dbc-70b78a68a2b9",
+        "symbol": "PYUSD-USDC",
+        "chain": "Solana",
+        "project": "orca-dex",
+        "tvl_usd": 16699156.0,
+        "robust_apy_30d": 0.18845,
+        "effective_apy": 0.02734,
+        "history_sample_count": 31,
+        "persistence_30d": 0.7419354838709677,
+        "risk_flags": [
+          "depeg_risk"
+        ],
+        "valuation_inputs": {
+          "underlying_prices_expected": 2,
+          "underlying_prices_resolved": 2,
+          "reward_prices_expected": 0,
+          "reward_prices_resolved": 0
+        }
+      }
+    ],
     "allocations": [
       {
         "allocation_id": "26c6fb5ea0fe2d5eb19e94f8",
@@ -1864,19 +2035,19 @@
         "sub_state": "waiting",
         "result": "success",
         "unit_file_state": "enabled",
-        "last_trigger": "Wed 2026-10-21 10:41:17 KST",
-        "next_trigger": "Wed 2026-10-21 10:42:15 KST"
+        "last_trigger": "Wed 2026-10-21 10:52:17 KST",
+        "next_trigger": "Wed 2026-10-21 10:53:15 KST"
       },
       "dashboard_publish": {
         "unit": "lp-dashboard-pages-publish.timer",
         "ok": true,
         "load_state": "loaded",
         "active_state": "active",
-        "sub_state": "running",
+        "sub_state": "waiting",
         "result": "success",
         "unit_file_state": "enabled",
         "last_trigger": "Wed 2026-10-21 10:42:07 KST",
-        "next_trigger": null
+        "next_trigger": "Wed 2026-10-21 10:57:00 KST"
       },
       "dashboard_web": {
         "unit": "lp-dashboard-web.service",
