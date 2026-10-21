@@ -18,8 +18,8 @@
       "legacy_scan"
     ]
   },
-  "generated_at": "2026-10-21T06:12:02.704423+00:00",
-  "health": "ok",
+  "generated_at": "2026-10-21T06:27:05.462753+00:00",
+  "health": "warning",
   "status": {
     "state": "RESEARCH",
     "reason": "fee_spike_strategies_produced_no_repeatable_entry_candidates",
@@ -44,8 +44,10 @@
     }
   },
   "completeness": {
-    "status": "full",
-    "warnings": []
+    "status": "partial",
+    "warnings": [
+      "global_research_version_mismatch"
+    ]
   },
   "freshness": {
     "discovery": {
@@ -1708,7 +1710,7 @@
   "global_research": {
     "available": true,
     "schema_version": 3,
-    "expected_version": "global-lp-strategy-research-v0.4",
+    "expected_version": "global-lp-strategy-research-v0.5",
     "program": "global-lp-strategy-research-v0.4",
     "status": "RESEARCH_ONLY",
     "generated_at": "2026-10-21T01:14:36.988261Z",
@@ -1981,15 +1983,15 @@
       "No paper or live entry authority is granted by this research ledger."
     ],
     "audit": {
-      "snapshot_version_matches": true,
+      "snapshot_version_matches": false,
       "database_integrity": {
         "ok": true,
         "status": "ok"
       },
-      "versioned_run_count": 1,
-      "versioned_allocation_count": 1,
+      "versioned_run_count": 0,
+      "versioned_allocation_count": 0,
       "versioned_forward_count": 0,
-      "last_run_at": "2026-10-21T01:14:36.988261Z"
+      "last_run_at": null
     }
   },
   "operations": {
@@ -2035,8 +2037,8 @@
         "sub_state": "waiting",
         "result": "success",
         "unit_file_state": "enabled",
-        "last_trigger": "Wed 2026-10-21 15:11:15 KST",
-        "next_trigger": "Wed 2026-10-21 15:12:15 KST"
+        "last_trigger": "Wed 2026-10-21 15:26:17 KST",
+        "next_trigger": "Wed 2026-10-21 15:27:15 KST"
       },
       "dashboard_publish": {
         "unit": "lp-dashboard-pages-publish.timer",
@@ -2046,7 +2048,7 @@
         "sub_state": "running",
         "result": "success",
         "unit_file_state": "enabled",
-        "last_trigger": "Wed 2026-10-21 15:12:02 KST",
+        "last_trigger": "Wed 2026-10-21 15:27:05 KST",
         "next_trigger": null
       },
       "dashboard_web": {
