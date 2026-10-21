@@ -18,7 +18,7 @@
       "legacy_scan"
     ]
   },
-  "generated_at": "2026-10-21T11:42:06.463597+00:00",
+  "generated_at": "2026-10-21T11:57:05.050133+00:00",
   "health": "ok",
   "status": {
     "state": "RESEARCH",
@@ -1708,12 +1708,12 @@
   "global_research": {
     "available": true,
     "schema_version": 3,
-    "expected_version": "global-lp-strategy-research-v0.5",
-    "program": "global-lp-strategy-research-v0.5",
+    "expected_version": "global-lp-strategy-research-v0.6",
+    "program": "global-lp-strategy-research-v0.6",
     "status": "RESEARCH_ONLY",
-    "generated_at": "2026-10-21T06:29:15.494446Z",
+    "generated_at": "2026-10-21T11:49:56.522666Z",
     "source": {
-      "pool_count": 16163,
+      "pool_count": 16165,
       "price_lookup_errors": 0,
       "price_provider": "DefiLlama Coins",
       "provider": "DefiLlama Yields",
@@ -1722,8 +1722,8 @@
     "run": {
       "bucket_seconds": 21600,
       "bucket_started_at": "2026-10-21T06:00:00Z",
-      "eligible_candidates": 23,
-      "run_id": "fd798a1656245c3709dfbdcb",
+      "eligible_candidates": 24,
+      "run_id": "758feb0b83f9984728d651ac",
       "screened_candidates": 30,
       "settled_outcomes": 0,
       "strategy_settled_outcomes": 0
@@ -1763,7 +1763,7 @@
       "stable_carry": {
         "allocated_usd": 800.0,
         "candidate_count": 10,
-        "eligible_candidate_count": 7,
+        "eligible_candidate_count": 8,
         "horizons_days": [
           3,
           7,
@@ -1781,9 +1781,9 @@
         "symbol": "USDC-AERO",
         "chain": "Base",
         "project": "aerodrome-v1",
-        "tvl_usd": 38486315.0,
+        "tvl_usd": 38453148.0,
         "robust_apy_30d": 31.49654,
-        "effective_apy": 35.1571,
+        "effective_apy": 35.17092,
         "history_sample_count": 31,
         "persistence_30d": 1.0,
         "risk_flags": [
@@ -1804,9 +1804,9 @@
         "symbol": "MSUSD-USDC",
         "chain": "Base",
         "project": "aerodrome-v1",
-        "tvl_usd": 1787292.0,
+        "tvl_usd": 1787653.0,
         "robust_apy_30d": 25.50652,
-        "effective_apy": 51.39039,
+        "effective_apy": 51.355,
         "history_sample_count": 31,
         "persistence_30d": 0.9032258064516129,
         "risk_flags": [
@@ -1828,9 +1828,9 @@
         "symbol": "WBTC-USDC",
         "chain": "Arbitrum",
         "project": "uniswap-v3",
-        "tvl_usd": 8013163.0,
-        "robust_apy_30d": 23.34762,
-        "effective_apy": 22.75256,
+        "tvl_usd": 8161194.0,
+        "robust_apy_30d": 23.41823,
+        "effective_apy": 24.24842,
         "history_sample_count": 31,
         "persistence_30d": 0.7419354838709677,
         "risk_flags": [
@@ -1851,9 +1851,32 @@
         "symbol": "USDC-CBBTC",
         "chain": "Base",
         "project": "uniswap-v3",
-        "tvl_usd": 9913880.0,
+        "tvl_usd": 9963387.0,
         "robust_apy_30d": 20.70347,
-        "effective_apy": 18.74972,
+        "effective_apy": 19.78061,
+        "history_sample_count": 31,
+        "persistence_30d": 0.8064516129032258,
+        "risk_flags": [
+          "directional_inventory_risk",
+          "impermanent_loss_unmeasured",
+          "range_management_unmeasured"
+        ],
+        "valuation_inputs": {
+          "underlying_prices_expected": 2,
+          "underlying_prices_resolved": 2,
+          "reward_prices_expected": 0,
+          "reward_prices_resolved": 0
+        }
+      },
+      {
+        "strategy": "bluechip_cl",
+        "pool_id": "5f229682-5d41-4330-9b50-9bf2d2f1af79",
+        "symbol": "USDC-CBBTC",
+        "chain": "Base",
+        "project": "uniswap-v3",
+        "tvl_usd": 2277598.0,
+        "robust_apy_30d": 20.69686,
+        "effective_apy": 20.69686,
         "history_sample_count": 31,
         "persistence_30d": 0.8064516129032258,
         "risk_flags": [
@@ -1874,34 +1897,11 @@
         "symbol": "WSOL-USDC",
         "chain": "Solana",
         "project": "raydium-amm",
-        "tvl_usd": 19693310.0,
+        "tvl_usd": 19752639.0,
         "robust_apy_30d": 20.54,
-        "effective_apy": 20.08,
+        "effective_apy": 17.53,
         "history_sample_count": 31,
         "persistence_30d": 1.0,
-        "risk_flags": [
-          "directional_inventory_risk",
-          "impermanent_loss_unmeasured",
-          "range_management_unmeasured"
-        ],
-        "valuation_inputs": {
-          "underlying_prices_expected": 2,
-          "underlying_prices_resolved": 2,
-          "reward_prices_expected": 0,
-          "reward_prices_resolved": 0
-        }
-      },
-      {
-        "strategy": "bluechip_cl",
-        "pool_id": "5f229682-5d41-4330-9b50-9bf2d2f1af79",
-        "symbol": "USDC-CBBTC",
-        "chain": "Base",
-        "project": "uniswap-v3",
-        "tvl_usd": 2270559.0,
-        "robust_apy_30d": 20.00716,
-        "effective_apy": 20.00716,
-        "history_sample_count": 31,
-        "persistence_30d": 0.8064516129032258,
         "risk_flags": [
           "directional_inventory_risk",
           "impermanent_loss_unmeasured",
@@ -1920,9 +1920,9 @@
         "symbol": "USDC-ALUSDB",
         "chain": "Base",
         "project": "aerodrome-v1",
-        "tvl_usd": 2403773.0,
+        "tvl_usd": 2402969.0,
         "robust_apy_30d": 19.65669,
-        "effective_apy": 18.83704,
+        "effective_apy": 18.83421,
         "history_sample_count": 27,
         "persistence_30d": 1.0,
         "risk_flags": [
@@ -1944,9 +1944,9 @@
         "symbol": "WETH-WELL",
         "chain": "Base",
         "project": "aerodrome-v1",
-        "tvl_usd": 1193369.0,
+        "tvl_usd": 1205095.0,
         "robust_apy_30d": 17.51392,
-        "effective_apy": 18.30737,
+        "effective_apy": 18.12044,
         "history_sample_count": 31,
         "persistence_30d": 1.0,
         "risk_flags": [
@@ -1967,9 +1967,9 @@
         "symbol": "VIRTUAL-WETH",
         "chain": "Base",
         "project": "aerodrome-v1",
-        "tvl_usd": 4694956.0,
+        "tvl_usd": 4748494.0,
         "robust_apy_30d": 16.13705,
-        "effective_apy": 16.83093,
+        "effective_apy": 16.63311,
         "history_sample_count": 31,
         "persistence_30d": 1.0,
         "risk_flags": [
@@ -1990,9 +1990,9 @@
         "symbol": "WETH-AERO",
         "chain": "Base",
         "project": "aerodrome-v1",
-        "tvl_usd": 3341329.0,
+        "tvl_usd": 3352866.0,
         "robust_apy_30d": 15.77024,
-        "effective_apy": 16.34446,
+        "effective_apy": 16.27906,
         "history_sample_count": 31,
         "persistence_30d": 0.967741935483871,
         "risk_flags": [
@@ -2013,9 +2013,9 @@
         "symbol": "MSUSD-MSETH",
         "chain": "Base",
         "project": "aerodrome-slipstream",
-        "tvl_usd": 3498780.0,
+        "tvl_usd": 3505430.0,
         "robust_apy_30d": 15.25221,
-        "effective_apy": 26.01932,
+        "effective_apy": 19.81287,
         "history_sample_count": 31,
         "persistence_30d": 0.8064516129032258,
         "risk_flags": [
@@ -2036,9 +2036,9 @@
         "symbol": "MSUSD-USDC",
         "chain": "Base",
         "project": "aerodrome-slipstream",
-        "tvl_usd": 1923429.0,
+        "tvl_usd": 1922686.0,
         "robust_apy_30d": 13.46885,
-        "effective_apy": 9.09519,
+        "effective_apy": 9.09753,
         "history_sample_count": 31,
         "persistence_30d": 1.0,
         "risk_flags": [
@@ -2060,9 +2060,9 @@
         "symbol": "WETH-MSETH",
         "chain": "Base",
         "project": "aerodrome-v1",
-        "tvl_usd": 2560162.0,
+        "tvl_usd": 2577344.0,
         "robust_apy_30d": 11.64771,
-        "effective_apy": 26.01023,
+        "effective_apy": 25.84594,
         "history_sample_count": 31,
         "persistence_30d": 0.9032258064516129,
         "risk_flags": [
@@ -2083,9 +2083,9 @@
         "symbol": "USDG-USDE",
         "chain": "Solana",
         "project": "orca-dex",
-        "tvl_usd": 1689619.0,
+        "tvl_usd": 1689486.0,
         "robust_apy_30d": 10.29801,
-        "effective_apy": 7.28507,
+        "effective_apy": 6.55625,
         "history_sample_count": 31,
         "persistence_30d": 0.8709677419354839,
         "risk_flags": [
@@ -2104,9 +2104,9 @@
         "symbol": "YFI-WSTETH",
         "chain": "Base",
         "project": "aerodrome-v1",
-        "tvl_usd": 1228920.0,
+        "tvl_usd": 1238640.0,
         "robust_apy_30d": 8.83107,
-        "effective_apy": 9.95065,
+        "effective_apy": 9.86778,
         "history_sample_count": 31,
         "persistence_30d": 1.0,
         "risk_flags": [
@@ -2127,9 +2127,9 @@
         "symbol": "SOL-USDG",
         "chain": "Solana",
         "project": "orca-dex",
-        "tvl_usd": 4322285.0,
+        "tvl_usd": 4342313.0,
         "robust_apy_30d": 7.90511,
-        "effective_apy": 8.02,
+        "effective_apy": 7.97792,
         "history_sample_count": 31,
         "persistence_30d": 0.8709677419354839,
         "risk_flags": [
@@ -2146,34 +2146,13 @@
       },
       {
         "strategy": "stable_carry",
-        "pool_id": "afc658d8-6c0b-4ac5-a46b-1bb611bf5234",
-        "symbol": "USDC-USDT",
-        "chain": "Polygon",
-        "project": "uniswap-v3",
-        "tvl_usd": 1037138.0,
-        "robust_apy_30d": 5.6324,
-        "effective_apy": 5.0092,
-        "history_sample_count": 31,
-        "persistence_30d": 0.9032258064516129,
-        "risk_flags": [
-          "depeg_risk"
-        ],
-        "valuation_inputs": {
-          "underlying_prices_expected": 2,
-          "underlying_prices_resolved": 2,
-          "reward_prices_expected": 0,
-          "reward_prices_resolved": 0
-        }
-      },
-      {
-        "strategy": "stable_carry",
         "pool_id": "ba3fb5f5-684e-4834-afca-d58668395b02",
         "symbol": "USDC-USDT",
         "chain": "Arbitrum",
         "project": "uniswap-v3",
-        "tvl_usd": 1252067.0,
+        "tvl_usd": 1235334.0,
         "robust_apy_30d": 4.85594,
-        "effective_apy": 5.82648,
+        "effective_apy": 5.92987,
         "history_sample_count": 31,
         "persistence_30d": 0.7741935483870968,
         "risk_flags": [
@@ -2192,11 +2171,11 @@
         "symbol": "PYUSD-USDE",
         "chain": "Solana",
         "project": "orca-dex",
-        "tvl_usd": 2198820.0,
+        "tvl_usd": 2199189.0,
         "robust_apy_30d": 4.11144,
-        "effective_apy": 2.4504,
+        "effective_apy": 1.85653,
         "history_sample_count": 31,
-        "persistence_30d": 0.8064516129032258,
+        "persistence_30d": 0.7741935483870968,
         "risk_flags": [
           "depeg_risk"
         ],
@@ -2213,9 +2192,9 @@
         "symbol": "USDC-USDT",
         "chain": "Solana",
         "project": "raydium-amm",
-        "tvl_usd": 1747306.0,
+        "tvl_usd": 1755730.0,
         "robust_apy_30d": 2.91,
-        "effective_apy": 4.28,
+        "effective_apy": 4.13,
         "history_sample_count": 31,
         "persistence_30d": 0.8709677419354839,
         "risk_flags": [
@@ -2227,11 +2206,34 @@
           "reward_prices_expected": 0,
           "reward_prices_resolved": 0
         }
+      },
+      {
+        "strategy": "bluechip_cl",
+        "pool_id": "e8cb4dbb-9e66-4cfa-9c77-407118b128a0",
+        "symbol": "WETH-USDC",
+        "chain": "Base",
+        "project": "aerodrome-v1",
+        "tvl_usd": 8468202.0,
+        "robust_apy_30d": 0.61543,
+        "effective_apy": 0.6635,
+        "history_sample_count": 31,
+        "persistence_30d": 0.8064516129032258,
+        "risk_flags": [
+          "directional_inventory_risk",
+          "impermanent_loss_unmeasured",
+          "range_management_unmeasured"
+        ],
+        "valuation_inputs": {
+          "underlying_prices_expected": 2,
+          "underlying_prices_resolved": 2,
+          "reward_prices_expected": 1,
+          "reward_prices_resolved": 1
+        }
       }
     ],
     "allocations": [
       {
-        "allocation_id": "e9fe9ad50f13de36574516ea",
+        "allocation_id": "07288c17d3b9f7e08a36a8d7",
         "strategy": "stable_carry",
         "pool_id": "ae8e306b-a55d-48ce-afea-420d177c9272",
         "symbol": "USDG-USDE",
@@ -2239,22 +2241,22 @@
         "project": "orca-dex",
         "notional_usd": 800.0,
         "robust_apy_30d": 10.29801,
-        "effective_apy": 7.28507,
+        "effective_apy": 6.55625,
         "history_sample_count": 31,
         "persistence_30d": 0.8709677419354839,
         "status": "illustrative_shadow_only",
         "evidence_status": "eligible_screening_proxy"
       },
       {
-        "allocation_id": "d716699f8217451003ba1e95",
+        "allocation_id": "87afd6cf0e7f1876b02f9f37",
         "strategy": "bluechip_cl",
         "pool_id": "7127db96-afba-4089-8c9d-daa93c116856",
         "symbol": "WBTC-USDC",
         "chain": "Arbitrum",
         "project": "uniswap-v3",
         "notional_usd": 800.0,
-        "robust_apy_30d": 23.34762,
-        "effective_apy": 22.75256,
+        "robust_apy_30d": 23.41823,
+        "effective_apy": 24.24842,
         "history_sample_count": 31,
         "persistence_30d": 0.7419354838709677,
         "status": "illustrative_shadow_only",
@@ -2327,7 +2329,7 @@
         "cohort": "bluechip_stable_cl",
         "review_status": "model_eligible",
         "objective_name": "maximize_worst_directional_net_usd",
-        "objective_score": -25.94634453959486,
+        "objective_score": -25.94479692315656,
         "eligible_for_allocation": true,
         "blockers": [
           "exact_tick_range",
@@ -2355,7 +2357,7 @@
         "cohort": "bluechip_stable_cl",
         "review_status": "model_eligible",
         "objective_name": "maximize_worst_directional_net_usd",
-        "objective_score": -26.007881416307214,
+        "objective_score": -26.004443388909976,
         "eligible_for_allocation": true,
         "blockers": [
           "exact_tick_range",
@@ -2369,7 +2371,7 @@
         "cohort": "bluechip_stable_cl",
         "review_status": "model_eligible",
         "objective_name": "maximize_worst_directional_net_usd",
-        "objective_score": -26.019560101238767,
+        "objective_score": -26.007881416307214,
         "eligible_for_allocation": true,
         "blockers": [
           "exact_tick_range",
@@ -2411,7 +2413,7 @@
         "cohort": "volatile_gauge",
         "review_status": "rejected",
         "objective_name": "maximize_joint_stress_net_usd",
-        "objective_score": -4.364664773972603,
+        "objective_score": -4.364538879452055,
         "eligible_for_allocation": false,
         "blockers": [
           "gauge_cohort_not_allocatable",
@@ -2427,7 +2429,7 @@
         "cohort": "volatile_gauge",
         "review_status": "rejected",
         "objective_name": "maximize_joint_stress_net_usd",
-        "objective_score": -4.216786173287671,
+        "objective_score": -4.217108561643836,
         "eligible_for_allocation": false,
         "blockers": [
           "gauge_cohort_not_allocatable",
@@ -2443,7 +2445,7 @@
         "cohort": "volatile_gauge",
         "review_status": "rejected",
         "objective_name": "maximize_joint_stress_net_usd",
-        "objective_score": -4.51333381369863,
+        "objective_score": -4.513359593835617,
         "eligible_for_allocation": false,
         "blockers": [
           "gauge_cohort_not_allocatable",
@@ -2459,7 +2461,7 @@
         "cohort": "volatile_gauge",
         "review_status": "rejected",
         "objective_name": "maximize_joint_stress_net_usd",
-        "objective_score": -4.518158889726028,
+        "objective_score": -4.51986174520548,
         "eligible_for_allocation": false,
         "blockers": [
           "gauge_cohort_not_allocatable",
@@ -2475,7 +2477,7 @@
         "cohort": "volatile_gauge",
         "review_status": "rejected",
         "objective_name": "maximize_joint_stress_net_usd",
-        "objective_score": -4.531608651369863,
+        "objective_score": -4.533410710273973,
         "eligible_for_allocation": false,
         "blockers": [
           "gauge_cohort_not_allocatable",
@@ -2491,7 +2493,7 @@
         "cohort": "volatile_gauge",
         "review_status": "rejected",
         "objective_name": "maximize_joint_stress_net_usd",
-        "objective_score": -4.536040193150685,
+        "objective_score": -4.536635960273973,
         "eligible_for_allocation": false,
         "blockers": [
           "gauge_cohort_not_allocatable",
@@ -2507,7 +2509,7 @@
         "cohort": "volatile_gauge",
         "review_status": "rejected",
         "objective_name": "maximize_joint_stress_net_usd",
-        "objective_score": -4.447906194520549,
+        "objective_score": -4.504444403424658,
         "eligible_for_allocation": false,
         "blockers": [
           "gauge_cohort_not_allocatable",
@@ -2523,7 +2525,7 @@
         "cohort": "volatile_gauge",
         "review_status": "rejected",
         "objective_name": "maximize_joint_stress_net_usd",
-        "objective_score": -4.60207806369863,
+        "objective_score": -4.602056747260274,
         "eligible_for_allocation": false,
         "blockers": [
           "gauge_cohort_not_allocatable",
@@ -2539,7 +2541,7 @@
         "cohort": "volatile_gauge",
         "review_status": "rejected",
         "objective_name": "maximize_joint_stress_net_usd",
-        "objective_score": -4.447989000684931,
+        "objective_score": -4.449485615068493,
         "eligible_for_allocation": false,
         "blockers": [
           "gauge_cohort_not_allocatable",
@@ -2555,7 +2557,7 @@
         "cohort": "volatile_gauge",
         "review_status": "rejected",
         "objective_name": "maximize_joint_stress_net_usd",
-        "objective_score": -4.594285174657534,
+        "objective_score": -4.5950400863013705,
         "eligible_for_allocation": false,
         "blockers": [
           "gauge_cohort_not_allocatable",
@@ -2567,6 +2569,319 @@
         ]
       }
     ],
+    "gauge_candidate_lab": {
+      "closed_count": 0,
+      "enabled": true,
+      "lane_count": 30,
+      "leaderboard": [
+        {
+          "chain": "Base",
+          "evidence_status": "proxy_complete",
+          "exit_reason": null,
+          "harvested_usd": 0.0,
+          "lane_id": "a7ce373012ec2136d3b2a093",
+          "last_action": "observe",
+          "marked_net_usd": -0.4327062844457714,
+          "policy_id": "daily_defensive",
+          "pool_id": "0af161e4-7127-4f87-89c3-fd0b1175532e",
+          "project": "aerodrome-v1",
+          "realized_net_usd": null,
+          "status": "open",
+          "symbol": "WETH-MSETH"
+        },
+        {
+          "chain": "Base",
+          "evidence_status": "proxy_complete",
+          "exit_reason": null,
+          "harvested_usd": 0.0,
+          "lane_id": "85a4a0705371d3497566ed1c",
+          "last_action": "observe",
+          "marked_net_usd": -0.4327062844457714,
+          "policy_id": "threshold_balanced",
+          "pool_id": "0af161e4-7127-4f87-89c3-fd0b1175532e",
+          "project": "aerodrome-v1",
+          "realized_net_usd": null,
+          "status": "open",
+          "symbol": "WETH-MSETH"
+        },
+        {
+          "chain": "Base",
+          "evidence_status": "proxy_complete",
+          "exit_reason": null,
+          "harvested_usd": 0.0,
+          "lane_id": "0641f951ca82b7fb27f58976",
+          "last_action": "observe",
+          "marked_net_usd": -0.4327062844457714,
+          "policy_id": "weekly_aggressive",
+          "pool_id": "0af161e4-7127-4f87-89c3-fd0b1175532e",
+          "project": "aerodrome-v1",
+          "realized_net_usd": null,
+          "status": "open",
+          "symbol": "WETH-MSETH"
+        },
+        {
+          "chain": "Base",
+          "evidence_status": "proxy_complete",
+          "exit_reason": null,
+          "harvested_usd": 0.0,
+          "lane_id": "b1cd2decc5f03c1277d530c2",
+          "last_action": "observe",
+          "marked_net_usd": -0.43272371440185964,
+          "policy_id": "daily_defensive",
+          "pool_id": "8af246ee-cf26-4c8e-88f8-f2021a69e44d",
+          "project": "aerodrome-v1",
+          "realized_net_usd": null,
+          "status": "open",
+          "symbol": "WETH-WELL"
+        },
+        {
+          "chain": "Base",
+          "evidence_status": "proxy_complete",
+          "exit_reason": null,
+          "harvested_usd": 0.0,
+          "lane_id": "ecb3da384ad2c9bf7c7572ea",
+          "last_action": "observe",
+          "marked_net_usd": -0.43272371440185964,
+          "policy_id": "threshold_balanced",
+          "pool_id": "8af246ee-cf26-4c8e-88f8-f2021a69e44d",
+          "project": "aerodrome-v1",
+          "realized_net_usd": null,
+          "status": "open",
+          "symbol": "WETH-WELL"
+        },
+        {
+          "chain": "Base",
+          "evidence_status": "proxy_complete",
+          "exit_reason": null,
+          "harvested_usd": 0.0,
+          "lane_id": "74d80fabd407e4b3410c242a",
+          "last_action": "observe",
+          "marked_net_usd": -0.43272371440185964,
+          "policy_id": "weekly_aggressive",
+          "pool_id": "8af246ee-cf26-4c8e-88f8-f2021a69e44d",
+          "project": "aerodrome-v1",
+          "realized_net_usd": null,
+          "status": "open",
+          "symbol": "WETH-WELL"
+        },
+        {
+          "chain": "Base",
+          "evidence_status": "proxy_complete",
+          "exit_reason": null,
+          "harvested_usd": 0.0,
+          "lane_id": "6e3b8f6661af705c5013e8e2",
+          "last_action": "observe",
+          "marked_net_usd": -0.4327264735678966,
+          "policy_id": "daily_defensive",
+          "pool_id": "69c0fc74-dee5-4c60-9aed-a593661d54ea",
+          "project": "aerodrome-v1",
+          "realized_net_usd": null,
+          "status": "open",
+          "symbol": "WETH-AERO"
+        },
+        {
+          "chain": "Base",
+          "evidence_status": "proxy_complete",
+          "exit_reason": null,
+          "harvested_usd": 0.0,
+          "lane_id": "00c4b2e87a9f0eab890beec1",
+          "last_action": "observe",
+          "marked_net_usd": -0.4327264735678966,
+          "policy_id": "threshold_balanced",
+          "pool_id": "69c0fc74-dee5-4c60-9aed-a593661d54ea",
+          "project": "aerodrome-v1",
+          "realized_net_usd": null,
+          "status": "open",
+          "symbol": "WETH-AERO"
+        },
+        {
+          "chain": "Base",
+          "evidence_status": "proxy_complete",
+          "exit_reason": null,
+          "harvested_usd": 0.0,
+          "lane_id": "df293a65115657be907c70a6",
+          "last_action": "observe",
+          "marked_net_usd": -0.4327264735678966,
+          "policy_id": "weekly_aggressive",
+          "pool_id": "69c0fc74-dee5-4c60-9aed-a593661d54ea",
+          "project": "aerodrome-v1",
+          "realized_net_usd": null,
+          "status": "open",
+          "symbol": "WETH-AERO"
+        },
+        {
+          "chain": "Base",
+          "evidence_status": "proxy_complete",
+          "exit_reason": null,
+          "harvested_usd": 0.0,
+          "lane_id": "013ba6b2613dd451c436a8ad",
+          "last_action": "observe",
+          "marked_net_usd": -0.4327270700547672,
+          "policy_id": "daily_defensive",
+          "pool_id": "2669bac4-c8c1-4436-b00c-0b9287681b3f",
+          "project": "aerodrome-v1",
+          "realized_net_usd": null,
+          "status": "open",
+          "symbol": "VIRTUAL-WETH"
+        },
+        {
+          "chain": "Base",
+          "evidence_status": "proxy_complete",
+          "exit_reason": null,
+          "harvested_usd": 0.0,
+          "lane_id": "31d1990b276ab0f1e0cb747e",
+          "last_action": "observe",
+          "marked_net_usd": -0.4327270700547672,
+          "policy_id": "threshold_balanced",
+          "pool_id": "2669bac4-c8c1-4436-b00c-0b9287681b3f",
+          "project": "aerodrome-v1",
+          "realized_net_usd": null,
+          "status": "open",
+          "symbol": "VIRTUAL-WETH"
+        },
+        {
+          "chain": "Base",
+          "evidence_status": "proxy_complete",
+          "exit_reason": null,
+          "harvested_usd": 0.0,
+          "lane_id": "5a7c94dc145f95363aabbca5",
+          "last_action": "observe",
+          "marked_net_usd": -0.4327270700547672,
+          "policy_id": "weekly_aggressive",
+          "pool_id": "2669bac4-c8c1-4436-b00c-0b9287681b3f",
+          "project": "aerodrome-v1",
+          "realized_net_usd": null,
+          "status": "open",
+          "symbol": "VIRTUAL-WETH"
+        },
+        {
+          "chain": "Base",
+          "evidence_status": "proxy_complete",
+          "exit_reason": null,
+          "harvested_usd": 0.0,
+          "lane_id": "ed5687589511571ad15cfea1",
+          "last_action": "observe",
+          "marked_net_usd": -0.499258868781709,
+          "policy_id": "daily_defensive",
+          "pool_id": "af1b872b-af09-511d-8124-2faa2c57b9b5",
+          "project": "aerodrome-v1",
+          "realized_net_usd": null,
+          "status": "open",
+          "symbol": "USDC-ALUSDB"
+        },
+        {
+          "chain": "Base",
+          "evidence_status": "proxy_complete",
+          "exit_reason": null,
+          "harvested_usd": 0.0,
+          "lane_id": "96b822aac5310937897cddf7",
+          "last_action": "observe",
+          "marked_net_usd": -0.499258868781709,
+          "policy_id": "threshold_balanced",
+          "pool_id": "af1b872b-af09-511d-8124-2faa2c57b9b5",
+          "project": "aerodrome-v1",
+          "realized_net_usd": null,
+          "status": "open",
+          "symbol": "USDC-ALUSDB"
+        },
+        {
+          "chain": "Base",
+          "evidence_status": "proxy_complete",
+          "exit_reason": null,
+          "harvested_usd": 0.0,
+          "lane_id": "5a630672f73235d174213839",
+          "last_action": "observe",
+          "marked_net_usd": -0.499258868781709,
+          "policy_id": "weekly_aggressive",
+          "pool_id": "af1b872b-af09-511d-8124-2faa2c57b9b5",
+          "project": "aerodrome-v1",
+          "realized_net_usd": null,
+          "status": "open",
+          "symbol": "USDC-ALUSDB"
+        },
+        {
+          "chain": "Base",
+          "evidence_status": "proxy_complete",
+          "exit_reason": null,
+          "harvested_usd": 0.0,
+          "lane_id": "f20c6c0c3877ea0771f8d484",
+          "last_action": "observe",
+          "marked_net_usd": -0.4997517751917684,
+          "policy_id": "daily_defensive",
+          "pool_id": "9652fa5a-8b82-4b48-b1b8-5a5d41ddcc42",
+          "project": "aerodrome-v1",
+          "realized_net_usd": null,
+          "status": "open",
+          "symbol": "MSUSD-USDC"
+        },
+        {
+          "chain": "Base",
+          "evidence_status": "proxy_complete",
+          "exit_reason": null,
+          "harvested_usd": 0.0,
+          "lane_id": "20fa4830fddc7a262d52910c",
+          "last_action": "observe",
+          "marked_net_usd": -0.4997517751917684,
+          "policy_id": "threshold_balanced",
+          "pool_id": "9652fa5a-8b82-4b48-b1b8-5a5d41ddcc42",
+          "project": "aerodrome-v1",
+          "realized_net_usd": null,
+          "status": "open",
+          "symbol": "MSUSD-USDC"
+        },
+        {
+          "chain": "Base",
+          "evidence_status": "proxy_complete",
+          "exit_reason": null,
+          "harvested_usd": 0.0,
+          "lane_id": "16a42483bad5a790a9959c9b",
+          "last_action": "observe",
+          "marked_net_usd": -0.4997517751917684,
+          "policy_id": "weekly_aggressive",
+          "pool_id": "9652fa5a-8b82-4b48-b1b8-5a5d41ddcc42",
+          "project": "aerodrome-v1",
+          "realized_net_usd": null,
+          "status": "open",
+          "symbol": "MSUSD-USDC"
+        },
+        {
+          "chain": "Base",
+          "evidence_status": "proxy_complete",
+          "exit_reason": null,
+          "harvested_usd": 0.0,
+          "lane_id": "271b6551a11c268f166e5f11",
+          "last_action": "observe",
+          "marked_net_usd": -0.49978828904893646,
+          "policy_id": "daily_defensive",
+          "pool_id": "d32f9c01-47d1-4077-8c73-8b91b08d1e91",
+          "project": "aerodrome-v1",
+          "realized_net_usd": null,
+          "status": "open",
+          "symbol": "USDC-AERO"
+        },
+        {
+          "chain": "Base",
+          "evidence_status": "proxy_complete",
+          "exit_reason": null,
+          "harvested_usd": 0.0,
+          "lane_id": "55d309ea9fff8fbac2f883a3",
+          "last_action": "observe",
+          "marked_net_usd": -0.49978828904893646,
+          "policy_id": "threshold_balanced",
+          "pool_id": "d32f9c01-47d1-4077-8c73-8b91b08d1e91",
+          "project": "aerodrome-v1",
+          "realized_net_usd": null,
+          "status": "open",
+          "symbol": "USDC-AERO"
+        }
+      ],
+      "minimum_closed_samples_for_winner": 5,
+      "notional_per_candidate_usd": 100.0,
+      "open_count": 30,
+      "policy_count": 3,
+      "updated_at": "2026-10-21T11:51:11.417644Z",
+      "winner_status": "preliminary"
+    },
     "forward": {
       "outcome_counts": {},
       "valuation_complete": 0
@@ -2581,9 +2896,10 @@
       "DefiLlama APY is a screening proxy, not realized PnL.",
       "Stable Carry and Gauge Farm forward values integrate observed APY paths but remain non-realized proxies until reward-sale, depeg and exit-quote adapters are implemented.",
       "Blue-chip CL requires price, range, inventory, IL and exit-quote adapters before any profitability claim.",
-      "Earlier-version observations remain in the audit ledger but are excluded from global-lp-strategy-research-v0.5 allocation and forward-performance aggregates.",
+      "Earlier-version observations remain in the audit ledger but are excluded from global-lp-strategy-research-v0.6 allocation and forward-performance aggregates.",
       "Address-bound token and reward prices are persisted at every scan; they support depeg and price-path analysis but do not replace exact pool inventory or executable exit quotes.",
       "Capital without an eligible candidate remains explicit idle cash; the engine never force-allocates it.",
+      "Gauge Candidate Lab tests every shortlisted Gauge with equal virtual notional across competing harvest and defense policies; its proxy capital is not added to model-portfolio capital.",
       "No paper or live entry authority is granted by this research ledger."
     ],
     "audit": {
@@ -2592,10 +2908,10 @@
         "ok": true,
         "status": "ok"
       },
-      "versioned_run_count": 1,
+      "versioned_run_count": 2,
       "versioned_allocation_count": 2,
       "versioned_forward_count": 0,
-      "last_run_at": "2026-10-21T06:29:15.494446Z"
+      "last_run_at": "2026-10-21T11:51:11.417644Z"
     }
   },
   "operations": {
@@ -2641,8 +2957,8 @@
         "sub_state": "waiting",
         "result": "success",
         "unit_file_state": "enabled",
-        "last_trigger": "Wed 2026-10-21 20:41:15 KST",
-        "next_trigger": "Wed 2026-10-21 20:42:15 KST"
+        "last_trigger": "Wed 2026-10-21 20:56:17 KST",
+        "next_trigger": "Wed 2026-10-21 20:57:15 KST"
       },
       "dashboard_publish": {
         "unit": "lp-dashboard-pages-publish.timer",
@@ -2652,7 +2968,7 @@
         "sub_state": "running",
         "result": "success",
         "unit_file_state": "enabled",
-        "last_trigger": "Wed 2026-10-21 20:42:06 KST",
+        "last_trigger": "Wed 2026-10-21 20:57:04 KST",
         "next_trigger": null
       },
       "dashboard_web": {
@@ -2674,7 +2990,7 @@
         "sub_state": "waiting",
         "result": "success",
         "unit_file_state": "enabled",
-        "last_trigger": "Wed 2026-10-21 18:05:02 KST",
+        "last_trigger": "Wed 2026-10-21 20:52:17 KST",
         "next_trigger": "Thu 2026-10-22 00:05:00 KST"
       }
     },
