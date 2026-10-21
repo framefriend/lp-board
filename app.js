@@ -5,6 +5,11 @@ const $ = (id) => document.getElementById(id);
 const safe = (value) => String(value ?? "-").replace(/[&<>'"]/g, (char) => ({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[char]));
 const number = (value, digits = 2) => Number.isFinite(Number(value)) ? new Intl.NumberFormat("ko-KR", {maximumFractionDigits: digits}).format(Number(value)) : "-";
 const money = (value) => Number.isFinite(Number(value)) ? new Intl.NumberFormat("en-US", {style:"currency", currency:"USD", maximumFractionDigits:2}).format(Number(value)) : "-";
+const signedMoney = (value) => {
+  if (!Number.isFinite(Number(value))) return "-";
+  const amount = Number(value);
+  return `${amount > 0 ? "+" : ""}${money(amount)}`;
+};
 const percent = (value, ratio = false) => Number.isFinite(Number(value)) ? `${number(ratio ? Number(value) * 100 : Number(value), 2)}%` : "-";
 const when = (value) => {
   if (!value) return "-";
@@ -13,6 +18,7 @@ const when = (value) => {
 };
 const statusClass = (value) => value === "ok" ? "ok" : value === "critical" ? "critical" : "warning";
 const strategyLabels = {stable_carry:"Stable Carry", bluechip_cl:"Blue-chip CL", gauge_farm:"Gauge Farm"};
+const policyLabels = {daily_defensive:"일일 수확·방어형", threshold_balanced:"비용 임계·균형형", weekly_aggressive:"주간 수확·공격형"};
 const riskLabels = {depeg_risk:"디페그", eur_usd_fx_risk:"EUR/USD 환율", reward_token_risk:"보상 토큰", range_risk:"범위 이탈"};
 
 function metric(label, value, detail = "", tone = "") {
@@ -85,6 +91,59 @@ function renderStrategies(research) {
   }).join("") || `<div class="empty">전략별 연구 결과가 없습니다.</div>`;
 }
 
+function pnlTone(value) {
+  const amount = Number(value);
+  return amount > 0 ? "positive" : amount < 0 ? "negative" : "";
+}
+
+function renderGaugeLab(research) {
+  const lab = research.gauge_candidate_lab || {};
+  const cards = $("gauge-lab-cards");
+  const policyTable = $("gauge-policy-table");
+  const laneTable = $("gauge-lane-table");
+  if (!lab.enabled || !Number(lab.lane_count || 0)) {
+    $("gauge-lab-updated").textContent = "Candidate Lab 비활성 또는 데이터 없음";
+    cards.innerHTML = metric("상태", "데이터 없음", "자동 관측 대기");
+    policyTable.innerHTML = `<tr><td colspan="7" class="empty">정책별 손익 데이터가 없습니다.</td></tr>`;
+    laneTable.innerHTML = `<tr><td colspan="7" class="empty">Gauge 레인 데이터가 없습니다.</td></tr>`;
+    return;
+  }
+  const minimumClosed = Number(lab.minimum_closed_samples_for_winner || 0);
+  const winnerConfirmed = lab.winner_status === "confirmed";
+  $("gauge-lab-updated").textContent = `최근 관측 ${when(lab.updated_at)} · 15분 자동 갱신`;
+  cards.innerHTML = [
+    metric("실험 레인", number(lab.lane_count, 0), `${number(lab.policy_count, 0)}개 정책 · 후보당 ${money(lab.notional_per_candidate_usd)}`),
+    metric("레인당 평균 평가손익", signedMoney(lab.average_marked_net_usd), "프록시·즉시 청산비용 반영", pnlTone(lab.average_marked_net_usd)),
+    metric("실현 순수익", signedMoney(lab.total_realized_net_usd), `${number(lab.closed_count, 0)}개 종료 레인`, pnlTone(lab.total_realized_net_usd)),
+    metric("현금화 보상", money(lab.total_harvested_usd), `수확비용 ${money(lab.total_harvest_cost_usd)}`),
+    metric("누적 관측", number(lab.observation_count, 0), `${number(lab.open_count, 0)}개 레인 운용 중`),
+    metric("정책 판정", winnerConfirmed ? "확정 가능" : "예비", `종료 ${number(lab.closed_count, 0)}/${number(minimumClosed, 0)}개`, winnerConfirmed ? "positive" : ""),
+  ].join("");
+  const summaries = lab.policy_summaries || [];
+  policyTable.innerHTML = summaries.length ? summaries.map((item) => `<tr>
+    <td><span class="pool-name">${safe(policyLabels[item.policy_id] || item.policy_id)}</span><span class="quality">${safe(item.policy_id)}</span></td>
+    <td>${number(item.lane_count, 0)}개<br><span class="muted">운용 ${number(item.open_count, 0)}</span></td>
+    <td class="${pnlTone(item.average_net_usd)}">${signedMoney(item.average_net_usd)}</td>
+    <td><span class="positive">${signedMoney(item.best_net_usd)}</span><br><span class="negative">${signedMoney(item.worst_net_usd)}</span></td>
+    <td class="${pnlTone(item.realized_net_usd)}">${signedMoney(item.realized_net_usd)}</td>
+    <td>${money(item.harvested_usd)}<br><span class="muted">비용 ${money(item.harvest_cost_usd)}</span></td>
+    <td>${number(item.closed_count, 0)}개<br><span class="muted">승률 ${item.win_rate == null ? "표본 없음" : percent(item.win_rate, true)}</span></td>
+  </tr>`).join("") : `<tr><td colspan="7" class="empty">정책별 집계가 없습니다.</td></tr>`;
+  const lanes = lab.leaderboard || [];
+  laneTable.innerHTML = lanes.length ? lanes.slice(0, 12).map((item) => {
+    const currentNet = item.status === "closed" ? item.realized_net_usd : item.marked_net_usd;
+    return `<tr>
+      <td><span class="pool-name">${safe(item.symbol || item.pool_id)}</span><span class="quality">${safe(item.chain)} · ${safe(item.project)}</span></td>
+      <td>${safe(policyLabels[item.policy_id] || item.policy_id)}</td>
+      <td class="${pnlTone(currentNet)}">${signedMoney(currentNet)}<span class="quality">${item.evidence_status === "proxy_complete" ? "프록시" : safe(item.evidence_status)}</span></td>
+      <td class="${pnlTone(item.realized_net_usd)}">${item.realized_net_usd == null ? "미종료" : signedMoney(item.realized_net_usd)}</td>
+      <td>${money(item.harvested_usd)}<span class="quality">대기보상 ${money(item.pending_reward_value_usd)}</span></td>
+      <td><span class="verdict ${item.status === "closed" ? "blocked" : "pass"}">${item.status === "closed" ? "종료" : "운용 중"}</span><span class="quality">${safe(item.last_action || "-")}</span></td>
+      <td>${when(item.latest_observed_at)}</td>
+    </tr>`;
+  }).join("") : `<tr><td colspan="7" class="empty">현재 레인이 없습니다.</td></tr>`;
+}
+
 function renderAllocations(research) {
   const allocations = research.allocations || [];
   $("global-allocation-table").innerHTML = allocations.length ? allocations.map((item) => `<tr>
@@ -145,7 +204,7 @@ function renderValidation(research) {
 function renderOperations(snapshot) {
   const operations = snapshot.operations || {};
   const services = operations.services || {};
-  const activeKeys = ["global_shadow", "dashboard_snapshot", "dashboard_publish", "dashboard_web"];
+  const activeKeys = ["global_shadow", "gauge_lab", "dashboard_snapshot", "dashboard_publish", "dashboard_web"];
   $("service-cards").innerHTML = activeKeys.filter((key) => services[key]).map((key) => {
     const item = services[key];
     return `<article class="service-card ${item.ok ? "ok" : "bad"}">
@@ -169,6 +228,7 @@ function render(snapshot) {
   renderHeader(snapshot, research);
   renderOverview(research);
   renderStrategies(research);
+  renderGaugeLab(research);
   renderAllocations(research);
   renderWatchlist(research);
   renderValidation(research);

@@ -88,6 +88,9 @@ tbody tr:hover { background: rgba(65, 217, 196, .035); }
 .research-disclaimer { margin: 0 0 14px; border-left: 3px solid var(--yellow); background: rgba(246, 196, 79, .08); border-radius: 0 10px 10px 0; padding: 10px 12px; color: var(--muted); font-size: .8rem; }
 .global-allocation-wrap { margin-top: 16px; }
 .research-card { border-color: rgba(107, 179, 255, .28); }
+.subsection-title { margin: 20px 0 10px; color: #dce8ef; }
+.table-wrap + .subsection-title { margin-top: 24px; }
+.table-wrap td.positive, .table-wrap td.negative { font-weight: 800; font-variant-numeric: tabular-nums; }
 .risk-text { max-width: 260px; line-height: 1.45; }
 .position-card.open { border-color: var(--yellow); }
 .position-card strong { display: block; margin-bottom: 8px; }
