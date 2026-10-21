@@ -171,7 +171,7 @@ async function refresh() {
   const status = $("refresh-status");
   status.textContent = "갱신 중";
   try {
-    const response = await fetch("/api/v1/snapshot", {cache:"no-store"});
+    const response = await fetch(`./dashboard-snapshot.json?t=${Date.now()}`, {cache: "no-store"});
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     render(await response.json());
     status.textContent = `최근 화면 갱신 ${new Intl.DateTimeFormat("ko-KR", {timeStyle:"medium"}).format(new Date())}`;
