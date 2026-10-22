@@ -209,8 +209,11 @@ function renderGaugeLab(research) {
 
 function renderExactForward(research) {
   const exact = research.exact_position_evidence || {};
+  const gauge = research.aerodrome_gauge_evidence || {};
   const cards = $("exact-forward-cards");
   const table = $("exact-forward-table");
+  const gaugeCards = $("exact-gauge-cards");
+  const gaugeTable = $("exact-gauge-table");
   const lanes = exact.forward_lanes || [];
   $("exact-forward-updated").textContent = exact.status === "collecting_forward_exact"
     ? "6시간 글로벌 스캔마다 자동 관측"
@@ -231,6 +234,23 @@ function renderExactForward(research) {
     <td class="${pnlTone(lane.gross_before_exit_usd)}">${signedMoney(lane.gross_before_exit_usd)}<span class="quality">청산비용 전</span></td>
     <td><span class="verdict blocked">${safe(lane.status)}</span><span class="quality">수익 주장 차단</span></td>
   </tr>`).join("") : `<tr><td colspan="8" class="empty">연속 exact 관측이 아직 없습니다.</td></tr>`;
+  const gaugeLanes = gauge.forward_lanes || [];
+  gaugeCards.innerHTML = [
+    metric("exact / 미해결", `${number(gauge.exact_snapshot_count || 0, 0)} / ${number(gauge.unresolved_snapshot_count || 0, 0)}`, "Base RPC 직접 관측"),
+    metric("exact 보상 구간", number(gauge.exact_reward_interval_count || 0, 0), `부분 구간 ${number(gauge.partial_reward_interval_count || 0, 0)}개`),
+    metric("exact 보상 합계", money(gauge.exact_interval_reward_value_usd), "풀 수수료는 수익에서 제외"),
+    metric("수익 주장", gauge.profit_claim_count ? `${number(gauge.profit_claim_count, 0)}건` : "0건", "매도·철수·가스 증거 전 차단"),
+  ].join("");
+  gaugeTable.innerHTML = gaugeLanes.length ? gaugeLanes.map((lane) => `<tr>
+    <td><span class="pool-name">${safe(lane.symbol || lane.pool_id)}</span><span class="pool-key">${safe(lane.pool_id)}</span></td>
+    <td>${number(lane.observation_count || 0, 0)} / ${number(lane.exact_reward_interval_count || 0, 0)}</td>
+    <td>${money(lane.entry_inventory_usd)}</td>
+    <td>${money(lane.current_inventory_usd)}</td>
+    <td>${money(lane.instantaneous_reward_per_day_usd)}</td>
+    <td>${money(lane.cumulative_exact_reward_usd)}</td>
+    <td class="${pnlTone(lane.gross_before_exit_usd)}">${signedMoney(lane.gross_before_exit_usd)}<span class="quality">청산비용 전</span></td>
+    <td><span class="verdict blocked">${safe(lane.status)}</span><span class="quality">수익 주장 차단</span></td>
+  </tr>`).join("") : `<tr><td colspan="8" class="empty">Aerodrome exact 연속 관측이 아직 없습니다.</td></tr>`;
 }
 
 function renderAllocations(research) {
