@@ -235,8 +235,10 @@ function renderExactForward(research) {
     <td><span class="verdict blocked">${safe(lane.status)}</span><span class="quality">수익 주장 차단</span></td>
   </tr>`).join("") : `<tr><td colspan="8" class="empty">연속 exact 관측이 아직 없습니다.</td></tr>`;
   const gaugeLanes = gauge.forward_lanes || [];
+  const gaugePools = new Map((gauge.pools || []).map((item) => [item.pool_id, item]));
   gaugeCards.innerHTML = [
     metric("exact / 미해결", `${number(gauge.exact_snapshot_count || 0, 0)} / ${number(gauge.unresolved_snapshot_count || 0, 0)}`, "Base RPC 직접 관측"),
+    metric("배출 epoch 만료", number((gauge.blocker_counts || {}).aerodrome_reward_period_expired || 0, 0), "온체인 periodFinish 기준"),
     metric("exact 보상 구간", number(gauge.exact_reward_interval_count || 0, 0), `부분 구간 ${number(gauge.partial_reward_interval_count || 0, 0)}개`),
     metric("exact 보상 합계", money(gauge.exact_interval_reward_value_usd), "풀 수수료는 수익에서 제외"),
     metric("수익 주장", gauge.profit_claim_count ? `${number(gauge.profit_claim_count, 0)}건` : "0건", "매도·철수·가스 증거 전 차단"),
@@ -246,10 +248,10 @@ function renderExactForward(research) {
     <td>${number(lane.observation_count || 0, 0)} / ${number(lane.exact_reward_interval_count || 0, 0)}</td>
     <td>${money(lane.entry_inventory_usd)}</td>
     <td>${money(lane.current_inventory_usd)}</td>
-    <td>${money(lane.instantaneous_reward_per_day_usd)}</td>
+    <td>${money(lane.instantaneous_reward_per_day_usd)}<span class="quality">${lane.reward_epoch_status === "expired" || (gaugePools.get(lane.pool_id)?.blockers || []).includes("aerodrome_reward_period_expired") ? "배출 epoch 만료" : "현재 배출 활성"}</span></td>
     <td>${money(lane.cumulative_exact_reward_usd)}</td>
     <td class="${pnlTone(lane.gross_before_exit_usd)}">${signedMoney(lane.gross_before_exit_usd)}<span class="quality">청산비용 전</span></td>
-    <td><span class="verdict blocked">${safe(lane.status)}</span><span class="quality">수익 주장 차단</span></td>
+    <td><span class="verdict blocked">${lane.reward_epoch_status === "expired" || (gaugePools.get(lane.pool_id)?.blockers || []).includes("aerodrome_reward_period_expired") ? "epoch 만료" : safe(lane.status)}</span><span class="quality">수익 주장 차단</span></td>
   </tr>`).join("") : `<tr><td colspan="8" class="empty">Aerodrome exact 연속 관측이 아직 없습니다.</td></tr>`;
 }
 
