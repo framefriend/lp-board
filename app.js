@@ -207,6 +207,32 @@ function renderGaugeLab(research) {
   </tr>`).join("") : `<tr><td colspan="7" class="empty">사용 가능한 과거 재생 데이터가 없습니다.</td></tr>`;
 }
 
+function renderExactForward(research) {
+  const exact = research.exact_position_evidence || {};
+  const cards = $("exact-forward-cards");
+  const table = $("exact-forward-table");
+  const lanes = exact.forward_lanes || [];
+  $("exact-forward-updated").textContent = exact.status === "collecting_forward_exact"
+    ? "6시간 글로벌 스캔마다 자동 관측"
+    : "exact 증거 대기 중";
+  cards.innerHTML = [
+    metric("exact / partial", `${number(exact.exact_snapshot_count || 0, 0)} / ${number(exact.partial_snapshot_count || 0, 0)}`, `미해결 ${number(exact.unresolved_snapshot_count || 0, 0)}개`),
+    metric("exact 수수료 구간", number(exact.exact_fee_interval_count || 0, 0), "동일 범위·동일 유동성만 집계"),
+    metric("구간 수수료 합계", money(exact.exact_interval_fee_value_usd), "포트폴리오 수익 아님"),
+    metric("수익 주장", exact.profit_claim_count ? `${number(exact.profit_claim_count, 0)}건` : "0건", "청산·가스·스왑 증거 전 차단"),
+  ].join("");
+  table.innerHTML = lanes.length ? lanes.map((lane) => `<tr>
+    <td><span class="pool-name">${safe(strategyLabels[lane.strategy] || lane.strategy)}</span><span class="pool-key">${safe(lane.pool_id)}</span></td>
+    <td>${safe(lane.policy_id)}</td>
+    <td>${number(lane.observation_count || 0, 0)} / ${number(lane.exact_fee_interval_count || 0, 0)}<span class="quality">${number(lane.elapsed_hours || 0, 1)}시간</span></td>
+    <td>${money(lane.entry_inventory_usd)}</td>
+    <td>${money(lane.current_inventory_usd)}</td>
+    <td>${money(lane.cumulative_exact_fee_usd)}</td>
+    <td class="${pnlTone(lane.gross_before_exit_usd)}">${signedMoney(lane.gross_before_exit_usd)}<span class="quality">청산비용 전</span></td>
+    <td><span class="verdict blocked">${safe(lane.status)}</span><span class="quality">수익 주장 차단</span></td>
+  </tr>`).join("") : `<tr><td colspan="8" class="empty">연속 exact 관측이 아직 없습니다.</td></tr>`;
+}
+
 function renderAllocations(research) {
   const allocations = research.allocations || [];
   $("global-allocation-table").innerHTML = allocations.length ? allocations.map((item) => `<tr>
@@ -292,6 +318,7 @@ function render(snapshot) {
   renderOverview(research);
   renderStrategies(research);
   renderGaugeLab(research);
+  renderExactForward(research);
   renderAllocations(research);
   renderWatchlist(research);
   renderValidation(research);

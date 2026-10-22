@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
   <title>Global LP Research</title>
-  <link rel="stylesheet" href="./styles.css?v=20261022-1132">
+  <link rel="stylesheet" href="./styles.css?v=20261022-exact1">
 </head>
 <body>
   <a class="skip-link" href="#main">본문으로 이동</a>
@@ -51,6 +51,12 @@
       <div class="research-disclaimer">과거 APY·TVL만 재생하며 토큰가격·정확한 LP 재고·실행 견적은 고정 또는 누락입니다. 총손익 검증이 아니라 수익 지속성·TVL 방어 규칙 점검입니다.</div>
       <div class="table-wrap"><table><caption class="sr-only">Gauge 과거 APY TVL 재생 결과</caption><thead><tr><th>기간</th><th>정책</th><th>후보수</th><th>평균 운용손익</th><th>지금 청산 평균</th><th>종료</th><th>증거 범위</th></tr></thead><tbody id="gauge-replay-table"></tbody></table></div>
     </section>
+    <section class="panel full" aria-labelledby="exact-forward-title">
+      <div class="section-heading"><div><p class="eyebrow">EXACT POSITION FORWARD</p><h2 id="exact-forward-title">온체인 포지션·수수료 검증</h2></div><p id="exact-forward-updated" class="muted">exact 증거 대기 중</p></div>
+      <div class="research-disclaimer">고정 가상 범위의 온체인 재고와 fee-growth 증가분입니다. `청산 전 총가치 변화`는 가스·스왑·철수 견적 전 값이므로 실현 순수익이나 투자 성과가 아닙니다.</div>
+      <div id="exact-forward-cards" class="metrics metrics-wide"></div>
+      <div class="table-wrap"><table><caption class="sr-only">Uniswap v3 exact 포지션 Forward 검증</caption><thead><tr><th>전략·풀</th><th>정책</th><th>관측 / 구간</th><th>기초 재고</th><th>현재 재고</th><th>exact 수수료</th><th>청산 전 총가치 변화</th><th>검증 상태</th></tr></thead><tbody id="exact-forward-table"></tbody></table></div>
+    </section>
     <section class="panel full" aria-labelledby="allocation-title">
       <div class="section-heading"><div><p class="eyebrow">CURRENT TRACKING</p><h2 id="allocation-title">현재 연구 배정</h2></div><p class="muted">실제 투자가 아닌 성과 추적용 가상 배정입니다.</p></div>
       <div class="table-wrap"><table><caption class="sr-only">현재 글로벌 LP 연구 배정</caption><thead><tr><th>전략</th><th>풀</th><th>체인·DEX</th><th>연구 배정</th><th>강건 APY</th><th>표본·지속성</th><th>상태</th></tr></thead><tbody id="global-allocation-table"></tbody></table></div>
@@ -71,6 +77,6 @@
     </section>
   </main>
   <footer><span>Global LP Research · 읽기 전용 · 정적 스냅샷</span><span id="refresh-status">30초마다 갱신</span></footer>
-  <script src="./app.js?v=20261022-1132" defer></script>
+  <script src="./app.js?v=20261022-exact1" defer></script>
 </body>
 </html>
