@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
   <title>Global LP Research</title>
-  <link rel="stylesheet" href="./styles.css?v=20261021-2335">
+  <link rel="stylesheet" href="./styles.css?v=20261022-1132">
 </head>
 <body>
   <a class="skip-link" href="#main">본문으로 이동</a>
@@ -35,7 +35,7 @@
     </section>
     <section class="panel full" aria-labelledby="gauge-lab-title">
       <div class="section-heading"><div><p class="eyebrow">GAUGE CANDIDATE LAB</p><h2 id="gauge-lab-title">Gauge 가정 진입 손익</h2></div><p id="gauge-lab-updated" class="muted">Candidate Lab 데이터 대기 중</p></div>
-      <div class="research-disclaimer">모든 레인은 후보당 가상 $100 진입을 가정합니다. 운용손익은 철수비용 전, 지금 청산 손익은 예상 철수비용 후, 실현손익은 실제 종료 레인만 표시합니다.</div>
+      <div class="research-disclaimer">각 LP의 정책 3개는 동시에 투자한 포지션이 아니라 같은 가상 $100을 서로 다른 규칙으로 운용한 반사실 비교입니다. 정책별 원금·손익·비용은 독립적으로 보며 3정책 합계는 실험 규모일 뿐 포트폴리오 자금이 아닙니다.</div>
       <div id="gauge-lab-cards" class="metrics metrics-wide"></div>
       <h3 class="subsection-title">시간별 손익·수익 구성 추이</h3>
       <div class="chart-grid">
@@ -43,9 +43,10 @@
         <article class="chart-card"><h4>가정 수수료·보상</h4><div id="gauge-income-chart"></div></article>
       </div>
       <h3 class="subsection-title">정책별 성과</h3>
-      <div class="table-wrap"><table><caption class="sr-only">Gauge Candidate Lab 정책별 가정 손익</caption><thead><tr><th>정책</th><th>레인·가상진입</th><th>운용 평균</th><th>지금 청산 평균</th><th>LP 원금변동</th><th>가정 수수료·보상</th><th>예상 비용</th><th>트리거 / 종료</th></tr></thead><tbody id="gauge-policy-table"></tbody></table></div>
-      <h3 class="subsection-title">현재 상위 레인</h3>
-      <div class="table-wrap"><table><caption class="sr-only">Gauge Candidate Lab 현재 상위 가정 레인</caption><thead><tr><th>풀</th><th>정책</th><th>가상 진입</th><th>LP 평가가치</th><th>가정 수수료</th><th>가정 보상</th><th>운용손익</th><th>지금 청산</th><th>상태</th><th>최근 관측</th></tr></thead><tbody id="gauge-lane-table"></tbody></table></div>
+      <div class="table-wrap"><table><caption class="sr-only">Gauge Candidate Lab 정책별 독립 가정 손익</caption><thead><tr><th>정책</th><th>LP·가상원금</th><th>운용 평균</th><th>지금 청산 평균</th><th>LP 원금변동</th><th>LP 수수료</th><th>미수령 보상</th><th>현금화 보상</th><th>예상 비용</th><th>비용 회수율</th><th>트리거 / 종료</th></tr></thead><tbody id="gauge-policy-table"></tbody></table></div>
+      <h3 class="subsection-title">LP별 정책 비교</h3>
+      <div class="research-disclaimer">동일 LP는 한 묶음으로 표시합니다. `현재 적격`은 최신 스캔 통과 여부이며 `과거 진입 코호트`는 실험 시작 당시 후보였지만 현재 적격 목록과 다를 수 있음을 뜻합니다.</div>
+      <div class="table-wrap"><table><caption class="sr-only">Gauge Candidate Lab LP별 정책 비교</caption><thead><tr><th>LP</th><th>정책</th><th>LP 평가가치</th><th>LP 수수료</th><th>미수령 보상</th><th>현금화 보상</th><th>운용손익</th><th>지금 청산</th><th>비용 회수율</th><th>상태</th><th>최근 관측</th></tr></thead><tbody id="gauge-lane-table"></tbody></table></div>
       <h3 class="subsection-title">7·14·30일 과거 재생</h3>
       <div class="research-disclaimer">과거 APY·TVL만 재생하며 토큰가격·정확한 LP 재고·실행 견적은 고정 또는 누락입니다. 총손익 검증이 아니라 수익 지속성·TVL 방어 규칙 점검입니다.</div>
       <div class="table-wrap"><table><caption class="sr-only">Gauge 과거 APY TVL 재생 결과</caption><thead><tr><th>기간</th><th>정책</th><th>후보수</th><th>평균 운용손익</th><th>지금 청산 평균</th><th>종료</th><th>증거 범위</th></tr></thead><tbody id="gauge-replay-table"></tbody></table></div>
@@ -70,6 +71,6 @@
     </section>
   </main>
   <footer><span>Global LP Research · 읽기 전용 · 정적 스냅샷</span><span id="refresh-status">30초마다 갱신</span></footer>
-  <script src="./app.js?v=20261021-2335" defer></script>
+  <script src="./app.js?v=20261022-1132" defer></script>
 </body>
 </html>

@@ -76,6 +76,8 @@ th, td { padding: 11px 12px; border-bottom: 1px solid var(--line); text-align: l
 th { color: var(--muted); font-size: .68rem; letter-spacing: .07em; text-transform: uppercase; background: #0b141d; position: sticky; top: 0; }
 tbody tr:last-child td { border-bottom: 0; }
 tbody tr:hover { background: rgba(65, 217, 196, .035); }
+.pool-group-start td { border-top: 2px solid rgba(65, 217, 196, .22); }
+.pool-group-start:first-child td { border-top: 0; }
 .pool-name { display: block; color: var(--text); font-weight: 750; }
 .pool-key { display: block; color: var(--muted); font-size: .68rem; max-width: 230px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin-top: 4px; }
 .verdict { font-weight: 800; }
