@@ -18,7 +18,7 @@
       "legacy_scan"
     ]
   },
-  "generated_at": "2026-10-23T07:12:07.626593+00:00",
+  "generated_at": "2026-10-23T07:27:01.749546+00:00",
   "health": "warning",
   "status": {
     "state": "RESEARCH",
@@ -2573,7 +2573,7 @@
       "open_count": 0,
       "policy_count": 3,
       "unverified_lane_count": 0,
-      "updated_at": "2026-10-23T07:02:04.976523Z",
+      "updated_at": "2026-10-23T07:17:13.536310Z",
       "verified_closed_count": 0,
       "verified_lane_count": 0,
       "winner_status": "preliminary"
@@ -3273,10 +3273,10 @@
         "ok": true,
         "status": "ok"
       },
-      "versioned_run_count": 7,
+      "versioned_run_count": 8,
       "versioned_allocation_count": 0,
       "versioned_forward_count": 0,
-      "last_run_at": "2026-10-23T07:02:04.976523Z"
+      "last_run_at": "2026-10-23T07:17:13.536310Z"
     }
   },
   "operations": {
@@ -3322,8 +3322,8 @@
         "sub_state": "waiting",
         "result": "success",
         "unit_file_state": "enabled",
-        "last_trigger": "Fri 2026-10-23 16:11:17 KST",
-        "next_trigger": "Fri 2026-10-23 16:12:15 KST"
+        "last_trigger": "Fri 2026-10-23 16:26:17 KST",
+        "next_trigger": "Fri 2026-10-23 16:27:15 KST"
       },
       "dashboard_publish": {
         "unit": "lp-dashboard-pages-publish.timer",
@@ -3333,7 +3333,7 @@
         "sub_state": "running",
         "result": "success",
         "unit_file_state": "enabled",
-        "last_trigger": "Fri 2026-10-23 16:12:07 KST",
+        "last_trigger": "Fri 2026-10-23 16:27:01 KST",
         "next_trigger": null
       },
       "dashboard_web": {
@@ -3366,8 +3366,8 @@
         "sub_state": "waiting",
         "result": "success",
         "unit_file_state": "enabled",
-        "last_trigger": "Fri 2026-10-23 16:02:04 KST",
-        "next_trigger": "Fri 2026-10-23 16:17:08 KST"
+        "last_trigger": "Fri 2026-10-23 16:17:13 KST",
+        "next_trigger": "Fri 2026-10-23 16:32:07 KST"
       }
     },
     "latest_runs": [
