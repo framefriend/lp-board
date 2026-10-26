@@ -33,7 +33,8 @@ function renderSummary(data) {
     ["열린 가상 포지션", integer.format(data.summary.open_lanes), "정책별 독립 레인"],
     ["가상 배정 합계", compactMoney.format(data.summary.deployed_usd), "실제 자금 아님"],
     ["누적 Edge 추정", formatMoney(data.summary.gross_edge_usd), "7일 비율 Forward 적분"],
-    ["비용 후 모델 상대손익", formatMoney(data.summary.modeled_net_relative_pnl_usd), "실현손익 아님"],
+    ["운영 중 평가손익", formatMoney(data.summary.operating_marked_pnl_usd), "발생 가스 추정 반영"],
+    ["지금 철수 시", data.summary.immediate_exit_pnl_usd == null ? "미확정" : formatMoney(data.summary.immediate_exit_pnl_usd), "예상 철수가스 후 · 스왑 제외"],
   ];
   const root = byId("summary-cards"); clear(root);
   for (const [label, value, note] of items) {
