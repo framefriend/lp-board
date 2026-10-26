@@ -4,83 +4,132 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
-  <title>Global LP Research</title>
-  <link rel="stylesheet" href="./styles.css?v=20261022-gauge1">
+  <meta name="description" content="Metric 전체 풀 Shadow 실험 상황판">
+  <title>Metric Shadow Lab</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">본문으로 이동</a>
-  <header class="topbar">
-    <div>
-      <p class="eyebrow">GLOBAL LP RESEARCH CONSOLE</p>
-      <h1>Global LP Research</h1>
-      <p class="subtitle">현재 추적 중인 글로벌 LP 후보와 검증 진행률만 표시합니다.</p>
-    </div>
-    <div class="header-status" aria-live="polite">
-      <span id="health-badge" class="badge neutral">연결 중</span>
-      <span id="state-badge" class="badge neutral">상태 확인 중</span>
-      <span class="badge locked">연구 전용</span>
-    </div>
-  </header>
-  <main id="main" class="layout">
-    <section class="hero panel" aria-labelledby="overview-title">
-      <div class="section-heading"><div><p class="eyebrow">CURRENT STATUS</p><h2 id="overview-title">현재 연구 상태</h2></div><p id="generated-at" class="muted">스냅샷 대기 중</p></div>
-      <div id="alert-banner" class="alert hidden" role="alert"></div>
-      <div id="overview-cards" class="metrics metrics-wide"></div>
-      <div id="authority-strip" class="authority-strip"></div>
-    </section>
-    <section class="panel full" aria-labelledby="strategy-title">
-      <div class="section-heading"><div><p class="eyebrow">STRATEGY STATUS</p><h2 id="strategy-title">전략별 연구 현황</h2></div><p id="global-research-status" class="muted">연구 스냅샷 대기 중</p></div>
-      <div class="research-disclaimer">강건 APY는 후보 선별용 프록시입니다. 이 구역의 모델 포트폴리오와 미배정액은 아래 Candidate Lab의 후보별 가상 진입 원장과 별개입니다.</div>
-      <div id="global-strategies" class="position-grid"></div>
-    </section>
-    <section class="panel full" aria-labelledby="gauge-lab-title">
-      <div class="section-heading"><div><p class="eyebrow">GAUGE CANDIDATE LAB</p><h2 id="gauge-lab-title">Gauge 가정 진입 손익</h2></div><p id="gauge-lab-updated" class="muted">Candidate Lab 데이터 대기 중</p></div>
-      <div class="research-disclaimer">각 LP의 정책 3개는 동시에 투자한 포지션이 아니라 같은 가상 $100을 서로 다른 규칙으로 운용한 반사실 비교입니다. 정책별 원금·손익·비용은 독립적으로 보며 3정책 합계는 실험 규모일 뿐 포트폴리오 자금이 아닙니다.</div>
-      <div id="gauge-lab-cards" class="metrics metrics-wide"></div>
-      <h3 class="subsection-title">시간별 손익·수익 구성 추이</h3>
-      <div class="chart-grid">
-        <article class="chart-card"><h4>레인당 손익</h4><div id="gauge-pnl-chart"></div></article>
-        <article class="chart-card"><h4>가정 수수료·보상</h4><div id="gauge-income-chart"></div></article>
+  <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+  <div class="shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">LP HUNTER · METRIC SHADOW LAB</p>
+        <h1>Metric 전체 풀 수익성 실험</h1>
+        <p class="hero-copy">양수 후보는 가상 진입하고, 조건이 깨지면 철수합니다. 실제 거래와 지갑 연결은 없습니다.</p>
       </div>
-      <h3 class="subsection-title">정책별 성과</h3>
-      <div class="table-wrap"><table><caption class="sr-only">Gauge Candidate Lab 정책별 독립 가정 손익</caption><thead><tr><th>정책</th><th>LP·가상원금</th><th>운용 평균</th><th>지금 청산 평균</th><th>LP 원금변동</th><th>LP 수수료</th><th>미수령 보상</th><th>현금화 보상</th><th>예상 비용</th><th>비용 회수율</th><th>트리거 / 종료</th></tr></thead><tbody id="gauge-policy-table"></tbody></table></div>
-      <h3 class="subsection-title">LP별 정책 비교</h3>
-      <div class="research-disclaimer">동일 LP는 한 묶음으로 표시합니다. `현재 적격`은 최신 스캔 통과 여부이며 `과거 진입 코호트`는 실험 시작 당시 후보였지만 현재 적격 목록과 다를 수 있음을 뜻합니다.</div>
-      <div class="table-wrap"><table><caption class="sr-only">Gauge Candidate Lab LP별 정책 비교</caption><thead><tr><th>LP</th><th>정책</th><th>LP 평가가치</th><th>LP 수수료</th><th>미수령 보상</th><th>현금화 보상</th><th>운용손익</th><th>지금 청산</th><th>비용 회수율</th><th>상태</th><th>최근 관측</th></tr></thead><tbody id="gauge-lane-table"></tbody></table></div>
-      <h3 class="subsection-title">7·14·30일 과거 재생</h3>
-      <div class="research-disclaimer">과거 APY·TVL만 재생하며 토큰가격·정확한 LP 재고·실행 견적은 고정 또는 누락입니다. 총손익 검증이 아니라 수익 지속성·TVL 방어 규칙 점검입니다.</div>
-      <div class="table-wrap"><table><caption class="sr-only">Gauge 과거 APY TVL 재생 결과</caption><thead><tr><th>기간</th><th>정책</th><th>후보수</th><th>평균 운용손익</th><th>지금 청산 평균</th><th>종료</th><th>증거 범위</th></tr></thead><tbody id="gauge-replay-table"></tbody></table></div>
-    </section>
-    <section class="panel full" aria-labelledby="exact-forward-title">
-      <div class="section-heading"><div><p class="eyebrow">EXACT POSITION FORWARD</p><h2 id="exact-forward-title">온체인 포지션·수수료 검증</h2></div><p id="exact-forward-updated" class="muted">exact 증거 대기 중</p></div>
-      <div class="research-disclaimer">고정 가상 범위의 온체인 재고와 fee-growth 증가분입니다. `청산 전 총가치 변화`는 가스·스왑·철수 견적 전 값이므로 실현 순수익이나 투자 성과가 아닙니다.</div>
-      <div id="exact-forward-cards" class="metrics metrics-wide"></div>
-      <div class="table-wrap"><table><caption class="sr-only">Uniswap v3 exact 포지션 Forward 검증</caption><thead><tr><th>전략·풀</th><th>정책</th><th>관측 / 구간</th><th>기초 재고</th><th>현재 재고</th><th>exact 수수료</th><th>청산 전 총가치 변화</th><th>검증 상태</th></tr></thead><tbody id="exact-forward-table"></tbody></table></div>
-      <h3 class="subsection-title">Aerodrome Gauge 온체인 배출</h3>
-      <div class="research-disclaimer">활성 풀·Gauge·고정 LP 지분·현재 배출을 Base RPC에서 직접 읽습니다. 배출 만료 시 보상은 0으로 표시하며, 보상률과 Gauge 공급량이 두 관측 사이 동일할 때만 구간 보상을 exact로 인정합니다. 풀 fee-index는 Gauge 스테이커 귀속이 확인되지 않아 수익에서 제외합니다.</div>
-      <div id="exact-gauge-cards" class="metrics metrics-wide"></div>
-      <div class="table-wrap"><table><caption class="sr-only">Aerodrome Gauge exact 보상 Forward 검증</caption><thead><tr><th>풀</th><th>관측 / exact 구간</th><th>기초 재고</th><th>현재 재고</th><th>현재 일일 보상</th><th>누적 exact 보상</th><th>청산 전 총가치 변화</th><th>검증 상태</th></tr></thead><tbody id="exact-gauge-table"></tbody></table></div>
-    </section>
-    <section class="panel full" aria-labelledby="allocation-title">
-      <div class="section-heading"><div><p class="eyebrow">CURRENT TRACKING</p><h2 id="allocation-title">현재 연구 배정</h2></div><p class="muted">실제 투자가 아닌 성과 추적용 가상 배정입니다.</p></div>
-      <div class="table-wrap"><table><caption class="sr-only">현재 글로벌 LP 연구 배정</caption><thead><tr><th>전략</th><th>풀</th><th>체인·DEX</th><th>연구 배정</th><th>강건 APY</th><th>표본·지속성</th><th>상태</th></tr></thead><tbody id="global-allocation-table"></tbody></table></div>
-    </section>
-    <section class="panel full" aria-labelledby="watchlist-title">
-      <div class="section-heading"><div><p class="eyebrow">ELIGIBLE WATCHLIST</p><h2 id="watchlist-title">검증 중인 적격 후보</h2></div><p id="watchlist-summary" class="muted">후보 데이터 대기 중</p></div>
-      <div class="table-wrap"><table><caption class="sr-only">현재 검증 중인 글로벌 LP 적격 후보</caption><thead><tr><th>전략</th><th>풀</th><th>체인·DEX</th><th>TVL</th><th>강건 APY</th><th>가격 증거</th><th>위험</th></tr></thead><tbody id="watchlist-table"></tbody></table></div>
-    </section>
-    <section class="panel full" aria-labelledby="validation-title">
-      <div class="section-heading"><div><p class="eyebrow">VALIDATION PROGRESS</p><h2 id="validation-title">수익 검증 진행률</h2></div><p class="muted">비용·가격·IL·청산 증거가 완성되기 전에는 수익으로 판정하지 않습니다.</p></div>
-      <div id="validation-cards" class="metrics"></div>
-      <div id="global-limitations" class="note-list"></div>
-    </section>
-    <section class="panel full" aria-labelledby="operations-title">
-      <div class="section-heading"><div><p class="eyebrow">SYSTEM HEALTH</p><h2 id="operations-title">자동 검증 상태</h2></div><p class="muted">현재 연구와 상황판에 필요한 서비스만 표시합니다.</p></div>
-      <div id="service-cards" class="service-grid"></div>
-      <details class="technical-details"><summary>기술 상태 자세히 보기</summary><div id="integrity" class="check-list"></div></details>
-    </section>
-  </main>
-  <footer><span>Global LP Research · 읽기 전용 · 정적 스냅샷</span><span id="refresh-status">30초마다 갱신</span></footer>
-  <script src="./app.js?v=20261022-gauge1" defer></script>
+      <div class="hero-status" aria-label="실험 상태">
+        <span id="status-badge" class="badge">불러오는 중</span>
+        <strong id="countdown">—</strong>
+        <span id="last-update">최근 갱신 —</span>
+      </div>
+    </header>
+
+    <aside class="notice" role="note">
+      <strong>연구용 모델</strong>
+      <span id="evidence-warning">최근 7일 Metric API 비율을 Forward 적분한 결과이며 실현손익이 아닙니다.</span>
+    </aside>
+
+    <main id="main" tabindex="-1">
+      <section aria-labelledby="overview-title">
+        <div class="section-heading">
+          <div><p class="kicker">OVERVIEW</p><h2 id="overview-title">현재 실험 상태</h2></div>
+          <p id="run-meta" class="meta">—</p>
+        </div>
+        <div id="summary-cards" class="card-grid" aria-live="polite"></div>
+      </section>
+
+      <div class="charts-grid">
+        <section class="panel" aria-labelledby="policy-chart-title">
+          <div class="section-heading compact">
+            <div><p class="kicker">POLICY CURVE</p><h2 id="policy-chart-title">비용 후 모델 상대손익</h2></div>
+            <p class="meta">15분 관측 · USD</p>
+          </div>
+          <div id="policy-chart" class="chart" role="img" aria-label="정책별 비용 후 모델 상대손익 시계열"></div>
+          <div id="chart-empty" class="empty" hidden>시계열 3개가 쌓이면 차트를 표시합니다.</div>
+          <div class="legend" aria-label="차트 범례">
+            <span><i class="legend-dot dot-full"></i>즉시 $800</span>
+            <span><i class="legend-dot dot-scout"></i>단계 진입 $400→$800</span>
+          </div>
+        </section>
+        <section class="panel" aria-labelledby="count-chart-title">
+          <div class="section-heading compact">
+            <div><p class="kicker">COVERAGE</p><h2 id="count-chart-title">적격 풀·열린 레인</h2></div>
+            <p class="meta">15분 관측 · 개수</p>
+          </div>
+          <div id="count-chart" class="chart" role="img" aria-label="적격 풀과 열린 가상 포지션 개수 시계열"></div>
+          <div id="count-chart-empty" class="empty" hidden>시계열 3개가 쌓이면 차트를 표시합니다.</div>
+          <div class="legend" aria-label="차트 범례">
+            <span><i class="legend-dot dot-full"></i>적격 풀</span>
+            <span><i class="legend-dot dot-scout"></i>열린 레인</span>
+          </div>
+        </section>
+      </div>
+
+      <section aria-labelledby="eligible-title">
+        <div class="section-heading">
+          <div><p class="kicker">ELIGIBLE NOW</p><h2 id="eligible-title">현재 진입 적격 풀</h2></div>
+          <p class="meta">Green · Anchored · 양수 bin 기준</p>
+        </div>
+        <div class="table-wrap"><table>
+          <thead><tr><th>풀</th><th>체인</th><th>TVL</th><th>24h 거래량</th><th>회전율</th><th>Edge APR</th><th>상대손익 APR</th><th>양수 bin</th></tr></thead>
+          <tbody id="eligible-body"></tbody>
+        </table></div>
+        <p id="eligible-empty" class="empty" hidden>현재 진입 조건을 통과한 풀이 없습니다. 전액 대기 상태입니다.</p>
+      </section>
+
+      <section aria-labelledby="positions-title">
+        <div class="section-heading">
+          <div><p class="kicker">SHADOW POSITIONS</p><h2 id="positions-title">가상 포지션</h2></div>
+          <p class="meta">실제 지갑·자금 없음</p>
+        </div>
+        <div class="table-wrap"><table>
+          <thead><tr><th>풀</th><th>정책</th><th>가상 배정</th><th>누적 Edge 추정</th><th>모델 상대손익</th><th>비용</th><th>비용 후 모델 상대손익</th><th>관측</th></tr></thead>
+          <tbody id="positions-body"></tbody>
+        </table></div>
+        <p id="positions-empty" class="empty" hidden>열린 가상 포지션이 없습니다.</p>
+      </section>
+
+      <div class="two-column">
+        <section class="panel" aria-labelledby="policies-title">
+          <div class="section-heading compact"><div><p class="kicker">POLICIES</p><h2 id="policies-title">진입 정책 비교</h2></div></div>
+          <div id="policy-cards" class="stack"></div>
+        </section>
+        <section class="panel" aria-labelledby="blockers-title">
+          <div class="section-heading compact"><div><p class="kicker">EXCLUSIONS</p><h2 id="blockers-title">진입 차단 사유</h2></div></div>
+          <div id="blockers" class="blockers"></div>
+        </section>
+      </div>
+
+      <section aria-labelledby="leaderboard-title">
+        <div class="section-heading">
+          <div><p class="kicker">LEADERBOARD</p><h2 id="leaderboard-title">풀별 모델 성과</h2></div>
+          <p class="meta">비용 후 모델 상대손익 순</p>
+        </div>
+        <div class="table-wrap"><table>
+          <thead><tr><th>구분</th><th>풀</th><th>정책</th><th>누적 Edge 추정</th><th>모델 상대손익</th><th>비용</th><th>비용 후 모델 상대손익</th></tr></thead>
+          <tbody id="leaderboard-body"></tbody>
+        </table></div>
+      </section>
+
+      <div class="two-column">
+        <section class="panel" aria-labelledby="events-title">
+          <div class="section-heading compact"><div><p class="kicker">EVENT FEED</p><h2 id="events-title">최근 진입·증액·철수</h2></div></div>
+          <ol id="events" class="events"></ol>
+          <p id="events-empty" class="empty" hidden>아직 기록된 이벤트가 없습니다.</p>
+        </section>
+        <section class="panel" aria-labelledby="health-title">
+          <div class="section-heading compact"><div><p class="kicker">SYSTEM</p><h2 id="health-title">수집 상태</h2></div></div>
+          <dl id="health" class="health"></dl>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <span>Metric Shadow Lab</span>
+      <span>연구 전용 · 거래 비활성 · 수익 주장 금지</span>
+    </footer>
+  </div>
+  <div id="error-banner" class="error-banner" role="alert" hidden>데이터를 불러오지 못했습니다.</div>
 </body>
 </html>
