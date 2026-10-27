@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'">
+    <title>Metric Executor · OKX Wallet</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header>
+        <p class="eyebrow">METRIC EXECUTOR</p>
+        <h1>OKX Wallet 연결</h1>
+        <p class="lede">전용 실행 지갑의 주소와 체인 상태만 확인합니다. 개인키를 읽거나 거래를 전송하지 않습니다.</p>
+        <p class="mobile-note">OKX 모바일 앱의 <strong>Discover·DApp 브라우저</strong>에서 이 페이지를 열고 연결하세요.</p>
+      </header>
+
+      <section class="notice" aria-label="안전 상태">
+        <strong>실행 잠금 유지</strong>
+        <span>브리지·스왑·LP 예치 승인은 아직 비활성입니다. 연결만으로 자금은 움직이지 않습니다.</span>
+      </section>
+
+      <section class="card connect-card">
+        <div>
+          <p class="label">등록된 실행 지갑</p>
+          <p id="expected-address" class="mono">불러오는 중…</p>
+        </div>
+        <div class="actions">
+          <button id="connect" type="button">OKX Wallet 연결</button>
+          <button id="disconnect" class="secondary" type="button" disabled>연결 상태 초기화</button>
+        </div>
+        <p id="status" class="status" data-kind="idle" aria-live="polite">연결 대기 중입니다.</p>
+      </section>
+
+      <section class="grid" aria-label="연결 정보">
+        <article class="card metric"><span>연결 주소</span><strong id="wallet-address" class="mono">미연결</strong></article>
+        <article class="card metric"><span>주소 검증</span><strong id="address-check">대기</strong></article>
+        <article class="card metric"><span>현재 체인</span><strong id="chain-name">대기</strong></article>
+        <article class="card metric"><span>네이티브 잔액</span><strong id="native-balance">대기</strong></article>
+        <article class="card metric"><span>브로드캐스트</span><strong id="execution-mode">잠금</strong></article>
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <div><p class="label">네트워크</p><h2>체인 전환 확인</h2></div>
+          <span class="pill">읽기 전용</span>
+        </div>
+        <div class="chain-actions">
+          <button class="secondary" type="button" data-chain="4663" disabled>Robinhood Chain</button>
+          <button class="secondary" type="button" data-chain="56" disabled>BNB Smart Chain</button>
+        </div>
+      </section>
+
+      <section class="card checklist">
+        <p class="label">다음 활성화 경계</p>
+        <ol>
+          <li>OKX Wallet 주소 일치 확인</li>
+          <li>브리지 최신 견적과 최대손실 표시</li>
+          <li>거래마다 OKX Wallet에서 직접 승인</li>
+          <li>영수증 확인 후 다음 거래 생성</li>
+        </ol>
+      </section>
+    </main>
+    <script type="module" src="./app.mjs"></script>
+  </body>
+</html>

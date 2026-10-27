@@ -1,0 +1,9 @@
+{
+  "expected_wallet_address": "0x363043028e12583944B7DdB50a2EdD1962296682",
+  "allowed_chain_ids": [1, 56, 4663],
+  "execution": {
+    "mode": "dry-run",
+    "broadcast_enabled": false,
+    "transaction_approval_enabled": false
+  }
+}
