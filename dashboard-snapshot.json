@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-27T05:42:04Z",
+  "generated_at": "2026-10-27T05:57:06Z",
   "mode": "METRIC_SHADOW_ONLY_NO_TRADING",
   "status": "collecting",
   "experiment": {
     "started_at": "2026-10-27T05:35:28Z",
     "ends_at": "2026-11-03T05:35:28Z",
-    "remaining_seconds": 604403,
+    "remaining_seconds": 603501,
     "observation_interval_minutes": 15
   },
   "evidence": {
@@ -23,84 +23,267 @@
   },
   "summary": {
     "scanned_pools": 184,
-    "detailed_pools": 12,
-    "eligible_pools": 3,
-    "open_lanes": 0,
-    "deployed_usd": 0,
-    "gross_edge_usd": 0,
-    "gross_relative_pnl_usd": 0,
-    "gross_absolute_pnl_usd": 0,
-    "marked_value_usd": 0,
-    "hold_value_usd": 0,
-    "costs_usd": 0,
-    "modeled_net_relative_pnl_usd": 0,
-    "operating_marked_pnl_usd": 0,
-    "lp_excess_over_hold_usd": 0,
-    "estimated_exit_cost_usd": 0,
-    "immediate_exit_pnl_usd": 0,
+    "detailed_pools": 13,
+    "eligible_pools": 1,
+    "open_lanes": 2,
+    "deployed_usd": 1200.0,
+    "gross_edge_usd": 4.964796331332217e-05,
+    "gross_relative_pnl_usd": 4e-77,
+    "gross_absolute_pnl_usd": 0.0,
+    "marked_value_usd": 1200.0,
+    "hold_value_usd": 1200.0,
+    "costs_usd": 0.025796749999999997,
+    "modeled_net_relative_pnl_usd": -0.025796749999999997,
+    "operating_marked_pnl_usd": -0.025796749999999997,
+    "lp_excess_over_hold_usd": -0.025796749999999997,
+    "estimated_exit_cost_usd": 0.0221115,
+    "immediate_exit_pnl_usd": -0.04790825,
     "incomplete_cost_lane_count": 0
   },
   "run": {
-    "run_id": "metric-20261027T053704Z-03d44cfa",
-    "started_at": "2026-10-27T05:37:04Z",
-    "finished_at": "2026-10-27T05:37:09Z",
+    "run_id": "metric-20261027T055204Z-0d7932d1",
+    "started_at": "2026-10-27T05:52:04Z",
+    "finished_at": "2026-10-27T05:52:12Z",
     "status": "ok",
-    "opened_lanes": 0,
+    "opened_lanes": 2,
     "scaled_lanes": 0,
     "closed_lanes": 0
   },
   "eligible_pools": [
     {
-      "pair": "TSLAB/USDT",
-      "chain_id": 56,
-      "tvl_usd": 109788.23,
-      "volume_24h_usd": 2513882.58,
-      "volume_tvl_24h": 22.897559966127517,
-      "tight_edge_apr_bps_7d": 19167.621914452753,
-      "tight_pnl_apr_bps_7d": 34770.36091079579,
-      "valid_bins": 5,
-      "positive_pnl_bins": 5,
-      "eligible": true,
-      "chain": "BSC"
-    },
-    {
-      "pair": "BABAB/USDT",
-      "chain_id": 56,
-      "tvl_usd": 62616.95,
-      "volume_24h_usd": 386839.81,
-      "volume_tvl_24h": 6.177876916713446,
-      "tight_edge_apr_bps_7d": 22224.347865949494,
-      "tight_pnl_apr_bps_7d": 12077.463764645208,
-      "valid_bins": 4,
-      "positive_pnl_bins": 3,
-      "eligible": true,
-      "chain": "BSC"
-    },
-    {
       "pair": "SPCXB/USDT",
       "chain_id": 56,
-      "tvl_usd": 706761.62,
-      "volume_24h_usd": 3203118.19,
-      "volume_tvl_24h": 4.532105450208233,
-      "tight_edge_apr_bps_7d": 20231.868765259078,
-      "tight_pnl_apr_bps_7d": 9063.07141206434,
+      "tvl_usd": 707147.73,
+      "volume_24h_usd": 3227807.14,
+      "volume_tvl_24h": 4.564544299675544,
+      "tight_edge_apr_bps_7d": 20181.275334055426,
+      "tight_pnl_apr_bps_7d": 9502.427478900761,
       "valid_bins": 5,
       "positive_pnl_bins": 4,
       "eligible": true,
       "chain": "BSC"
     }
   ],
-  "active_positions": [],
-  "policies": [],
+  "active_positions": [
+    {
+      "lane_id": "5f654650638e465084987b68547855f0",
+      "pair": "SPCXB/USDT",
+      "chain_id": 56,
+      "strategy": "full_800",
+      "state": "open",
+      "opened_at": "2026-10-27T05:52:04Z",
+      "closed_at": null,
+      "deployed_usd": 800.0,
+      "gross_edge_usd": 3.3098642208881445e-05,
+      "gross_relative_pnl_usd": 3e-77,
+      "costs_usd": 0.012898374999999998,
+      "modeled_net_relative_pnl_usd": -0.012898374999999998,
+      "operating_marked_pnl_usd": -0.012898374999999998,
+      "lp_excess_over_hold_usd": -0.012898374999999998,
+      "estimated_exit_cost_usd": 0.01105575,
+      "immediate_exit_pnl_usd": -0.023954125,
+      "cost_complete": 1,
+      "marked_value_usd": 800.0,
+      "hold_value_usd": 800.0,
+      "gross_absolute_pnl_usd": 0.0,
+      "nav_complete": 1,
+      "positive_streak": 3,
+      "negative_streak": 0,
+      "held_observations": 1,
+      "last_observed_at": "2026-10-27T05:52:04Z",
+      "last_edge_apr_bps": 20259.800000000003,
+      "last_pnl_apr_bps": 9198.400000000001,
+      "close_reason": null,
+      "chain": "BSC",
+      "strategy_name": "즉시 $800"
+    },
+    {
+      "lane_id": "6bf68334035e4591b31b6b2052f08ed7",
+      "pair": "SPCXB/USDT",
+      "chain_id": 56,
+      "strategy": "scout_scale",
+      "state": "open",
+      "opened_at": "2026-10-27T05:52:04Z",
+      "closed_at": null,
+      "deployed_usd": 400.0,
+      "gross_edge_usd": 1.6549321104440723e-05,
+      "gross_relative_pnl_usd": 1e-77,
+      "costs_usd": 0.012898374999999998,
+      "modeled_net_relative_pnl_usd": -0.012898374999999998,
+      "operating_marked_pnl_usd": -0.012898374999999998,
+      "lp_excess_over_hold_usd": -0.012898374999999998,
+      "estimated_exit_cost_usd": 0.01105575,
+      "immediate_exit_pnl_usd": -0.023954125,
+      "cost_complete": 1,
+      "marked_value_usd": 400.0,
+      "hold_value_usd": 400.0,
+      "gross_absolute_pnl_usd": 0.0,
+      "nav_complete": 1,
+      "positive_streak": 3,
+      "negative_streak": 0,
+      "held_observations": 1,
+      "last_observed_at": "2026-10-27T05:52:04Z",
+      "last_edge_apr_bps": 20259.800000000003,
+      "last_pnl_apr_bps": 9198.400000000001,
+      "close_reason": null,
+      "chain": "BSC",
+      "strategy_name": "단계 진입 $400→$800"
+    }
+  ],
+  "policies": [
+    {
+      "strategy": "full_800",
+      "lane_count": 1,
+      "open_lane_count": 1,
+      "deployed_usd": 800.0,
+      "gross_edge_usd": 3.3098642208881445e-05,
+      "gross_relative_pnl_usd": 3e-77,
+      "gross_absolute_pnl_usd": 0.0,
+      "marked_value_usd": 800.0,
+      "hold_value_usd": 800.0,
+      "costs_usd": 0.012898374999999998,
+      "modeled_net_relative_pnl_usd": -0.012898374999999998,
+      "operating_marked_pnl_usd": -0.012898374999999998,
+      "lp_excess_over_hold_usd": -0.012898374999999998,
+      "estimated_exit_cost_usd": 0.01105575,
+      "immediate_exit_pnl_usd": -0.023954125,
+      "incomplete_cost_lane_count": 0,
+      "winning_lane_count": 0,
+      "strategy_name": "즉시 $800"
+    },
+    {
+      "strategy": "scout_scale",
+      "lane_count": 1,
+      "open_lane_count": 1,
+      "deployed_usd": 400.0,
+      "gross_edge_usd": 1.6549321104440723e-05,
+      "gross_relative_pnl_usd": 1e-77,
+      "gross_absolute_pnl_usd": 0.0,
+      "marked_value_usd": 400.0,
+      "hold_value_usd": 400.0,
+      "costs_usd": 0.012898374999999998,
+      "modeled_net_relative_pnl_usd": -0.012898374999999998,
+      "operating_marked_pnl_usd": -0.012898374999999998,
+      "lp_excess_over_hold_usd": -0.012898374999999998,
+      "estimated_exit_cost_usd": 0.01105575,
+      "immediate_exit_pnl_usd": -0.023954125,
+      "incomplete_cost_lane_count": 0,
+      "winning_lane_count": 0,
+      "strategy_name": "단계 진입 $400→$800"
+    }
+  ],
   "policy_series": {
-    "full_800": [],
-    "scout_scale": []
+    "full_800": [
+      {
+        "observed_at": "2026-10-27T05:52:04Z",
+        "open_lane_count": 1,
+        "eligible_pool_count": 1,
+        "deployed_usd": 800.0,
+        "gross_edge_usd": 3.3098642208881445e-05,
+        "gross_relative_pnl_usd": 3e-77,
+        "costs_usd": 0.012898374999999998,
+        "modeled_net_relative_pnl_usd": -0.012898374999999998,
+        "winning_lane_count": 0
+      }
+    ],
+    "scout_scale": [
+      {
+        "observed_at": "2026-10-27T05:52:04Z",
+        "open_lane_count": 1,
+        "eligible_pool_count": 1,
+        "deployed_usd": 400.0,
+        "gross_edge_usd": 1.6549321104440723e-05,
+        "gross_relative_pnl_usd": 1e-77,
+        "costs_usd": 0.012898374999999998,
+        "modeled_net_relative_pnl_usd": -0.012898374999999998,
+        "winning_lane_count": 0
+      }
+    ]
   },
   "leaderboard": {
-    "top": [],
-    "bottom": []
+    "top": [
+      {
+        "pair": "SPCXB/USDT",
+        "chain_id": 56,
+        "strategy": "full_800",
+        "cycles": 1,
+        "gross_edge_usd": 3.3098642208881445e-05,
+        "gross_relative_pnl_usd": 3e-77,
+        "costs_usd": 0.012898374999999998,
+        "modeled_net_relative_pnl_usd": -0.012898374999999998,
+        "winning_cycles": 0,
+        "chain": "BSC",
+        "strategy_name": "즉시 $800"
+      },
+      {
+        "pair": "SPCXB/USDT",
+        "chain_id": 56,
+        "strategy": "scout_scale",
+        "cycles": 1,
+        "gross_edge_usd": 1.6549321104440723e-05,
+        "gross_relative_pnl_usd": 1e-77,
+        "costs_usd": 0.012898374999999998,
+        "modeled_net_relative_pnl_usd": -0.012898374999999998,
+        "winning_cycles": 0,
+        "chain": "BSC",
+        "strategy_name": "단계 진입 $400→$800"
+      }
+    ],
+    "bottom": [
+      {
+        "pair": "SPCXB/USDT",
+        "chain_id": 56,
+        "strategy": "full_800",
+        "cycles": 1,
+        "gross_edge_usd": 3.3098642208881445e-05,
+        "gross_relative_pnl_usd": 3e-77,
+        "costs_usd": 0.012898374999999998,
+        "modeled_net_relative_pnl_usd": -0.012898374999999998,
+        "winning_cycles": 0,
+        "chain": "BSC",
+        "strategy_name": "즉시 $800"
+      },
+      {
+        "pair": "SPCXB/USDT",
+        "chain_id": 56,
+        "strategy": "scout_scale",
+        "cycles": 1,
+        "gross_edge_usd": 1.6549321104440723e-05,
+        "gross_relative_pnl_usd": 1e-77,
+        "costs_usd": 0.012898374999999998,
+        "modeled_net_relative_pnl_usd": -0.012898374999999998,
+        "winning_cycles": 0,
+        "chain": "BSC",
+        "strategy_name": "단계 진입 $400→$800"
+      }
+    ]
   },
-  "events": [],
+  "events": [
+    {
+      "observed_at": "2026-10-27T05:52:04Z",
+      "event_type": "open",
+      "amount_usd": 400.0,
+      "cost_usd": 0.012898374999999998,
+      "reason": "two_consecutive_positive_observations",
+      "pair": "SPCXB/USDT",
+      "chain_id": 56,
+      "strategy": "scout_scale",
+      "chain": "BSC",
+      "strategy_name": "단계 진입 $400→$800"
+    },
+    {
+      "observed_at": "2026-10-27T05:52:04Z",
+      "event_type": "open",
+      "amount_usd": 800.0,
+      "cost_usd": 0.012898374999999998,
+      "reason": "two_consecutive_positive_observations",
+      "pair": "SPCXB/USDT",
+      "chain_id": 56,
+      "strategy": "full_800",
+      "chain": "BSC",
+      "strategy_name": "즉시 $800"
+    }
+  ],
   "blockers": [
     {
       "reason": "tvl_below_minimum",
@@ -115,7 +298,7 @@
     {
       "reason": "trading_pnl_7d_not_positive",
       "label": "7일 상대손익 음수/0",
-      "count": 107
+      "count": 103
     },
     {
       "reason": "provider_not_anchored",
@@ -145,17 +328,22 @@
     {
       "reason": "gross_edge_daily_below_entry_floor",
       "label": "gross_edge_daily_below_entry_floor",
-      "count": 9
+      "count": 11
     },
     {
       "reason": "insufficient_positive_bins",
       "label": "양수 bin 부족",
-      "count": 5
+      "count": 7
     },
     {
       "reason": "pool_paused",
       "label": "풀 일시정지",
       "count": 3
+    },
+    {
+      "reason": "tight_trading_pnl_not_positive",
+      "label": "선택 bin 상대손익 음수/0",
+      "count": 2
     },
     {
       "reason": "insufficient_valid_bins",
@@ -166,16 +354,11 @@
       "reason": "tight_edge_not_positive",
       "label": "선택 bin Edge 음수/0",
       "count": 1
-    },
-    {
-      "reason": "tight_trading_pnl_not_positive",
-      "label": "선택 bin 상대손익 음수/0",
-      "count": 1
     }
   ],
   "health": {
     "database_integrity": "ok",
-    "latest_run_age_seconds": 295,
+    "latest_run_age_seconds": 294,
     "fresh": true,
     "scheduler": "15분 간격",
     "trading_enabled": false,
