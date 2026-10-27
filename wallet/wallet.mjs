@@ -98,6 +98,21 @@ function numericChain(value) {
   return Number(value);
 }
 
+function hexQuantity(value) {
+  if (typeof value === "string" && value.startsWith("0x")) return value;
+  return `0x${BigInt(value).toString(16)}`;
+}
+
+export function normalizeTransactionRequest(transactionRequest) {
+  const tx = { ...transactionRequest };
+  if (tx.chainId !== undefined) tx.chainId = hexQuantity(tx.chainId);
+  if (tx.value !== undefined) tx.value = hexQuantity(tx.value);
+  if (tx.gasPrice !== undefined) tx.gasPrice = hexQuantity(tx.gasPrice);
+  if (tx.gasLimit !== undefined && tx.gas === undefined) tx.gas = hexQuantity(tx.gasLimit);
+  delete tx.gasLimit;
+  return tx;
+}
+
 export function quoteFingerprint(quote) {
   const tx = quote?.transactionRequest || {};
   return [quote?.id || "", tx.to || "", tx.data || "", tx.value || "", quote?.estimate?.toAmountMin || ""].join("|");
@@ -141,17 +156,26 @@ export async function preflightBridge(provider, config, record, address, now = D
   if (normalizeAddress(accounts?.[0]) !== normalizeAddress(address)) throw new Error("preflight_account_changed");
   const chainId = numericChain(await provider.request({ method: "eth_chainId" }));
   if (chainId !== Number(config.bridge.from_chain_id)) throw new Error("preflight_wrong_chain");
-  const tx = record.quote.transactionRequest;
+  const tx = normalizeTransactionRequest(record.quote.transactionRequest);
   const balance = BigInt(await provider.request({ method: "eth_getBalance", params: [address, "latest"] }));
-  const gas = BigInt(await provider.request({ method: "eth_estimateGas", params: [tx] }));
-  const gasPrice = BigInt(await provider.request({ method: "eth_gasPrice" }));
+  const networkGasPrice = BigInt(await provider.request({ method: "eth_gasPrice" }));
+  const quotedGasPrice = BigInt(tx.gasPrice || 0);
+  const gasPrice = [quotedGasPrice, networkGasPrice * 125n / 100n].reduce((a, b) => a > b ? a : b);
+  tx.gasPrice = hexQuantity(gasPrice);
+  const estimateTx = { ...tx };
+  delete estimateTx.gas;
+  const estimatedGas = BigInt(await provider.request({ method: "eth_estimateGas", params: [estimateTx] }));
+  const quotedGas = BigInt(tx.gas || 0);
+  const gas = [quotedGas, estimatedGas * 120n / 100n].reduce((a, b) => a > b ? a : b);
+  tx.gas = hexQuantity(gas);
   const required = BigInt(tx.value || 0) + gas * gasPrice;
   if (balance < required) throw new Error("preflight_insufficient_balance");
-  return { balance, gas, gasPrice, required };
+  return { balance, gas, gasPrice, required, transaction: tx };
 }
 
-export async function sendBridgeTransaction(provider, record) {
-  return provider.request({ method: "eth_sendTransaction", params: [record.quote.transactionRequest] });
+export async function sendBridgeTransaction(provider, record, preparedTransaction = null) {
+  const transaction = preparedTransaction || normalizeTransactionRequest(record.quote.transactionRequest);
+  return provider.request({ method: "eth_sendTransaction", params: [transaction] });
 }
 
 export async function waitForReceipt(provider, txHash, { attempts = 120, intervalMs = 3000 } = {}) {

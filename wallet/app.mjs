@@ -149,12 +149,12 @@ async function submitBridge() {
   if (storedRun()) { setStatus("error", "이미 제출 기록이 있어 새 거래를 만들지 않습니다."); return; }
   try {
     state.busy = true; render(); setStatus("working", "최종 계정·체인·잔액·가스를 검사합니다…");
-    await preflightBridge(state.provider, state.config, state.quote, state.address);
+    const preflight = await preflightBridge(state.provider, state.config, state.quote, state.address);
     const baseline = await rpcNativeBalance(state.config.bridge.destination_rpc_url, state.address);
     const submitting = { status: "submitting", fingerprint: state.quote.fingerprint, baselineBscBalanceWei: baseline.toString(), startedAt: Date.now() };
     saveRun(submitting);
     setStatus("working", "OKX Wallet에서 표시된 브리지 거래 1건만 승인하세요.");
-    const txHash = await sendBridgeTransaction(state.provider, state.quote);
+    const txHash = await sendBridgeTransaction(state.provider, state.quote, preflight.transaction);
     const pending = { ...submitting, status: "pending", txHash, sentAt: Date.now() };
     saveRun(pending); await trackRun(pending);
   } catch (error) {
