@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-27T00:57:07Z",
+  "generated_at": "2026-10-27T01:12:01Z",
   "mode": "METRIC_SHADOW_ONLY_NO_TRADING",
   "status": "collecting",
   "experiment": {
-    "started_at": "2026-10-27T00:56:08Z",
-    "ends_at": "2026-11-03T00:56:08Z",
-    "remaining_seconds": 604740,
+    "started_at": "2026-10-27T00:58:38Z",
+    "ends_at": "2026-11-03T00:58:38Z",
+    "remaining_seconds": 603996,
     "observation_interval_minutes": 15
   },
   "evidence": {
@@ -23,7 +23,7 @@
   },
   "summary": {
     "scanned_pools": 182,
-    "detailed_pools": 14,
+    "detailed_pools": 15,
     "eligible_pools": 9,
     "open_lanes": 0,
     "deployed_usd": 0,
@@ -41,9 +41,9 @@
     "incomplete_cost_lane_count": 0
   },
   "run": {
-    "run_id": "metric-20261027T005608Z-b1550a66",
-    "started_at": "2026-10-27T00:56:08Z",
-    "finished_at": "2026-10-27T00:56:16Z",
+    "run_id": "metric-20261027T010700Z-ae3c659b",
+    "started_at": "2026-10-27T01:07:00Z",
+    "finished_at": "2026-10-27T01:07:08Z",
     "status": "ok",
     "opened_lanes": 0,
     "scaled_lanes": 0,
@@ -53,11 +53,11 @@
     {
       "pair": "TSLAB/USDT",
       "chain_id": 56,
-      "tvl_usd": 130748.65,
-      "volume_24h_usd": 2791281.55,
-      "volume_tvl_24h": 21.348454075816463,
-      "tight_edge_apr_bps_7d": 23522.46479220503,
-      "tight_pnl_apr_bps_7d": 44468.157566738344,
+      "tvl_usd": 130815.82,
+      "volume_24h_usd": 2779780.04,
+      "volume_tvl_24h": 21.24957088523391,
+      "tight_edge_apr_bps_7d": 23487.651942692068,
+      "tight_pnl_apr_bps_7d": 44044.25176371358,
       "valid_bins": 5,
       "positive_pnl_bins": 5,
       "eligible": true,
@@ -66,11 +66,11 @@
     {
       "pair": "TSLA/USDG",
       "chain_id": 4663,
-      "tvl_usd": 479402.23,
-      "volume_24h_usd": 503319.08,
-      "volume_tvl_24h": 1.0498889001830467,
-      "tight_edge_apr_bps_7d": 6600.335337194165,
-      "tight_pnl_apr_bps_7d": 18292.19285096432,
+      "tvl_usd": 479412.71,
+      "volume_24h_usd": 492484.71,
+      "volume_tvl_24h": 1.0272666947023579,
+      "tight_edge_apr_bps_7d": 6592.648368555821,
+      "tight_pnl_apr_bps_7d": 18257.7413873834,
       "valid_bins": 5,
       "positive_pnl_bins": 4,
       "eligible": true,
@@ -79,11 +79,11 @@
     {
       "pair": "SPCXB/USDT",
       "chain_id": 56,
-      "tvl_usd": 555988.45,
-      "volume_24h_usd": 2952067.54,
-      "volume_tvl_24h": 5.309584290824747,
-      "tight_edge_apr_bps_7d": 21120.522985594722,
-      "tight_pnl_apr_bps_7d": 10715.098443328961,
+      "tvl_usd": 555954.17,
+      "volume_24h_usd": 2994680.54,
+      "volume_tvl_24h": 5.386560082821215,
+      "tight_edge_apr_bps_7d": 21138.004305146595,
+      "tight_pnl_apr_bps_7d": 10781.17898191536,
       "valid_bins": 5,
       "positive_pnl_bins": 4,
       "eligible": true,
@@ -92,11 +92,11 @@
     {
       "pair": "META/USDG",
       "chain_id": 4663,
-      "tvl_usd": 1110728.88,
-      "volume_24h_usd": 6880130.83,
-      "volume_tvl_24h": 6.194248618078609,
-      "tight_edge_apr_bps_7d": 5758.181601312571,
-      "tight_pnl_apr_bps_7d": 9215.238520130037,
+      "tvl_usd": 1110806.45,
+      "volume_24h_usd": 6884236.49,
+      "volume_tvl_24h": 6.197512167848863,
+      "tight_edge_apr_bps_7d": 5755.005982384472,
+      "tight_pnl_apr_bps_7d": 9229.368258626748,
       "valid_bins": 5,
       "positive_pnl_bins": 3,
       "eligible": true,
@@ -105,11 +105,11 @@
     {
       "pair": "WETH/USDT",
       "chain_id": 56,
-      "tvl_usd": 66696.87,
-      "volume_24h_usd": 295337.3,
-      "volume_tvl_24h": 4.428053370420531,
-      "tight_edge_apr_bps_7d": 9877.916860773377,
-      "tight_pnl_apr_bps_7d": 7209.813501180403,
+      "tvl_usd": 66699.09,
+      "volume_24h_usd": 221317.15,
+      "volume_tvl_24h": 3.3181434709229167,
+      "tight_edge_apr_bps_7d": 9863.035549111068,
+      "tight_pnl_apr_bps_7d": 7490.583658683049,
       "valid_bins": 5,
       "positive_pnl_bins": 4,
       "eligible": true,
@@ -118,11 +118,11 @@
     {
       "pair": "AAPL/USDG",
       "chain_id": 4663,
-      "tvl_usd": 387984.5,
-      "volume_24h_usd": 546323.14,
-      "volume_tvl_24h": 1.4081055815374068,
-      "tight_edge_apr_bps_7d": 6329.327317001283,
-      "tight_pnl_apr_bps_7d": 6829.008157894677,
+      "tvl_usd": 388440.11,
+      "volume_24h_usd": 506625.31,
+      "volume_tvl_24h": 1.3042559121919721,
+      "tight_edge_apr_bps_7d": 6317.801885004958,
+      "tight_pnl_apr_bps_7d": 6812.642062058292,
       "valid_bins": 5,
       "positive_pnl_bins": 5,
       "eligible": true,
@@ -131,11 +131,11 @@
     {
       "pair": "BABAB/USDT",
       "chain_id": 56,
-      "tvl_usd": 62687.22,
-      "volume_24h_usd": 767664.59,
-      "volume_tvl_24h": 12.245950450506498,
-      "tight_edge_apr_bps_7d": 5686.531521847319,
-      "tight_pnl_apr_bps_7d": 2461.7728119026874,
+      "tvl_usd": 62763.18,
+      "volume_24h_usd": 768735.94,
+      "volume_tvl_24h": 12.24819934235327,
+      "tight_edge_apr_bps_7d": 5691.239952043281,
+      "tight_pnl_apr_bps_7d": 3561.3961735156126,
       "valid_bins": 5,
       "positive_pnl_bins": 4,
       "eligible": true,
@@ -144,11 +144,11 @@
     {
       "pair": "AAPLB/USDT",
       "chain_id": 56,
-      "tvl_usd": 331678.05,
-      "volume_24h_usd": 5018492.93,
-      "volume_tvl_24h": 15.13061515526879,
-      "tight_edge_apr_bps_7d": 7200.98142586603,
-      "tight_pnl_apr_bps_7d": 2348.4499061377105,
+      "tvl_usd": 331674.75,
+      "volume_24h_usd": 5024234.03,
+      "volume_tvl_24h": 15.148075124802235,
+      "tight_edge_apr_bps_7d": 7318.8085489950845,
+      "tight_pnl_apr_bps_7d": 2529.0079706203296,
       "valid_bins": 5,
       "positive_pnl_bins": 4,
       "eligible": true,
@@ -157,11 +157,11 @@
     {
       "pair": "NVDAB/USDT",
       "chain_id": 56,
-      "tvl_usd": 1149347.12,
-      "volume_24h_usd": 6186038.83,
-      "volume_tvl_24h": 5.382219803187047,
-      "tight_edge_apr_bps_7d": 6382.682451873035,
-      "tight_pnl_apr_bps_7d": 638.5280168808305,
+      "tvl_usd": 1149449.38,
+      "volume_24h_usd": 6179145.44,
+      "volume_tvl_24h": 5.3757438539833755,
+      "tight_edge_apr_bps_7d": 6382.076092406985,
+      "tight_pnl_apr_bps_7d": 636.6291173996891,
       "valid_bins": 5,
       "positive_pnl_bins": 3,
       "eligible": true,
@@ -193,7 +193,7 @@
     {
       "reason": "trading_pnl_7d_not_positive",
       "label": "7일 상대손익 음수/0",
-      "count": 96
+      "count": 95
     },
     {
       "reason": "provider_not_anchored",
@@ -203,7 +203,7 @@
     {
       "reason": "volume_velocity_below_minimum",
       "label": "거래량/TVL 기준 미달",
-      "count": 65
+      "count": 64
     },
     {
       "reason": "pricing_not_locked",
@@ -223,12 +223,12 @@
     {
       "reason": "insufficient_positive_bins",
       "label": "양수 bin 부족",
-      "count": 5
+      "count": 6
     },
     {
       "reason": "tight_trading_pnl_not_positive",
       "label": "선택 bin 상대손익 음수/0",
-      "count": 3
+      "count": 4
     },
     {
       "reason": "pool_paused",
@@ -248,7 +248,7 @@
   ],
   "health": {
     "database_integrity": "ok",
-    "latest_run_age_seconds": 51,
+    "latest_run_age_seconds": 293,
     "fresh": true,
     "scheduler": "15분 간격",
     "trading_enabled": false,
