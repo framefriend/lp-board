@@ -76,17 +76,21 @@ export function formatNativeBalance(balanceWei, chainId) {
 }
 
 export function buildQuoteUrl(config, address) {
+  return new URL("https://api.relay.link/quote");
+}
+
+export function buildRelayQuoteBody(config, address) {
   const bridge = config.bridge;
-  const recipient = bridge.recipient_address || address;
-  const url = new URL("https://li.quest/v1/quote");
-  const params = {
-    fromChain: String(bridge.from_chain_id), toChain: String(bridge.to_chain_id),
-    fromToken: bridge.from_token_address, toToken: bridge.to_token_address,
-    fromAmount: bridge.amount_wei, fromAddress: address, toAddress: recipient,
-    slippage: String(bridge.slippage),
+  return {
+    user: address,
+    recipient: bridge.recipient_address || address,
+    originChainId: Number(bridge.from_chain_id),
+    destinationChainId: Number(bridge.to_chain_id),
+    originCurrency: bridge.from_token_address,
+    destinationCurrency: bridge.to_token_address,
+    amount: bridge.amount_wei,
+    tradeType: "EXACT_INPUT",
   };
-  for (const [key, value] of Object.entries(params)) url.searchParams.set(key, value);
-  return url;
 }
 
 export function totalCostUsd(estimate) {
@@ -109,6 +113,9 @@ export function normalizeTransactionRequest(transactionRequest) {
   if (tx.chainId !== undefined) tx.chainId = hexQuantity(tx.chainId);
   if (tx.value !== undefined) tx.value = hexQuantity(tx.value);
   if (tx.gasPrice !== undefined) tx.gasPrice = hexQuantity(tx.gasPrice);
+  if (tx.maxFeePerGas !== undefined) tx.maxFeePerGas = hexQuantity(tx.maxFeePerGas);
+  if (tx.maxPriorityFeePerGas !== undefined) tx.maxPriorityFeePerGas = hexQuantity(tx.maxPriorityFeePerGas);
+  if (tx.gas !== undefined) tx.gas = hexQuantity(tx.gas);
   if (tx.gasLimit !== undefined && tx.gas === undefined) tx.gas = hexQuantity(tx.gasLimit);
   delete tx.gasLimit;
   return tx;
@@ -117,6 +124,33 @@ export function normalizeTransactionRequest(transactionRequest) {
 export function quoteFingerprint(quote) {
   const tx = quote?.transactionRequest || {};
   return [quote?.id || "", tx.to || "", tx.data || "", tx.value || "", quote?.estimate?.toAmountMin || ""].join("|");
+}
+
+export function normalizeRelayQuote(payload) {
+  const details = payload?.details || {};
+  const tx = payload?.steps?.find((step) => step.kind === "transaction")?.items?.[0]?.data;
+  const impactUsd = Math.abs(Number(details?.totalImpact?.usd || 0));
+  return {
+    id: payload?.steps?.[0]?.requestId,
+    tool: "relay",
+    action: {
+      fromChainId: details?.currencyIn?.currency?.chainId,
+      toChainId: details?.currencyOut?.currency?.chainId,
+      fromToken: { address: details?.currencyIn?.currency?.address },
+      toToken: { address: details?.currencyOut?.currency?.address },
+      fromAmount: details?.currencyIn?.amount,
+      fromAddress: details?.sender,
+      toAddress: details?.recipient,
+    },
+    estimate: {
+      toAmount: details?.currencyOut?.amount,
+      toAmountMin: details?.currencyOut?.minimumAmount,
+      feeCosts: [{ amountUSD: String(impactUsd) }],
+      gasCosts: [],
+    },
+    transactionRequest: tx,
+    relay: payload,
+  };
 }
 
 export function validateBridgeQuote(quote, config, address, fetchedAt, now = Date.now()) {
@@ -147,9 +181,14 @@ export function validateBridgeQuote(quote, config, address, fetchedAt, now = Dat
 }
 
 export async function fetchBridgeQuote(config, address, fetcher = fetch, now = Date.now()) {
-  const response = await fetcher(buildQuoteUrl(config, address), { headers: { Accept: "application/json" }, cache: "no-store" });
+  const response = await fetcher(buildQuoteUrl(config, address), {
+    method: "POST",
+    headers: { Accept: "application/json", "Content-Type": "application/json" },
+    body: JSON.stringify(buildRelayQuoteBody(config, address)),
+    cache: "no-store",
+  });
   if (!response.ok) throw new Error(`quote_http_${response.status}`);
-  return validateBridgeQuote(await response.json(), config, address, now, now);
+  return validateBridgeQuote(normalizeRelayQuote(await response.json()), config, address, now, now);
 }
 
 export async function preflightBridge(provider, config, record, address, now = Date.now()) {
@@ -161,9 +200,15 @@ export async function preflightBridge(provider, config, record, address, now = D
   const tx = normalizeTransactionRequest(record.quote.transactionRequest);
   const balance = BigInt(await provider.request({ method: "eth_getBalance", params: [address, "latest"] }));
   const networkGasPrice = BigInt(await provider.request({ method: "eth_gasPrice" }));
-  const quotedGasPrice = BigInt(tx.gasPrice || 0);
+  const quotedGasPrice = BigInt(tx.maxFeePerGas || tx.gasPrice || 0);
   const gasPrice = [quotedGasPrice, networkGasPrice * 125n / 100n].reduce((a, b) => a > b ? a : b);
-  tx.gasPrice = hexQuantity(gasPrice);
+  if (tx.maxFeePerGas !== undefined) {
+    tx.maxFeePerGas = hexQuantity(gasPrice);
+    tx.maxPriorityFeePerGas = hexQuantity(tx.maxPriorityFeePerGas || 0);
+    delete tx.gasPrice;
+  } else {
+    tx.gasPrice = hexQuantity(gasPrice);
+  }
   const estimateTx = { ...tx };
   delete estimateTx.gas;
   const estimatedGas = BigInt(await provider.request({ method: "eth_estimateGas", params: [estimateTx] }));

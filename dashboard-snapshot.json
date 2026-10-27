@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-27T14:54:44Z",
+  "generated_at": "2026-10-27T14:56:22Z",
   "mode": "METRIC_SHADOW_ONLY_NO_TRADING",
   "status": "collecting",
   "experiment": {
     "started_at": "2026-10-27T05:35:28Z",
     "ends_at": "2026-11-03T05:35:28Z",
-    "remaining_seconds": 571243,
+    "remaining_seconds": 571145,
     "observation_interval_minutes": 15
   },
   "evidence": {
@@ -1452,7 +1452,7 @@
   ],
   "health": {
     "database_integrity": "ok",
-    "latest_run_age_seconds": 151,
+    "latest_run_age_seconds": 249,
     "fresh": true,
     "scheduler": "15분 간격",
     "trading_enabled": false,
