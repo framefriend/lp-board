@@ -1,9 +1,24 @@
 {
-  "expected_wallet_address": "0x363043028e12583944B7DdB50a2EdD1962296682",
-  "allowed_chain_ids": [1, 56, 4663],
+  "expected_wallet_address": "0x363043028e12583944b7ddb50a2edd1962296682",
+  "allowed_chain_ids": [56, 4663],
   "execution": {
-    "mode": "dry-run",
+    "mode": "manual-wallet-approval",
     "broadcast_enabled": false,
-    "transaction_approval_enabled": false
+    "transaction_approval_enabled": true,
+    "single_transaction_only": true,
+    "auto_retry": false
+  },
+  "bridge": {
+    "from_chain_id": 4663,
+    "to_chain_id": 56,
+    "from_token_address": "0x0000000000000000000000000000000000000000",
+    "to_token_address": "0x0000000000000000000000000000000000000000",
+    "amount_wei": "4950000000000000",
+    "slippage": 0.005,
+    "min_destination_amount_wei": "14500000000000000",
+    "max_total_cost_usd": 0.25,
+    "quote_ttl_seconds": 120,
+    "destination_rpc_url": "https://bsc-dataseed.bnbchain.org",
+    "storage_key": "metric-robinhood-bsc-bridge-v1"
   }
 }
