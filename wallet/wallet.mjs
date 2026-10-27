@@ -77,11 +77,12 @@ export function formatNativeBalance(balanceWei, chainId) {
 
 export function buildQuoteUrl(config, address) {
   const bridge = config.bridge;
+  const recipient = bridge.recipient_address || address;
   const url = new URL("https://li.quest/v1/quote");
   const params = {
     fromChain: String(bridge.from_chain_id), toChain: String(bridge.to_chain_id),
     fromToken: bridge.from_token_address, toToken: bridge.to_token_address,
-    fromAmount: bridge.amount_wei, fromAddress: address, toAddress: address,
+    fromAmount: bridge.amount_wei, fromAddress: address, toAddress: recipient,
     slippage: String(bridge.slippage),
   };
   for (const [key, value] of Object.entries(params)) url.searchParams.set(key, value);
@@ -125,7 +126,8 @@ export function validateBridgeQuote(quote, config, address, fetchedAt, now = Dat
   const fromToken = action.fromToken?.address || action.fromToken;
   const toToken = action.toToken?.address || action.toToken;
   const fromAddress = action.fromAddress || tx.from;
-  const toAddress = action.toAddress || address;
+  const recipient = bridge.recipient_address || address;
+  const toAddress = action.toAddress || recipient;
   if (now - fetchedAt > bridge.quote_ttl_seconds * 1000) throw new Error("quote_stale");
   if (numericChain(action.fromChainId) !== Number(bridge.from_chain_id)) throw new Error("quote_from_chain_mismatch");
   if (numericChain(action.toChainId) !== Number(bridge.to_chain_id)) throw new Error("quote_to_chain_mismatch");
@@ -133,7 +135,7 @@ export function validateBridgeQuote(quote, config, address, fetchedAt, now = Dat
   if (normalizeAddress(toToken) !== normalizeAddress(bridge.to_token_address)) throw new Error("quote_to_token_mismatch");
   if (String(action.fromAmount) !== String(bridge.amount_wei)) throw new Error("quote_amount_mismatch");
   if (normalizeAddress(fromAddress) !== normalizeAddress(address)) throw new Error("quote_sender_mismatch");
-  if (normalizeAddress(toAddress) !== normalizeAddress(address)) throw new Error("quote_recipient_mismatch");
+  if (normalizeAddress(toAddress) !== normalizeAddress(recipient)) throw new Error("quote_recipient_mismatch");
   if (BigInt(quote?.estimate?.toAmountMin || 0) < BigInt(bridge.min_destination_amount_wei)) throw new Error("quote_minimum_too_low");
   const costUsd = totalCostUsd(quote.estimate);
   if (!Number.isFinite(costUsd) || costUsd > Number(bridge.max_total_cost_usd)) throw new Error("quote_cost_too_high");

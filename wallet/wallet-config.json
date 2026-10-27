@@ -19,6 +19,7 @@
     "max_total_cost_usd": 0.25,
     "quote_ttl_seconds": 120,
     "destination_rpc_url": "https://bsc-dataseed.bnbchain.org",
-    "storage_key": "metric-robinhood-bsc-bridge-v1"
+    "recipient_address": "0xcE9b8553C7Aa4A2C0402d294DD0865AD22D2335e",
+    "storage_key": "metric-robinhood-bsc-executor-funding-v2"
   }
 }

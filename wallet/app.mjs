@@ -131,7 +131,7 @@ async function trackRun(run) {
   await waitForReceipt(state.provider, run.txHash);
   setTimeline("source", "Robinhood 거래 성공");
   setStatus("working", "BSC 도착 잔액을 확인 중입니다…");
-  const destination = await waitForDestinationIncrease(state.config.bridge.destination_rpc_url, state.address, BigInt(run.baselineBscBalanceWei));
+  const destination = await waitForDestinationIncrease(state.config.bridge.destination_rpc_url, state.config.bridge.recipient_address, BigInt(run.baselineBscBalanceWei));
   const completed = { ...run, status: "completed", completedAt: Date.now(), destinationBalanceWei: destination.toString() };
   saveRun(completed); setTimeline("destination", `BSC 도착 확인 · ${formatUnits(destination)} BNB`);
   setStatus("ok", "브리지 완료. 이 화면에서는 추가 거래를 만들지 않습니다.");
@@ -150,7 +150,7 @@ async function submitBridge() {
   try {
     state.busy = true; render(); setStatus("working", "최종 계정·체인·잔액·가스를 검사합니다…");
     const preflight = await preflightBridge(state.provider, state.config, state.quote, state.address);
-    const baseline = await rpcNativeBalance(state.config.bridge.destination_rpc_url, state.address);
+    const baseline = await rpcNativeBalance(state.config.bridge.destination_rpc_url, state.config.bridge.recipient_address);
     const submitting = { status: "submitting", fingerprint: state.quote.fingerprint, baselineBscBalanceWei: baseline.toString(), startedAt: Date.now() };
     saveRun(submitting);
     setStatus("working", "OKX Wallet에서 표시된 브리지 거래 1건만 승인하세요.");
@@ -178,6 +178,8 @@ async function boot() {
   $("#expected-address").title = state.config.expected_wallet_address;
   $("#bridge-amount").textContent = `${formatUnits(state.config.bridge.amount_wei)} ETH`;
   $("#hard-minimum").textContent = `${formatUnits(state.config.bridge.min_destination_amount_wei)} BNB`;
+  $("#recipient-address").textContent = shortAddress(state.config.bridge.recipient_address);
+  $("#recipient-address").title = state.config.bridge.recipient_address;
   $("#connect").addEventListener("click", connect);
   $("#disconnect").addEventListener("click", disconnect);
   $("#switch-source").addEventListener("click", selectSourceChain);
