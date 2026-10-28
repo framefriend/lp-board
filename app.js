@@ -66,11 +66,14 @@ function renderStrategyPolicy(policy = {}) {
 }
 
 function renderSummary(data) {
+  const policy = data.strategy_policy || {};
   const items = [
     ["전체 스캔", integer.format(data.summary.scanned_pools), `상세 분석 ${integer.format(data.summary.detailed_pools)}`],
     ["현재 적격 풀", integer.format(data.summary.eligible_pools), "없으면 전액 대기"],
-    ["열린 가상 포지션", integer.format(data.summary.open_lanes), "정책별 독립 레인"],
-    ["가상 배정 합계", compactMoney.format(data.summary.deployed_usd), "실제 자금 아님"],
+    ["가상 총 NAV", formatMoney(data.summary.virtual_nav_usd ?? policy.total_budget_usd), "실제 자산 0달러"],
+    ["가상 현금", formatMoney(data.summary.cash_usd), `코어 ${formatMoney(policy.core?.cash_usd)} · 마이크로 ${formatMoney(policy.micro?.cash_usd)}`],
+    ["열린 가상 포지션", integer.format(data.summary.open_lanes), "코어 1개 + 마이크로 1개 한도"],
+    ["가상 배정 합계", compactMoney.format(data.summary.deployed_usd), "실제 체결·비용 가정"],
     ["누적 Edge 추정", formatMoney(data.summary.gross_edge_usd), "7일 비율 Forward 적분"],
     ["운영 중 평가손익", formatMoney(data.summary.operating_marked_pnl_usd), "발생 가스 추정 반영"],
     ["지금 철수 시", data.summary.immediate_exit_pnl_usd == null ? "미확정" : formatMoney(data.summary.immediate_exit_pnl_usd), "예상 철수가스 후 · 스왑 제외"],
