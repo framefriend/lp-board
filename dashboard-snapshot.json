@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-28T13:42:03Z",
+  "generated_at": "2026-10-28T13:45:45Z",
   "mode": "METRIC_SHADOW_ONLY_NO_TRADING",
   "status": "collecting",
   "experiment": {
     "started_at": "2026-10-27T05:35:28Z",
     "ends_at": "2026-11-03T05:35:28Z",
-    "remaining_seconds": 489204,
+    "remaining_seconds": 488982,
     "observation_interval_minutes": 15
   },
   "evidence": {
@@ -89,79 +89,39 @@
   "events": [],
   "blockers": [
     {
-      "reason": "tvl_below_minimum",
-      "label": "TVL 기준 미달",
-      "count": 149
-    },
-    {
-      "reason": "tier_not_green",
-      "label": "Green 등급 아님",
-      "count": 128
-    },
-    {
-      "reason": "trading_pnl_7d_not_positive",
-      "label": "7일 상대손익 음수/0",
-      "count": 85
-    },
-    {
-      "reason": "provider_not_anchored",
-      "label": "Anchored 오라클 아님",
-      "count": 81
-    },
-    {
-      "reason": "volume_velocity_below_minimum",
-      "label": "거래량/TVL 기준 미달",
-      "count": 56
-    },
-    {
-      "reason": "pricing_not_locked",
-      "label": "가격 정책 미고정",
-      "count": 45
-    },
-    {
-      "reason": "provider_unhealthy",
-      "label": "가격 제공자 비정상",
-      "count": 42
-    },
-    {
-      "reason": "edge_7d_not_positive",
-      "label": "7일 Edge 음수/0",
+      "reason": "persistence_below_3_observations",
+      "label": "3회 지속성 미충족",
       "count": 24
     },
     {
-      "reason": "gross_edge_daily_below_entry_floor",
-      "label": "gross_edge_daily_below_entry_floor",
-      "count": 15
+      "reason": "horizon_net_not_positive",
+      "label": "가격위험·비용 후 기대수익 음수",
+      "count": 18
     },
     {
-      "reason": "insufficient_positive_bins",
-      "label": "양수 bin 부족",
-      "count": 4
+      "reason": "round_trip_recovery_too_slow",
+      "label": "왕복비용 회수 지연",
+      "count": 17
     },
     {
-      "reason": "pool_paused",
-      "label": "풀 일시정지",
-      "count": 3
+      "reason": "gross_daily_below_4_usd",
+      "label": "코어 일 gross $4 미달",
+      "count": 12
     },
     {
-      "reason": "insufficient_valid_bins",
-      "label": "유효 bin 부족",
-      "count": 1
+      "reason": "edge_apr_below_lane_floor",
+      "label": "마이크로 APR 기준 미달",
+      "count": 12
     },
     {
-      "reason": "tight_edge_not_positive",
-      "label": "선택 bin Edge 음수/0",
-      "count": 1
-    },
-    {
-      "reason": "tight_trading_pnl_not_positive",
-      "label": "선택 bin 상대손익 음수/0",
+      "reason": "selected_bin_capacity_exceeded",
+      "label": "선택 5-bin 용량 부족",
       "count": 1
     }
   ],
   "health": {
     "database_integrity": "ok",
-    "latest_run_age_seconds": 290,
+    "latest_run_age_seconds": 512,
     "fresh": true,
     "scheduler": "15분 간격",
     "trading_enabled": false,
@@ -508,21 +468,21 @@
           "chain_id": 1,
           "close_cost": {
             "action": "close",
-            "gas_cost_usd": 0.11915293513314601,
-            "gas_price_wei": 169936142,
+            "gas_cost_usd": 0.128151844078689,
+            "gas_price_wei": 182770403,
             "gas_units": 300000,
             "native_price_usd": 2337.21,
             "source": "live_gas_plus_declared_swap_proxy",
             "status": "estimated",
             "swap_cost_usd": 0.4,
             "swap_status": "configured_10bps_half_notional_proxy",
-            "total_cost_usd": 0.5191529351331461
+            "total_cost_usd": 0.528151844078689
           },
-          "cost_recovery_hours": 25.15616804690619,
+          "cost_recovery_hours": 25.619693065554642,
           "decision": "대기/제외",
           "edge_apr_bps": 4609.143809029288,
           "edge_apr_pct": 46.091438090292876,
-          "expected_net_usd": -0.04863285234401227,
+          "expected_net_usd": -0.06813048839268854,
           "gross_horizon_usd": 1.0095318404444709,
           "gross_hourly_usd": 0.04206382668518629,
           "high_risk": false,
@@ -533,15 +493,15 @@
           "observed_at": "2026-10-28T13:37:04Z",
           "open_cost": {
             "action": "open",
-            "gas_cost_usd": 0.13901175765533702,
-            "gas_price_wei": 169936142,
+            "gas_cost_usd": 0.1495104847584705,
+            "gas_price_wei": 182770403,
             "gas_units": 350000,
             "native_price_usd": 2337.21,
             "source": "live_gas_plus_declared_swap_proxy",
             "status": "estimated",
             "swap_cost_usd": 0.4,
             "swap_status": "configured_10bps_half_notional_proxy",
-            "total_cost_usd": 0.539011757655337
+            "total_cost_usd": 0.5495104847584705
           },
           "pair": "AAVE/USDC",
           "persistence_observations": 0,
@@ -554,7 +514,7 @@
             "persistence_below_3_observations"
           ],
           "recent_price_change_pct": 0.11768967113220952,
-          "round_trip_cost_usd": 1.0581646927884831,
+          "round_trip_cost_usd": 1.0776623288371594,
           "selected_reserve_usd": 50474.079774,
           "status": "rejected"
         },
@@ -565,21 +525,21 @@
           "chain_id": 4663,
           "close_cost": {
             "action": "close",
-            "gas_cost_usd": 0.014219779830000001,
-            "gas_price_wei": 20290000,
+            "gas_cost_usd": 0.01433191215,
+            "gas_price_wei": 20450000,
             "gas_units": 300000,
             "native_price_usd": 2336.09,
             "source": "live_gas_plus_declared_swap_proxy",
             "status": "estimated",
             "swap_cost_usd": 0.4,
             "swap_status": "configured_10bps_half_notional_proxy",
-            "total_cost_usd": 0.41421977983
+            "total_cost_usd": 0.41433191215000004
           },
-          "cost_recovery_hours": 27.090574415815343,
+          "cost_recovery_hours": 27.098496503726853,
           "decision": "대기/제외",
           "edge_apr_bps": 3360.4290585194663,
           "edge_apr_pct": 33.60429058519466,
-          "expected_net_usd": -0.09478125552747163,
+          "expected_net_usd": -0.09502420888747154,
           "gross_horizon_usd": 0.7360282674375285,
           "gross_hourly_usd": 0.030667844476563687,
           "high_risk": false,
@@ -590,15 +550,15 @@
           "observed_at": "2026-10-28T13:37:04Z",
           "open_cost": {
             "action": "open",
-            "gas_cost_usd": 0.016589743135,
-            "gas_price_wei": 20290000,
+            "gas_cost_usd": 0.016720564175,
+            "gas_price_wei": 20450000,
             "gas_units": 350000,
             "native_price_usd": 2336.09,
             "source": "live_gas_plus_declared_swap_proxy",
             "status": "estimated",
             "swap_cost_usd": 0.4,
             "swap_status": "configured_10bps_half_notional_proxy",
-            "total_cost_usd": 0.416589743135
+            "total_cost_usd": 0.41672056417500003
           },
           "pair": "WETH/USDG",
           "persistence_observations": 0,
@@ -611,7 +571,7 @@
             "persistence_below_3_observations"
           ],
           "recent_price_change_pct": 0.0070031156007177575,
-          "round_trip_cost_usd": 0.8308095229650001,
+          "round_trip_cost_usd": 0.831052476325,
           "selected_reserve_usd": 1488548.887718,
           "status": "rejected"
         },
@@ -735,21 +695,21 @@
           "chain_id": 1,
           "close_cost": {
             "action": "close",
-            "gas_cost_usd": 0.11915293513314601,
-            "gas_price_wei": 169936142,
+            "gas_cost_usd": 0.128151844078689,
+            "gas_price_wei": 182770403,
             "gas_units": 300000,
             "native_price_usd": 2337.21,
             "source": "live_gas_plus_declared_swap_proxy",
             "status": "estimated",
             "swap_cost_usd": 0.4,
             "swap_status": "configured_10bps_half_notional_proxy",
-            "total_cost_usd": 0.5191529351331461
+            "total_cost_usd": 0.528151844078689
           },
-          "cost_recovery_hours": 37.41073050705619,
+          "cost_recovery_hours": 38.100056859289246,
           "decision": "대기/제외",
           "edge_apr_bps": 3099.335261321041,
           "edge_apr_pct": 30.99335261321041,
-          "expected_net_usd": -0.3793232940049561,
+          "expected_net_usd": -0.3988209300536324,
           "gross_horizon_usd": 0.678841398783527,
           "gross_hourly_usd": 0.02828505828264696,
           "high_risk": false,
@@ -760,15 +720,15 @@
           "observed_at": "2026-10-28T13:37:04Z",
           "open_cost": {
             "action": "open",
-            "gas_cost_usd": 0.13901175765533702,
-            "gas_price_wei": 169936142,
+            "gas_cost_usd": 0.1495104847584705,
+            "gas_price_wei": 182770403,
             "gas_units": 350000,
             "native_price_usd": 2337.21,
             "source": "live_gas_plus_declared_swap_proxy",
             "status": "estimated",
             "swap_cost_usd": 0.4,
             "swap_status": "configured_10bps_half_notional_proxy",
-            "total_cost_usd": 0.539011757655337
+            "total_cost_usd": 0.5495104847584705
           },
           "pair": "WETH/USDT",
           "persistence_observations": 0,
@@ -781,7 +741,7 @@
             "persistence_below_3_observations"
           ],
           "recent_price_change_pct": 0.0292927653446462,
-          "round_trip_cost_usd": 1.0581646927884831,
+          "round_trip_cost_usd": 1.0776623288371594,
           "selected_reserve_usd": 110004.081234,
           "status": "rejected"
         },
@@ -792,21 +752,21 @@
           "chain_id": 1,
           "close_cost": {
             "action": "close",
-            "gas_cost_usd": 0.11915293513314601,
-            "gas_price_wei": 169936142,
+            "gas_cost_usd": 0.128151844078689,
+            "gas_price_wei": 182770403,
             "gas_units": 300000,
             "native_price_usd": 2337.21,
             "source": "live_gas_plus_declared_swap_proxy",
             "status": "estimated",
             "swap_cost_usd": 0.4,
             "swap_status": "configured_10bps_half_notional_proxy",
-            "total_cost_usd": 0.5191529351331461
+            "total_cost_usd": 0.528151844078689
           },
-          "cost_recovery_hours": 63.078661196065866,
+          "cost_recovery_hours": 64.24094225384492,
           "decision": "대기/제외",
           "edge_apr_bps": 1838.1556300299158,
           "edge_apr_pct": 18.381556300299156,
-          "expected_net_usd": -0.8890708018837593,
+          "expected_net_usd": -0.9085684379324356,
           "gross_horizon_usd": 0.4026076670838966,
           "gross_hourly_usd": 0.016775319461829027,
           "high_risk": false,
@@ -817,15 +777,15 @@
           "observed_at": "2026-10-28T13:37:04Z",
           "open_cost": {
             "action": "open",
-            "gas_cost_usd": 0.13901175765533702,
-            "gas_price_wei": 169936142,
+            "gas_cost_usd": 0.1495104847584705,
+            "gas_price_wei": 182770403,
             "gas_units": 350000,
             "native_price_usd": 2337.21,
             "source": "live_gas_plus_declared_swap_proxy",
             "status": "estimated",
             "swap_cost_usd": 0.4,
             "swap_status": "configured_10bps_half_notional_proxy",
-            "total_cost_usd": 0.539011757655337
+            "total_cost_usd": 0.5495104847584705
           },
           "pair": "CBBTC/USDC",
           "persistence_observations": 0,
@@ -838,7 +798,7 @@
             "persistence_below_3_observations"
           ],
           "recent_price_change_pct": -0.0291892220223966,
-          "round_trip_cost_usd": 1.0581646927884831,
+          "round_trip_cost_usd": 1.0776623288371594,
           "selected_reserve_usd": 32236.591436,
           "status": "rejected"
         }
@@ -1079,21 +1039,21 @@
           "chain_id": 4663,
           "close_cost": {
             "action": "close",
-            "gas_cost_usd": 0.014219779830000001,
-            "gas_price_wei": 20290000,
+            "gas_cost_usd": 0.01433191215,
+            "gas_price_wei": 20450000,
             "gas_units": 300000,
             "native_price_usd": 2336.09,
             "source": "live_gas_plus_declared_swap_proxy",
             "status": "estimated",
             "swap_cost_usd": 0.1,
             "swap_status": "configured_10bps_half_notional_proxy",
-            "total_cost_usd": 0.11421977983
+            "total_cost_usd": 0.11433191215
           },
-          "cost_recovery_hours": 30.10443373565224,
+          "cost_recovery_hours": 30.1361220872983,
           "decision": "대기/제외",
           "edge_apr_bps": 3360.4290585194663,
           "edge_apr_pct": 33.60429058519466,
-          "expected_net_usd": -0.20014167848843634,
+          "expected_net_usd": -0.20038463184843636,
           "gross_horizon_usd": 0.030667844476563687,
           "gross_hourly_usd": 0.007666961119140922,
           "high_risk": false,
@@ -1104,15 +1064,15 @@
           "observed_at": "2026-10-28T13:37:04Z",
           "open_cost": {
             "action": "open",
-            "gas_cost_usd": 0.016589743135,
-            "gas_price_wei": 20290000,
+            "gas_cost_usd": 0.016720564175,
+            "gas_price_wei": 20450000,
             "gas_units": 350000,
             "native_price_usd": 2336.09,
             "source": "live_gas_plus_declared_swap_proxy",
             "status": "estimated",
             "swap_cost_usd": 0.1,
             "swap_status": "configured_10bps_half_notional_proxy",
-            "total_cost_usd": 0.116589743135
+            "total_cost_usd": 0.11672056417500001
           },
           "pair": "WETH/USDG",
           "persistence_observations": 0,
@@ -1125,7 +1085,7 @@
             "persistence_below_3_observations"
           ],
           "recent_price_change_pct": 0.0070031156007177575,
-          "round_trip_cost_usd": 0.230809522965,
+          "round_trip_cost_usd": 0.23105247632500003,
           "selected_reserve_usd": 1488548.887718,
           "status": "rejected"
         },
@@ -1307,21 +1267,21 @@
           "chain_id": 1,
           "close_cost": {
             "action": "close",
-            "gas_cost_usd": 0.11915293513314601,
-            "gas_price_wei": 169936142,
+            "gas_cost_usd": 0.128151844078689,
+            "gas_price_wei": 182770403,
             "gas_units": 300000,
             "native_price_usd": 2337.21,
             "source": "live_gas_plus_declared_swap_proxy",
             "status": "estimated",
             "swap_cost_usd": 0.1,
             "swap_status": "configured_10bps_half_notional_proxy",
-            "total_cost_usd": 0.21915293513314602
+            "total_cost_usd": 0.228151844078689
           },
-          "cost_recovery_hours": 43.56852230468474,
+          "cost_recovery_hours": 45.42262237927858,
           "decision": "대기/제외",
           "edge_apr_bps": 4609.143809029288,
           "edge_apr_pct": 46.091438090292876,
-          "expected_net_usd": -0.4161008661032968,
+          "expected_net_usd": -0.43559850215197327,
           "gross_horizon_usd": 0.04206382668518629,
           "gross_hourly_usd": 0.010515956671296572,
           "high_risk": false,
@@ -1332,15 +1292,15 @@
           "observed_at": "2026-10-28T13:37:04Z",
           "open_cost": {
             "action": "open",
-            "gas_cost_usd": 0.13901175765533702,
-            "gas_price_wei": 169936142,
+            "gas_cost_usd": 0.1495104847584705,
+            "gas_price_wei": 182770403,
             "gas_units": 350000,
             "native_price_usd": 2337.21,
             "source": "live_gas_plus_declared_swap_proxy",
             "status": "estimated",
             "swap_cost_usd": 0.1,
             "swap_status": "configured_10bps_half_notional_proxy",
-            "total_cost_usd": 0.23901175765533703
+            "total_cost_usd": 0.2495104847584705
           },
           "pair": "AAVE/USDC",
           "persistence_observations": 0,
@@ -1353,7 +1313,7 @@
             "persistence_below_3_observations"
           ],
           "recent_price_change_pct": 0.11768967113220952,
-          "round_trip_cost_usd": 0.45816469278848304,
+          "round_trip_cost_usd": 0.47766232883715953,
           "selected_reserve_usd": 50474.079774,
           "status": "rejected"
         },
@@ -1364,21 +1324,21 @@
           "chain_id": 1,
           "close_cost": {
             "action": "close",
-            "gas_cost_usd": 0.11915293513314601,
-            "gas_price_wei": 169936142,
+            "gas_cost_usd": 0.128151844078689,
+            "gas_price_wei": 182770403,
             "gas_units": 300000,
             "native_price_usd": 2337.21,
             "source": "live_gas_plus_declared_swap_proxy",
             "status": "estimated",
             "swap_cost_usd": 0.1,
             "swap_status": "configured_10bps_half_notional_proxy",
-            "total_cost_usd": 0.21915293513314602
+            "total_cost_usd": 0.228151844078689
           },
-          "cost_recovery_hours": 64.79246932569619,
+          "cost_recovery_hours": 67.54977473462843,
           "decision": "대기/제외",
           "edge_apr_bps": 3099.335261321041,
           "edge_apr_pct": 30.99335261321041,
-          "expected_net_usd": -0.4298796345058361,
+          "expected_net_usd": -0.4493772705545126,
           "gross_horizon_usd": 0.02828505828264696,
           "gross_hourly_usd": 0.00707126457066174,
           "high_risk": false,
@@ -1389,15 +1349,15 @@
           "observed_at": "2026-10-28T13:37:04Z",
           "open_cost": {
             "action": "open",
-            "gas_cost_usd": 0.13901175765533702,
-            "gas_price_wei": 169936142,
+            "gas_cost_usd": 0.1495104847584705,
+            "gas_price_wei": 182770403,
             "gas_units": 350000,
             "native_price_usd": 2337.21,
             "source": "live_gas_plus_declared_swap_proxy",
             "status": "estimated",
             "swap_cost_usd": 0.1,
             "swap_status": "configured_10bps_half_notional_proxy",
-            "total_cost_usd": 0.23901175765533703
+            "total_cost_usd": 0.2495104847584705
           },
           "pair": "WETH/USDT",
           "persistence_observations": 0,
@@ -1410,7 +1370,7 @@
             "persistence_below_3_observations"
           ],
           "recent_price_change_pct": 0.0292927653446462,
-          "round_trip_cost_usd": 0.45816469278848304,
+          "round_trip_cost_usd": 0.47766232883715953,
           "selected_reserve_usd": 110004.081234,
           "status": "rejected"
         },
@@ -1421,21 +1381,21 @@
           "chain_id": 1,
           "close_cost": {
             "action": "close",
-            "gas_cost_usd": 0.11915293513314601,
-            "gas_price_wei": 169936142,
+            "gas_cost_usd": 0.128151844078689,
+            "gas_price_wei": 182770403,
             "gas_units": 300000,
             "native_price_usd": 2337.21,
             "source": "live_gas_plus_declared_swap_proxy",
             "status": "estimated",
             "swap_cost_usd": 0.1,
             "swap_status": "configured_10bps_half_notional_proxy",
-            "total_cost_usd": 0.21915293513314602
+            "total_cost_usd": 0.228151844078689
           },
-          "cost_recovery_hours": 109.2473246380797,
+          "cost_recovery_hours": 113.89644886919599,
           "decision": "대기/제외",
           "edge_apr_bps": 1838.1556300299158,
           "edge_apr_pct": 18.381556300299156,
-          "expected_net_usd": -0.4997678173714472,
+          "expected_net_usd": -0.5192654534201238,
           "gross_horizon_usd": 0.016775319461829027,
           "gross_hourly_usd": 0.004193829865457257,
           "high_risk": false,
@@ -1446,15 +1406,15 @@
           "observed_at": "2026-10-28T13:37:04Z",
           "open_cost": {
             "action": "open",
-            "gas_cost_usd": 0.13901175765533702,
-            "gas_price_wei": 169936142,
+            "gas_cost_usd": 0.1495104847584705,
+            "gas_price_wei": 182770403,
             "gas_units": 350000,
             "native_price_usd": 2337.21,
             "source": "live_gas_plus_declared_swap_proxy",
             "status": "estimated",
             "swap_cost_usd": 0.1,
             "swap_status": "configured_10bps_half_notional_proxy",
-            "total_cost_usd": 0.23901175765533703
+            "total_cost_usd": 0.2495104847584705
           },
           "pair": "CBBTC/USDC",
           "persistence_observations": 0,
@@ -1467,7 +1427,7 @@
             "persistence_below_3_observations"
           ],
           "recent_price_change_pct": -0.0291892220223966,
-          "round_trip_cost_usd": 0.45816469278848304,
+          "round_trip_cost_usd": 0.47766232883715953,
           "selected_reserve_usd": 32236.591436,
           "status": "rejected"
         },
@@ -1478,21 +1438,21 @@
           "chain_id": 1,
           "close_cost": {
             "action": "close",
-            "gas_cost_usd": 0.11915293513314601,
-            "gas_price_wei": 169936142,
+            "gas_cost_usd": 0.128151844078689,
+            "gas_price_wei": 182770403,
             "gas_units": 300000,
             "native_price_usd": 2337.21,
             "source": "live_gas_plus_declared_swap_proxy",
             "status": "estimated",
             "swap_cost_usd": 0.1,
             "swap_status": "configured_10bps_half_notional_proxy",
-            "total_cost_usd": 0.21915293513314602
+            "total_cost_usd": 0.228151844078689
           },
-          "cost_recovery_hours": 109.29095960794731,
+          "cost_recovery_hours": 113.94194076687769,
           "decision": "대기/제외",
           "edge_apr_bps": 1837.4217370728397,
           "edge_apr_pct": 18.3742173707284,
-          "expected_net_usd": -0.5258880527899792,
+          "expected_net_usd": -0.5453856888386557,
           "gross_horizon_usd": 0.01676862183046169,
           "gross_hourly_usd": 0.0041921554576154225,
           "high_risk": false,
@@ -1503,15 +1463,15 @@
           "observed_at": "2026-10-28T13:37:04Z",
           "open_cost": {
             "action": "open",
-            "gas_cost_usd": 0.13901175765533702,
-            "gas_price_wei": 169936142,
+            "gas_cost_usd": 0.1495104847584705,
+            "gas_price_wei": 182770403,
             "gas_units": 350000,
             "native_price_usd": 2337.21,
             "source": "live_gas_plus_declared_swap_proxy",
             "status": "estimated",
             "swap_cost_usd": 0.1,
             "swap_status": "configured_10bps_half_notional_proxy",
-            "total_cost_usd": 0.23901175765533703
+            "total_cost_usd": 0.2495104847584705
           },
           "pair": "WBTC/USDC",
           "persistence_observations": 0,
@@ -1524,7 +1484,7 @@
             "persistence_below_3_observations"
           ],
           "recent_price_change_pct": -0.042245990915978915,
-          "round_trip_cost_usd": 0.45816469278848304,
+          "round_trip_cost_usd": 0.47766232883715953,
           "selected_reserve_usd": 43178.074371,
           "status": "rejected"
         }
@@ -1556,7 +1516,7 @@
       "open_positions": 0,
       "virtual_nav_usd": 1000.0
     },
-    "updated_at": "2026-10-28T13:42:01Z"
+    "updated_at": "2026-10-28T13:45:42Z"
   },
   "strategy_policy": {
     "status": "virtual_portfolio_active",

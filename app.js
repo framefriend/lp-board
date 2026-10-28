@@ -289,8 +289,8 @@ function render(data) {
   startCountdown(data.experiment.ends_at);
   renderStrategyPolicy(data.strategy_policy);
   renderSummary(data); renderCandidates(data.virtual_portfolio); renderPositions(data.active_positions);
-  renderPolicies(data.policies); renderBlockers(data.blockers); renderLeaderboard(data.leaderboard);
-  renderEvents(data.events); renderHealth(data); renderChart(data.policy_series); renderCountChart(data.policy_series);
+  renderPolicies(data.policies); renderBlockers(data.blockers);
+  renderEvents(data.events); renderHealth(data);
 }
 
 async function load() {

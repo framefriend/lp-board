@@ -53,33 +53,6 @@
         <p id="strategy-policy-note" class="policy-note"></p>
       </section>
 
-      <div class="charts-grid">
-        <section class="panel" aria-labelledby="policy-chart-title">
-          <div class="section-heading compact">
-            <div><p class="kicker">POLICY CURVE</p><h2 id="policy-chart-title">운영 중 평가손익</h2></div>
-            <p class="meta">15분 관측 · USD</p>
-          </div>
-          <div id="policy-chart" class="chart" role="img" aria-label="정책별 운영 중 평가손익 시계열"></div>
-          <div id="chart-empty" class="empty" hidden>시계열 3개가 쌓이면 차트를 표시합니다.</div>
-          <div class="legend" aria-label="차트 범례">
-            <span><i class="legend-dot dot-full"></i>코어 가상계정 $800</span>
-            <span><i class="legend-dot dot-scout"></i>마이크로 가상계정 $200</span>
-          </div>
-        </section>
-        <section class="panel" aria-labelledby="count-chart-title">
-          <div class="section-heading compact">
-            <div><p class="kicker">COVERAGE</p><h2 id="count-chart-title">적격 풀·열린 레인</h2></div>
-            <p class="meta">15분 관측 · 개수</p>
-          </div>
-          <div id="count-chart" class="chart" role="img" aria-label="적격 풀과 열린 가상 포지션 개수 시계열"></div>
-          <div id="count-chart-empty" class="empty" hidden>시계열 3개가 쌓이면 차트를 표시합니다.</div>
-          <div class="legend" aria-label="차트 범례">
-            <span><i class="legend-dot dot-full"></i>적격 풀</span>
-            <span><i class="legend-dot dot-scout"></i>열린 레인</span>
-          </div>
-        </section>
-      </div>
-
       <section aria-labelledby="eligible-title">
         <div class="section-heading">
           <div><p class="kicker">CANDIDATE DECISIONS</p><h2 id="eligible-title">코어·마이크로 후보 순위</h2></div>
@@ -119,17 +92,6 @@
           <div id="blockers" class="blockers"></div>
         </section>
       </div>
-
-      <section aria-labelledby="leaderboard-title">
-        <div class="section-heading">
-          <div><p class="kicker">LEADERBOARD</p><h2 id="leaderboard-title">풀별 모델 성과</h2></div>
-          <p class="meta">비용 후 모델 상대손익 순</p>
-        </div>
-        <div class="table-wrap"><table>
-          <thead><tr><th>구분</th><th>풀</th><th>정책</th><th>누적 Edge 추정</th><th>모델 상대손익</th><th>비용</th><th>비용 후 모델 상대손익</th></tr></thead>
-          <tbody id="leaderboard-body"></tbody>
-        </table></div>
-      </section>
 
       <div class="two-column">
         <section class="panel" aria-labelledby="events-title">
