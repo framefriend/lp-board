@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-28T12:22:09Z",
+  "generated_at": "2026-10-28T12:27:00Z",
   "mode": "METRIC_SHADOW_ONLY_NO_TRADING",
   "status": "collecting",
   "experiment": {
     "started_at": "2026-10-27T05:35:28Z",
     "ends_at": "2026-11-03T05:35:28Z",
-    "remaining_seconds": 493998,
+    "remaining_seconds": 493707,
     "observation_interval_minutes": 15
   },
   "evidence": {
@@ -23,7 +23,7 @@
   },
   "summary": {
     "scanned_pools": 179,
-    "detailed_pools": 18,
+    "detailed_pools": 16,
     "eligible_pools": 0,
     "open_lanes": 6,
     "deployed_usd": 3600.0,
@@ -41,9 +41,9 @@
     "incomplete_cost_lane_count": 0
   },
   "run": {
-    "run_id": "metric-20261028T120700Z-a231dc37",
-    "started_at": "2026-10-28T12:07:00Z",
-    "finished_at": "2026-10-28T12:07:11Z",
+    "run_id": "metric-20261028T122200Z-bb9b6ec7",
+    "started_at": "2026-10-28T12:22:00Z",
+    "finished_at": "2026-10-28T12:22:11Z",
     "status": "ok",
     "opened_lanes": 0,
     "scaled_lanes": 0,
@@ -1695,6 +1695,17 @@
         "costs_usd": 0.03857769999999999,
         "modeled_net_relative_pnl_usd": 13.083797699603238,
         "winning_lane_count": 3
+      },
+      {
+        "observed_at": "2026-10-28T12:22:00Z",
+        "open_lane_count": 3,
+        "eligible_pool_count": 0,
+        "deployed_usd": 2400.0,
+        "gross_edge_usd": 14.958939075745207,
+        "gross_relative_pnl_usd": 14.111652531908252,
+        "costs_usd": 0.03857769999999999,
+        "modeled_net_relative_pnl_usd": 14.07307483190825,
+        "winning_lane_count": 3
       }
     ],
     "scout_scale": [
@@ -3105,6 +3116,17 @@
         "costs_usd": 0.03857769999999999,
         "modeled_net_relative_pnl_usd": 6.522609999801619,
         "winning_lane_count": 3
+      },
+      {
+        "observed_at": "2026-10-28T12:22:00Z",
+        "open_lane_count": 3,
+        "eligible_pool_count": 0,
+        "deployed_usd": 1200.0,
+        "gross_edge_usd": 7.479469537872603,
+        "gross_relative_pnl_usd": 7.055826265954126,
+        "costs_usd": 0.03857769999999999,
+        "modeled_net_relative_pnl_usd": 7.017248565954127,
+        "winning_lane_count": 3
       }
     ]
   },
@@ -3358,7 +3380,7 @@
     {
       "reason": "trading_pnl_7d_not_positive",
       "label": "7일 상대손익 음수/0",
-      "count": 87
+      "count": 90
     },
     {
       "reason": "provider_not_anchored",
@@ -3388,7 +3410,7 @@
     {
       "reason": "gross_edge_daily_below_entry_floor",
       "label": "gross_edge_daily_below_entry_floor",
-      "count": 18
+      "count": 16
     },
     {
       "reason": "insufficient_positive_bins",
@@ -3403,7 +3425,7 @@
   ],
   "health": {
     "database_integrity": "ok",
-    "latest_run_age_seconds": 898,
+    "latest_run_age_seconds": 289,
     "fresh": true,
     "scheduler": "15분 간격",
     "trading_enabled": false,
