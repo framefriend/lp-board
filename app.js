@@ -48,11 +48,14 @@ function renderStrategyPolicy(policy = {}) {
   }
   const coreRules = byId("core-policy-rules"); clear(coreRules);
   appendRule(coreRules, "진입", core.entry || "-");
+  appendRule(coreRules, "증액", core.scale_in || "-");
   appendRule(coreRules, "보유", core.retention || "-");
   appendRule(coreRules, "철수", core.exit || "-");
   const microRules = byId("micro-policy-rules"); clear(microRules);
   appendRule(microRules, "진입", micro.entry || "-");
+  appendRule(microRules, "배분", micro.scale_in || "-");
   appendRule(microRules, "보유", micro.retention || "-");
+  appendRule(microRules, "수익실현", micro.harvest || "-");
   appendRule(microRules, "철수", micro.exit || "-");
   const hardStops = byId("hard-stop-rules"); clear(hardStops);
   for (const rule of policy.hard_stops || []) hardStops.append(element("li", "", rule));

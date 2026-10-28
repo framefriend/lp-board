@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-28T12:17:29Z",
+  "generated_at": "2026-10-28T12:20:57Z",
   "mode": "METRIC_SHADOW_ONLY_NO_TRADING",
   "status": "collecting",
   "experiment": {
     "started_at": "2026-10-27T05:35:28Z",
     "ends_at": "2026-11-03T05:35:28Z",
-    "remaining_seconds": 494278,
+    "remaining_seconds": 494070,
     "observation_interval_minutes": 15
   },
   "evidence": {
@@ -3403,7 +3403,7 @@
   ],
   "health": {
     "database_integrity": "ok",
-    "latest_run_age_seconds": 618,
+    "latest_run_age_seconds": 826,
     "fresh": true,
     "scheduler": "15분 간격",
     "trading_enabled": false,
@@ -3416,18 +3416,21 @@
     "core": {
       "budget_usd": 800,
       "objective": "지속 가능한 Edge를 장기 수확",
-      "entry": "구조 안전 통과 · 5-bin 용량 5% 이내 · 왕복비용 회수 가능",
-      "retention": "실제 수수료와 회복 가능성이 유지되는 동안 보유",
-      "exit": "회복 불가 또는 Edge 붕괴 시 철수 · 구조 이상은 즉시 철수"
+      "entry": "5-bin 점유 5% 이내 · 30분/3회 지속 · ＄800 기준 gross ＄4/일+ · 왕복비용 24시간 이내 회수",
+      "scale_in": "＄200 시험 → 실제 수수료 70%+ 확인 시 ＄400 → 3시간 유지 시 최대 ＄800",
+      "retention": "실제 수수료 70%+ · 순 Edge 양수 · 예상 손실 회복기간 14일 이내면 보유",
+      "exit": "3회 연속 실제 수수료 50% 미만 · 회복기간 14일 초과 · 다음 24시간 순수익이 철수비용 미만"
     },
     "micro": {
       "budget_usd": 200,
       "per_pool_min_usd": 25,
       "per_pool_max_usd": 50,
       "objective": "초고 Edge 구간을 3~24시간 단기 수확",
-      "entry": "일반 500%+ · 레버리지/고위험 1000%+ · 비용 회수 4시간 이내",
-      "retention": "실제 수수료가 예상치의 70% 이상이면 유지",
-      "exit": "Edge 40~50% 하락 · 다음 3시간 수익이 철수비용 미만 · 최대 48시간"
+      "entry": "일반 500%+ · 레버리지/고위험 1000%+ · 30분/3회 지속 · 왕복비용 4시간 이내 회수",
+      "scale_in": "일반 풀 ＄25 시험 후 최대 ＄50 · 레버리지/고위험 풀은 ＄25 고정 · 총합 최대 ＄200",
+      "retention": "3~24시간 · 실제 수수료 70%+ · Edge가 진입값의 60% 이상이면 유지",
+      "harvest": "순이익이 왕복비용 3배 또는 원금 1% 중 큰 값에 도달하면 수익실현 구간",
+      "exit": "Edge 40% 하락 2회 · 고점 대비 50% 하락 · 다음 3시간 순수익이 철수비용 미만 · 최장 48시간"
     },
     "hard_stops": [
       "풀 정지 또는 출금 제한",
