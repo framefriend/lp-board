@@ -86,20 +86,40 @@ function renderSummary(data) {
   }
 }
 
-function renderEligible(rows) {
-  const body = byId("eligible-body"); clear(body);
-  byId("eligible-empty").hidden = rows.length > 0;
+const reasonLabels = {
+  tier_not_green: "Green 아님", provider_not_anchored: "Anchored 아님", provider_unhealthy: "Provider 이상",
+  pricing_not_locked: "가격 미고정", pool_paused: "풀 정지", fiat_coverage_below_minimum: "가격 커버리지",
+  withdrawal_extension_present: "출금 확장", insufficient_valid_bins: "유효 bin 부족",
+  selected_bin_capacity_exceeded: "5-bin 용량 부족", edge_not_positive: "Edge 음수",
+  gross_daily_below_4_usd: "일 gross $4 미달", edge_apr_below_lane_floor: "APR 기준 미달",
+  round_trip_cost_unresolved: "비용 미확정", round_trip_recovery_too_slow: "비용회수 지연",
+  horizon_net_not_positive: "기대 순수익 음수", persistence_below_3_observations: "3회 지속성 부족",
+};
+
+function renderCandidateLane(lane, rows) {
+  const body = byId(`${lane}-candidates-body`); clear(body);
+  byId(`${lane}-candidates-empty`).hidden = rows.length > 0;
   for (const row of rows) {
     const tr = document.createElement("tr");
+    const reasons = (row.reasons || []).map(reason => reasonLabels[reason] || reason).join(" · ") || "모든 조건 통과";
     tr.append(
-      tableCell(row.pair, "pair"), tableCell(row.chain), tableCell(compactMoney.format(row.tvl_usd)),
-      tableCell(compactMoney.format(row.volume_24h_usd)), tableCell(`${number.format(row.volume_tvl_24h)}×`),
-      tableCell(pctFromBps(row.tight_edge_apr_bps_7d), "positive"),
-      tableCell(pctFromBps(row.tight_pnl_apr_bps_7d), "positive"),
-      tableCell(`${integer.format(row.positive_pnl_bins)}/${integer.format(row.valid_bins)}`)
+      tableCell(`#${integer.format(row.rank)} ${row.pair} · ${row.chain}`, "pair"),
+      tableCell(row.decision, row.status === "actionable" ? "positive" : row.status === "warming" ? "warning" : "neutral"),
+      tableCell(`${number.format(row.edge_apr_pct)}%`, row.status === "actionable" ? "positive" : ""),
+      tableCell(row.expected_net_usd == null ? "미확정" : formatMoney(row.expected_net_usd), pnlClass(row.expected_net_usd)),
+      tableCell(row.round_trip_cost_usd == null ? "미확정" : formatMoney(row.round_trip_cost_usd)),
+      tableCell(row.cost_recovery_hours == null ? "—" : `${number.format(row.cost_recovery_hours)}h`),
+      tableCell(row.bin_occupancy_pct == null ? "—" : `${number.format(row.bin_occupancy_pct)}%`),
+      tableCell(`${integer.format(row.persistence_observations)}/3`), tableCell(reasons, "candidate-reason")
     );
     body.append(tr);
   }
+}
+
+function renderCandidates(portfolio = {}) {
+  const candidates = portfolio.candidates || {};
+  renderCandidateLane("core", candidates.core || []);
+  renderCandidateLane("micro", candidates.micro || []);
 }
 
 function renderPositions(rows) {
@@ -108,12 +128,11 @@ function renderPositions(rows) {
   for (const row of rows) {
     const tr = document.createElement("tr");
     tr.append(
-      tableCell(`${row.pair} · ${row.chain}`, "pair"), tableCell(row.strategy_name), tableCell(formatMoney(row.deployed_usd)),
-      tableCell(formatMoney(row.gross_edge_usd), pnlClass(row.gross_edge_usd)),
-      tableCell(formatMoney(row.gross_relative_pnl_usd), pnlClass(row.gross_relative_pnl_usd)),
+      tableCell(`${row.pair} · ${row.chain}`, "pair"), tableCell(row.lane_label || row.strategy_name || row.lane), tableCell(formatMoney(row.deployed_usd)),
+      tableCell(formatMoney(row.fee_income_usd), "positive"), tableCell(formatMoney(row.price_loss_usd), row.price_loss_usd > 0 ? "negative" : "neutral"),
       tableCell(formatMoney(row.costs_usd), "negative"),
-      tableCell(formatMoney(row.modeled_net_relative_pnl_usd), pnlClass(row.modeled_net_relative_pnl_usd)),
-      tableCell(integer.format(row.held_observations))
+      tableCell(formatMoney(row.liquidation_value_usd), pnlClass((row.liquidation_value_usd || 0) - (row.deployed_usd || 0))),
+      tableCell(`${row.decision || "—"} · ${row.decision_reason || ""}`)
     );
     body.append(tr);
   }
@@ -209,7 +228,7 @@ function renderEvents(rows) {
   for (const row of rows.slice(0, 16)) {
     const item = document.createElement("li");
     const copy = element("div", "event-copy");
-    copy.append(element("strong", "", `${row.pair} · ${row.strategy_name}`), element("span", "", `${row.reason} · ${formatMoney(row.amount_usd)}`));
+    copy.append(element("strong", "", `${row.pair} · ${row.lane_label || row.strategy_name || row.lane}`), element("span", "", `${row.reason} · ${formatMoney(row.amount_usd)}`));
     item.append(element("span", "event-type", labels[row.event_type] || row.event_type), copy, element("time", "event-time", formatTime(row.observed_at)));
     root.append(item);
   }
@@ -269,7 +288,7 @@ function render(data) {
   setText("evidence-warning", data.evidence.warning);
   startCountdown(data.experiment.ends_at);
   renderStrategyPolicy(data.strategy_policy);
-  renderSummary(data); renderEligible(data.eligible_pools); renderPositions(data.active_positions);
+  renderSummary(data); renderCandidates(data.virtual_portfolio); renderPositions(data.active_positions);
   renderPolicies(data.policies); renderBlockers(data.blockers); renderLeaderboard(data.leaderboard);
   renderEvents(data.events); renderHealth(data); renderChart(data.policy_series); renderCountChart(data.policy_series);
 }

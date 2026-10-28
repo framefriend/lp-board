@@ -82,14 +82,19 @@
 
       <section aria-labelledby="eligible-title">
         <div class="section-heading">
-          <div><p class="kicker">ELIGIBLE NOW</p><h2 id="eligible-title">현재 진입 적격 풀</h2></div>
-          <p class="meta">Green · Anchored · 양수 bin 기준</p>
+          <div><p class="kicker">CANDIDATE DECISIONS</p><h2 id="eligible-title">코어·마이크로 후보 순위</h2></div>
+          <p class="meta">고정 투자금의 비용·가격위험 후 기대 순수익 순</p>
         </div>
-        <div class="table-wrap"><table>
-          <thead><tr><th>풀</th><th>체인</th><th>TVL</th><th>24h 거래량</th><th>회전율</th><th>Edge APR</th><th>상대손익 APR</th><th>양수 bin</th></tr></thead>
-          <tbody id="eligible-body"></tbody>
-        </table></div>
-        <p id="eligible-empty" class="empty" hidden>현재 진입 조건을 통과한 풀이 없습니다. 전액 대기 상태입니다.</p>
+        <div class="candidate-grid">
+          <article class="panel candidate-panel"><h3>코어 $800 후보</h3><div class="table-wrap"><table>
+            <thead><tr><th>순위·풀</th><th>판정</th><th>Edge APR</th><th>24h 순수익</th><th>왕복비용</th><th>회수</th><th>5-bin 점유</th><th>지속</th><th>사유</th></tr></thead>
+            <tbody id="core-candidates-body"></tbody>
+          </table></div><p id="core-candidates-empty" class="empty" hidden>코어 후보가 없습니다.</p></article>
+          <article class="panel candidate-panel"><h3>마이크로 $200 후보</h3><div class="table-wrap"><table>
+            <thead><tr><th>순위·풀</th><th>판정</th><th>Edge APR</th><th>4h 순수익</th><th>왕복비용</th><th>회수</th><th>5-bin 점유</th><th>지속</th><th>사유</th></tr></thead>
+            <tbody id="micro-candidates-body"></tbody>
+          </table></div><p id="micro-candidates-empty" class="empty" hidden>마이크로 후보가 없습니다.</p></article>
+        </div>
       </section>
 
       <section aria-labelledby="positions-title">
@@ -98,7 +103,7 @@
           <p class="meta">실제 지갑·자금 없음</p>
         </div>
         <div class="table-wrap"><table>
-          <thead><tr><th>풀</th><th>정책</th><th>가상 배정</th><th>누적 Edge 추정</th><th>모델 상대손익</th><th>발생 가스 추정</th><th>운영 중 평가손익</th><th>관측</th></tr></thead>
+          <thead><tr><th>풀</th><th>계정</th><th>가상 배정</th><th>누적 수수료</th><th>가격손실</th><th>누적비용</th><th>즉시청산가치</th><th>판정</th></tr></thead>
           <tbody id="positions-body"></tbody>
         </table></div>
         <p id="positions-empty" class="empty" hidden>열린 가상 포지션이 없습니다.</p>
