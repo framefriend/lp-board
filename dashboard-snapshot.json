@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-28T13:12:15Z",
+  "generated_at": "2026-10-28T13:27:07Z",
   "mode": "METRIC_SHADOW_ONLY_NO_TRADING",
   "status": "collecting",
   "experiment": {
     "started_at": "2026-10-27T05:35:28Z",
     "ends_at": "2026-11-03T05:35:28Z",
-    "remaining_seconds": 490992,
+    "remaining_seconds": 490100,
     "observation_interval_minutes": 15
   },
   "evidence": {
@@ -24,7 +24,7 @@
   "summary": {
     "scanned_pools": 180,
     "detailed_pools": 21,
-    "eligible_pools": 1,
+    "eligible_pools": 0,
     "open_lanes": 0,
     "deployed_usd": 0,
     "gross_edge_usd": 0,
@@ -45,29 +45,15 @@
     "legacy_comparison_lanes_excluded": 6
   },
   "run": {
-    "run_id": "metric-20261028T130700Z-69d18881",
-    "started_at": "2026-10-28T13:07:00Z",
-    "finished_at": "2026-10-28T13:07:12Z",
+    "run_id": "metric-20261028T132200Z-cfad553c",
+    "started_at": "2026-10-28T13:22:00Z",
+    "finished_at": "2026-10-28T13:22:13Z",
     "status": "ok",
     "opened_lanes": 0,
     "scaled_lanes": 0,
     "closed_lanes": 0
   },
-  "eligible_pools": [
-    {
-      "pair": "TSLAB/USDT",
-      "chain_id": 56,
-      "tvl_usd": 99946.25,
-      "volume_24h_usd": 1006460.6,
-      "volume_tvl_24h": 10.070018635016321,
-      "tight_edge_apr_bps_7d": 19447.46480855908,
-      "tight_pnl_apr_bps_7d": 38335.78710014849,
-      "valid_bins": 5,
-      "positive_pnl_bins": 5,
-      "eligible": true,
-      "chain": "BSC"
-    }
-  ],
+  "eligible_pools": [],
   "active_positions": [],
   "policies": [
     {
@@ -125,7 +111,7 @@
     {
       "reason": "volume_velocity_below_minimum",
       "label": "거래량/TVL 기준 미달",
-      "count": 55
+      "count": 56
     },
     {
       "reason": "pricing_not_locked",
@@ -135,22 +121,22 @@
     {
       "reason": "provider_unhealthy",
       "label": "가격 제공자 비정상",
-      "count": 29
+      "count": 25
     },
     {
       "reason": "edge_7d_not_positive",
       "label": "7일 Edge 음수/0",
-      "count": 25
+      "count": 24
     },
     {
       "reason": "gross_edge_daily_below_entry_floor",
       "label": "gross_edge_daily_below_entry_floor",
-      "count": 20
+      "count": 21
     },
     {
       "reason": "insufficient_positive_bins",
       "label": "양수 bin 부족",
-      "count": 5
+      "count": 4
     },
     {
       "reason": "pool_paused",
@@ -175,7 +161,7 @@
   ],
   "health": {
     "database_integrity": "ok",
-    "latest_run_age_seconds": 303,
+    "latest_run_age_seconds": 294,
     "fresh": true,
     "scheduler": "15분 간격",
     "trading_enabled": false,
