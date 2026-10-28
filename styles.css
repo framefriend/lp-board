@@ -43,6 +43,20 @@ main { display: grid; gap: 44px; padding: 20px 0 64px; }
 .metric-card strong { display: block; margin-top: .6rem; overflow: hidden; color: var(--text); font-size: clamp(1.25rem, 2.4vw, 2rem); letter-spacing: -.04em; text-overflow: ellipsis; font-variant-numeric: tabular-nums; }
 .metric-card small { display: block; margin-top: .35rem; color: var(--muted); font-size: .68rem; }
 .panel { padding: 22px; background: color-mix(in srgb, var(--surface) 94%, transparent); border: 1px solid var(--line); border-radius: var(--radius); }
+.strategy-policy { background: linear-gradient(145deg, #111a17, #111614 58%, #17150e); }
+.policy-badge { color: var(--warn); background: #2b2414; border-color: #5a4924; }
+.policy-budget-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.policy-budget-card strong.warning { color: var(--warn); }
+.policy-rule-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 14px; }
+.policy-rule-card { padding: 18px; background: var(--surface-2); border: 1px solid var(--line); border-radius: 12px; }
+.policy-rule-card h3 { margin: 0 0 14px; font-size: .96rem; }
+.policy-rule-card dl { display: grid; gap: 12px; margin: 0; }
+.policy-rule-row { display: grid; gap: 4px; }
+.policy-rule-row dt { color: var(--accent); font-size: .69rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.policy-rule-row dd { margin: 0; color: var(--muted); font-size: .8rem; line-height: 1.55; }
+.hard-stop-card { border-color: #5b332d; }
+.hard-stop-card ul { display: grid; gap: 9px; margin: 0; padding-left: 1.2rem; color: #f0c0b7; font-size: .8rem; line-height: 1.45; }
+.policy-note { margin: 14px 0 0; padding-top: 13px; color: var(--warn); border-top: 1px solid var(--line); font-size: .78rem; }
 .charts-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
 .chart { min-height: 300px; }
 .chart svg { display: block; width: 100%; height: 300px; overflow: visible; }
@@ -102,6 +116,7 @@ footer { display: flex; justify-content: space-between; gap: 1rem; padding: 22px
   .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .two-column { grid-template-columns: 1fr; }
   .charts-grid { grid-template-columns: 1fr; }
+  .policy-budget-grid, .policy-rule-grid { grid-template-columns: 1fr; }
   .section-heading { align-items: start; flex-direction: column; }
   .policy-card dl { grid-template-columns: repeat(2, 1fr); }
   .events li { grid-template-columns: 58px 1fr; }

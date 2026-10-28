@@ -26,6 +26,39 @@ function tableCell(text, className) {
   return element("td", className || "", text);
 }
 
+function appendRule(root, label, value) {
+  const group = element("div", "policy-rule-row");
+  group.append(element("dt", "", label), element("dd", "", value));
+  root.append(group);
+}
+
+function renderStrategyPolicy(policy = {}) {
+  const core = policy.core || {};
+  const micro = policy.micro || {};
+  setText("strategy-policy-status", policy.status_label || "정책 미확정");
+  const cards = byId("strategy-policy-cards"); clear(cards);
+  for (const [label, value, note, tone] of [
+    ["총 전략 예산", formatMoney(policy.total_budget_usd), "코어 + 마이크로", ""],
+    ["코어 한도", formatMoney(core.budget_usd), core.objective || "-", "positive"],
+    ["마이크로 총한도", formatMoney(micro.budget_usd), `풀별 ${formatMoney(micro.per_pool_min_usd)}~${formatMoney(micro.per_pool_max_usd)}`, "warning"],
+  ]) {
+    const card = element("article", "metric-card policy-budget-card");
+    card.append(element("span", "", label), element("strong", tone, value), element("small", "", note));
+    cards.append(card);
+  }
+  const coreRules = byId("core-policy-rules"); clear(coreRules);
+  appendRule(coreRules, "진입", core.entry || "-");
+  appendRule(coreRules, "보유", core.retention || "-");
+  appendRule(coreRules, "철수", core.exit || "-");
+  const microRules = byId("micro-policy-rules"); clear(microRules);
+  appendRule(microRules, "진입", micro.entry || "-");
+  appendRule(microRules, "보유", micro.retention || "-");
+  appendRule(microRules, "철수", micro.exit || "-");
+  const hardStops = byId("hard-stop-rules"); clear(hardStops);
+  for (const rule of policy.hard_stops || []) hardStops.append(element("li", "", rule));
+  setText("strategy-policy-note", policy.activation_note || "");
+}
+
 function renderSummary(data) {
   const items = [
     ["전체 스캔", integer.format(data.summary.scanned_pools), `상세 분석 ${integer.format(data.summary.detailed_pools)}`],
@@ -226,6 +259,7 @@ function render(data) {
   setText("run-meta", `${data.run.status} · ${data.run.run_id.slice(0, 25)}`);
   setText("evidence-warning", data.evidence.warning);
   startCountdown(data.experiment.ends_at);
+  renderStrategyPolicy(data.strategy_policy);
   renderSummary(data); renderEligible(data.eligible_pools); renderPositions(data.active_positions);
   renderPolicies(data.policies); renderBlockers(data.blockers); renderLeaderboard(data.leaderboard);
   renderEvents(data.events); renderHealth(data); renderChart(data.policy_series); renderCountChart(data.policy_series);
