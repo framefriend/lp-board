@@ -38,9 +38,9 @@ function renderStrategyPolicy(policy = {}) {
   setText("strategy-policy-status", policy.status_label || "정책 미확정");
   const cards = byId("strategy-policy-cards"); clear(cards);
   for (const [label, value, note, tone] of [
-    ["총 전략 예산", formatMoney(policy.total_budget_usd), "코어 + 마이크로", ""],
-    ["코어 한도", formatMoney(core.budget_usd), core.objective || "-", "positive"],
-    ["마이크로 총한도", formatMoney(micro.budget_usd), `풀별 ${formatMoney(micro.per_pool_min_usd)}~${formatMoney(micro.per_pool_max_usd)}`, "warning"],
+    ["가상 총자산", formatMoney(policy.total_budget_usd), "실제 자산 0달러 · 실전 비용 반영", ""],
+    ["코어 가상계정", formatMoney(core.budget_usd), `현금 ${formatMoney(core.cash_usd)} · 1개 풀 전액`, "positive"],
+    ["마이크로 가상계정", formatMoney(micro.budget_usd), `현금 ${formatMoney(micro.cash_usd)} · 1개 풀 전액`, "warning"],
   ]) {
     const card = element("article", "metric-card policy-budget-card");
     card.append(element("span", "", label), element("strong", tone, value), element("small", "", note));
@@ -48,15 +48,18 @@ function renderStrategyPolicy(policy = {}) {
   }
   const coreRules = byId("core-policy-rules"); clear(coreRules);
   appendRule(coreRules, "진입", core.entry || "-");
-  appendRule(coreRules, "증액", core.scale_in || "-");
+  appendRule(coreRules, "배분", core.allocation || "-");
   appendRule(coreRules, "보유", core.retention || "-");
-  appendRule(coreRules, "철수", core.exit || "-");
+  appendRule(coreRules, "가격 하락 철수", core.price_exit || "-");
+  appendRule(coreRules, "경제적 철수", core.economic_exit || "-");
+  appendRule(coreRules, "풀 이동", core.rotation || "-");
   const microRules = byId("micro-policy-rules"); clear(microRules);
   appendRule(microRules, "진입", micro.entry || "-");
-  appendRule(microRules, "배분", micro.scale_in || "-");
+  appendRule(microRules, "배분", micro.allocation || "-");
   appendRule(microRules, "보유", micro.retention || "-");
-  appendRule(microRules, "수익실현", micro.harvest || "-");
-  appendRule(microRules, "철수", micro.exit || "-");
+  appendRule(microRules, "가격 하락 철수", micro.price_exit || "-");
+  appendRule(microRules, "경제적 철수", micro.economic_exit || "-");
+  appendRule(microRules, "풀 이동", micro.rotation || "-");
   const hardStops = byId("hard-stop-rules"); clear(hardStops);
   for (const rule of policy.hard_stops || []) hardStops.append(element("li", "", rule));
   setText("strategy-policy-note", policy.activation_note || "");
