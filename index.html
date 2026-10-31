@@ -2,115 +2,228 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#08110f">
   <meta name="color-scheme" content="dark">
-  <meta name="description" content="Metric 전체 풀 Shadow 실험 상황판">
-  <title>Metric Shadow Lab</title>
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>Metric Operations Console</title>
   <link rel="stylesheet" href="./styles.css">
-  <script src="./app.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">본문으로 건너뛰기</a>
-  <div class="shell">
-    <header class="hero">
-      <div>
-        <p class="eyebrow">LP HUNTER · METRIC SHADOW LAB</p>
-        <h1>Metric 전체 풀 수익성 실험</h1>
-        <p class="hero-copy">가상 $1,000을 실제 자산처럼 운용해 체결·수수료·가격손실·가스·슬리피지·철수비용을 추적합니다. 실제 거래와 지갑 연결은 없습니다.</p>
-      </div>
-      <div class="hero-status" aria-label="실험 상태">
-        <span id="status-badge" class="badge">불러오는 중</span>
-        <strong id="countdown">—</strong>
-        <span id="last-update">최근 갱신 —</span>
-      </div>
-    </header>
+  <a class="skip-link" href="#main-content">본문으로 건너뛰기</a>
 
-    <aside class="notice" role="note">
-      <strong>가상 실전형 Shadow</strong>
-      <span id="evidence-warning">실제 자산은 사용하지 않지만, 가능한 범위에서 실제 체결과 비용을 가정해 가상 $1,000의 NAV를 추적합니다.</span>
+  <section class="auth-gate" id="auth-gate" aria-labelledby="auth-title" hidden>
+    <div class="auth-card">
+      <span class="brand-mark" aria-hidden="true">M</span>
+      <p class="eyebrow">Wallet verified access</p>
+      <h1 id="auth-title">OKX Wallet으로 본인 확인</h1>
+      <p id="auth-description">등록된 관리자 지갑만 운영 제어 화면에 접근할 수 있습니다.</p>
+      <button id="wallet-signin-button" class="button primary wallet-signin" type="button">OKX Wallet 연결 후 로그인</button>
+      <p class="auth-note">거래·토큰 승인·가스비 없이 1회성 로그인 메시지만 서명합니다.</p>
+      <p class="auth-status" id="auth-status" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="운영 콘솔 탐색">
+      <a class="brand" href="/?view=overview" aria-label="Metric Operations 홈">
+        <span class="brand-mark" aria-hidden="true">M</span>
+        <span><strong>Metric</strong><small>Operations Console</small></span>
+      </a>
+
+      <nav class="side-nav" aria-label="주요 화면">
+        <a href="/?view=overview" data-view-link="overview"><span aria-hidden="true">⌂</span> 개요</a>
+        <a href="/?view=position" data-view-link="position"><span aria-hidden="true">◫</span> 운용 포지션</a>
+        <a href="/?view=opportunities" data-view-link="opportunities"><span aria-hidden="true">↗</span> 기회 탐색</a>
+        <a href="/?view=wallet" data-view-link="wallet"><span aria-hidden="true">◇</span> 실행 지갑</a>
+        <a href="/?view=activity" data-view-link="activity"><span aria-hidden="true">≡</span> 활동 · 경보</a>
+      </nav>
+
+      <div class="sidebar-status">
+        <div class="status-line"><span class="pulse" id="sidebar-pulse"></span><span>Executor</span><strong id="sidebar-executor">확인 중</strong></div>
+        <div class="status-line"><span>데이터</span><strong id="sidebar-updated">—</strong></div>
+      </div>
     </aside>
 
-    <main id="main" tabindex="-1">
-      <section aria-labelledby="overview-title">
-        <div class="section-heading">
-          <div><p class="kicker">OVERVIEW</p><h2 id="overview-title">현재 실험 상태</h2></div>
-          <p id="run-meta" class="meta">—</p>
+    <div class="workspace">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobile-menu" type="button" aria-label="탐색 메뉴 열기" aria-expanded="false">☰</button>
+        <div class="topbar-title">
+          <p>개인용 비공개 운영 콘솔</p>
+          <h1 id="page-title">운영 개요</h1>
         </div>
-        <div id="summary-cards" class="card-grid" aria-live="polite"></div>
-      </section>
+        <div class="topbar-actions">
+          <button class="text-button" id="logout-button" type="button" hidden>로그아웃</button>
+          <button class="icon-button" id="refresh-button" type="button" aria-label="최신 상태 새로고침" title="새로고침">↻</button>
+          <div class="mode-badge" id="mode-badge" data-mode="LOADING"><span></span><strong>LOADING</strong></div>
+        </div>
+      </header>
 
-      <section class="panel strategy-policy" aria-labelledby="strategy-policy-title">
-        <div class="section-heading compact">
-          <div><p class="kicker">VIRTUAL $1,000 POLICY</p><h2 id="strategy-policy-title">코어 $800 · 마이크로 $200 가상 운용</h2></div>
-          <span id="strategy-policy-status" class="badge policy-badge">정책 확인 중</span>
+      <main id="main-content" tabindex="-1">
+        <div class="loading-state" id="loading-state" role="status">
+          <span class="loading-ring" aria-hidden="true"></span>
+          <p>실행기와 지갑 상태를 안전하게 불러오는 중…</p>
         </div>
-        <div id="strategy-policy-cards" class="policy-budget-grid"></div>
-        <div class="policy-rule-grid">
-          <article class="policy-rule-card"><h3>코어 규정</h3><dl id="core-policy-rules"></dl></article>
-          <article class="policy-rule-card"><h3>마이크로 규정</h3><dl id="micro-policy-rules"></dl></article>
-          <article class="policy-rule-card hard-stop-card"><h3>공통 구조적 즉시 철수</h3><ul id="hard-stop-rules"></ul></article>
-        </div>
-        <p id="strategy-policy-note" class="policy-note"></p>
-      </section>
 
-      <section aria-labelledby="eligible-title">
-        <div class="section-heading">
-          <div><p class="kicker">CANDIDATE DECISIONS</p><h2 id="eligible-title">코어·마이크로 후보 순위</h2></div>
-          <p class="meta">고정 투자금의 비용·가격위험 후 기대 순수익 순</p>
-        </div>
-        <div class="candidate-grid">
-          <article class="panel candidate-panel"><h3>코어 $800 후보</h3><div class="table-wrap"><table>
-            <thead><tr><th>순위·풀</th><th>판정</th><th>Edge APR</th><th>24h 순수익</th><th>왕복비용</th><th>회수</th><th>5-bin 점유</th><th>지속</th><th>사유</th></tr></thead>
-            <tbody id="core-candidates-body"></tbody>
-          </table></div><p id="core-candidates-empty" class="empty" hidden>코어 후보가 없습니다.</p></article>
-          <article class="panel candidate-panel"><h3>마이크로 $200 후보</h3><div class="table-wrap"><table>
-            <thead><tr><th>순위·풀</th><th>판정</th><th>Edge APR</th><th>4h 순수익</th><th>왕복비용</th><th>회수</th><th>5-bin 점유</th><th>지속</th><th>사유</th></tr></thead>
-            <tbody id="micro-candidates-body"></tbody>
-          </table></div><p id="micro-candidates-empty" class="empty" hidden>마이크로 후보가 없습니다.</p></article>
-        </div>
-      </section>
+        <section class="view" data-view="overview" aria-labelledby="overview-title" hidden>
+          <div class="view-heading">
+            <div><p class="eyebrow">Portfolio command center</p><h2 id="overview-title">운영 개요</h2></div>
+            <p id="overview-generated">최신 상태를 확인 중입니다.</p>
+          </div>
 
-      <section aria-labelledby="positions-title">
-        <div class="section-heading">
-          <div><p class="kicker">SHADOW POSITIONS</p><h2 id="positions-title">가상 포지션</h2></div>
-          <p class="meta">실제 지갑·자금 없음</p>
-        </div>
-        <div class="table-wrap"><table>
-          <thead><tr><th>풀</th><th>계정</th><th>가상 배정</th><th>누적 수수료</th><th>가격손실</th><th>누적비용</th><th>즉시청산가치</th><th>판정</th></tr></thead>
-          <tbody id="positions-body"></tbody>
-        </table></div>
-        <p id="positions-empty" class="empty" hidden>열린 가상 포지션이 없습니다.</p>
-      </section>
+          <div class="attention-banner" id="attention-banner" role="alert" hidden>
+            <div><strong>운영자 확인이 필요합니다</strong><p id="attention-copy"></p></div>
+            <button type="button" class="button secondary" data-command="acknowledge-alert">확인 후 잠금</button>
+          </div>
 
-      <div class="two-column">
-        <section class="panel" aria-labelledby="policies-title">
-          <div class="section-heading compact"><div><p class="kicker">POLICIES</p><h2 id="policies-title">진입 정책 비교</h2></div></div>
-          <div id="policy-cards" class="stack"></div>
+          <div class="metric-grid" aria-label="핵심 자산 지표">
+            <article class="metric-card accent-card"><span>총 평가자산</span><strong id="metric-total">—</strong><small id="metric-total-note">지갑과 LP 합산</small></article>
+            <article class="metric-card"><span>USDT 잔액</span><strong id="metric-usdt">—</strong><small>대기 자금</small></article>
+            <article class="metric-card"><span>BNB 가스</span><strong id="metric-bnb">—</strong><small id="metric-gas-note">트랜잭션 수수료</small></article>
+            <article class="metric-card"><span>WBNB</span><strong id="metric-wbnb">—</strong><small>정산·운용 대기 자산</small></article>
+            <article class="metric-card"><span>현재 LP</span><strong id="metric-lp">—</strong><small id="metric-pool">활성 포지션 없음</small></article>
+              <article class="metric-card"><span>추정 누적 LP 수수료</span><strong id="metric-fees">—</strong><small>최근 7일 흐름 기반</small></article>
+              <article class="metric-card"><span>평가손익</span><strong id="metric-pnl">—</strong><small id="metric-apy">진입 NAV 대비 —</small></article>
+          </div>
+
+          <div class="scan-funnel" aria-label="최근 풀 탐색 퍼널">
+            <div><span>전체 스캔</span><strong id="scan-total">—</strong><small>전체 체인 원시 풀</small></div>
+            <span aria-hidden="true">→</span>
+            <div><span>정밀 평가</span><strong id="scan-detailed">—</strong><small>전체 체인 APR·bin</small></div>
+            <span aria-hidden="true">→</span>
+            <div><span>감시 후보</span><strong id="scan-watch">—</strong><small>BSC 양수 Edge·PnL</small></div>
+            <span aria-hidden="true">→</span>
+            <div><span>진입 적격</span><strong id="scan-eligible">—</strong><small>모든 게이트 통과</small></div>
+          </div>
+
+          <div class="overview-grid">
+            <article class="panel decision-panel">
+              <div class="panel-heading"><div><p class="eyebrow">Automation decision</p><h3>현재 자동판단</h3></div><span class="decision-pill" id="decision-pill">WAIT</span></div>
+              <div class="decision-body">
+                <strong id="decision-title">판단 데이터를 기다리는 중입니다</strong>
+                <p id="decision-reason">후보 수익과 현재 포지션의 유지 가치를 비교해 판단 근거를 표시합니다.</p>
+              </div>
+              <dl class="decision-stats">
+                <div><dt>Executor 단계</dt><dd id="executor-phase">—</dd></div>
+                <div><dt>미결 거래</dt><dd id="executor-pending">—</dd></div>
+                <div><dt>다음 평가</dt><dd id="next-evaluation">자동 주기</dd></div>
+              </dl>
+            </article>
+
+            <article class="panel control-panel" aria-labelledby="control-title">
+              <div class="panel-heading"><div><p class="eyebrow">Safety controls</p><h3 id="control-title">자동운영 제어</h3></div><span id="wallet-connection-chip" class="connection-chip">지갑 확인 중</span></div>
+              <p class="control-explainer" id="control-explainer">지갑 연결은 조회 권한만 준비하며 자동운영을 시작하지 않습니다.</p>
+              <div class="control-actions" id="control-actions">
+                <button type="button" class="button primary" data-command="connect">실행지갑 연결</button>
+                <button type="button" class="button secondary" data-command="arm">운영 준비</button>
+                <button type="button" class="button live" data-command="activate">라이브 시작</button>
+                <button type="button" class="button secondary" data-command="pause-entries">신규 진입 정지</button>
+                <button type="button" class="button secondary" data-command="exit-only">Exit-only</button>
+                <button type="button" class="button secondary" data-command="lock">운영 잠금</button>
+              </div>
+              <div class="control-foot">
+                <button type="button" class="text-button" data-command="disconnect">지갑 연결 해제</button>
+                <button type="button" class="text-button danger-text" data-command="emergency-close">긴급 전량 철수</button>
+              </div>
+            </article>
+          </div>
+
+          <div class="overview-grid lower-grid">
+            <article class="panel">
+              <div class="panel-heading"><div><p class="eyebrow">Active allocation</p><h3>현재 포지션 요약</h3></div><a href="/?view=position" data-view-link="position" class="panel-link">상세 보기</a></div>
+              <div id="position-summary" class="empty-state"><strong>활성 포지션 없음</strong><p>운영이 시작되면 투입 원금, 평가액, 수수료와 교체 판단을 표시합니다.</p></div>
+            </article>
+            <article class="panel">
+              <div class="panel-heading"><div><p class="eyebrow">Top opportunity</p><h3>최상위 후보</h3></div><a href="/?view=opportunities" data-view-link="opportunities" class="panel-link">전체 후보</a></div>
+              <div id="top-opportunity" class="empty-state"><strong>적격 후보 없음</strong><p>순수익과 비용 회수 조건을 통과한 풀이 여기에 표시됩니다.</p></div>
+            </article>
+          </div>
         </section>
-        <section class="panel" aria-labelledby="blockers-title">
-          <div class="section-heading compact"><div><p class="kicker">EXCLUSIONS</p><h2 id="blockers-title">진입 차단 사유</h2></div></div>
-          <div id="blockers" class="blockers"></div>
-        </section>
-      </div>
 
-      <div class="two-column">
-        <section class="panel" aria-labelledby="events-title">
-          <div class="section-heading compact"><div><p class="kicker">EVENT FEED</p><h2 id="events-title">최근 진입·증액·철수</h2></div></div>
-          <ol id="events" class="events"></ol>
-          <p id="events-empty" class="empty" hidden>아직 기록된 이벤트가 없습니다.</p>
+        <section class="view" data-view="position" aria-labelledby="position-title" hidden>
+          <div class="view-heading"><div><p class="eyebrow">Live position</p><h2 id="position-title">운용 포지션</h2></div><p>관리 원장과 온체인 상태를 함께 확인합니다.</p></div>
+          <div id="position-detail" class="panel empty-state"><strong>활성 포지션 없음</strong><p>Executor가 관리하는 포지션이 열리면 상세 손익과 철수 경제성을 표시합니다.</p></div>
+          <div class="two-column-grid">
+            <article class="panel"><div class="panel-heading"><h3>관리 포지션 원장</h3><span class="subtle">Executor 생성 LP만 포함</span></div><div id="registry-detail" class="data-list"></div></article>
+            <article class="panel"><div class="panel-heading"><h3>Shadow 가상 포지션</h3><span class="shadow-badge">실제 자금 아님</span></div><p class="subtle section-copy">전략 검증용 가상 포지션입니다. 실제 Executor 포지션과 분리해 표시합니다.</p><div id="shadow-positions" class="shadow-list"></div></article>
+          </div>
         </section>
-        <section class="panel" aria-labelledby="health-title">
-          <div class="section-heading compact"><div><p class="kicker">SYSTEM</p><h2 id="health-title">수집 상태</h2></div></div>
-          <dl id="health" class="health"></dl>
-        </section>
-      </div>
-    </main>
 
-    <footer>
-      <span>Metric Shadow Lab</span>
-      <span>연구 전용 · 거래 비활성 · 수익 주장 금지</span>
-    </footer>
+        <section class="view" data-view="opportunities" aria-labelledby="opportunities-title" hidden>
+          <div class="view-heading"><div><p class="eyebrow">Opportunity engine</p><h2 id="opportunities-title">기회 탐색</h2></div><p>비용 차감 후 경제성을 통과한 후보를 우선합니다.</p></div>
+          <div class="opportunity-summary" id="opportunity-summary"></div>
+          <article class="panel table-panel">
+            <div class="panel-heading opportunity-heading"><div><h3>BSC 정밀평가 후보</h3><p class="subtle">스캔된 전체 풀 중 bin·APR 정밀평가를 완료한 후보</p></div><span id="candidate-count" class="connection-chip">0개</span></div>
+            <form class="candidate-filters" id="candidate-filters" role="search">
+              <label>상태<select id="candidate-status" name="candidateStatus"><option value="all">전체</option><option value="eligible">진입 적격</option><option value="watch">감시</option><option value="blocked">탈락</option></select></label>
+              <label>풀 검색<input id="candidate-search" name="candidateSearch" type="search" placeholder="예: BNCB/USDT" autocomplete="off"></label>
+            </form>
+            <div class="table-scroll"><table class="candidate-table"><thead><tr><th>풀</th><th>상태</th><th>Edge APR</th><th>PnL APR</th><th>$100 일 Edge</th><th>TVL</th><th>24h 거래량</th><th>거래량/TVL</th><th>유효 bin</th><th>판정 근거</th></tr></thead><tbody id="opportunity-rows"></tbody></table></div>
+            <div id="opportunity-empty" class="empty-state" hidden><strong>조건에 맞는 후보가 없습니다</strong><p>필터를 변경하거나 다음 탐색 주기를 기다려 주세요.</p></div>
+          </article>
+          <article class="panel"><div class="panel-heading"><h3>진입 차단 요인</h3><span class="subtle">최근 평가 기준</span></div><div id="blocker-list" class="blocker-list"></div></article>
+        </section>
+
+        <section class="view" data-view="wallet" aria-labelledby="wallet-title" hidden>
+          <div class="view-heading"><div><p class="eyebrow">Encrypted executor wallet</p><h2 id="wallet-title">실행 지갑</h2></div><p>개인키는 브라우저나 API로 전달되지 않습니다.</p></div>
+          <div class="wallet-grid">
+            <article class="panel wallet-identity">
+              <div class="wallet-icon" aria-hidden="true">◇</div>
+              <div><span class="connection-chip" id="wallet-status-chip">확인 중</span><h3>암호화 실행지갑</h3><p id="wallet-address">—</p><a id="wallet-explorer" href="#" target="_blank" rel="noreferrer noopener" hidden>BscScan에서 보기 ↗</a></div>
+            </article>
+            <article class="panel balance-panel"><span>USDT</span><strong id="wallet-usdt">—</strong><small>운용·대기 자금</small></article>
+            <article class="panel balance-panel"><span>BNB</span><strong id="wallet-bnb">—</strong><small>가스 잔액</small></article>
+            <article class="panel balance-panel"><span>WBNB</span><strong id="wallet-wbnb">—</strong><small>정산·운용 대기 자산</small></article>
+            <article class="panel balance-panel"><span>유동자산 합계</span><strong id="wallet-total">—</strong><small>BNB + WBNB + USDT 추정값</small></article>
+          </div>
+          <article class="panel wallet-safety">
+            <div class="panel-heading"><div><h3>연결 및 운영 안전</h3><p class="subtle">연결과 자동운영은 서로 다른 상태입니다.</p></div></div>
+            <div class="safety-steps">
+              <div><span>1</span><strong>지갑 연결</strong><p>암호화 Signer와 주소·체인·잔액을 검증합니다.</p></div>
+              <div><span>2</span><strong>운영 준비</strong><p>RPC·가스·미결 거래·경보를 확인합니다.</p></div>
+              <div><span>3</span><strong>라이브 시작</strong><p>서버의 하드 라이브 조건을 모두 통과해야 합니다.</p></div>
+            </div>
+            <div class="wallet-controls">
+              <button type="button" class="button primary" data-command="connect">실행지갑 연결</button>
+              <button type="button" class="button secondary" data-command="disconnect">안전하게 연결 해제</button>
+            </div>
+          </article>
+        </section>
+
+        <section class="view" data-view="activity" aria-labelledby="activity-title" hidden>
+          <div class="view-heading"><div><p class="eyebrow">Audit & alerts</p><h2 id="activity-title">활동 · 경보</h2></div><p>자동판단과 운영자 명령을 시간순으로 기록합니다.</p></div>
+          <div class="two-column-grid activity-grid">
+            <article class="panel"><div class="panel-heading"><h3>운영 감사로그</h3><span class="subtle">최근 50건</span></div><ol class="timeline" id="activity-list"></ol></article>
+            <article class="panel"><div class="panel-heading"><h3>안전 경보</h3><span class="subtle">최근 25건</span></div><ol class="timeline alerts" id="alert-list"></ol></article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>Metric Operations Console · Private</span>
+        <span id="footer-status">서버 상태 확인 중</span>
+      </footer>
+    </div>
   </div>
-  <div id="error-banner" class="error-banner" role="alert" hidden>데이터를 불러오지 못했습니다.</div>
+
+  <dialog id="confirm-dialog" aria-labelledby="confirm-title" aria-describedby="confirm-description">
+    <form method="dialog" class="dialog-card">
+      <div class="dialog-icon" id="confirm-icon" aria-hidden="true">!</div>
+      <h2 id="confirm-title">명령 확인</h2>
+      <p id="confirm-description"></p>
+      <label id="confirm-phrase-wrap" hidden>
+        확인 문구 <strong id="confirm-phrase-label"></strong>
+        <input id="confirm-phrase" name="confirmation_phrase" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="확인 문구 입력…">
+      </label>
+      <div class="dialog-actions">
+        <button class="button secondary" value="cancel">취소</button>
+        <button class="button danger" id="confirm-submit" value="confirm">확인</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
+  <div class="sr-only" id="live-region" role="status" aria-live="polite" aria-atomic="true"></div>
+  <script src="./app.js" defer></script>
 </body>
 </html>
