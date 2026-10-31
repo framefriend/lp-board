@@ -496,17 +496,32 @@ function shadowPositions(snapshot) {
 }
 
 function positionMetrics(position) {
+  const principal = firstValue(position, ["entry_nav_usd", "entry_value_usd", "principal_usd", "amount_usd", "initial_value_usd", "deployed_usd"]);
+  const fees = firstValue(position, ["estimated_accrued_fees_usd", "fees_usd", "accrued_fees_usd", "fee_value_usd", "metrics.fees_usd", "gross_edge_usd"]);
+  const elapsedHours = firstValue(position, ["fee_estimate_elapsed_hours"]);
+  const entryAprBps = firstValue(position, ["intent.edge_apr_bps"]);
+  const entryApr = firstValue(position, ["entry_edge_apr_pct"], asNumber(entryAprBps) === null ? null : Number(entryAprBps) / 100);
+  const expectedFeesFallback = [principal, entryApr, elapsedHours].every((value) => asNumber(value) !== null)
+    ? Number(principal) * (Number(entryApr) / 100) * (Number(elapsedHours) / (365.25 * 24))
+    : null;
+  const expectedFees = firstValue(position, ["expected_accrued_fees_usd"], expectedFeesFallback);
+  const attainmentFallback = asNumber(fees) !== null && asNumber(expectedFees) !== null && Number(expectedFees) > 0
+    ? Number(fees) / Number(expectedFees) * 100
+    : null;
   return {
     pool: firstValue(position, ["pair", "pool_name", "symbol", "name", "candidate.pair"], "Metric LP"),
     value: firstValue(position, ["current_value_usd", "value_usd", "position_value_usd", "marked_value_usd", "mark_value_usd", "last_nav_usd", "notional_usd"]),
-    principal: firstValue(position, ["entry_nav_usd", "entry_value_usd", "principal_usd", "amount_usd", "initial_value_usd", "deployed_usd"]),
+    principal,
     feeEvidence: firstValue(position, ["fee_evidence"]),
-    fees: firstValue(position, ["estimated_accrued_fees_usd", "fees_usd", "accrued_fees_usd", "fee_value_usd", "metrics.fees_usd", "gross_edge_usd"]),
+    fees,
     pnl: firstValue(position, ["valuation_pnl_usd", "net_pnl_usd", "pnl_usd", "unrealized_pnl_usd", "metrics.net_pnl_usd", "modeled_net_relative_pnl_usd"]),
     valuationReturnPct: firstValue(position, ["valuation_return_pct"]),
     feeHourly: firstValue(position, ["estimated_fee_hourly_usd"]),
     feeDaily: firstValue(position, ["estimated_fee_daily_usd"]),
     feeApr: firstValue(position, ["estimated_fee_apr_pct"]),
+    entryApr,
+    expectedFees,
+    feeAttainment: firstValue(position, ["fee_apr_attainment_pct"], attainmentFallback),
     feeEstimateMethod: firstValue(position, ["fee_estimate_method"]),
     feeEstimateAsOf: firstValue(position, ["fee_estimate_as_of"]),
     feeEstimatePeriodDays: firstValue(position, ["fee_estimate_period_days"]),
@@ -618,11 +633,11 @@ function renderPositionSummary(position, metrics) {
   container.className = "position-hero opportunity-hero";
   container.replaceChildren(
     labeledMetric("position-name", "현재 운용 풀", metrics.pool),
-    labeledMetric("position-stat", "평가액", formatMoney(metrics.value)),
-    labeledMetric("position-stat", "추정 누적 LP 수수료", formatMoneyPrecise(metrics.fees)),
-    labeledMetric("position-stat", "평가손익", moneyAndPercent(metrics.pnl, metrics.valuationReturnPct)),
-    labeledMetric("position-stat", "철수 후 예상손익", formatMoney(metrics.exitNetPnl)),
-    createNode("p", { className: "allocation-note", text: feeEvidenceCopy(metrics) }),
+    labeledMetric("position-stat", "진입 APR", formatPercent(metrics.entryApr)),
+    labeledMetric("position-stat", "APR 예상 누적", formatMoneyPrecise(metrics.expectedFees)),
+    labeledMetric("position-stat", "추정 누적 수수료", formatMoneyPrecise(metrics.fees)),
+    labeledMetric("position-stat", "APR 달성률", formatPercent(metrics.feeAttainment)),
+    createNode("p", { className: "allocation-note", text: "수수료는 최근 7일 bin 흐름 기반 추정치입니다. 가격·재고 손익과 철수비용은 포지션 상세에서 확인합니다." }),
   );
 }
 
@@ -692,15 +707,17 @@ function renderPosition(snapshot) {
     const hero = createNode("div", { className: "position-hero" }, [
       labeledMetric("position-name", "현재 평가액", formatMoney(metrics.value), `진입 ${formatDate(metrics.entered)}`),
       labeledMetric("position-stat", "진입 NAV", formatMoney(metrics.principal)),
-      labeledMetric("position-stat", "추정 누적 LP 수수료", formatMoneyPrecise(metrics.fees)),
+      labeledMetric("position-stat", "진입 APR", formatPercent(metrics.entryApr)),
+      labeledMetric("position-stat", "APR 예상 누적", formatMoneyPrecise(metrics.expectedFees)),
+      labeledMetric("position-stat", "APR 달성률", formatPercent(metrics.feeAttainment)),
       labeledMetric("position-stat", "평가손익", moneyAndPercent(metrics.pnl, metrics.valuationReturnPct)),
-      labeledMetric("position-stat", "철수 후 예상손익", formatMoney(metrics.exitNetPnl)),
     ]);
     hero.style.marginTop = "20px";
     const details = createNode("div", { className: "data-list" }, [
       dataRow("Token 0 수량", formatNumber(metrics.token0)),
       dataRow("Token 1 수량", formatNumber(metrics.token1)),
       dataRow("수수료 추정 기준시각", formatDate(metrics.feeEstimateAsOf)),
+      dataRow("추정 누적 LP 수수료", formatMoneyPrecise(metrics.fees)),
       dataRow("시간당 추정 수수료", formatMoneyPrecise(metrics.feeHourly)),
       dataRow("24시간 환산 수수료", formatMoneyPrecise(metrics.feeDaily)),
       dataRow("수수료 환산 APR", formatPercent(metrics.feeApr)),
