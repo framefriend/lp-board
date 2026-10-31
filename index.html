@@ -34,6 +34,7 @@
       <nav class="side-nav" aria-label="주요 화면">
         <a href="/?view=overview" data-view-link="overview"><span aria-hidden="true">⌂</span> 개요</a>
         <a href="/?view=position" data-view-link="position"><span aria-hidden="true">◫</span> 운용 포지션</a>
+        <a href="/?view=shadow" data-view-link="shadow"><span aria-hidden="true">◌</span> Shadow 연구</a>
         <a href="/?view=opportunities" data-view-link="opportunities"><span aria-hidden="true">↗</span> 기회 탐색</a>
         <a href="/?view=wallet" data-view-link="wallet"><span aria-hidden="true">◇</span> 실행 지갑</a>
         <a href="/?view=activity" data-view-link="activity"><span aria-hidden="true">≡</span> 활동 · 경보</a>
@@ -141,11 +142,26 @@
         </section>
 
         <section class="view" data-view="position" aria-labelledby="position-title" hidden>
-          <div class="view-heading"><div><p class="eyebrow">Live position</p><h2 id="position-title">운용 포지션</h2></div><p>관리 원장과 온체인 상태를 함께 확인합니다.</p></div>
+          <div class="view-heading"><div><p class="eyebrow">Live position</p><h2 id="position-title">현물 LP 상세</h2></div><p>실제 Executor가 보유한 온체인 LP와 철수 경제성만 표시합니다.</p></div>
           <div id="position-detail" class="panel empty-state"><strong>활성 포지션 없음</strong><p>Executor가 관리하는 포지션이 열리면 상세 손익과 철수 경제성을 표시합니다.</p></div>
-          <div class="two-column-grid">
-            <article class="panel"><div class="panel-heading"><h3>관리 포지션 원장</h3><span class="subtle">Executor 생성 LP만 포함</span></div><div id="registry-detail" class="data-list"></div></article>
-            <article class="panel"><div class="panel-heading"><h3>Shadow 가상 포지션</h3><span class="shadow-badge">실제 자금 아님</span></div><p class="subtle section-copy">전략 검증용 가상 포지션입니다. 실제 Executor 포지션과 분리해 표시합니다.</p><div id="shadow-positions" class="shadow-list"></div></article>
+          <article class="panel registry-panel"><div class="panel-heading"><h3>관리 포지션 원장</h3><span class="subtle">Executor 생성 LP만 포함</span></div><div id="registry-detail" class="data-list"></div></article>
+        </section>
+
+        <section class="view" data-view="shadow" aria-labelledby="shadow-title" hidden>
+          <div class="view-heading"><div><p class="eyebrow">Research ledger</p><h2 id="shadow-title">Shadow 연구 기록</h2></div><p>실제 자금과 분리된 반사실 실험입니다. 운용 수익이나 실현손익으로 해석하지 않습니다.</p></div>
+          <article class="panel research-notice" id="shadow-evidence">
+            <div class="panel-heading"><div><p class="eyebrow">Evidence boundary</p><h3>연구 증거 수준</h3></div><span class="shadow-badge">실제 자금 아님</span></div>
+            <p id="shadow-warning" class="section-copy">Shadow 연구 스냅샷을 불러오는 중입니다.</p>
+            <div id="shadow-period" class="research-period"></div>
+          </article>
+          <div class="opportunity-summary" id="shadow-summary"></div>
+          <div class="two-column-grid shadow-grid">
+            <article class="panel"><div class="panel-heading"><h3>정책별 연구 결과</h3><span class="subtle">각 정책은 독립 가상 원장</span></div><div id="shadow-policies" class="shadow-list"></div></article>
+            <article class="panel"><div class="panel-heading"><h3>현재 가상 포지션</h3><span class="subtle">실제 LP와 비교 금지</span></div><div id="shadow-positions" class="shadow-list"></div></article>
+          </div>
+          <div class="two-column-grid shadow-grid">
+            <article class="panel"><div class="panel-heading"><h3>누적 모델 순위</h3><span class="subtle">HODL 대비 모델 손익</span></div><div id="shadow-leaderboard" class="data-list"></div></article>
+            <article class="panel"><div class="panel-heading"><h3>최근 Shadow 이벤트</h3><span class="subtle">진입·확대·종료 기록</span></div><ol id="shadow-events" class="timeline shadow-events"></ol></article>
           </div>
         </section>
 

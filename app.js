@@ -13,10 +13,11 @@ const BSC_CHAIN = {
   blockExplorerUrls: ["https://bscscan.com"],
 };
 const EXTERNAL_CONTROL_COMMANDS = new Set(["connect", "lock", "pause-entries", "exit-only", "acknowledge-alert"]);
-const VALID_VIEWS = new Set(["overview", "position", "opportunities", "wallet", "activity"]);
+const VALID_VIEWS = new Set(["overview", "position", "shadow", "opportunities", "wallet", "activity"]);
 const VIEW_TITLES = {
   overview: "운영 개요",
-  position: "운용 포지션",
+  position: "현물 LP 상세",
+  shadow: "Shadow 연구 기록",
   opportunities: "기회 탐색",
   wallet: "실행 지갑",
   activity: "활동 · 경보",
@@ -467,6 +468,7 @@ function render() {
   renderHeader(snapshot);
   renderOverview(snapshot);
   renderPosition(snapshot);
+  renderShadow(snapshot);
   renderOpportunities(snapshot);
   renderWallet(snapshot);
   renderActivity(snapshot);
@@ -491,8 +493,9 @@ function activePosition(snapshot) {
   return active && typeof active === "object" ? active : null;
 }
 
-function shadowPositions(snapshot) {
-  return list(snapshot.positions?.shadow || snapshot.positions?.dashboard);
+function shadowResearch(snapshot) {
+  const shadow = snapshot.research?.shadow;
+  return shadow && typeof shadow === "object" ? shadow : {};
 }
 
 function positionMetrics(position) {
@@ -509,7 +512,7 @@ function positionMetrics(position) {
     ? Number(fees) / Number(expectedFees) * 100
     : null;
   return {
-    pool: firstValue(position, ["pair", "pool_name", "symbol", "name", "candidate.pair"], "Metric LP"),
+    pool: firstValue(position, ["pair", "pool_name", "symbol", "name", "candidate.pair", "intent.pair"], "Metric LP"),
     value: firstValue(position, ["current_value_usd", "value_usd", "position_value_usd", "marked_value_usd", "mark_value_usd", "last_nav_usd", "notional_usd"]),
     principal,
     feeEvidence: firstValue(position, ["fee_evidence"]),
@@ -535,6 +538,13 @@ function positionMetrics(position) {
     token1: firstValue(position, ["token1_amount", "amount1", "inventory.token1"]),
     exitCost: firstValue(position, ["estimated_round_trip_cost_usd", "estimated_exit_cost_usd", "exit_cost_usd", "metrics.exit_cost_usd"]),
     recoveryDays: firstValue(position, ["recovery_days", "loss_recovery_days", "metrics.recovery_days"]),
+    chainId: firstValue(position, ["chain_id", "intent.chain_id"]),
+    poolAddress: firstValue(position, ["pool_address", "intent.pool_address"]),
+    owner: firstValue(position, ["owner", "intent.owner"]),
+    notional: firstValue(position, ["notional_usd", "intent.notional_usd"]),
+    projectedDaily: firstValue(position, ["projected_gross_edge_usd_per_day", "intent.projected_gross_edge_usd_per_day"]),
+    observedAt: firstValue(position, ["observed_at", "intent.observed_at"]),
+    bins: list(position.shares).map((item) => item.bin).filter((value) => value !== undefined && value !== null),
   };
 }
 
@@ -699,10 +709,14 @@ function renderPosition(snapshot) {
     container.replaceChildren(...emptyStateNodes("활성 포지션 없음", "Executor가 관리하는 포지션이 열리면 상세 손익과 철수 경제성을 표시합니다."));
   } else {
     const metrics = positionMetrics(position);
+    const decision = snapshot.executor?.last_decision;
+    const decisionName = typeof decision === "object"
+      ? firstValue(decision, ["decision", "action", "status"], "HOLD")
+      : decision || "HOLD";
     container.className = "panel";
     const heading = createNode("div", { className: "panel-heading" }, [
       createNode("div", {}, [createNode("p", { className: "eyebrow", text: "Managed liquidity" }), createNode("h3", { text: metrics.pool })]),
-      createNode("span", { className: "decision-pill", text: humanize(snapshot.executor?.last_decision?.decision || snapshot.executor?.last_decision || "HOLD") }),
+      createNode("span", { className: "decision-pill", text: humanize(decisionName) }),
     ]);
     const hero = createNode("div", { className: "position-hero" }, [
       labeledMetric("position-name", "현재 평가액", formatMoney(metrics.value), `진입 ${formatDate(metrics.entered)}`),
@@ -714,8 +728,12 @@ function renderPosition(snapshot) {
     ]);
     hero.style.marginTop = "20px";
     const details = createNode("div", { className: "data-list" }, [
-      dataRow("Token 0 수량", formatNumber(metrics.token0)),
-      dataRow("Token 1 수량", formatNumber(metrics.token1)),
+      dataRow("체인", Number(metrics.chainId) === 56 ? "BNB Smart Chain (56)" : formatNumber(metrics.chainId)),
+      dataRow("풀 주소", shortAddress(metrics.poolAddress), metrics.poolAddress),
+      dataRow("보유 bin", metrics.bins.length ? metrics.bins.join(", ") : "—"),
+      dataRow("실제 투입 기준", formatMoney(metrics.notional)),
+      dataRow("진입 판단 관측시각", formatDate(metrics.observedAt)),
+      dataRow("진입 당시 예상 일 Edge", formatMoneyPrecise(metrics.projectedDaily)),
       dataRow("수수료 추정 기준시각", formatDate(metrics.feeEstimateAsOf)),
       dataRow("추정 누적 LP 수수료", formatMoneyPrecise(metrics.fees)),
       dataRow("시간당 추정 수수료", formatMoneyPrecise(metrics.feeHourly)),
@@ -730,7 +748,51 @@ function renderPosition(snapshot) {
     container.replaceChildren(heading, hero, details, note);
   }
   renderObjectList("registry-detail", snapshot.positions?.managed_registry, "등록된 관리 포지션이 없습니다.");
-  renderShadowPositions(shadowPositions(snapshot));
+}
+
+function renderShadow(snapshot) {
+  const shadow = shadowResearch(snapshot);
+  const evidence = shadow.evidence || {};
+  const experiment = shadow.experiment || {};
+  const summary = shadow.summary || {};
+  setText("shadow-warning", evidence.warning || "Shadow 연구는 실제 거래 체결과 실현비용을 증명하지 않습니다.");
+  const status = humanize(shadow.status || "unavailable");
+  $("shadow-period").replaceChildren(
+    dataRow("연구 상태", status),
+    dataRow("실험 기간", `${formatDate(experiment.started_at)} → ${formatDate(experiment.ends_at)}`),
+    dataRow("증거 수준", humanize(evidence.level || "미확인")),
+    dataRow("실현수익 주장 가능", evidence.profit_claim_eligible ? "가능" : "불가"),
+  );
+  const cards = [
+    ["현재 가상 원금", formatMoney(summary.deployed_usd)],
+    ["열린 가상 포지션", formatNumber(summary.open_lanes)],
+    ["모델 평가손익", formatMoney(summary.operating_marked_pnl_usd)],
+    ["HODL 대비", formatMoney(summary.lp_excess_over_hold_usd)],
+  ];
+  $("shadow-summary").replaceChildren(...cards.map(([label, value]) => labeledMetric("summary-card", label, value)));
+  renderShadowPolicies(list(shadow.policies));
+  renderShadowPositions(list(shadow.active_lanes));
+  renderShadowLeaderboard(shadow.leaderboard || {});
+  renderShadowEvents(list(shadow.events));
+}
+
+function renderShadowPolicies(items) {
+  const container = $("shadow-policies");
+  if (!items.length) {
+    container.replaceChildren(createNode("div", { className: "empty-state" }, emptyStateNodes("정책 기록 없음", "Shadow 정책 결과가 생성되면 표시합니다.")));
+    return;
+  }
+  container.replaceChildren(...items.map((item) => createNode("article", { className: "shadow-card" }, [
+    createNode("div", { className: "shadow-card-head" }, [
+      createNode("strong", { text: firstValue(item, ["strategy_name", "strategy"], "Shadow 정책") }),
+      createNode("span", { className: "shadow-badge", text: `${formatNumber(item.open_lane_count)} OPEN` }),
+    ]),
+    createNode("dl", {}, [
+      createNode("div", {}, [createNode("dt", { text: "실험 lane" }), createNode("dd", { text: formatNumber(item.lane_count) })]),
+      createNode("div", {}, [createNode("dt", { text: "모델 절대손익" }), createNode("dd", { text: formatMoney(item.operating_marked_pnl_usd) })]),
+      createNode("div", {}, [createNode("dt", { text: "HODL 대비" }), createNode("dd", { text: formatMoney(item.lp_excess_over_hold_usd) })]),
+    ]),
+  ])));
 }
 
 function renderShadowPositions(items) {
@@ -749,10 +811,58 @@ function renderShadowPositions(items) {
       createNode("dl", {}, [
         createNode("div", {}, [createNode("dt", { text: "가상 투입" }), createNode("dd", { text: formatMoney(metrics.principal) })]),
         createNode("div", {}, [createNode("dt", { text: "가상 평가" }), createNode("dd", { text: formatMoney(metrics.value) })]),
-        createNode("div", {}, [createNode("dt", { text: "Hold 대비" }), createNode("dd", { text: formatMoney(metrics.pnl) })]),
+        createNode("div", {}, [createNode("dt", { text: "HODL 대비" }), createNode("dd", { text: formatMoney(item.lp_excess_over_hold_usd) })]),
       ]),
     ]);
   }));
+}
+
+function renderShadowLeaderboard(leaderboard) {
+  const container = $("shadow-leaderboard");
+  const rows = [
+    ...list(leaderboard.top).slice(0, 4).map((item) => ({ ...item, rankLabel: "상위" })),
+    ...list(leaderboard.bottom).slice(0, 2).map((item) => ({ ...item, rankLabel: "하위" })),
+  ];
+  if (!rows.length) {
+    container.replaceChildren(createNode("div", { className: "empty-state" }, emptyStateNodes("순위 기록 없음", "종료된 Shadow 주기가 쌓이면 표시합니다.")));
+    return;
+  }
+  container.replaceChildren(...rows.map((item) => dataRow(
+    `${item.rankLabel} · ${firstValue(item, ["pair"], "—")} · ${firstValue(item, ["strategy_name", "strategy"], "—")}`,
+    formatMoney(item.modeled_net_relative_pnl_usd),
+  )));
+}
+
+function renderShadowEvents(items) {
+  const container = $("shadow-events");
+  if (!items.length) {
+    container.replaceChildren(createNode("li", {}, emptyStateNodes("이벤트 없음", "Shadow 진입·확대·종료 기록이 여기에 표시됩니다.")));
+    return;
+  }
+  container.replaceChildren(...items.slice(0, 12).map((item) => createNode("li", {}, [
+    createNode("time", { text: formatDate(item.observed_at), dateTime: item.observed_at }),
+    createNode("div", {}, [
+      createNode("strong", { text: `${shadowEventLabel(item.event_type)} · ${firstValue(item, ["pair"], "—")}` }),
+      createNode("p", { text: `${firstValue(item, ["strategy_name", "strategy"], "—")} · ${shadowReasonLabel(firstValue(item, ["reason"], "기록"))} · ${formatMoney(item.amount_usd)}` }),
+    ]),
+  ])));
+}
+
+function shadowEventLabel(value) {
+  return ({ open: "가상 진입", scale: "가상 확대", close: "가상 종료" })[String(value || "").toLowerCase()] || humanize(value);
+}
+
+function shadowReasonLabel(value) {
+  const labels = {
+    two_consecutive_positive_observations: "양수 신호 2회 지속",
+    positive_signal_persisted: "양수 신호 지속",
+    hard_risk_gate: "위험 게이트",
+    peak_drawdown: "고점 대비 하락",
+    immediate_stop: "즉시 중단 조건",
+    sustained_underperformance: "지속 저성과",
+    provider_unhealthy: "가격 제공자 이상",
+  };
+  return labels[String(value || "").toLowerCase()] || humanize(value);
 }
 
 function renderObjectList(id, source, emptyCopy) {
@@ -763,8 +873,8 @@ function renderObjectList(id, source, emptyCopy) {
     return;
   }
   container.replaceChildren(...items.slice(0, 8).map((item, index) => {
-    const label = firstValue(item, ["pair", "pool_name", "symbol", "key", "status"], `항목 ${index + 1}`);
-    const detail = firstValue(item, ["pool_address", "address", "phase", "shares", "value"], "관리 중");
+    const label = firstValue(item, ["pair", "pool_name", "symbol", "position.intent.pair", "key", "status"], `항목 ${index + 1}`);
+    const detail = firstValue(item, ["pool_address", "address", "position.intent.pool_address", "phase", "shares", "value"], "관리 중");
     return dataRow(label, shortAddress(detail), detail);
   }));
 }
