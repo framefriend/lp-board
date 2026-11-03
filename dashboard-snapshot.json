@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-03T05:57:07Z",
+  "generated_at": "2026-11-03T06:12:01Z",
   "mode": "METRIC_SHADOW_ONLY_NO_TRADING",
   "status": "completed",
   "experiment": {
@@ -25,75 +25,48 @@
     "scanned_pools": 0,
     "detailed_pools": 0,
     "eligible_pools": 0,
-    "open_lanes": 1,
-    "deployed_usd": 821.2732999875973,
-    "gross_edge_usd": 1.0753588535387335,
+    "open_lanes": 0,
+    "deployed_usd": 0.0,
+    "gross_edge_usd": 0.0,
     "gross_relative_pnl_usd": 0,
     "gross_absolute_pnl_usd": 0,
     "marked_value_usd": 1022.7226779162883,
     "hold_value_usd": 1000,
-    "costs_usd": 0.42673147583452026,
+    "costs_usd": 0.0,
     "modeled_net_relative_pnl_usd": 0,
     "operating_marked_pnl_usd": 0,
     "lp_excess_over_hold_usd": 0,
     "estimated_exit_cost_usd": 0,
     "immediate_exit_pnl_usd": 22.722677916288262,
     "incomplete_cost_lane_count": 0,
-    "cash_usd": 200.0,
+    "cash_usd": 1022.7226779162883,
     "virtual_nav_usd": 1022.7226779162883,
     "actual_assets_used_usd": 0,
     "legacy_comparison_lanes_excluded": 0
   },
   "run": {
-    "run_id": "metric-20261103T055204Z-24ec3b9b",
-    "started_at": "2026-11-03T05:52:04Z",
-    "finished_at": "2026-11-03T05:52:04Z",
+    "run_id": "metric-20261103T060700Z-6b7a579a",
+    "started_at": "2026-11-03T06:07:00Z",
+    "finished_at": "2026-11-03T06:07:00Z",
     "status": "experiment_complete",
     "opened_lanes": 0,
     "scaled_lanes": 0,
     "closed_lanes": 0
   },
   "eligible_pools": [],
-  "active_positions": [
-    {
-      "chain": "Robinhood",
-      "chain_id": 4663,
-      "costs_usd": 0.42673147583452026,
-      "decision": "철수 관찰",
-      "decision_reason": "순 Edge 기준 미달",
-      "deployed_usd": 821.2732999875973,
-      "entry_edge_apr_bps": 21786.645492512678,
-      "estimated_exit_cost_usd": null,
-      "evidence_complete": false,
-      "fee_income_usd": 1.0753588535387335,
-      "fee_rate_usd_per_hour": 0.0,
-      "hold_value_usd": 821.738584543592,
-      "lane": "core",
-      "lane_label": "코어",
-      "last_edge_apr_bps": 0.0,
-      "last_observed_at": "2026-11-03T05:57:07Z",
-      "liquidation_value_usd": 822.7226779162883,
-      "marked_value_usd": 822.0740505385841,
-      "opened_at": "2026-11-03T00:12:07Z",
-      "pair": "WETH/USDG",
-      "pool_key": "94d7edebb24bca0f9ce6",
-      "price_loss_recovery_hours": null,
-      "price_loss_usd": 0.0,
-      "price_loss_velocity_usd_per_hour": 0.0
-    }
-  ],
+  "active_positions": [],
   "policies": [
     {
       "strategy": "core_800",
       "strategy_name": "코어 가상계정 $800",
-      "lane_count": 1,
-      "open_lane_count": 1,
-      "deployed_usd": 821.2732999875973,
-      "cash_usd": 0.0,
-      "gross_edge_usd": 1.0753588535387335,
+      "lane_count": 0,
+      "open_lane_count": 0,
+      "deployed_usd": 0.0,
+      "cash_usd": 822.7226779162883,
+      "gross_edge_usd": 0.0,
       "gross_relative_pnl_usd": 0,
-      "costs_usd": 0.42673147583452026,
-      "modeled_net_relative_pnl_usd": 1.4493779286909785
+      "costs_usd": 0.0,
+      "modeled_net_relative_pnl_usd": 0.0
     },
     {
       "strategy": "micro_200",
@@ -302,12 +275,21 @@
       "observed_at": "2026-11-03T00:12:07Z",
       "pair": "WETH/USDG",
       "reason": "highest_expected_net_candidate"
+    },
+    {
+      "amount_usd": 822.7226779162883,
+      "event_type": "close",
+      "lane": "core",
+      "lane_label": "코어",
+      "observed_at": "2026-11-03T06:12:01Z",
+      "pair": "WETH/USDG",
+      "reason": "순 Edge 기준 미달"
     }
   ],
   "blockers": [],
   "health": {
     "database_integrity": "ok",
-    "latest_run_age_seconds": 303,
+    "latest_run_age_seconds": 301,
     "fresh": true,
     "scheduler": "15분 간격",
     "trading_enabled": false,
@@ -507,38 +489,22 @@
         "observed_at": "2026-11-03T00:12:07Z",
         "pair": "WETH/USDG",
         "reason": "highest_expected_net_candidate"
+      },
+      {
+        "amount_usd": 822.7226779162883,
+        "event_type": "close",
+        "lane": "core",
+        "lane_label": "코어",
+        "observed_at": "2026-11-03T06:12:01Z",
+        "pair": "WETH/USDG",
+        "reason": "순 Edge 기준 미달"
       }
     ],
     "lanes": {
       "core": {
-        "cash_usd": 0.0,
-        "exit_streak": 2,
-        "position": {
-          "chain": "Robinhood",
-          "chain_id": 4663,
-          "costs_usd": 0.42673147583452026,
-          "decision": "철수 관찰",
-          "decision_reason": "순 Edge 기준 미달",
-          "deployed_usd": 821.2732999875973,
-          "entry_edge_apr_bps": 21786.645492512678,
-          "estimated_exit_cost_usd": null,
-          "evidence_complete": false,
-          "fee_income_usd": 1.0753588535387335,
-          "fee_rate_usd_per_hour": 0.0,
-          "hold_value_usd": 821.738584543592,
-          "lane": "core",
-          "lane_label": "코어",
-          "last_edge_apr_bps": 0.0,
-          "last_observed_at": "2026-11-03T05:57:07Z",
-          "liquidation_value_usd": 822.7226779162883,
-          "marked_value_usd": 822.0740505385841,
-          "opened_at": "2026-11-03T00:12:07Z",
-          "pair": "WETH/USDG",
-          "pool_key": "94d7edebb24bca0f9ce6",
-          "price_loss_recovery_hours": null,
-          "price_loss_usd": 0.0,
-          "price_loss_velocity_usd_per_hour": 0.0
-        }
+        "cash_usd": 822.7226779162883,
+        "exit_streak": 0,
+        "position": null
       },
       "micro": {
         "cash_usd": 200.0,
@@ -547,46 +513,19 @@
       }
     },
     "mode": "virtual_actual_like_no_real_assets",
-    "positions": [
-      {
-        "chain": "Robinhood",
-        "chain_id": 4663,
-        "costs_usd": 0.42673147583452026,
-        "decision": "철수 관찰",
-        "decision_reason": "순 Edge 기준 미달",
-        "deployed_usd": 821.2732999875973,
-        "entry_edge_apr_bps": 21786.645492512678,
-        "estimated_exit_cost_usd": null,
-        "evidence_complete": false,
-        "fee_income_usd": 1.0753588535387335,
-        "fee_rate_usd_per_hour": 0.0,
-        "hold_value_usd": 821.738584543592,
-        "lane": "core",
-        "lane_label": "코어",
-        "last_edge_apr_bps": 0.0,
-        "last_observed_at": "2026-11-03T05:57:07Z",
-        "liquidation_value_usd": 822.7226779162883,
-        "marked_value_usd": 822.0740505385841,
-        "opened_at": "2026-11-03T00:12:07Z",
-        "pair": "WETH/USDG",
-        "pool_key": "94d7edebb24bca0f9ce6",
-        "price_loss_recovery_hours": null,
-        "price_loss_usd": 0.0,
-        "price_loss_velocity_usd_per_hour": 0.0
-      }
-    ],
+    "positions": [],
     "schema_version": "metric-virtual-portfolio-v1",
-    "source_run_id": "metric-20261103T055204Z-24ec3b9b",
+    "source_run_id": "metric-20261103T060700Z-6b7a579a",
     "summary": {
-      "cash_usd": 200.0,
-      "costs_usd": 0.42673147583452026,
-      "deployed_usd": 821.2732999875973,
-      "fee_income_usd": 1.0753588535387335,
+      "cash_usd": 1022.7226779162883,
+      "costs_usd": 0,
+      "deployed_usd": 0,
+      "fee_income_usd": 0,
       "liquidation_value_usd": 1022.7226779162883,
-      "open_positions": 1,
+      "open_positions": 0,
       "virtual_nav_usd": 1022.7226779162883
     },
-    "updated_at": "2026-11-03T05:57:07Z"
+    "updated_at": "2026-11-03T06:12:01Z"
   },
   "strategy_policy": {
     "status": "virtual_portfolio_active",
@@ -602,7 +541,7 @@
     ],
     "core": {
       "budget_usd": 800,
-      "cash_usd": 0.0,
+      "cash_usd": 822.7226779162883,
       "position_limit": 1,
       "objective": "지속 가능한 최고 순 Edge를 장기 수확",
       "entry": "모든 구조 안전조건 · 선택 5-bin 점유 5% 이하 · 3회 연속 Edge 유지 · $800 기준 gross $4/일+ · 최신 양방향 견적 · 왕복비용 24시간 이내 회수",
