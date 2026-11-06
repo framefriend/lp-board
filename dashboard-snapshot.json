@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-06T23:12:06Z",
+  "generated_at": "2026-11-06T23:27:00Z",
   "mode": "METRIC_SHADOW_ONLY_NO_TRADING",
   "status": "completed",
   "experiment": {
@@ -45,9 +45,9 @@
     "legacy_comparison_lanes_excluded": 0
   },
   "run": {
-    "run_id": "metric-20261106T230700Z-d6a90947",
-    "started_at": "2026-11-06T23:07:00Z",
-    "finished_at": "2026-11-06T23:07:00Z",
+    "run_id": "metric-20261106T232204Z-04d2d0d7",
+    "started_at": "2026-11-06T23:22:04Z",
+    "finished_at": "2026-11-06T23:22:04Z",
     "status": "experiment_complete",
     "opened_lanes": 0,
     "scaled_lanes": 0,
@@ -289,7 +289,7 @@
   "blockers": [],
   "health": {
     "database_integrity": "ok",
-    "latest_run_age_seconds": 306,
+    "latest_run_age_seconds": 296,
     "fresh": true,
     "scheduler": "15분 간격",
     "trading_enabled": false,
@@ -515,7 +515,7 @@
     "mode": "virtual_actual_like_no_real_assets",
     "positions": [],
     "schema_version": "metric-virtual-portfolio-v1",
-    "source_run_id": "metric-20261106T230700Z-d6a90947",
+    "source_run_id": "metric-20261106T232204Z-04d2d0d7",
     "summary": {
       "cash_usd": 1022.7226779162883,
       "costs_usd": 0,
@@ -525,7 +525,7 @@
       "open_positions": 0,
       "virtual_nav_usd": 1022.7226779162883
     },
-    "updated_at": "2026-11-06T23:12:06Z"
+    "updated_at": "2026-11-06T23:27:00Z"
   },
   "pilot_preparation": {
     "runtime": {
@@ -534,9 +534,18 @@
       "live_ready": true,
       "armed": true,
       "phase": "idle",
-      "at": "2026-11-06T23:11:35.953Z"
+      "at": "2026-11-06T23:26:49.777Z"
     },
-    "income": {},
+    "income": {
+      "verified": true,
+      "apr_pct": 13.605165485593435,
+      "observed_at": "2026-11-06T23:17:47.000Z",
+      "stale": false,
+      "entry_eligible": false,
+      "matched": 29,
+      "total": 29,
+      "regime": "low_range"
+    },
     "available": true,
     "status": "PREPARING_NO_TRADING",
     "label": "WBNB LP + BNB 고정 숏 · 사전 준비",
@@ -552,7 +561,7 @@
     "exit_confirmation_minutes": 60,
     "zero_fee_exit_minutes": 120,
     "blockers": [
-      "최근 관측 신호 재조회 전 진입 대기"
+      "진입 APR 240% 미달 · 조건 충족 대기"
     ],
     "note": "자동운영 연결 완료. 표시는 준비 규모 예시이며 실제 포지션이 아닙니다. 진입 때 재조회하며, LP·숏은 독립 거래소라 원자적 동시 체결은 보장되지 않습니다.",
     "diversification": "기초자산별·전체 한도 및 bin 수용량 관리 · 자동 분산 미연결"
