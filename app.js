@@ -342,6 +342,11 @@ async function loadSnapshot({ announce = false, refreshWallet = false } = {}) {
       ? `${PUBLIC_SNAPSHOT_URL}?t=${Date.now()}`
       : refreshWallet ? `${API_ROOT}/snapshot?refresh_wallet=1` : `${API_ROOT}/snapshot`;
     state.snapshot = await fetchJson(path);
+    if (PUBLIC_SNAPSHOT_URL) {
+      const source = state.snapshot;
+      source.research = {shadow: {...source, active_lanes: source.active_positions || []}};
+      source.opportunities = {candidate_pools: source.eligible_pools || [], eligible_pools: source.eligible_pools || [], summary: source.summary || {}, blockers: source.blockers || []};
+    }
     state.loading = false;
     render();
     if (announce) showToast("최신 운영 상태를 불러왔습니다.");
@@ -361,7 +366,7 @@ function randomRequestId() {
 }
 
 async function executeCommand(command) {
-  if (EXTERNAL_READ_ONLY) {
+  if (PUBLIC_SNAPSHOT_URL || EXTERNAL_READ_ONLY) {
     showToast("외부 공개 화면은 읽기 전용입니다. 운영 제어는 서버 로컬 콘솔에서만 가능합니다.", true);
     return;
   }
@@ -447,8 +452,8 @@ function updateControls() {
   qsa("[data-command]").forEach((button) => {
     const command = button.dataset.command;
     const permittedByChannel = !EXTERNAL_CONTROL || EXTERNAL_CONTROL_COMMANDS.has(command);
-    button.disabled = EXTERNAL_READ_ONLY || state.busy || !allowed[command] || !permittedByChannel;
-    if (EXTERNAL_READ_ONLY) button.title = "외부 공개 화면에서는 운영 제어가 차단됩니다.";
+    button.disabled = Boolean(PUBLIC_SNAPSHOT_URL) || EXTERNAL_READ_ONLY || state.busy || !allowed[command] || !permittedByChannel;
+    if (PUBLIC_SNAPSHOT_URL || EXTERNAL_READ_ONLY) button.title = "외부 공개 화면에서는 운영 제어가 차단됩니다.";
     else if (!permittedByChannel) button.title = "고위험 제어는 외부 카나리 검증 후 개방됩니다.";
     button.setAttribute("aria-disabled", String(button.disabled));
   });
@@ -478,11 +483,11 @@ function render() {
 
 function renderHeader(snapshot) {
   const operation = snapshot.operation || {};
-  const mode = operation.mode || "UNKNOWN";
+  const mode = operation.mode || (snapshot.pilot_preparation ? "PREPARING" : "UNKNOWN");
   const badge = $("mode-badge");
   badge.dataset.mode = mode;
   badge.querySelector("strong").textContent = mode;
-  const phase = snapshot.executor?.phase || "unknown";
+  const phase = snapshot.executor?.phase || (snapshot.pilot_preparation ? "준비 중" : "unknown");
   setText("sidebar-executor", humanize(phase));
   setText("sidebar-updated", formatDate(snapshot.generated_at));
   setText("footer-status", `${mode} · ${humanize(phase)} · ${formatDate(snapshot.generated_at)}`);
@@ -1023,7 +1028,7 @@ function bindEvents() {
 }
 
 async function init() {
-  if (EXTERNAL_READ_ONLY) {
+  if (PUBLIC_SNAPSHOT_URL || EXTERNAL_READ_ONLY) {
     document.title = `읽기 전용 · ${document.title}`;
     const externalRoot = "/metric-console/";
     const brand = document.querySelector(".brand");
@@ -1064,6 +1069,11 @@ init();
 
 function renderPilot(snapshot) {
   const p = snapshot.pilot_preparation || {};
+  if (PUBLIC_SNAPSHOT_URL) {
+    document.querySelector('.metric-grid').hidden = true;
+    document.querySelector('.scan-funnel').hidden = true;
+    document.querySelector('.overview-grid').hidden = true;
+  }
   setText("pilot-status", p.live_ready ? "상태 재확인 필요" : "거래 비활성 · 준비 중");
   setText("pilot-lp", p.example_lp_usd == null ? "자료 없음" : `${formatMoney(p.example_lp_usd)} · 예시`);
   setText("pilot-short", p.example_short_bnb == null ? "자료 없음" : `${number.format(p.example_short_bnb)} BNB · 예시`);
