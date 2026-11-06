@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-06T05:12:07Z",
+  "generated_at": "2026-11-06T05:13:35Z",
   "mode": "METRIC_SHADOW_ONLY_NO_TRADING",
   "status": "completed",
   "experiment": {
@@ -289,7 +289,7 @@
   "blockers": [],
   "health": {
     "database_integrity": "ok",
-    "latest_run_age_seconds": 307,
+    "latest_run_age_seconds": 395,
     "fresh": true,
     "scheduler": "15분 간격",
     "trading_enabled": false,
@@ -525,16 +525,16 @@
       "open_positions": 0,
       "virtual_nav_usd": 1022.7226779162883
     },
-    "updated_at": "2026-11-06T05:12:07Z"
+    "updated_at": "2026-11-06T05:13:35Z"
   },
   "pilot_preparation": {
     "available": true,
     "status": "PREPARING_NO_TRADING",
     "label": "WBNB LP + BNB 고정 숏 · 사전 준비",
-    "observed_at": "2026-11-06T04:56:32.136Z",
-    "stale": true,
+    "observed_at": "2026-11-06T05:13:30.608Z",
+    "stale": false,
     "live_ready": false,
-    "example_lp_usd": 13.853446899827516,
+    "example_lp_usd": 13.826256156401566,
     "example_short_bnb": 0.01,
     "max_lp_usd": 30,
     "target_leverage": 2,
@@ -547,8 +547,8 @@
       "LP·숏 공동 실행 연결 필요",
       "2배 증거금 실행 경로 준비 필요",
       "전체 순차 실행 시뮬레이션 필요",
-      "BNBUSDT 목표 레버리지 설정 필요",
-      "WBNB 전용 운영 연결 미적용"
+      "WBNB 전용 운영 연결 미적용",
+      "BNBUSDT 목표 레버리지 설정 필요"
     ],
     "note": "준비 시점의 예시이며 실제 포지션·현재 진입 신호가 아닙니다. 실행 직전 재조회합니다.",
     "diversification": "기초자산별·전체 한도 및 bin 수용량 관리 · 자동 분산 미연결"
