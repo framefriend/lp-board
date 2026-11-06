@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-06T21:42:07Z",
+  "generated_at": "2026-11-06T21:57:07Z",
   "mode": "METRIC_SHADOW_ONLY_NO_TRADING",
   "status": "completed",
   "experiment": {
@@ -45,9 +45,9 @@
     "legacy_comparison_lanes_excluded": 0
   },
   "run": {
-    "run_id": "metric-20261106T213704Z-a31f5efe",
-    "started_at": "2026-11-06T21:37:04Z",
-    "finished_at": "2026-11-06T21:37:04Z",
+    "run_id": "metric-20261106T215204Z-d7b01ecd",
+    "started_at": "2026-11-06T21:52:04Z",
+    "finished_at": "2026-11-06T21:52:04Z",
     "status": "experiment_complete",
     "opened_lanes": 0,
     "scaled_lanes": 0,
@@ -515,7 +515,7 @@
     "mode": "virtual_actual_like_no_real_assets",
     "positions": [],
     "schema_version": "metric-virtual-portfolio-v1",
-    "source_run_id": "metric-20261106T213704Z-a31f5efe",
+    "source_run_id": "metric-20261106T215204Z-d7b01ecd",
     "summary": {
       "cash_usd": 1022.7226779162883,
       "costs_usd": 0,
@@ -525,7 +525,7 @@
       "open_positions": 0,
       "virtual_nav_usd": 1022.7226779162883
     },
-    "updated_at": "2026-11-06T21:42:07Z"
+    "updated_at": "2026-11-06T21:57:07Z"
   },
   "pilot_preparation": {
     "runtime": {
@@ -534,7 +534,7 @@
       "live_ready": true,
       "armed": true,
       "phase": "idle",
-      "at": "2026-11-06T21:41:45.824Z"
+      "at": "2026-11-06T21:56:59.748Z"
     },
     "income": {},
     "available": true,
