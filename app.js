@@ -1074,7 +1074,9 @@ function renderPilot(snapshot) {
     document.querySelector('.scan-funnel').hidden = true;
     document.querySelector('.overview-grid').hidden = true;
   }
-  setText("pilot-status", p.live_ready ? "상태 재확인 필요" : "거래 비활성 · 준비 중");
+  const rt = p.runtime || {};
+  const phaseLabels = {idle:"조건 충족 대기",preparing:"진입 준비",opening:"LP·숏 연결 중",open:"LP·고정 숏 운영 중",closing:"공동 철회 중",halted:"운영 차단"};
+  setText("pilot-status", p.live_ready ? `${rt.armed ? "자동운영 활성" : "진입 일시 정지"} · ${phaseLabels[rt.phase] || "상태 확인"}` : "거래 비활성 · 준비 중");
   setText("pilot-lp", p.example_lp_usd == null ? "자료 없음" : `${formatMoney(p.example_lp_usd)} · 예시`);
   setText("pilot-short", p.example_short_bnb == null ? "자료 없음" : `${number.format(p.example_short_bnb)} BNB · 예시`);
   setText("pilot-freshness", `${p.stale ? "준비 기록 · 재조회 필요" : "준비 자료 조회 시각"} ${formatDate(p.observed_at)}`);

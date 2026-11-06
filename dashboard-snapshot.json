@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-06T09:12:07Z",
+  "generated_at": "2026-11-06T09:21:16Z",
   "mode": "METRIC_SHADOW_ONLY_NO_TRADING",
   "status": "completed",
   "experiment": {
@@ -45,9 +45,9 @@
     "legacy_comparison_lanes_excluded": 0
   },
   "run": {
-    "run_id": "metric-20261106T090700Z-f750db0a",
-    "started_at": "2026-11-06T09:07:00Z",
-    "finished_at": "2026-11-06T09:07:00Z",
+    "run_id": "metric-20261106T091725Z-70c5ed81",
+    "started_at": "2026-11-06T09:17:25Z",
+    "finished_at": "2026-11-06T09:17:25Z",
     "status": "experiment_complete",
     "opened_lanes": 0,
     "scaled_lanes": 0,
@@ -289,7 +289,7 @@
   "blockers": [],
   "health": {
     "database_integrity": "ok",
-    "latest_run_age_seconds": 307,
+    "latest_run_age_seconds": 231,
     "fresh": true,
     "scheduler": "15분 간격",
     "trading_enabled": false,
@@ -515,7 +515,7 @@
     "mode": "virtual_actual_like_no_real_assets",
     "positions": [],
     "schema_version": "metric-virtual-portfolio-v1",
-    "source_run_id": "metric-20261106T090700Z-f750db0a",
+    "source_run_id": "metric-20261106T091725Z-70c5ed81",
     "summary": {
       "cash_usd": 1022.7226779162883,
       "costs_usd": 0,
@@ -525,13 +525,20 @@
       "open_positions": 0,
       "virtual_nav_usd": 1022.7226779162883
     },
-    "updated_at": "2026-11-06T09:12:07Z"
+    "updated_at": "2026-11-06T09:21:16Z"
   },
   "pilot_preparation": {
+    "runtime": {
+      "fresh": true,
+      "live_ready": true,
+      "armed": true,
+      "phase": "idle",
+      "at": "2026-11-06T09:21:14.191Z"
+    },
     "income": {
       "verified": true,
-      "apr_pct": 30.63135001872432,
-      "observed_at": "2026-11-06T09:00:18.000Z",
+      "apr_pct": 32.486727987695055,
+      "observed_at": "2026-11-06T09:15:27.000Z",
       "stale": false,
       "entry_eligible": false,
       "matched": 31,
@@ -543,7 +550,7 @@
     "label": "WBNB LP + BNB 고정 숏 · 사전 준비",
     "observed_at": "2026-11-06T09:05:32.014Z",
     "stale": true,
-    "live_ready": false,
+    "live_ready": true,
     "example_lp_usd": 13.862686083199444,
     "example_short_bnb": 0.01,
     "max_lp_usd": 30,
@@ -553,14 +560,9 @@
     "exit_confirmation_minutes": 60,
     "zero_fee_exit_minutes": 120,
     "blockers": [
-      "최근 확인 진입 APR이 240% 기준 미달",
-      "LP·숏 공동 실행 연결 필요",
-      "2배 운용 설정 미적용",
-      "전체 순차 실행 시뮬레이션 필요",
-      "WBNB 전용 운영 연결 미적용",
-      "BNBUSDT 목표 레버리지 설정 필요"
+      "진입 APR 240% 미달 · 조건 충족 대기"
     ],
-    "note": "준비 시점의 예시이며 실제 포지션·현재 진입 신호가 아닙니다. 실행 직전 재조회합니다.",
+    "note": "자동운영 연결 완료. 표시는 준비 규모 예시이며 실제 포지션이 아닙니다. 진입 때 재조회하며, LP·숏은 독립 거래소라 원자적 동시 체결은 보장되지 않습니다.",
     "diversification": "기초자산별·전체 한도 및 bin 수용량 관리 · 자동 분산 미연결"
   },
   "strategy_policy": {
