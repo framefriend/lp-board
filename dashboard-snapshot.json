@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-06T16:27:07Z",
+  "generated_at": "2026-11-06T16:42:07Z",
   "mode": "METRIC_SHADOW_ONLY_NO_TRADING",
   "status": "completed",
   "experiment": {
@@ -45,9 +45,9 @@
     "legacy_comparison_lanes_excluded": 0
   },
   "run": {
-    "run_id": "metric-20261106T162204Z-0e5eb648",
-    "started_at": "2026-11-06T16:22:04Z",
-    "finished_at": "2026-11-06T16:22:04Z",
+    "run_id": "metric-20261106T163704Z-447c8d1e",
+    "started_at": "2026-11-06T16:37:04Z",
+    "finished_at": "2026-11-06T16:37:04Z",
     "status": "experiment_complete",
     "opened_lanes": 0,
     "scaled_lanes": 0,
@@ -515,7 +515,7 @@
     "mode": "virtual_actual_like_no_real_assets",
     "positions": [],
     "schema_version": "metric-virtual-portfolio-v1",
-    "source_run_id": "metric-20261106T162204Z-0e5eb648",
+    "source_run_id": "metric-20261106T163704Z-447c8d1e",
     "summary": {
       "cash_usd": 1022.7226779162883,
       "costs_usd": 0,
@@ -525,7 +525,7 @@
       "open_positions": 0,
       "virtual_nav_usd": 1022.7226779162883
     },
-    "updated_at": "2026-11-06T16:27:07Z"
+    "updated_at": "2026-11-06T16:42:07Z"
   },
   "pilot_preparation": {
     "runtime": {
@@ -534,18 +534,9 @@
       "live_ready": true,
       "armed": true,
       "phase": "idle",
-      "at": "2026-11-06T16:26:51.985Z"
+      "at": "2026-11-06T16:41:37.778Z"
     },
-    "income": {
-      "verified": true,
-      "apr_pct": 18.497185172827,
-      "observed_at": "2026-11-06T15:56:16.000Z",
-      "stale": true,
-      "entry_eligible": false,
-      "matched": 31,
-      "total": 31,
-      "regime": "low_range"
-    },
+    "income": {},
     "available": true,
     "status": "PREPARING_NO_TRADING",
     "label": "WBNB LP + BNB 고정 숏 · 사전 준비",
