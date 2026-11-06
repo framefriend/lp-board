@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-06T09:22:24Z",
+  "generated_at": "2026-11-06T09:27:02Z",
   "mode": "METRIC_SHADOW_ONLY_NO_TRADING",
   "status": "completed",
   "experiment": {
@@ -289,7 +289,7 @@
   "blockers": [],
   "health": {
     "database_integrity": "ok",
-    "latest_run_age_seconds": 20,
+    "latest_run_age_seconds": 298,
     "fresh": true,
     "scheduler": "15분 간격",
     "trading_enabled": false,
@@ -525,7 +525,7 @@
       "open_positions": 0,
       "virtual_nav_usd": 1022.7226779162883
     },
-    "updated_at": "2026-11-06T09:22:24Z"
+    "updated_at": "2026-11-06T09:27:02Z"
   },
   "pilot_preparation": {
     "runtime": {
@@ -534,7 +534,7 @@
       "live_ready": true,
       "armed": true,
       "phase": "idle",
-      "at": "2026-11-06T09:22:17.929Z"
+      "at": "2026-11-06T09:26:31.865Z"
     },
     "income": {
       "verified": true,
