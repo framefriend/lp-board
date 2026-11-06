@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-06T08:57:07Z",
+  "generated_at": "2026-11-06T09:12:07Z",
   "mode": "METRIC_SHADOW_ONLY_NO_TRADING",
   "status": "completed",
   "experiment": {
@@ -45,9 +45,9 @@
     "legacy_comparison_lanes_excluded": 0
   },
   "run": {
-    "run_id": "metric-20261106T085204Z-d2733cbd",
-    "started_at": "2026-11-06T08:52:04Z",
-    "finished_at": "2026-11-06T08:52:04Z",
+    "run_id": "metric-20261106T090700Z-f750db0a",
+    "started_at": "2026-11-06T09:07:00Z",
+    "finished_at": "2026-11-06T09:07:00Z",
     "status": "experiment_complete",
     "opened_lanes": 0,
     "scaled_lanes": 0,
@@ -289,7 +289,7 @@
   "blockers": [],
   "health": {
     "database_integrity": "ok",
-    "latest_run_age_seconds": 303,
+    "latest_run_age_seconds": 307,
     "fresh": true,
     "scheduler": "15분 간격",
     "trading_enabled": false,
@@ -515,7 +515,7 @@
     "mode": "virtual_actual_like_no_real_assets",
     "positions": [],
     "schema_version": "metric-virtual-portfolio-v1",
-    "source_run_id": "metric-20261106T085204Z-d2733cbd",
+    "source_run_id": "metric-20261106T090700Z-f750db0a",
     "summary": {
       "cash_usd": 1022.7226779162883,
       "costs_usd": 0,
@@ -525,13 +525,13 @@
       "open_positions": 0,
       "virtual_nav_usd": 1022.7226779162883
     },
-    "updated_at": "2026-11-06T08:57:07Z"
+    "updated_at": "2026-11-06T09:12:07Z"
   },
   "pilot_preparation": {
     "income": {
       "verified": true,
-      "apr_pct": 31.20355312093527,
-      "observed_at": "2026-11-06T08:45:16.000Z",
+      "apr_pct": 30.63135001872432,
+      "observed_at": "2026-11-06T09:00:18.000Z",
       "stale": false,
       "entry_eligible": false,
       "matched": 31,
@@ -541,10 +541,10 @@
     "available": true,
     "status": "PREPARING_NO_TRADING",
     "label": "WBNB LP + BNB 고정 숏 · 사전 준비",
-    "observed_at": "2026-11-06T05:13:30.608Z",
+    "observed_at": "2026-11-06T09:05:32.014Z",
     "stale": true,
     "live_ready": false,
-    "example_lp_usd": 13.826256156401566,
+    "example_lp_usd": 13.862686083199444,
     "example_short_bnb": 0.01,
     "max_lp_usd": 30,
     "target_leverage": 2,
