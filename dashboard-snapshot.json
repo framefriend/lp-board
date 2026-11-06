@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-06T04:57:07Z",
+  "generated_at": "2026-11-06T05:10:26Z",
   "mode": "METRIC_SHADOW_ONLY_NO_TRADING",
   "status": "completed",
   "experiment": {
@@ -45,9 +45,9 @@
     "legacy_comparison_lanes_excluded": 0
   },
   "run": {
-    "run_id": "metric-20261106T045204Z-6c0a0b7d",
-    "started_at": "2026-11-06T04:52:04Z",
-    "finished_at": "2026-11-06T04:52:04Z",
+    "run_id": "metric-20261106T050700Z-d40acd93",
+    "started_at": "2026-11-06T05:07:00Z",
+    "finished_at": "2026-11-06T05:07:00Z",
     "status": "experiment_complete",
     "opened_lanes": 0,
     "scaled_lanes": 0,
@@ -289,7 +289,7 @@
   "blockers": [],
   "health": {
     "database_integrity": "ok",
-    "latest_run_age_seconds": 303,
+    "latest_run_age_seconds": 206,
     "fresh": true,
     "scheduler": "15분 간격",
     "trading_enabled": false,
@@ -515,7 +515,7 @@
     "mode": "virtual_actual_like_no_real_assets",
     "positions": [],
     "schema_version": "metric-virtual-portfolio-v1",
-    "source_run_id": "metric-20261106T045204Z-6c0a0b7d",
+    "source_run_id": "metric-20261106T050700Z-d40acd93",
     "summary": {
       "cash_usd": 1022.7226779162883,
       "costs_usd": 0,
@@ -525,7 +525,33 @@
       "open_positions": 0,
       "virtual_nav_usd": 1022.7226779162883
     },
-    "updated_at": "2026-11-06T04:57:07Z"
+    "updated_at": "2026-11-06T05:10:26Z"
+  },
+  "pilot_preparation": {
+    "available": true,
+    "status": "PREPARING_NO_TRADING",
+    "label": "WBNB LP + BNB 고정 숏 · 사전 준비",
+    "observed_at": "2026-11-06T04:56:32.136Z",
+    "stale": true,
+    "live_ready": false,
+    "example_lp_usd": 13.853446899827516,
+    "example_short_bnb": 0.01,
+    "max_lp_usd": 30,
+    "target_leverage": 2,
+    "entry_apr_pct": 240,
+    "exit_apr_pct": 120,
+    "exit_confirmation_minutes": 60,
+    "zero_fee_exit_minutes": 120,
+    "blockers": [
+      "최근 3·6시간 실제 수수료 확인 필요",
+      "LP·숏 공동 실행 연결 필요",
+      "2배 증거금 실행 경로 준비 필요",
+      "전체 순차 실행 시뮬레이션 필요",
+      "BNBUSDT 목표 레버리지 설정 필요",
+      "WBNB 전용 운영 연결 미적용"
+    ],
+    "note": "준비 시점의 예시이며 실제 포지션·현재 진입 신호가 아닙니다. 실행 직전 재조회합니다.",
+    "diversification": "기초자산별·전체 한도 및 bin 수용량 관리 · 자동 분산 미연결"
   },
   "strategy_policy": {
     "status": "virtual_portfolio_active",

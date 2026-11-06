@@ -466,6 +466,7 @@ function render() {
   $("loading-state").hidden = true;
   selectView(state.activeView);
   renderHeader(snapshot);
+  renderPilot(snapshot);
   renderOverview(snapshot);
   renderPosition(snapshot);
   renderShadow(snapshot);
@@ -1060,3 +1061,14 @@ async function init() {
 }
 
 init();
+
+function renderPilot(snapshot) {
+  const p = snapshot.pilot_preparation || {};
+  setText("pilot-status", p.live_ready ? "상태 재확인 필요" : "거래 비활성 · 준비 중");
+  setText("pilot-lp", p.example_lp_usd == null ? "자료 없음" : `${formatMoney(p.example_lp_usd)} · 예시`);
+  setText("pilot-short", p.example_short_bnb == null ? "자료 없음" : `${number.format(p.example_short_bnb)} BNB · 예시`);
+  setText("pilot-freshness", `${p.stale ? "준비 기록 · 재조회 필요" : "준비 자료 조회 시각"} ${formatDate(p.observed_at)}`);
+  setText("pilot-note", p.note || "아직 실거래하지 않습니다.");
+  const target = $("pilot-blockers"); target.replaceChildren();
+  for (const reason of p.blockers || ["준비 상태 확인 필요"]) { const li = document.createElement("li"); li.textContent = reason; target.appendChild(li); }
+}
