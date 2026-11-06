@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-06T05:13:35Z",
+  "generated_at": "2026-11-06T05:18:53Z",
   "mode": "METRIC_SHADOW_ONLY_NO_TRADING",
   "status": "completed",
   "experiment": {
@@ -45,9 +45,9 @@
     "legacy_comparison_lanes_excluded": 0
   },
   "run": {
-    "run_id": "metric-20261106T050700Z-d40acd93",
-    "started_at": "2026-11-06T05:07:00Z",
-    "finished_at": "2026-11-06T05:07:00Z",
+    "run_id": "metric-20261106T051724Z-7cf5f9c7",
+    "started_at": "2026-11-06T05:17:24Z",
+    "finished_at": "2026-11-06T05:17:24Z",
     "status": "experiment_complete",
     "opened_lanes": 0,
     "scaled_lanes": 0,
@@ -289,7 +289,7 @@
   "blockers": [],
   "health": {
     "database_integrity": "ok",
-    "latest_run_age_seconds": 395,
+    "latest_run_age_seconds": 89,
     "fresh": true,
     "scheduler": "15분 간격",
     "trading_enabled": false,
@@ -515,7 +515,7 @@
     "mode": "virtual_actual_like_no_real_assets",
     "positions": [],
     "schema_version": "metric-virtual-portfolio-v1",
-    "source_run_id": "metric-20261106T050700Z-d40acd93",
+    "source_run_id": "metric-20261106T051724Z-7cf5f9c7",
     "summary": {
       "cash_usd": 1022.7226779162883,
       "costs_usd": 0,
@@ -525,14 +525,24 @@
       "open_positions": 0,
       "virtual_nav_usd": 1022.7226779162883
     },
-    "updated_at": "2026-11-06T05:13:35Z"
+    "updated_at": "2026-11-06T05:18:53Z"
   },
   "pilot_preparation": {
+    "income": {
+      "verified": true,
+      "apr_pct": 30.997421074686887,
+      "observed_at": "2026-11-06T05:12:12.000Z",
+      "stale": false,
+      "entry_eligible": false,
+      "matched": 28,
+      "total": 28,
+      "regime": "low_range"
+    },
     "available": true,
     "status": "PREPARING_NO_TRADING",
     "label": "WBNB LP + BNB 고정 숏 · 사전 준비",
     "observed_at": "2026-11-06T05:13:30.608Z",
-    "stale": false,
+    "stale": true,
     "live_ready": false,
     "example_lp_usd": 13.826256156401566,
     "example_short_bnb": 0.01,
@@ -543,9 +553,9 @@
     "exit_confirmation_minutes": 60,
     "zero_fee_exit_minutes": 120,
     "blockers": [
-      "최근 3·6시간 실제 수수료 확인 필요",
+      "최근 확인 진입 APR이 240% 기준 미달",
       "LP·숏 공동 실행 연결 필요",
-      "2배 증거금 실행 경로 준비 필요",
+      "2배 운용 설정 미적용",
       "전체 순차 실행 시뮬레이션 필요",
       "WBNB 전용 운영 연결 미적용",
       "BNBUSDT 목표 레버리지 설정 필요"

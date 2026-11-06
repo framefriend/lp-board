@@ -1078,6 +1078,8 @@ function renderPilot(snapshot) {
   setText("pilot-lp", p.example_lp_usd == null ? "자료 없음" : `${formatMoney(p.example_lp_usd)} · 예시`);
   setText("pilot-short", p.example_short_bnb == null ? "자료 없음" : `${number.format(p.example_short_bnb)} BNB · 예시`);
   setText("pilot-freshness", `${p.stale ? "준비 기록 · 재조회 필요" : "준비 자료 조회 시각"} ${formatDate(p.observed_at)}`);
+  const income = p.income || {};
+  setText("pilot-income", income.verified ? `최근 확인 진입 APR ${formatPercent(income.apr_pct)} / 기준 240% · ${income.stale ? "재조회 필요" : income.entry_eligible ? "수수료 문턱 충족 · 실행 준비 별도" : "기준 미달 · 현금 대기"} · ${formatDate(income.observed_at)} · 상태 대조 ${income.matched}/${income.total}` : "최근 3·6시간 실제 수수료 지표 미확인 · 진입 차단");
   setText("pilot-note", p.note || "아직 실거래하지 않습니다.");
   const target = $("pilot-blockers"); target.replaceChildren();
   for (const reason of p.blockers || ["준비 상태 확인 필요"]) { const li = document.createElement("li"); li.textContent = reason; target.appendChild(li); }
