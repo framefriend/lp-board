@@ -452,8 +452,8 @@ function updateControls() {
   qsa("[data-command]").forEach((button) => {
     const command = button.dataset.command;
     const permittedByChannel = !EXTERNAL_CONTROL || EXTERNAL_CONTROL_COMMANDS.has(command);
-    button.disabled = Boolean(PUBLIC_SNAPSHOT_URL) || state.snapshot.pilot_preparation?.status === "SINGLE_POSITION_SELECTOR" || EXTERNAL_READ_ONLY || state.busy || !allowed[command] || !permittedByChannel;
-    if (state.snapshot.pilot_preparation?.status === "SINGLE_POSITION_SELECTOR") button.title = "단일 포지션 자동운영 상황판은 조회 전용입니다.";
+    button.disabled = Boolean(PUBLIC_SNAPSHOT_URL) || ["SINGLE_POSITION_SELECTOR","WHOLE_METRIC_UNIVERSE"].includes(state.snapshot.pilot_preparation?.status) || EXTERNAL_READ_ONLY || state.busy || !allowed[command] || !permittedByChannel;
+    if (["SINGLE_POSITION_SELECTOR","WHOLE_METRIC_UNIVERSE"].includes(state.snapshot.pilot_preparation?.status)) button.title = "단일 포지션 자동운영 상황판은 조회 전용입니다.";
     else if (PUBLIC_SNAPSHOT_URL || EXTERNAL_READ_ONLY) button.title = "외부 공개 화면에서는 운영 제어가 차단됩니다.";
     else if (!permittedByChannel) button.title = "고위험 제어는 외부 카나리 검증 후 개방됩니다.";
     button.setAttribute("aria-disabled", String(button.disabled));
@@ -1070,7 +1070,7 @@ init();
 
 function renderPilot(snapshot) {
   const p = snapshot.pilot_preparation || {};
-  if (PUBLIC_SNAPSHOT_URL || p.status === "SINGLE_POSITION_SELECTOR") {
+  if (PUBLIC_SNAPSHOT_URL || ["SINGLE_POSITION_SELECTOR","WHOLE_METRIC_UNIVERSE"].includes(p.status)) {
     document.querySelector('.metric-grid').hidden = true;
     document.querySelector('.scan-funnel').hidden = true;
     document.querySelector('.overview-grid').hidden = true;
@@ -1086,7 +1086,15 @@ function renderPilot(snapshot) {
   const income = p.income || {};
   setText("pilot-income", income.kind === "holding" && income.verified ? `보유 1시간 수수료 APR ${formatPercent(income.apr_pct)} · 철회 기준120% 미만60분 지속 · ${formatDate(income.observed_at)}` : income.verified ? `최근 확인 진입 APR ${formatPercent(income.apr_pct)} / 기준 240% · ${income.stale ? "재조회 필요" : income.entry_eligible ? "수수료 문턱 충족 · 실행 준비 별도" : "기준 미달 · 현금 대기"} · ${formatDate(income.observed_at)} · 상태 대조 ${income.matched}/${income.total}` : p.candidates ? `최근 후보 검색: ${formatDate(p.scan_at)} · 통과 후보 없으면 현금 대기` : "최근 3·6시간 실제 수수료 지표 미확인 · 진입 차단");
   setText("pilot-note", `${p.note || "아직 실거래하지 않습니다."}${rt.at ? ` 운영 확인: ${formatDate(rt.at)}.${PUBLIC_SNAPSHOT_URL ? " 공개판은 발행 시점 상태입니다." : ""}` : ""}`);
+  let allPools = document.getElementById("universe-all-pools");
+  if (p.universe_candidates) {
+    if (!allPools) { allPools = document.createElement("details"); allPools.id = "universe-all-pools"; $("pilot-blockers").after(allPools); }
+    allPools.replaceChildren(); const summary = document.createElement("summary"); summary.textContent = `전체 ${p.universe_candidates.length}개 풀 조사 결과 보기`; allPools.append(summary);
+    const wrap = document.createElement("div"); wrap.className = "table-scroll"; const table = document.createElement("table"); table.className = "candidate-table";
+    const head = document.createElement("tr"); for (const value of ["체인","풀","검증된 보수 APR","판정"]) { const th=document.createElement("th"); th.textContent=value; head.append(th); } table.append(head);
+    for (const r of p.universe_candidates) { const tr=document.createElement("tr"); for (const value of [({1:"Ethereum",56:"BNB Chain",4663:"Robinhood"})[r.chain] || String(r.chain),`${r.pair} · ${r.id}`,r.apr_pct == null ? "미검증" : formatPercent(r.apr_pct),r.status]) {const td=document.createElement("td");td.textContent=value;tr.append(td);}table.append(tr); } wrap.append(table);allPools.append(wrap);
+  } else if (allPools) { allPools.remove(); }
   const target = $("pilot-blockers"); target.replaceChildren();
-  const selectorNotes = p.candidates ? [p.active_pair ? `보유: ${p.active_pair}` : p.selected_pair ? `선택: ${p.selected_pair}` : "선택: 현금 대기", ...p.candidates.map(r => `${r.pair}: ${r.apr_pct == null ? "자료 미확인" : formatPercent(r.apr_pct)} · ${r.eligible ? "진입 후보" : "대기"}`), ...(p.next_scan_at ? [`다음 검색: ${formatDate(p.next_scan_at)}`] : [])] : [];
+  const selectorNotes = p.candidates ? [p.active_pair ? `보유: ${p.active_pair}` : p.selected_pair ? `선택: ${p.selected_pair}` : "선택: 현금 대기", ...p.candidates.map(r => `${r.pair}: ${r.apr_pct == null ? "자료 미확인" : formatPercent(r.apr_pct)} · ${r.status || (r.eligible ? "진입 후보" : "대기")}`), ...(p.next_scan_at ? [`다음 검색: ${formatDate(p.next_scan_at)}`] : [])] : [];
   for (const reason of [...(p.blockers || ["준비 상태 확인 필요"]), ...selectorNotes]) { const li = document.createElement("li"); li.textContent = reason; target.appendChild(li); }
 }
