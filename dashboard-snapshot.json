@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-07T17:27:02Z",
+  "generated_at": "2026-11-07T17:42:07Z",
   "mode": "METRIC_SHADOW_ONLY_NO_TRADING",
   "status": "completed",
   "experiment": {
@@ -45,9 +45,9 @@
     "legacy_comparison_lanes_excluded": 0
   },
   "run": {
-    "run_id": "metric-20261107T172204Z-cf752087",
-    "started_at": "2026-11-07T17:22:04Z",
-    "finished_at": "2026-11-07T17:22:04Z",
+    "run_id": "metric-20261107T173700Z-18876043",
+    "started_at": "2026-11-07T17:37:00Z",
+    "finished_at": "2026-11-07T17:37:00Z",
     "status": "experiment_complete",
     "opened_lanes": 0,
     "scaled_lanes": 0,
@@ -289,7 +289,7 @@
   "blockers": [],
   "health": {
     "database_integrity": "ok",
-    "latest_run_age_seconds": 298,
+    "latest_run_age_seconds": 307,
     "fresh": true,
     "scheduler": "15분 간격",
     "trading_enabled": false,
@@ -515,7 +515,7 @@
     "mode": "virtual_actual_like_no_real_assets",
     "positions": [],
     "schema_version": "metric-virtual-portfolio-v1",
-    "source_run_id": "metric-20261107T172204Z-cf752087",
+    "source_run_id": "metric-20261107T173700Z-18876043",
     "summary": {
       "cash_usd": 1022.7226779162883,
       "costs_usd": 0,
@@ -525,7 +525,7 @@
       "open_positions": 0,
       "virtual_nav_usd": 1022.7226779162883
     },
-    "updated_at": "2026-11-07T17:27:02Z"
+    "updated_at": "2026-11-07T17:42:07Z"
   },
   "pilot_preparation": {
     "available": true,
@@ -537,7 +537,7 @@
       "live_ready": true,
       "armed": true,
       "phase": "idle",
-      "at": "2026-11-07T17:27:03.506Z"
+      "at": "2026-11-07T17:41:58.997Z"
     },
     "live_ready": true,
     "income": {},
@@ -547,7 +547,7 @@
       "actualFeeRequested": 15,
       "actualFeeVerified": 15,
       "feeThresholdPassed": 1,
-      "executionReady": 1,
+      "executionReady": 0,
       "admissionPending": 0,
       "activeChains": [
         1,
@@ -561,18 +561,18 @@
         "id": "da000e84f9",
         "pair": "BNCB/USDT",
         "chain": 56,
-        "apr_pct": 417.42964559248543,
-        "observed_apr_pct": 834.8592911849709,
+        "apr_pct": 462.7760531184818,
+        "observed_apr_pct": 925.5521062369636,
         "fee_verified": true,
-        "eligible": true,
-        "status": "진입 가능"
+        "eligible": false,
+        "status": "실행 검증/설정 대기"
       },
       {
         "id": "5359e9235c",
         "pair": "WETH/USDT",
         "chain": 56,
-        "apr_pct": 156.36186771854042,
-        "observed_apr_pct": 312.72373543708085,
+        "apr_pct": 130.25058552977967,
+        "observed_apr_pct": 260.50117105955934,
         "fee_verified": true,
         "eligible": false,
         "status": "APR 미달"
@@ -581,28 +581,8 @@
         "id": "df1bcda102",
         "pair": "GOOGLB/USDT",
         "chain": 56,
-        "apr_pct": 97.68654089091811,
-        "observed_apr_pct": 195.37308178183622,
-        "fee_verified": true,
-        "eligible": false,
-        "status": "APR 미달"
-      },
-      {
-        "id": "9a07e59022",
-        "pair": "BNCB/USDT",
-        "chain": 56,
-        "apr_pct": 55.679769386661825,
-        "observed_apr_pct": 111.35953877332365,
-        "fee_verified": true,
-        "eligible": false,
-        "status": "APR 미달"
-      },
-      {
-        "id": "1f609fe7eb",
-        "pair": "TSLAB/USDT",
-        "chain": 56,
-        "apr_pct": 40.18966935439583,
-        "observed_apr_pct": 80.37933870879166,
+        "apr_pct": 98.18084503466741,
+        "observed_apr_pct": 196.36169006933483,
         "fee_verified": true,
         "eligible": false,
         "status": "APR 미달"
@@ -611,8 +591,18 @@
         "id": "5cb2ec15fb",
         "pair": "CRCLB/USDT",
         "chain": 56,
-        "apr_pct": 31.19927067499628,
-        "observed_apr_pct": 62.39854134999256,
+        "apr_pct": 61.11779371881213,
+        "observed_apr_pct": 122.23558743762426,
+        "fee_verified": true,
+        "eligible": false,
+        "status": "APR 미달"
+      },
+      {
+        "id": "9a07e59022",
+        "pair": "BNCB/USDT",
+        "chain": 56,
+        "apr_pct": 53.07051594249565,
+        "observed_apr_pct": 106.1410318849913,
         "fee_verified": true,
         "eligible": false,
         "status": "APR 미달"
@@ -621,28 +611,18 @@
         "id": "56fdd36978",
         "pair": "NVDAB/USDT",
         "chain": 56,
-        "apr_pct": 20.782320655976818,
-        "observed_apr_pct": 41.564641311953636,
+        "apr_pct": 46.73879171788929,
+        "observed_apr_pct": 93.47758343577858,
         "fee_verified": true,
         "eligible": false,
         "status": "APR 미달"
       },
       {
-        "id": "22711876c5",
-        "pair": "MUB/USDT",
+        "id": "1f609fe7eb",
+        "pair": "TSLAB/USDT",
         "chain": 56,
-        "apr_pct": 20.360780208832622,
-        "observed_apr_pct": 40.721560417665245,
-        "fee_verified": true,
-        "eligible": false,
-        "status": "APR 미달"
-      },
-      {
-        "id": "58c409db05",
-        "pair": "MUB/USDT",
-        "chain": 56,
-        "apr_pct": 18.432047062148577,
-        "observed_apr_pct": 36.864094124297154,
+        "apr_pct": 34.729647117611286,
+        "observed_apr_pct": 69.45929423522257,
         "fee_verified": true,
         "eligible": false,
         "status": "APR 미달"
@@ -651,8 +631,28 @@
         "id": "a39e4586a0",
         "pair": "SPCXB/USDT",
         "chain": 56,
-        "apr_pct": 16.880550229892087,
-        "observed_apr_pct": 33.761100459784174,
+        "apr_pct": 24.887669739422353,
+        "observed_apr_pct": 49.77533947884471,
+        "fee_verified": true,
+        "eligible": false,
+        "status": "APR 미달"
+      },
+      {
+        "id": "58c409db05",
+        "pair": "MUB/USDT",
+        "chain": 56,
+        "apr_pct": 17.55294404975008,
+        "observed_apr_pct": 35.10588809950016,
+        "fee_verified": true,
+        "eligible": false,
+        "status": "APR 미달"
+      },
+      {
+        "id": "22711876c5",
+        "pair": "MUB/USDT",
+        "chain": 56,
+        "apr_pct": 16.81551629748224,
+        "observed_apr_pct": 33.63103259496448,
         "fee_verified": true,
         "eligible": false,
         "status": "APR 미달"
@@ -661,18 +661,8 @@
         "id": "aa08ad30e6",
         "pair": "AAPLB/USDT",
         "chain": 56,
-        "apr_pct": 12.035725367462373,
-        "observed_apr_pct": 24.071450734924746,
-        "fee_verified": true,
-        "eligible": false,
-        "status": "APR 미달"
-      },
-      {
-        "id": "2ccc649887",
-        "pair": "MSTRB/USDT",
-        "chain": 56,
-        "apr_pct": 9.42799730469965,
-        "observed_apr_pct": 18.8559946093993,
+        "apr_pct": 11.171167373612555,
+        "observed_apr_pct": 22.34233474722511,
         "fee_verified": true,
         "eligible": false,
         "status": "APR 미달"
@@ -681,8 +671,18 @@
         "id": "ca0da9da00",
         "pair": "WBNB/USDT",
         "chain": 56,
-        "apr_pct": 5.376460116579911,
-        "observed_apr_pct": 10.752920233159822,
+        "apr_pct": 3.8986710581155366,
+        "observed_apr_pct": 7.797342116231073,
+        "fee_verified": true,
+        "eligible": false,
+        "status": "APR 미달"
+      },
+      {
+        "id": "2ccc649887",
+        "pair": "MSTRB/USDT",
+        "chain": 56,
+        "apr_pct": 2.7502696387547467,
+        "observed_apr_pct": 5.5005392775094935,
         "fee_verified": true,
         "eligible": false,
         "status": "APR 미달"
@@ -691,8 +691,8 @@
         "id": "191609681c",
         "pair": "HOODB/USDT",
         "chain": 56,
-        "apr_pct": 0.24159266302469198,
-        "observed_apr_pct": 0.48318532604938397,
+        "apr_pct": 0.2415032624834145,
+        "observed_apr_pct": 0.483006524966829,
         "fee_verified": true,
         "eligible": false,
         "status": "APR 미달"
@@ -1025,7 +1025,7 @@
         "observed_apr_pct": null,
         "fee_verified": false,
         "eligible": false,
-        "status": "가격 피드 조건 미달"
+        "status": "구조 등급 미달"
       },
       {
         "id": "5af9a3d82d",
@@ -1126,6 +1126,16 @@
         "fee_verified": false,
         "eligible": false,
         "status": "체인 자금·실행 연결 필요"
+      },
+      {
+        "id": "57b672ca80",
+        "pair": "GOOGL/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "observed_apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
       },
       {
         "id": "aefe1dd23d",
@@ -1405,7 +1415,7 @@
         "observed_apr_pct": null,
         "fee_verified": false,
         "eligible": false,
-        "status": "가격 피드 조건 미달"
+        "status": "구조 등급 미달"
       },
       {
         "id": "2b096dae64",
@@ -1515,7 +1525,7 @@
         "observed_apr_pct": null,
         "fee_verified": false,
         "eligible": false,
-        "status": "가격 피드 조건 미달"
+        "status": "구조 등급 미달"
       },
       {
         "id": "9294b4f63f",
@@ -1895,7 +1905,7 @@
         "observed_apr_pct": null,
         "fee_verified": false,
         "eligible": false,
-        "status": "구조 등급 미달"
+        "status": "가격 피드 조건 미달"
       },
       {
         "id": "81b7030377",
@@ -2265,7 +2275,7 @@
         "observed_apr_pct": null,
         "fee_verified": false,
         "eligible": false,
-        "status": "가격 피드 조건 미달"
+        "status": "구조 등급 미달"
       },
       {
         "id": "c8e5a67e57",
@@ -2356,16 +2366,6 @@
         "fee_verified": false,
         "eligible": false,
         "status": "가격 피드 조건 미달"
-      },
-      {
-        "id": "f735da9b89",
-        "pair": "WETH/USDG",
-        "chain": 4663,
-        "apr_pct": null,
-        "observed_apr_pct": null,
-        "fee_verified": false,
-        "eligible": false,
-        "status": "구조 등급 미달"
       },
       {
         "id": "83f7ced144",
@@ -2553,18 +2553,18 @@
         "id": "da000e84f9",
         "pair": "BNCB/USDT",
         "chain": 56,
-        "apr_pct": 417.42964559248543,
-        "observed_apr_pct": 834.8592911849709,
+        "apr_pct": 462.7760531184818,
+        "observed_apr_pct": 925.5521062369636,
         "fee_verified": true,
-        "eligible": true,
-        "status": "진입 가능"
+        "eligible": false,
+        "status": "실행 검증/설정 대기"
       },
       {
         "id": "5359e9235c",
         "pair": "WETH/USDT",
         "chain": 56,
-        "apr_pct": 156.36186771854042,
-        "observed_apr_pct": 312.72373543708085,
+        "apr_pct": 130.25058552977967,
+        "observed_apr_pct": 260.50117105955934,
         "fee_verified": true,
         "eligible": false,
         "status": "APR 미달"
@@ -2573,28 +2573,8 @@
         "id": "df1bcda102",
         "pair": "GOOGLB/USDT",
         "chain": 56,
-        "apr_pct": 97.68654089091811,
-        "observed_apr_pct": 195.37308178183622,
-        "fee_verified": true,
-        "eligible": false,
-        "status": "APR 미달"
-      },
-      {
-        "id": "9a07e59022",
-        "pair": "BNCB/USDT",
-        "chain": 56,
-        "apr_pct": 55.679769386661825,
-        "observed_apr_pct": 111.35953877332365,
-        "fee_verified": true,
-        "eligible": false,
-        "status": "APR 미달"
-      },
-      {
-        "id": "1f609fe7eb",
-        "pair": "TSLAB/USDT",
-        "chain": 56,
-        "apr_pct": 40.18966935439583,
-        "observed_apr_pct": 80.37933870879166,
+        "apr_pct": 98.18084503466741,
+        "observed_apr_pct": 196.36169006933483,
         "fee_verified": true,
         "eligible": false,
         "status": "APR 미달"
@@ -2603,8 +2583,18 @@
         "id": "5cb2ec15fb",
         "pair": "CRCLB/USDT",
         "chain": 56,
-        "apr_pct": 31.19927067499628,
-        "observed_apr_pct": 62.39854134999256,
+        "apr_pct": 61.11779371881213,
+        "observed_apr_pct": 122.23558743762426,
+        "fee_verified": true,
+        "eligible": false,
+        "status": "APR 미달"
+      },
+      {
+        "id": "9a07e59022",
+        "pair": "BNCB/USDT",
+        "chain": 56,
+        "apr_pct": 53.07051594249565,
+        "observed_apr_pct": 106.1410318849913,
         "fee_verified": true,
         "eligible": false,
         "status": "APR 미달"
@@ -2613,28 +2603,18 @@
         "id": "56fdd36978",
         "pair": "NVDAB/USDT",
         "chain": 56,
-        "apr_pct": 20.782320655976818,
-        "observed_apr_pct": 41.564641311953636,
+        "apr_pct": 46.73879171788929,
+        "observed_apr_pct": 93.47758343577858,
         "fee_verified": true,
         "eligible": false,
         "status": "APR 미달"
       },
       {
-        "id": "22711876c5",
-        "pair": "MUB/USDT",
+        "id": "1f609fe7eb",
+        "pair": "TSLAB/USDT",
         "chain": 56,
-        "apr_pct": 20.360780208832622,
-        "observed_apr_pct": 40.721560417665245,
-        "fee_verified": true,
-        "eligible": false,
-        "status": "APR 미달"
-      },
-      {
-        "id": "58c409db05",
-        "pair": "MUB/USDT",
-        "chain": 56,
-        "apr_pct": 18.432047062148577,
-        "observed_apr_pct": 36.864094124297154,
+        "apr_pct": 34.729647117611286,
+        "observed_apr_pct": 69.45929423522257,
         "fee_verified": true,
         "eligible": false,
         "status": "APR 미달"
@@ -2643,8 +2623,28 @@
         "id": "a39e4586a0",
         "pair": "SPCXB/USDT",
         "chain": 56,
-        "apr_pct": 16.880550229892087,
-        "observed_apr_pct": 33.761100459784174,
+        "apr_pct": 24.887669739422353,
+        "observed_apr_pct": 49.77533947884471,
+        "fee_verified": true,
+        "eligible": false,
+        "status": "APR 미달"
+      },
+      {
+        "id": "58c409db05",
+        "pair": "MUB/USDT",
+        "chain": 56,
+        "apr_pct": 17.55294404975008,
+        "observed_apr_pct": 35.10588809950016,
+        "fee_verified": true,
+        "eligible": false,
+        "status": "APR 미달"
+      },
+      {
+        "id": "22711876c5",
+        "pair": "MUB/USDT",
+        "chain": 56,
+        "apr_pct": 16.81551629748224,
+        "observed_apr_pct": 33.63103259496448,
         "fee_verified": true,
         "eligible": false,
         "status": "APR 미달"
@@ -2653,18 +2653,18 @@
         "id": "aa08ad30e6",
         "pair": "AAPLB/USDT",
         "chain": 56,
-        "apr_pct": 12.035725367462373,
-        "observed_apr_pct": 24.071450734924746,
+        "apr_pct": 11.171167373612555,
+        "observed_apr_pct": 22.34233474722511,
         "fee_verified": true,
         "eligible": false,
         "status": "APR 미달"
       },
       {
-        "id": "2ccc649887",
-        "pair": "MSTRB/USDT",
+        "id": "ca0da9da00",
+        "pair": "WBNB/USDT",
         "chain": 56,
-        "apr_pct": 9.42799730469965,
-        "observed_apr_pct": 18.8559946093993,
+        "apr_pct": 3.8986710581155366,
+        "observed_apr_pct": 7.797342116231073,
         "fee_verified": true,
         "eligible": false,
         "status": "APR 미달"
@@ -2675,7 +2675,7 @@
     "short_symbol": "토큰",
     "example_lp_usd": null,
     "example_short_bnb": null,
-    "observed_at": "2026-11-07T17:27:03.506Z",
+    "observed_at": "2026-11-07T17:41:58.997Z",
     "stale": false,
     "max_lp_usd": 30,
     "target_leverage": 2,
@@ -2684,11 +2684,11 @@
     "exit_confirmation_minutes": 60,
     "zero_fee_exit_minutes": 120,
     "blockers": [
-      "전체 199개 풀 조사 · 상세 수수료 15/15개 확인 · 240% 통과 1개 · 현재 실행 가능 1개",
+      "전체 199개 풀 조사 · 상세 수수료 15/15개 확인 · 240% 통과 1개 · 현재 실행 가능 0개",
       "직전 진입 시도 공동 복구 완료 · 다음 재평가까지 현금 대기"
     ],
-    "scan_at": "2026-11-07T17:18:34.897000+00:00",
-    "next_scan_at": "2026-11-07T17:33:34.897000+00:00",
+    "scan_at": "2026-11-07T17:38:18.058000+00:00",
+    "next_scan_at": "2026-11-07T17:53:18.058000+00:00",
     "note": "미진입 시 Metric 전체 활성 체인/풀을15분마다 조사합니다. 수익 조건과 실행 준비를 구분하며 새 후보는 자동 실행 검증 후 편입합니다. 보유 중 다른 풀로 교체하지 않습니다.",
     "diversification": "검색 범위는 전체 풀 · 동시에 한 포지션 · 체인/자금/헤지 준비가 된 풀만 진입"
   },
