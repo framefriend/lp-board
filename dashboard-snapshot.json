@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-07T16:12:00Z",
+  "generated_at": "2026-11-07T16:18:34Z",
   "mode": "METRIC_SHADOW_ONLY_NO_TRADING",
   "status": "completed",
   "experiment": {
@@ -289,7 +289,7 @@
   "blockers": [],
   "health": {
     "database_integrity": "ok",
-    "latest_run_age_seconds": 300,
+    "latest_run_age_seconds": 694,
     "fresh": true,
     "scheduler": "15분 간격",
     "trading_enabled": false,
@@ -525,7 +525,7 @@
       "open_positions": 0,
       "virtual_nav_usd": 1022.7226779162883
     },
-    "updated_at": "2026-11-07T16:12:00Z"
+    "updated_at": "2026-11-07T16:18:34Z"
   },
   "pilot_preparation": {
     "available": true,
@@ -537,27 +537,94 @@
       "live_ready": true,
       "armed": true,
       "phase": "idle",
-      "at": "2026-11-07T16:11:40.322Z"
+      "at": "2026-11-07T16:18:14.451Z"
     },
     "live_ready": true,
     "income": {},
     "universe": {
-      "totalPools": 0,
-      "hedgeMatched": 0,
-      "actualFeeRequested": 0,
-      "actualFeeVerified": 0,
+      "totalPools": 200,
+      "hedgeMatched": 143,
+      "actualFeeRequested": 15,
+      "actualFeeVerified": 11,
       "feeThresholdPassed": 0,
       "executionReady": 0,
       "admissionPending": 0,
-      "activeChains": [],
-      "complete": false
+      "activeChains": [
+        1,
+        56,
+        4663
+      ],
+      "complete": true
     },
     "universe_candidates": [
       {
-        "id": "5359e9235c",
-        "pair": "WETH/USDT",
-        "chain": null,
-        "apr_pct": 108.33077854740426,
+        "id": "9a07e59022",
+        "pair": "BNCB/USDT",
+        "chain": 56,
+        "apr_pct": 71.16800758827625,
+        "fee_verified": true,
+        "eligible": false,
+        "status": "APR 미달"
+      },
+      {
+        "id": "df1bcda102",
+        "pair": "GOOGLB/USDT",
+        "chain": 56,
+        "apr_pct": 40.48399397866256,
+        "fee_verified": true,
+        "eligible": false,
+        "status": "APR 미달"
+      },
+      {
+        "id": "1f609fe7eb",
+        "pair": "TSLAB/USDT",
+        "chain": 56,
+        "apr_pct": 25.49312727287803,
+        "fee_verified": true,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "22711876c5",
+        "pair": "MUB/USDT",
+        "chain": 56,
+        "apr_pct": 24.306743555939242,
+        "fee_verified": true,
+        "eligible": false,
+        "status": "APR 미달"
+      },
+      {
+        "id": "56fdd36978",
+        "pair": "NVDAB/USDT",
+        "chain": 56,
+        "apr_pct": 22.83497856800788,
+        "fee_verified": true,
+        "eligible": false,
+        "status": "APR 미달"
+      },
+      {
+        "id": "58c409db05",
+        "pair": "MUB/USDT",
+        "chain": 56,
+        "apr_pct": 19.5992447769165,
+        "fee_verified": true,
+        "eligible": false,
+        "status": "APR 미달"
+      },
+      {
+        "id": "a39e4586a0",
+        "pair": "SPCXB/USDT",
+        "chain": 56,
+        "apr_pct": 17.421086076572035,
+        "fee_verified": true,
+        "eligible": false,
+        "status": "APR 미달"
+      },
+      {
+        "id": "aa08ad30e6",
+        "pair": "AAPLB/USDT",
+        "chain": 56,
+        "apr_pct": 16.65230955261906,
         "fee_verified": true,
         "eligible": false,
         "status": "APR 미달"
@@ -565,19 +632,1801 @@
       {
         "id": "ca0da9da00",
         "pair": "WBNB/USDT",
-        "chain": null,
-        "apr_pct": 15.882488910040985,
+        "chain": 56,
+        "apr_pct": 10.702471338648097,
         "fee_verified": true,
         "eligible": false,
         "status": "APR 미달"
+      },
+      {
+        "id": "2ccc649887",
+        "pair": "MSTRB/USDT",
+        "chain": 56,
+        "apr_pct": 10.100003770920084,
+        "fee_verified": true,
+        "eligible": false,
+        "status": "APR 미달"
+      },
+      {
+        "id": "191609681c",
+        "pair": "HOODB/USDT",
+        "chain": 56,
+        "apr_pct": 0.24122489614380802,
+        "fee_verified": true,
+        "eligible": false,
+        "status": "APR 미달"
+      },
+      {
+        "id": "b952a749f9",
+        "pair": "/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "d10e13c639",
+        "pair": "/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "300333acc5",
+        "pair": "AAPL/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "체인 자금·실행 연결 필요"
+      },
+      {
+        "id": "7277ed120b",
+        "pair": "AAPL/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "4860217d90",
+        "pair": "AAPL/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "213323ed03",
+        "pair": "AAPL/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "677574961a",
+        "pair": "AAVE/USDC",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "체인 자금·실행 연결 필요"
+      },
+      {
+        "id": "a9a588087b",
+        "pair": "AI/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "684911252b",
+        "pair": "AI/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "c1fe6f2aa1",
+        "pair": "AIN/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "b63bf582d0",
+        "pair": "BABAB/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "a630759ff8",
+        "pair": "BEM/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "da000e84f9",
+        "pair": "BNCB/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "실제 수수료 자료 미확인"
+      },
+      {
+        "id": "c40ffc2e6a",
+        "pair": "BNCB/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "ec23371f16",
+        "pair": "BNCB/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "2523a8bffe",
+        "pair": "BNCB/WBNB",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "125f3ee4c8",
+        "pair": "BNCB/WBNB",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "762e5b0153",
+        "pair": "BONER/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "154311d3e8",
+        "pair": "BONER/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "1909da73c5",
+        "pair": "BONER/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "ef58183bf3",
+        "pair": "BOOMER/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "446bdfb552",
+        "pair": "BTCB/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "최소 주문이 자금 한도 초과"
+      },
+      {
+        "id": "6d596e3180",
+        "pair": "BTCB/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "2c167feaef",
+        "pair": "BTCB/WBNB",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "e41d9f4da2",
+        "pair": "BTCB/WBNB",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "f507522834",
+        "pair": "BTCB/WBNB",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "b1b95c60db",
+        "pair": "CASHCAT/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "731fbe23bb",
+        "pair": "CASHCAT/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "c56b05c837",
+        "pair": "CBBTC/USDC",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "최소 주문이 자금 한도 초과"
+      },
+      {
+        "id": "6abc8f3ee6",
+        "pair": "CRCL/CBBTC",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "5cb2ec15fb",
+        "pair": "CRCLB/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "실제 수수료 자료 미확인"
+      },
+      {
+        "id": "d9cd8a4054",
+        "pair": "DARK/NVDA",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "4fbf7e4f4e",
+        "pair": "DELTA/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "90a99f4bd1",
+        "pair": "DELTA/WETH",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "5af9a3d82d",
+        "pair": "DELTA/WETH",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "8b0ebcc2b5",
+        "pair": "DJTB/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "dc903e688b",
+        "pair": "DNA/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "09bbc7cb1e",
+        "pair": "DRAMB/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "a2145f9edd",
+        "pair": "ENA/USDC",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "체인 자금·실행 연결 필요"
+      },
+      {
+        "id": "dc4f312898",
+        "pair": "FOREVER/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "79727d7030",
+        "pair": "FOREVER/WETH",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "5bd10cbff0",
+        "pair": "GM/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "8ef1a39023",
+        "pair": "GMEB/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "03afe6c2a9",
+        "pair": "GOOGL/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "체인 자금·실행 연결 필요"
+      },
+      {
+        "id": "aefe1dd23d",
+        "pair": "GOOGL/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "830b767b2f",
+        "pair": "GOOGL/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "8d8555ee7a",
+        "pair": "GOOGL/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "ebceec0532",
+        "pair": "HOOKR/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "c0f6f9996c",
+        "pair": "IGNITION/WETH",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "3be179acf6",
+        "pair": "INDEX/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "1b1d1af7d0",
+        "pair": "INDEX/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "80fa9c7f82",
+        "pair": "INDEX/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "a24ef486fe",
+        "pair": "INTC/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "체인 자금·실행 연결 필요"
+      },
+      {
+        "id": "0de2f6ea79",
+        "pair": "JUGGERNAUT/WETH",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "65c641d8f3",
+        "pair": "KORUB/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "6608e2343a",
+        "pair": "LINK/USDC",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "체인 자금·실행 연결 필요"
+      },
+      {
+        "id": "78d66ba7ed",
+        "pair": "LIT/USDC",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "7404b3fa47",
+        "pair": "LONGSHORT/WETH",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "3e151f81f4",
+        "pair": "MEMETRIC/WETH",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "a9bd19e231",
+        "pair": "META/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "체인 자금·실행 연결 필요"
+      },
+      {
+        "id": "0e1d31af4a",
+        "pair": "META/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "06b5db645d",
+        "pair": "META/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "377d675174",
+        "pair": "META/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "fa1dd6d1b4",
+        "pair": "META/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "40c2c56565",
+        "pair": "META/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "2320037e60",
+        "pair": "METAB/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "실제 수수료 자료 미확인"
+      },
+      {
+        "id": "0273e07cd3",
+        "pair": "MORPHO/WETH",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "체인 자금·실행 연결 필요"
+      },
+      {
+        "id": "be4eba4049",
+        "pair": "MPAD/WETH",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "e5c9e9e386",
+        "pair": "MSTR/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "0609f576ba",
+        "pair": "MSTR/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "a05ed21ad2",
+        "pair": "MU/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "체인 자금·실행 연결 필요"
+      },
+      {
+        "id": "80891c91ce",
+        "pair": "MU/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "213b1923eb",
+        "pair": "MU/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "2b096dae64",
+        "pair": "MU/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "3e8756e7e6",
+        "pair": "NET/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "c47110a3b8",
+        "pair": "NET/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "678796448f",
+        "pair": "NET/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "f9d60e9660",
+        "pair": "NET/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "da9d8d2edb",
+        "pair": "NET/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "4dd4c4ae30",
+        "pair": "NOTRIC/WETH",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "e4381b7afe",
+        "pair": "NVDA/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "체인 자금·실행 연결 필요"
+      },
+      {
+        "id": "0a2b844f85",
+        "pair": "NVDA/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "e8d5b95fa2",
+        "pair": "NVDA/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "118be81f9b",
+        "pair": "NVDA/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "a8a15c5426",
+        "pair": "NVDA/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "9294b4f63f",
+        "pair": "NVDA/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "bb2f1cafc8",
+        "pair": "NVDA/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "e8d2d24a76",
+        "pair": "NVDA/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "d25555826e",
+        "pair": "ONDO/USDC",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "체인 자금·실행 연결 필요"
+      },
+      {
+        "id": "72323727e3",
+        "pair": "ORBIO/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "03a47c9d50",
+        "pair": "PAIR/WETH",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "5c272f2d47",
+        "pair": "PAXG/USDC",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "체인 자금·실행 연결 필요"
+      },
+      {
+        "id": "0c042ec519",
+        "pair": "PAXG/XAUt",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "ab06190628",
+        "pair": "PONS/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "e66564a4fd",
+        "pair": "PONS/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "098c060af8",
+        "pair": "PONS/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "da933e03a1",
+        "pair": "PONS/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "f9843e3e6f",
+        "pair": "PONS/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "e6e2ebca4b",
+        "pair": "PONS/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "eb59e7cfa8",
+        "pair": "PONS/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "cdd050c459",
+        "pair": "PONS/WETH",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "f74cf12222",
+        "pair": "QNT/USDC",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "최소 주문이 자금 한도 초과"
+      },
+      {
+        "id": "2a7eb2625b",
+        "pair": "QQQ/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "체인 자금·실행 연결 필요"
+      },
+      {
+        "id": "d0aa29e660",
+        "pair": "QQQ/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "b39b8c8003",
+        "pair": "QQQ/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "6316094093",
+        "pair": "QQQB/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "15182911c8",
+        "pair": "QQQB/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "a6810578d3",
+        "pair": "RAETO/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "9fe9be8c58",
+        "pair": "RAETO/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "17ce1524fe",
+        "pair": "RAETO/WETH",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "b3bdbca50d",
+        "pair": "REBATE/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "4ed3fda8c7",
+        "pair": "SHRUB/USDC",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "454fea82ce",
+        "pair": "SKHYB/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "대응 숏 없음"
+      },
+      {
+        "id": "f74aef0cb8",
+        "pair": "SKHYB/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "b69aeb9592",
+        "pair": "SNDKB/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "e283c43040",
+        "pair": "SNXXB/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "ead677bb97",
+        "pair": "SOXLB/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "504832468a",
+        "pair": "SOXSB/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "0534e2484d",
+        "pair": "SPCX/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "체인 자금·실행 연결 필요"
+      },
+      {
+        "id": "749e87a951",
+        "pair": "SPCX/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "1d0205838c",
+        "pair": "SPCX/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "00fa5b6161",
+        "pair": "SPCX/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "bcfba82d6e",
+        "pair": "SPCX/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "81b7030377",
+        "pair": "SPCXB/BNCB",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "60bdc13e15",
+        "pair": "SPY/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "체인 자금·실행 연결 필요"
+      },
+      {
+        "id": "cfb7049468",
+        "pair": "SPY/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "409f4fbc0a",
+        "pair": "SPYB/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "6cd223fc5c",
+        "pair": "SUSDe/USDe",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "deae2fb512",
+        "pair": "TEST/WETH",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "5197ce8040",
+        "pair": "TORCH/WETH",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "9875df9aa7",
+        "pair": "TRIC/WETH",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "28e3dbd241",
+        "pair": "TSLA/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "체인 자금·실행 연결 필요"
+      },
+      {
+        "id": "d0de2aaea4",
+        "pair": "TSLA/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "f3e89e5f8e",
+        "pair": "TSLA/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "1021a9e8ad",
+        "pair": "TSLA/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "458afac368",
+        "pair": "TSLA/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "deae596ede",
+        "pair": "TSLA/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "91ce9df58d",
+        "pair": "TSLA/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "3a03206eb2",
+        "pair": "TSLAB/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "2ea1df90a1",
+        "pair": "UNI/USDC",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "체인 자금·실행 연결 필요"
+      },
+      {
+        "id": "e63bdfe249",
+        "pair": "UNI/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "7cffa3867b",
+        "pair": "USDC/USDG",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "f3cab410a6",
+        "pair": "USDC/USDT",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "64fe4e19c7",
+        "pair": "USDC/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "66e0a7c24a",
+        "pair": "USDC/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "00369fa151",
+        "pair": "USDC/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "facb065e13",
+        "pair": "USDG/USDT",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "c99641ed3c",
+        "pair": "USDS/USDT",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "0f309c3b57",
+        "pair": "USDS/USDT",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "fe971a6903",
+        "pair": "VRAX/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "6d5d3d8d58",
+        "pair": "WBNB/USDC",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "6076ff79cf",
+        "pair": "WBNB/USDC",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "b129df5675",
+        "pair": "WBNB/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "125736f822",
+        "pair": "WBNB/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "11c9e3eaad",
+        "pair": "WBNB/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "d669d7e8c4",
+        "pair": "WBNB/WETH",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "eb4000be67",
+        "pair": "WBTC/USDC",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "최소 주문이 자금 한도 초과"
+      },
+      {
+        "id": "9a3bb53637",
+        "pair": "WETH/CASHCAT",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "ed8cab3ddd",
+        "pair": "WETH/ONDO",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "2e76118f07",
+        "pair": "WETH/PEPE",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "c8e5a67e57",
+        "pair": "WETH/USDC",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "체인 자금·실행 연결 필요"
+      },
+      {
+        "id": "f56438f3a8",
+        "pair": "WETH/USDC",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "abc8b1f95e",
+        "pair": "WETH/USDC",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "cc17959d5d",
+        "pair": "WETH/USDC",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "c9bc3beaa5",
+        "pair": "WETH/USDC",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "289f49fbfd",
+        "pair": "WETH/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "체인 자금·실행 연결 필요"
+      },
+      {
+        "id": "0890a98dda",
+        "pair": "WETH/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "d2384b54af",
+        "pair": "WETH/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "86f2159701",
+        "pair": "WETH/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "f735da9b89",
+        "pair": "WETH/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "83f7ced144",
+        "pair": "WETH/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "285c6af6f2",
+        "pair": "WETH/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "bc6bee4690",
+        "pair": "WETH/USDG",
+        "chain": 4663,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "dd687dff27",
+        "pair": "WETH/USDT",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "체인 자금·실행 연결 필요"
+      },
+      {
+        "id": "5359e9235c",
+        "pair": "WETH/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "실제 수수료 자료 미확인"
+      },
+      {
+        "id": "5d83bb56ad",
+        "pair": "WETH/WBNB",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "6bf2a04d3e",
+        "pair": "WPRL/USDC",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "a21317d75c",
+        "pair": "WPRL/USDT",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "58fcb9a69a",
+        "pair": "WPRL/USDT",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "5543d755a4",
+        "pair": "WPRL/USDT",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "b40a4895ad",
+        "pair": "WSTETH/WETH",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "ddafcf6b58",
+        "pair": "WSTETH/WETH",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "f1819070dd",
+        "pair": "WSTETH/WETH",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "efedde2c4c",
+        "pair": "XAUT0/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "01c5cff246",
+        "pair": "XAUt/PAXG",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "aed8c112ab",
+        "pair": "XAUt/USDT",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "3fc56ee16f",
+        "pair": "XAUt/WETH",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
+      },
+      {
+        "id": "5b000bdb17",
+        "pair": "ZRO/USDC",
+        "chain": 1,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "체인 자금·실행 연결 필요"
+      },
+      {
+        "id": "8c10ed8438",
+        "pair": "wTCENTx/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
       }
     ],
     "candidates": [
       {
-        "id": "5359e9235c",
-        "pair": "WETH/USDT",
-        "chain": null,
-        "apr_pct": 108.33077854740426,
+        "id": "9a07e59022",
+        "pair": "BNCB/USDT",
+        "chain": 56,
+        "apr_pct": 71.16800758827625,
+        "fee_verified": true,
+        "eligible": false,
+        "status": "APR 미달"
+      },
+      {
+        "id": "df1bcda102",
+        "pair": "GOOGLB/USDT",
+        "chain": 56,
+        "apr_pct": 40.48399397866256,
+        "fee_verified": true,
+        "eligible": false,
+        "status": "APR 미달"
+      },
+      {
+        "id": "1f609fe7eb",
+        "pair": "TSLAB/USDT",
+        "chain": 56,
+        "apr_pct": 25.49312727287803,
+        "fee_verified": true,
+        "eligible": false,
+        "status": "가격 피드 조건 미달"
+      },
+      {
+        "id": "22711876c5",
+        "pair": "MUB/USDT",
+        "chain": 56,
+        "apr_pct": 24.306743555939242,
+        "fee_verified": true,
+        "eligible": false,
+        "status": "APR 미달"
+      },
+      {
+        "id": "56fdd36978",
+        "pair": "NVDAB/USDT",
+        "chain": 56,
+        "apr_pct": 22.83497856800788,
+        "fee_verified": true,
+        "eligible": false,
+        "status": "APR 미달"
+      },
+      {
+        "id": "58c409db05",
+        "pair": "MUB/USDT",
+        "chain": 56,
+        "apr_pct": 19.5992447769165,
+        "fee_verified": true,
+        "eligible": false,
+        "status": "APR 미달"
+      },
+      {
+        "id": "a39e4586a0",
+        "pair": "SPCXB/USDT",
+        "chain": 56,
+        "apr_pct": 17.421086076572035,
+        "fee_verified": true,
+        "eligible": false,
+        "status": "APR 미달"
+      },
+      {
+        "id": "aa08ad30e6",
+        "pair": "AAPLB/USDT",
+        "chain": 56,
+        "apr_pct": 16.65230955261906,
         "fee_verified": true,
         "eligible": false,
         "status": "APR 미달"
@@ -585,11 +2434,38 @@
       {
         "id": "ca0da9da00",
         "pair": "WBNB/USDT",
-        "chain": null,
-        "apr_pct": 15.882488910040985,
+        "chain": 56,
+        "apr_pct": 10.702471338648097,
         "fee_verified": true,
         "eligible": false,
         "status": "APR 미달"
+      },
+      {
+        "id": "2ccc649887",
+        "pair": "MSTRB/USDT",
+        "chain": 56,
+        "apr_pct": 10.100003770920084,
+        "fee_verified": true,
+        "eligible": false,
+        "status": "APR 미달"
+      },
+      {
+        "id": "191609681c",
+        "pair": "HOODB/USDT",
+        "chain": 56,
+        "apr_pct": 0.24122489614380802,
+        "fee_verified": true,
+        "eligible": false,
+        "status": "APR 미달"
+      },
+      {
+        "id": "b952a749f9",
+        "pair": "/USDT",
+        "chain": 56,
+        "apr_pct": null,
+        "fee_verified": false,
+        "eligible": false,
+        "status": "구조 등급 미달"
       }
     ],
     "active_pair": null,
@@ -597,7 +2473,7 @@
     "short_symbol": "토큰",
     "example_lp_usd": null,
     "example_short_bnb": null,
-    "observed_at": "2026-11-07T16:11:40.322Z",
+    "observed_at": "2026-11-07T16:18:14.451Z",
     "stale": false,
     "max_lp_usd": 30,
     "target_leverage": 2,
@@ -606,12 +2482,11 @@
     "exit_confirmation_minutes": 60,
     "zero_fee_exit_minutes": 120,
     "blockers": [
-      "전체 0개 풀 조사 · 상세 수수료 0/0개 확인 · 240% 통과 0개 · 현재 실행 가능 0개",
-      "현재 진입 조건을 모두 통과한 풀 없음 · 현금 대기",
-      "일부 체인 조회 미완료 · 범위 확인 필요"
+      "전체 200개 풀 조사 · 상세 수수료 11/15개 확인 · 240% 통과 0개 · 현재 실행 가능 0개",
+      "현재 진입 조건을 모두 통과한 풀 없음 · 현금 대기"
     ],
-    "scan_at": "2026-11-07T15:24:35.773000+00:00",
-    "next_scan_at": "2026-11-07T16:11:40.322000+00:00",
+    "scan_at": "2026-11-07T16:18:13.598000+00:00",
+    "next_scan_at": "2026-11-07T16:33:13.598000+00:00",
     "note": "미진입 시 Metric 전체 활성 체인/풀을15분마다 조사합니다. 수익 조건과 실행 준비를 구분하며 새 후보는 자동 실행 검증 후 편입합니다. 보유 중 다른 풀로 교체하지 않습니다.",
     "diversification": "검색 범위는 전체 풀 · 동시에 한 포지션 · 체인/자금/헤지 준비가 된 풀만 진입"
   },
