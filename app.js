@@ -1077,14 +1077,15 @@ function renderPilot(snapshot) {
   const rt = p.runtime || {};
   const phaseLabels = {idle:"조건 충족 대기",preparing:"진입 준비",opening:"LP·숏 연결 중",open:"LP·고정 숏 운영 중",closing:"공동 철회 중",halted:"운영 차단"};
   const rtAge = rt.at ? Date.now() - Date.parse(rt.at) : Infinity;
-  setText("pilot-heading", "WBNB LP + BNB 고정 숏 · 운영 상태");
+  setText("pilot-heading", p.label || "LP + 고정 숏 · 운영 상태");
   setText("pilot-status", rt.error ? "오류 · 운영 점검 필요" : p.live_ready ? `${rtAge > 120000 ? "마지막 확인: " : ""}${rt.armed ? "자동운영 활성" : "진입 일시 정지"} · ${phaseLabels[rt.phase] || "상태 확인"}` : "거래 비활성 · 준비 중");
   setText("pilot-lp", p.example_lp_usd == null ? "자료 없음" : `${formatMoney(p.example_lp_usd)} · 예시`);
-  setText("pilot-short", p.example_short_bnb == null ? "자료 없음" : `${number.format(p.example_short_bnb)} BNB · 예시`);
+  setText("pilot-short", p.example_short_bnb == null ? "자료 없음" : `${number.format(p.example_short_bnb)} ${p.short_symbol || "BNB"} · 예시`);
   setText("pilot-freshness", `${p.stale ? "준비 기록 · 재조회 필요" : "준비 자료 조회 시각"} ${formatDate(p.observed_at)}`);
   const income = p.income || {};
-  setText("pilot-income", income.verified ? `최근 확인 진입 APR ${formatPercent(income.apr_pct)} / 기준 240% · ${income.stale ? "재조회 필요" : income.entry_eligible ? "수수료 문턱 충족 · 실행 준비 별도" : "기준 미달 · 현금 대기"} · ${formatDate(income.observed_at)} · 상태 대조 ${income.matched}/${income.total}` : "최근 3·6시간 실제 수수료 지표 미확인 · 진입 차단");
+  setText("pilot-income", income.kind === "holding" && income.verified ? `보유 1시간 수수료 APR ${formatPercent(income.apr_pct)} · 철회 기준120% 미만60분 지속 · ${formatDate(income.observed_at)}` : income.verified ? `최근 확인 진입 APR ${formatPercent(income.apr_pct)} / 기준 240% · ${income.stale ? "재조회 필요" : income.entry_eligible ? "수수료 문턱 충족 · 실행 준비 별도" : "기준 미달 · 현금 대기"} · ${formatDate(income.observed_at)} · 상태 대조 ${income.matched}/${income.total}` : p.candidates ? `최근 후보 검색: ${formatDate(p.scan_at)} · 통과 후보 없으면 현금 대기` : "최근 3·6시간 실제 수수료 지표 미확인 · 진입 차단");
   setText("pilot-note", `${p.note || "아직 실거래하지 않습니다."}${rt.at ? ` 운영 확인: ${formatDate(rt.at)}.${PUBLIC_SNAPSHOT_URL ? " 공개판은 발행 시점 상태입니다." : ""}` : ""}`);
   const target = $("pilot-blockers"); target.replaceChildren();
-  for (const reason of p.blockers || ["준비 상태 확인 필요"]) { const li = document.createElement("li"); li.textContent = reason; target.appendChild(li); }
+  const selectorNotes = p.candidates ? [p.active_pair ? `보유: ${p.active_pair}` : p.selected_pair ? `선택: ${p.selected_pair}` : "선택: 현금 대기", ...p.candidates.map(r => `${r.pair}: ${r.apr_pct == null ? "자료 미확인" : formatPercent(r.apr_pct)} · ${r.eligible ? "진입 후보" : "대기"}`), ...(p.next_scan_at ? [`다음 검색: ${formatDate(p.next_scan_at)}`] : [])] : [];
+  for (const reason of [...(p.blockers || ["준비 상태 확인 필요"]), ...selectorNotes]) { const li = document.createElement("li"); li.textContent = reason; target.appendChild(li); }
 }
