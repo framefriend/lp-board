@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-06T23:57:07Z",
+  "generated_at": "2026-11-07T00:12:07Z",
   "mode": "METRIC_SHADOW_ONLY_NO_TRADING",
   "status": "completed",
   "experiment": {
@@ -45,9 +45,9 @@
     "legacy_comparison_lanes_excluded": 0
   },
   "run": {
-    "run_id": "metric-20261106T235203Z-af72e983",
-    "started_at": "2026-11-06T23:52:03Z",
-    "finished_at": "2026-11-06T23:52:03Z",
+    "run_id": "metric-20261107T000700Z-3229dd81",
+    "started_at": "2026-11-07T00:07:00Z",
+    "finished_at": "2026-11-07T00:07:00Z",
     "status": "experiment_complete",
     "opened_lanes": 0,
     "scaled_lanes": 0,
@@ -289,7 +289,7 @@
   "blockers": [],
   "health": {
     "database_integrity": "ok",
-    "latest_run_age_seconds": 304,
+    "latest_run_age_seconds": 307,
     "fresh": true,
     "scheduler": "15분 간격",
     "trading_enabled": false,
@@ -515,7 +515,7 @@
     "mode": "virtual_actual_like_no_real_assets",
     "positions": [],
     "schema_version": "metric-virtual-portfolio-v1",
-    "source_run_id": "metric-20261106T235203Z-af72e983",
+    "source_run_id": "metric-20261107T000700Z-3229dd81",
     "summary": {
       "cash_usd": 1022.7226779162883,
       "costs_usd": 0,
@@ -525,7 +525,7 @@
       "open_positions": 0,
       "virtual_nav_usd": 1022.7226779162883
     },
-    "updated_at": "2026-11-06T23:57:07Z"
+    "updated_at": "2026-11-07T00:12:07Z"
   },
   "pilot_preparation": {
     "runtime": {
@@ -534,13 +534,13 @@
       "live_ready": true,
       "armed": true,
       "phase": "idle",
-      "at": "2026-11-06T23:56:49.747Z"
+      "at": "2026-11-07T00:11:55.823Z"
     },
     "income": {
       "verified": true,
-      "apr_pct": 29.32958655139844,
-      "observed_at": "2026-11-06T23:48:18.000Z",
-      "stale": false,
+      "apr_pct": 28.435186753451227,
+      "observed_at": "2026-11-07T00:03:37.000Z",
+      "stale": true,
       "entry_eligible": false,
       "matched": 29,
       "total": 29,
@@ -561,7 +561,7 @@
     "exit_confirmation_minutes": 60,
     "zero_fee_exit_minutes": 120,
     "blockers": [
-      "진입 APR 240% 미달 · 조건 충족 대기"
+      "최근 관측 신호 재조회 전 진입 대기"
     ],
     "note": "자동운영 연결 완료. 표시는 준비 규모 예시이며 실제 포지션이 아닙니다. 진입 때 재조회하며, LP·숏은 독립 거래소라 원자적 동시 체결은 보장되지 않습니다.",
     "diversification": "기초자산별·전체 한도 및 bin 수용량 관리 · 자동 분산 미연결"
