@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-07T13:57:07Z",
+  "generated_at": "2026-11-07T14:12:02Z",
   "mode": "METRIC_SHADOW_ONLY_NO_TRADING",
   "status": "completed",
   "experiment": {
@@ -45,9 +45,9 @@
     "legacy_comparison_lanes_excluded": 0
   },
   "run": {
-    "run_id": "metric-20261107T135204Z-91b3d292",
-    "started_at": "2026-11-07T13:52:04Z",
-    "finished_at": "2026-11-07T13:52:04Z",
+    "run_id": "metric-20261107T140700Z-af6fcf5a",
+    "started_at": "2026-11-07T14:07:00Z",
+    "finished_at": "2026-11-07T14:07:00Z",
     "status": "experiment_complete",
     "opened_lanes": 0,
     "scaled_lanes": 0,
@@ -289,7 +289,7 @@
   "blockers": [],
   "health": {
     "database_integrity": "ok",
-    "latest_run_age_seconds": 303,
+    "latest_run_age_seconds": 302,
     "fresh": true,
     "scheduler": "15분 간격",
     "trading_enabled": false,
@@ -515,7 +515,7 @@
     "mode": "virtual_actual_like_no_real_assets",
     "positions": [],
     "schema_version": "metric-virtual-portfolio-v1",
-    "source_run_id": "metric-20261107T135204Z-91b3d292",
+    "source_run_id": "metric-20261107T140700Z-af6fcf5a",
     "summary": {
       "cash_usd": 1022.7226779162883,
       "costs_usd": 0,
@@ -525,7 +525,7 @@
       "open_positions": 0,
       "virtual_nav_usd": 1022.7226779162883
     },
-    "updated_at": "2026-11-07T13:57:07Z"
+    "updated_at": "2026-11-07T14:12:02Z"
   },
   "pilot_preparation": {
     "available": true,
@@ -537,7 +537,7 @@
       "live_ready": true,
       "armed": true,
       "phase": "idle",
-      "at": "2026-11-07T13:56:51.007Z"
+      "at": "2026-11-07T14:12:03.347Z"
     },
     "live_ready": true,
     "income": {},
@@ -545,14 +545,14 @@
       {
         "id": "WBNB",
         "pair": "WBNB/USDT",
-        "apr_pct": 16.062368129906854,
+        "apr_pct": 17.39263670947296,
         "fee_verified": true,
         "eligible": false
       },
       {
         "id": "WETH",
         "pair": "WETH/USDT",
-        "apr_pct": 95.43568008880666,
+        "apr_pct": 88.67727321396072,
         "fee_verified": true,
         "eligible": false
       }
@@ -560,7 +560,7 @@
     "active_pair": null,
     "selected_pair": null,
     "short_symbol": "토큰",
-    "observed_at": "2026-11-07T13:56:51.007Z",
+    "observed_at": "2026-11-07T14:12:03.347Z",
     "stale": false,
     "example_lp_usd": null,
     "example_short_bnb": null,
@@ -573,8 +573,8 @@
     "blockers": [
       "현재 통과 후보 없음 · 다음 검색까지 현금 대기"
     ],
-    "scan_at": "2026-11-07T13:52:41.299000+00:00",
-    "next_scan_at": "2026-11-07T14:07:41.299000+00:00",
+    "scan_at": "2026-11-07T14:07:54.554000+00:00",
+    "next_scan_at": "2026-11-07T14:22:54.554000+00:00",
     "note": "미진입 시 승인 후보를15분마다 검색 · 통과 후보 중 예상24시간 수수료-왕복비용 순위로 선택 · 보유 중 다른 풀 검색/갈아타기 없음. 표시는 규모 예시이며 실제 체결·수익과 다릅니다.",
     "diversification": "동시에 한 풀만 운용 · 검증된 WBNB/WETH 후보군 · 공용 담보 중복배정 금지"
   },
