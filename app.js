@@ -452,8 +452,8 @@ function updateControls() {
   qsa("[data-command]").forEach((button) => {
     const command = button.dataset.command;
     const permittedByChannel = !EXTERNAL_CONTROL || EXTERNAL_CONTROL_COMMANDS.has(command);
-    button.disabled = Boolean(PUBLIC_SNAPSHOT_URL) || ["SINGLE_POSITION_SELECTOR","WHOLE_METRIC_UNIVERSE"].includes(state.snapshot.pilot_preparation?.status) || EXTERNAL_READ_ONLY || state.busy || !allowed[command] || !permittedByChannel;
-    if (["SINGLE_POSITION_SELECTOR","WHOLE_METRIC_UNIVERSE"].includes(state.snapshot.pilot_preparation?.status)) button.title = "단일 포지션 자동운영 상황판은 조회 전용입니다.";
+    button.disabled = Boolean(PUBLIC_SNAPSHOT_URL) || ["SINGLE_POSITION_SELECTOR","WHOLE_METRIC_UNIVERSE","BSC_ASTER_UNIVERSE"].includes(state.snapshot.pilot_preparation?.status) || EXTERNAL_READ_ONLY || state.busy || !allowed[command] || !permittedByChannel;
+    if (["SINGLE_POSITION_SELECTOR","WHOLE_METRIC_UNIVERSE","BSC_ASTER_UNIVERSE"].includes(state.snapshot.pilot_preparation?.status)) button.title = "단일 포지션 자동운영 상황판은 조회 전용입니다.";
     else if (PUBLIC_SNAPSHOT_URL || EXTERNAL_READ_ONLY) button.title = "외부 공개 화면에서는 운영 제어가 차단됩니다.";
     else if (!permittedByChannel) button.title = "고위험 제어는 외부 카나리 검증 후 개방됩니다.";
     button.setAttribute("aria-disabled", String(button.disabled));
@@ -1070,7 +1070,7 @@ init();
 
 function renderPilot(snapshot) {
   const p = snapshot.pilot_preparation || {};
-  if (PUBLIC_SNAPSHOT_URL || ["SINGLE_POSITION_SELECTOR","WHOLE_METRIC_UNIVERSE"].includes(p.status)) {
+  if (PUBLIC_SNAPSHOT_URL || ["SINGLE_POSITION_SELECTOR","WHOLE_METRIC_UNIVERSE","BSC_ASTER_UNIVERSE"].includes(p.status)) {
     document.querySelector('.metric-grid').hidden = true;
     document.querySelector('.scan-funnel').hidden = true;
     document.querySelector('.overview-grid').hidden = true;
