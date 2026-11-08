@@ -1,6 +1,6 @@
 {
   "schema_version": "lp-minimal-dashboard-v1",
-  "generated_at": "2026-11-08T08:12:08.017386+00:00",
+  "generated_at": "2026-11-08T08:27:04.354182+00:00",
   "publication": {
     "read_only": true,
     "controls_enabled": false,
@@ -30,7 +30,7 @@
   },
   "runtime": {
     "phase": "open",
-    "at": "2026-11-08T08:12:06.236Z",
+    "at": "2026-11-08T08:26:50.237Z",
     "fresh": true,
     "armed": true,
     "ready": true,
@@ -43,8 +43,8 @@
     "pair": "BNCB/USDT",
     "token": "BNC",
     "lp_entry_usd": 18.548935583635995,
-    "lp_observed_nav_usd": 18.596118566981232,
-    "lp_nav_at": "2026-11-08T08:12:04+00:00",
+    "lp_observed_nav_usd": 18.59624887428834,
+    "lp_nav_at": "2026-11-08T08:27:01+00:00",
     "short_qty": 1.89,
     "leverage": 2,
     "entered_at": "2026-11-08T02:50:23.836000+00:00",
@@ -58,16 +58,16 @@
   },
   "profit": {
     "available": true,
-    "at": "2026-11-08T08:12:07.869Z",
-    "lp_fee_usd": 0.03164927950200971,
+    "at": "2026-11-08T08:27:04.198Z",
+    "lp_fee_usd": 0.03165962745517199,
     "fee_last_hour_usd": 0.0,
     "entry_price_usd": 4.905945737704097,
-    "token_price_usd": 4.942993928951355,
-    "price_change_pct": 0.7551692013739286,
-    "lp_price_inventory_pnl_usd": 0.017764924734581113,
-    "short_pnl_usd": -0.07278384699533694,
-    "net_pnl_usd": -0.050661164740207376,
-    "exit_cost_usd": 0.03497355002742956
+    "token_price_usd": 4.946882705046489,
+    "price_change_pct": 0.8344357954833459,
+    "lp_price_inventory_pnl_usd": 0.01788488408852522,
+    "short_pnl_usd": -0.07965882437412902,
+    "net_pnl_usd": -0.05746410259683374,
+    "exit_cost_usd": 0.03368381375959296
   },
   "discovery": {
     "source": "structure_audit",
