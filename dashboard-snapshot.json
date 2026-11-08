@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-08T02:51:46Z",
+  "generated_at": "2026-11-08T02:54:47Z",
   "mode": "METRIC_SHADOW_ONLY_NO_TRADING",
   "status": "completed",
   "experiment": {
@@ -45,9 +45,9 @@
     "legacy_comparison_lanes_excluded": 0
   },
   "run": {
-    "run_id": "metric-20261108T025011Z-91a3e83a",
-    "started_at": "2026-11-08T02:50:11Z",
-    "finished_at": "2026-11-08T02:50:11Z",
+    "run_id": "metric-20261108T025201Z-48b44a43",
+    "started_at": "2026-11-08T02:52:01Z",
+    "finished_at": "2026-11-08T02:52:01Z",
     "status": "experiment_complete",
     "opened_lanes": 0,
     "scaled_lanes": 0,
@@ -289,7 +289,7 @@
   "blockers": [],
   "health": {
     "database_integrity": "ok",
-    "latest_run_age_seconds": 95,
+    "latest_run_age_seconds": 166,
     "fresh": true,
     "scheduler": "15분 간격",
     "trading_enabled": false,
@@ -515,7 +515,7 @@
     "mode": "virtual_actual_like_no_real_assets",
     "positions": [],
     "schema_version": "metric-virtual-portfolio-v1",
-    "source_run_id": "metric-20261108T025011Z-91a3e83a",
+    "source_run_id": "metric-20261108T025201Z-48b44a43",
     "summary": {
       "cash_usd": 1022.7226779162883,
       "costs_usd": 0,
@@ -525,7 +525,7 @@
       "open_positions": 0,
       "virtual_nav_usd": 1022.7226779162883
     },
-    "updated_at": "2026-11-08T02:51:46Z"
+    "updated_at": "2026-11-08T02:54:47Z"
   },
   "pilot_preparation": {
     "available": true,
@@ -538,7 +538,7 @@
       "live_ready": true,
       "armed": true,
       "phase": "open",
-      "at": "2026-11-08T02:51:31.566Z"
+      "at": "2026-11-08T02:54:42.394Z"
     },
     "live_ready": true,
     "income": {},
@@ -1281,7 +1281,7 @@
     "short_symbol": "BNC",
     "example_lp_usd": 18.539755323291903,
     "example_short_bnb": 1.8900000000000001,
-    "observed_at": "2026-11-08T02:51:31.566Z",
+    "observed_at": "2026-11-08T02:54:42.394Z",
     "stale": false,
     "max_lp_usd": 30,
     "target_leverage": 2,
