@@ -1,6 +1,6 @@
 {
   "schema_version": "lp-minimal-dashboard-v1",
-  "generated_at": "2026-11-08T05:57:06.476786+00:00",
+  "generated_at": "2026-11-08T06:09:03.796254+00:00",
   "publication": {
     "read_only": true,
     "controls_enabled": false,
@@ -30,7 +30,7 @@
   },
   "runtime": {
     "phase": "open",
-    "at": "2026-11-08T05:56:35.972Z",
+    "at": "2026-11-08T06:08:39.924Z",
     "fresh": true,
     "armed": true,
     "ready": true,
@@ -43,8 +43,8 @@
     "pair": "BNCB/USDT",
     "token": "BNC",
     "lp_entry_usd": 18.548935583635995,
-    "lp_observed_nav_usd": 18.587814642087956,
-    "lp_nav_at": "2026-11-08T05:54:59+00:00",
+    "lp_observed_nav_usd": 18.587559608579113,
+    "lp_nav_at": "2026-11-08T06:09:00+00:00",
     "short_qty": 1.89,
     "leverage": 2,
     "entered_at": "2026-11-08T02:50:23.836000+00:00",
@@ -55,6 +55,19 @@
     "low_confirm_at": null,
     "net_pnl_usd": null,
     "net_pnl_status": "LP·숏·거래비용·펀딩·가스 합산 정산 전 미확정"
+  },
+  "profit": {
+    "available": true,
+    "at": "2026-11-08T06:09:03.623Z",
+    "lp_fee_usd": 0.02344283685891227,
+    "fee_last_hour_usd": 0.007628943076254932,
+    "entry_price_usd": 4.905945737704097,
+    "token_price_usd": 4.91541478084008,
+    "price_change_pct": 0.19301157497950694,
+    "lp_price_inventory_pnl_usd": 0.017412408975559263,
+    "short_pnl_usd": -0.03500760742561261,
+    "net_pnl_usd": -0.022198094656320545,
+    "exit_cost_usd": 0.023832039749206745
   },
   "discovery": {
     "source": "structure_audit",
