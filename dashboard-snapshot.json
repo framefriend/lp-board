@@ -1,6 +1,6 @@
 {
   "schema_version": "lp-minimal-dashboard-v1",
-  "generated_at": "2026-11-08T21:57:04.911347+00:00",
+  "generated_at": "2026-11-08T22:12:08.009364+00:00",
   "publication": {
     "read_only": true,
     "controls_enabled": false,
@@ -29,25 +29,25 @@
     "switch_while_holding": false
   },
   "runtime": {
-    "phase": "closing",
-    "at": "2026-11-08T21:56:34.740Z",
+    "phase": "idle",
+    "at": "2026-11-08T22:11:47.004Z",
     "fresh": true,
     "armed": true,
-    "ready": false,
-    "error": true,
-    "decision": "운영 상태 재확인 필요"
+    "ready": true,
+    "error": false,
+    "decision": "진입 조건 충족 대기"
   },
   "position": {
-    "present": true,
+    "present": false,
     "verified": true,
-    "pair": "CRCLB/USDT",
-    "token": "CRCL",
-    "lp_entry_usd": 29.629933536550347,
+    "pair": null,
+    "token": null,
+    "lp_entry_usd": null,
     "lp_observed_nav_usd": null,
     "lp_nav_at": null,
-    "short_qty": 0.22,
+    "short_qty": null,
     "leverage": 2,
-    "entered_at": "2026-11-08T08:31:08.033000+00:00",
+    "entered_at": null,
     "fee_apr_pct": null,
     "fee_sample_at": null,
     "fee_sample_fresh": false,
@@ -71,13 +71,13 @@
   },
   "discovery": {
     "source": "operating_scan",
-    "at": "2026-11-08T08:30:54.437000+00:00",
+    "at": "2026-11-08T21:57:09.789000+00:00",
     "current_policy_scan": true,
     "complete": true,
     "total_pools": 59,
     "fee_pass_count": 3,
-    "next_scan_at": null,
-    "paused_while_holding": true,
+    "next_scan_at": "2026-11-08T22:12:09.789000+00:00",
+    "paused_while_holding": false,
     "rows": [
       {
         "id": "5cb2ec15fb",
@@ -705,8 +705,8 @@
     ]
   },
   "last_settlement": {
-    "closed_at": "2026-11-08T08:27:27.945000+00:00",
-    "reason": "수수료 생산성 저하",
+    "closed_at": "2026-11-08T21:57:09.789000+00:00",
+    "reason": "실행·안전 상태에 따른 공동 정산",
     "accounting_complete": true
   }
 }
