@@ -1,6 +1,6 @@
 {
   "schema_version": "lp-minimal-dashboard-v1",
-  "generated_at": "2026-11-08T21:42:13.087472+00:00",
+  "generated_at": "2026-11-08T21:57:04.911347+00:00",
   "publication": {
     "read_only": true,
     "controls_enabled": false,
@@ -29,13 +29,13 @@
     "switch_while_holding": false
   },
   "runtime": {
-    "phase": "open",
-    "at": "2026-11-08T21:41:52.028Z",
+    "phase": "closing",
+    "at": "2026-11-08T21:56:34.740Z",
     "fresh": true,
     "armed": true,
-    "ready": true,
-    "error": false,
-    "decision": "수수료 기준 감시 중"
+    "ready": false,
+    "error": true,
+    "decision": "운영 상태 재확인 필요"
   },
   "position": {
     "present": true,
@@ -43,31 +43,31 @@
     "pair": "CRCLB/USDT",
     "token": "CRCL",
     "lp_entry_usd": 29.629933536550347,
-    "lp_observed_nav_usd": 29.67364082598222,
-    "lp_nav_at": "2026-11-08T21:42:07+00:00",
+    "lp_observed_nav_usd": null,
+    "lp_nav_at": null,
     "short_qty": 0.22,
     "leverage": 2,
     "entered_at": "2026-11-08T08:31:08.033000+00:00",
-    "fee_apr_pct": 157.4826670780663,
-    "fee_sample_at": "2026-11-08T21:28:41+00:00",
-    "fee_sample_fresh": true,
+    "fee_apr_pct": null,
+    "fee_sample_at": null,
+    "fee_sample_fresh": false,
     "low_since": null,
     "low_confirm_at": null,
     "net_pnl_usd": null,
     "net_pnl_status": "LP·숏·거래비용·펀딩·가스 합산 정산 전 미확정"
   },
   "profit": {
-    "available": true,
-    "at": "2026-11-08T21:42:12.932Z",
-    "lp_fee_usd": 0.16115256156285593,
-    "fee_last_hour_usd": 0.005486608070117095,
-    "entry_price_usd": 67.3426564684201,
-    "token_price_usd": 67.0105214755951,
-    "price_change_pct": -0.49320150145956143,
-    "lp_price_inventory_pnl_usd": -0.11786338798677118,
-    "short_pnl_usd": 0.044160824186100005,
-    "net_pnl_usd": 0.055618437974878275,
-    "exit_cost_usd": 0.05139631111082242
+    "available": false,
+    "at": null,
+    "lp_fee_usd": null,
+    "fee_last_hour_usd": null,
+    "entry_price_usd": null,
+    "token_price_usd": null,
+    "price_change_pct": null,
+    "lp_price_inventory_pnl_usd": null,
+    "short_pnl_usd": null,
+    "net_pnl_usd": null,
+    "exit_cost_usd": null
   },
   "discovery": {
     "source": "operating_scan",
