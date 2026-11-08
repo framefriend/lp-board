@@ -1,6 +1,6 @@
 {
   "schema_version": "lp-minimal-dashboard-v1",
-  "generated_at": "2026-11-08T07:12:04.439107+00:00",
+  "generated_at": "2026-11-08T07:27:10.683557+00:00",
   "publication": {
     "read_only": true,
     "controls_enabled": false,
@@ -30,12 +30,12 @@
   },
   "runtime": {
     "phase": "open",
-    "at": "2026-11-08T07:11:36.159Z",
+    "at": "2026-11-08T07:26:49.931Z",
     "fresh": true,
     "armed": true,
     "ready": true,
     "error": false,
-    "decision": "수수료 기준 감시 중"
+    "decision": "APR 120% 미만 지속시간 확인 중"
   },
   "position": {
     "present": true,
@@ -43,31 +43,31 @@
     "pair": "BNCB/USDT",
     "token": "BNC",
     "lp_entry_usd": 18.548935583635995,
-    "lp_observed_nav_usd": 18.596081336322058,
-    "lp_nav_at": "2026-11-08T07:12:00+00:00",
+    "lp_observed_nav_usd": 18.59851994449797,
+    "lp_nav_at": "2026-11-08T07:27:07+00:00",
     "short_qty": 1.89,
     "leverage": 2,
     "entered_at": "2026-11-08T02:50:23.836000+00:00",
-    "fee_apr_pct": 346.16141827044174,
-    "fee_sample_at": "2026-11-08T07:10:47+00:00",
+    "fee_apr_pct": 57.7027164478427,
+    "fee_sample_at": "2026-11-08T07:25:57+00:00",
     "fee_sample_fresh": true,
-    "low_since": null,
-    "low_confirm_at": null,
+    "low_since": "2026-11-08T07:25:57+00:00",
+    "low_confirm_at": "2026-11-08T08:25:57+00:00",
     "net_pnl_usd": null,
     "net_pnl_status": "LP·숏·거래비용·펀딩·가스 합산 정산 전 미확정"
   },
   "profit": {
     "available": true,
-    "at": "2026-11-08T07:12:04.294Z",
-    "lp_fee_usd": 0.0316174980015181,
-    "fee_last_hour_usd": 0.006142342104551217,
+    "at": "2026-11-08T07:27:10.547Z",
+    "lp_fee_usd": 0.03162667306482097,
+    "fee_last_hour_usd": 0.0012245112364456937,
     "entry_price_usd": 4.905945737704097,
-    "token_price_usd": 4.9309117480858236,
-    "price_change_pct": 0.5088929172178291,
-    "lp_price_inventory_pnl_usd": 0.01775947557589845,
-    "short_pnl_usd": -0.05274324952362725,
-    "net_pnl_usd": -0.030686822742746308,
-    "exit_cost_usd": 0.03423137715382921
+    "token_price_usd": 4.933472416724507,
+    "price_change_pct": 0.5610881263699463,
+    "lp_price_inventory_pnl_usd": 0.02018890868850671,
+    "short_pnl_usd": -0.057877207016126316,
+    "net_pnl_usd": -0.035818147427782485,
+    "exit_cost_usd": 0.03476314570033462
   },
   "discovery": {
     "source": "structure_audit",
