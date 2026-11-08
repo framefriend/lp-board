@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-08T03:57:07Z",
+  "generated_at": "2026-11-08T04:12:07Z",
   "mode": "METRIC_SHADOW_ONLY_NO_TRADING",
   "status": "completed",
   "experiment": {
@@ -45,9 +45,9 @@
     "legacy_comparison_lanes_excluded": 0
   },
   "run": {
-    "run_id": "metric-20261108T035204Z-d8da0fb1",
-    "started_at": "2026-11-08T03:52:04Z",
-    "finished_at": "2026-11-08T03:52:04Z",
+    "run_id": "metric-20261108T040700Z-3452e148",
+    "started_at": "2026-11-08T04:07:00Z",
+    "finished_at": "2026-11-08T04:07:00Z",
     "status": "experiment_complete",
     "opened_lanes": 0,
     "scaled_lanes": 0,
@@ -289,7 +289,7 @@
   "blockers": [],
   "health": {
     "database_integrity": "ok",
-    "latest_run_age_seconds": 303,
+    "latest_run_age_seconds": 307,
     "fresh": true,
     "scheduler": "15분 간격",
     "trading_enabled": false,
@@ -515,7 +515,7 @@
     "mode": "virtual_actual_like_no_real_assets",
     "positions": [],
     "schema_version": "metric-virtual-portfolio-v1",
-    "source_run_id": "metric-20261108T035204Z-d8da0fb1",
+    "source_run_id": "metric-20261108T040700Z-3452e148",
     "summary": {
       "cash_usd": 1022.7226779162883,
       "costs_usd": 0,
@@ -525,7 +525,7 @@
       "open_positions": 0,
       "virtual_nav_usd": 1022.7226779162883
     },
-    "updated_at": "2026-11-08T03:57:07Z"
+    "updated_at": "2026-11-08T04:12:07Z"
   },
   "pilot_preparation": {
     "available": true,
@@ -538,14 +538,14 @@
       "live_ready": true,
       "armed": true,
       "phase": "open",
-      "at": "2026-11-08T03:55:32.396Z"
+      "at": "2026-11-08T04:11:42.098Z"
     },
     "live_ready": true,
     "income": {
       "verified": true,
       "kind": "holding",
-      "apr_pct": 49.83073159134057,
-      "observed_at": "2026-11-08T03:50:37+00:00",
+      "apr_pct": 242.85055072916245,
+      "observed_at": "2026-11-08T04:08:16+00:00",
       "stale": false
     },
     "universe": {
@@ -1287,7 +1287,7 @@
     "short_symbol": "BNC",
     "example_lp_usd": 18.539755323291903,
     "example_short_bnb": 1.8900000000000001,
-    "observed_at": "2026-11-08T03:55:32.396Z",
+    "observed_at": "2026-11-08T04:11:42.098Z",
     "stale": false,
     "max_lp_usd": 30,
     "target_leverage": 2,
