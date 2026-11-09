@@ -1,6 +1,6 @@
 {
   "schema_version": "lp-minimal-dashboard-v1",
-  "generated_at": "2026-11-09T18:57:08.495147+00:00",
+  "generated_at": "2026-11-09T19:12:05.504950+00:00",
   "publication": {
     "read_only": true,
     "controls_enabled": false,
@@ -30,7 +30,7 @@
   },
   "runtime": {
     "phase": "open",
-    "at": "2026-11-09T18:56:52.244Z",
+    "at": "2026-11-09T19:11:34.092Z",
     "fresh": true,
     "armed": true,
     "ready": true,
