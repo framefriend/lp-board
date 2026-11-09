@@ -1,6 +1,6 @@
 {
   "schema_version": "lp-minimal-dashboard-v1",
-  "generated_at": "2026-11-09T05:42:10.554310+00:00",
+  "generated_at": "2026-11-09T05:57:08.156433+00:00",
   "publication": {
     "read_only": true,
     "controls_enabled": false,
@@ -30,12 +30,12 @@
   },
   "runtime": {
     "phase": "open",
-    "at": "2026-11-09T05:41:50.147Z",
+    "at": "2026-11-09T05:57:07.187Z",
     "fresh": true,
     "armed": true,
     "ready": true,
     "error": false,
-    "decision": "수수료 기준 감시 중"
+    "decision": "APR 120% 미만 지속시간 확인 중"
   },
   "position": {
     "present": true,
@@ -43,31 +43,31 @@
     "pair": "CRCLB/USDT",
     "token": "CRCL",
     "lp_entry_usd": 29.26794411304227,
-    "lp_observed_nav_usd": 29.230481652303517,
-    "lp_nav_at": "2026-11-09T05:42:07+00:00",
+    "lp_observed_nav_usd": 29.228960316311237,
+    "lp_nav_at": "2026-11-09T05:57:05+00:00",
     "short_qty": 0.22,
     "leverage": 2,
     "entered_at": "2026-11-09T03:48:45.773000+00:00",
-    "fee_apr_pct": 495.0750405874187,
-    "fee_sample_at": "2026-11-09T05:35:37+00:00",
+    "fee_apr_pct": 0.0,
+    "fee_sample_at": "2026-11-09T05:50:57+00:00",
     "fee_sample_fresh": true,
-    "low_since": null,
-    "low_confirm_at": null,
+    "low_since": "2026-11-09T05:50:57+00:00",
+    "low_confirm_at": "2026-11-09T06:50:57+00:00",
     "net_pnl_usd": null,
     "net_pnl_status": "LP·숏·거래비용·펀딩·가스 합산 정산 전 미확정"
   },
   "profit": {
     "available": true,
-    "at": "2026-11-09T05:42:10.416Z",
-    "lp_fee_usd": 0.0415598366688949,
-    "fee_last_hour_usd": 0.014692940147757844,
+    "at": "2026-11-09T05:57:08.010Z",
+    "lp_fee_usd": 0.04154513231035553,
+    "fee_last_hour_usd": 0.0,
     "entry_price_usd": 66.51325751500113,
-    "token_price_usd": 65.72246482773035,
-    "price_change_pct": -1.188924910334499,
-    "lp_price_inventory_pnl_usd": -0.07796597060563165,
-    "short_pnl_usd": 0.16774512993264,
-    "net_pnl_usd": 0.10240448149292358,
-    "exit_cost_usd": 0.021332811152341064
+    "token_price_usd": 65.63929442835743,
+    "price_change_pct": -1.3139682512867235,
+    "lp_price_inventory_pnl_usd": -0.07947260223937194,
+    "short_pnl_usd": 0.18782793561959998,
+    "net_pnl_usd": 0.12234348577436248,
+    "exit_cost_usd": 0.026703543043964145
   },
   "discovery": {
     "source": "operating_scan",
