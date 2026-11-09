@@ -1,6 +1,6 @@
 {
   "schema_version": "lp-minimal-dashboard-v1",
-  "generated_at": "2026-11-09T11:12:10.711125+00:00",
+  "generated_at": "2026-11-09T11:24:39.253481+00:00",
   "publication": {
     "read_only": true,
     "controls_enabled": false,
@@ -30,7 +30,7 @@
   },
   "runtime": {
     "phase": "open",
-    "at": "2026-11-09T11:11:42.127Z",
+    "at": "2026-11-09T11:24:19.772Z",
     "fresh": true,
     "armed": true,
     "ready": true,
@@ -43,8 +43,8 @@
     "pair": "BNCB/USDT",
     "token": "BNC",
     "lp_entry_usd": 29.849037611313104,
-    "lp_observed_nav_usd": 29.673568265642267,
-    "lp_nav_at": "2026-11-09T11:12:07+00:00",
+    "lp_observed_nav_usd": 29.67283059880216,
+    "lp_nav_at": "2026-11-09T11:24:31+00:00",
     "short_qty": 3.12,
     "leverage": 2,
     "entered_at": "2026-11-09T09:20:10.694000+00:00",
@@ -58,32 +58,39 @@
   },
   "profit": {
     "available": true,
-    "at": "2026-11-09T11:12:10.211Z",
-    "lp_fee_usd": 0.056240791752839366,
-    "fee_last_hour_usd": 0.016888186688698757,
+    "at": "2026-11-09T11:24:37.283Z",
+    "lp_fee_usd": 0.06893004746435544,
+    "fee_last_hour_usd": 0.029549111135816028,
     "entry_price_usd": 4.783423905500611,
-    "token_price_usd": 4.767601527080041,
-    "price_change_pct": -0.3307751671846604,
-    "lp_price_inventory_pnl_usd": -0.23140679994671243,
-    "short_pnl_usd": 0.06931590173315154,
-    "net_pnl_usd": -0.11682463228696961,
-    "exit_cost_usd": 0.07207331565751335
+    "token_price_usd": 4.774417964521192,
+    "price_change_pct": -0.18827394680749343,
+    "lp_price_inventory_pnl_usd": -0.2448337224983343,
+    "short_pnl_usd": 0.021796449699023997,
+    "net_pnl_usd": -0.16379865583025632,
+    "exit_cost_usd": 0.02765857246385133
   },
   "assets": {
     "available": true,
-    "at": "2026-11-09T11:12:10.563000+00:00",
-    "total_usd": 37.18064267967431,
-    "scope": "전략 배정자금 기준 · 개인 지갑·공용 담보 제외",
+    "at": "2026-11-09T11:24:38.706000+00:00",
+    "total_usd": 65.23644905670577,
+    "scope": "LP + 운용 지갑(대기자금·토큰·가스) + Aster 전체 순자산",
+    "components": {
+      "lp_usd": 29.67283059880216,
+      "wallet_stable_usd": 12.256549140535117,
+      "wallet_tokens_usd": 0.3559384770368794,
+      "gas_asset_usd": 12.753380285624978,
+      "aster_equity_usd": 10.197750554706627
+    },
     "day": {
-      "pnl_usd": -0.021456604646360233,
-      "return_pct": -0.057675789966517864,
-      "since": "2026-11-09T10:47:23.056000+00:00",
+      "pnl_usd": 0.057614684624851975,
+      "return_pct": 0.08839477597275196,
+      "since": "2026-11-09T11:22:43.464000+00:00",
       "complete": false
     },
     "week": {
-      "pnl_usd": -0.021456604646360233,
-      "return_pct": -0.057675789966517864,
-      "since": "2026-11-09T10:47:23.056000+00:00",
+      "pnl_usd": 0.057614684624851975,
+      "return_pct": 0.08839477597275196,
+      "since": "2026-11-09T11:22:43.464000+00:00",
       "complete": false
     }
   },
