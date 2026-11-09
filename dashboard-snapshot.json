@@ -1,6 +1,6 @@
 {
   "schema_version": "lp-minimal-dashboard-v1",
-  "generated_at": "2026-11-08T23:57:09.717902+00:00",
+  "generated_at": "2026-11-09T00:12:07.999736+00:00",
   "publication": {
     "read_only": true,
     "controls_enabled": false,
@@ -29,55 +29,55 @@
     "switch_while_holding": false
   },
   "runtime": {
-    "phase": "open",
-    "at": "2026-11-08T23:57:08.153Z",
+    "phase": "idle",
+    "at": "2026-11-09T00:11:46.030Z",
     "fresh": true,
     "armed": true,
     "ready": true,
     "error": false,
-    "decision": "APR 120% 미만 지속시간 확인 중"
+    "decision": "진입 조건 충족 대기"
   },
   "position": {
-    "present": true,
+    "present": false,
     "verified": true,
-    "pair": "SPCXB/USDT",
-    "token": "SPCX",
-    "lp_entry_usd": 29.39855744785565,
-    "lp_observed_nav_usd": 29.656507176408496,
-    "lp_nav_at": "2026-11-08T23:57:07+00:00",
-    "short_qty": 0.11,
+    "pair": null,
+    "token": null,
+    "lp_entry_usd": null,
+    "lp_observed_nav_usd": null,
+    "lp_nav_at": null,
+    "short_qty": null,
     "leverage": 2,
-    "entered_at": "2026-11-08T22:31:15.104000+00:00",
-    "fee_apr_pct": 0.0,
-    "fee_sample_at": "2026-11-08T23:51:16+00:00",
-    "fee_sample_fresh": true,
-    "low_since": "2026-11-08T23:51:16+00:00",
-    "low_confirm_at": "2026-11-09T00:51:16+00:00",
+    "entered_at": null,
+    "fee_apr_pct": null,
+    "fee_sample_at": null,
+    "fee_sample_fresh": false,
+    "low_since": null,
+    "low_confirm_at": null,
     "net_pnl_usd": null,
     "net_pnl_status": "LP·숏·거래비용·펀딩·가스 합산 정산 전 미확정"
   },
   "profit": {
-    "available": true,
-    "at": "2026-11-08T23:57:09.577Z",
-    "lp_fee_usd": 0.008864344624305546,
-    "fee_last_hour_usd": 0.0,
-    "entry_price_usd": 133.64728814288222,
-    "token_price_usd": 134.83006652921773,
-    "price_change_pct": 0.8849999149036281,
-    "lp_price_inventory_pnl_usd": 0.24718458736199753,
-    "short_pnl_usd": -0.1377149412802222,
-    "net_pnl_usd": 0.09847693267096624,
-    "exit_cost_usd": 0.08230745345905909
+    "available": false,
+    "at": null,
+    "lp_fee_usd": null,
+    "fee_last_hour_usd": null,
+    "entry_price_usd": null,
+    "token_price_usd": null,
+    "price_change_pct": null,
+    "lp_price_inventory_pnl_usd": null,
+    "short_pnl_usd": null,
+    "net_pnl_usd": null,
+    "exit_cost_usd": null
   },
   "discovery": {
     "source": "operating_scan",
-    "at": "2026-11-08T22:31:02.844000+00:00",
+    "at": "2026-11-09T00:01:53.880000+00:00",
     "current_policy_scan": true,
     "complete": true,
     "total_pools": 58,
     "fee_pass_count": 9,
-    "next_scan_at": null,
-    "paused_while_holding": true,
+    "next_scan_at": "2026-11-09T00:16:53.880000+00:00",
+    "paused_while_holding": false,
     "rows": [
       {
         "id": "22711876c5",
@@ -684,8 +684,8 @@
     ]
   },
   "last_settlement": {
-    "closed_at": "2026-11-08T22:15:20.934000+00:00",
-    "reason": "진입 실패 공동 복구",
+    "closed_at": "2026-11-09T00:01:53.880000+00:00",
+    "reason": "실행·안전 상태에 따른 공동 정산",
     "accounting_complete": true
   }
 }
