@@ -1,6 +1,6 @@
 {
   "schema_version": "lp-minimal-dashboard-v1",
-  "generated_at": "2026-11-09T12:57:13.683514+00:00",
+  "generated_at": "2026-11-09T13:12:13.349073+00:00",
   "publication": {
     "read_only": true,
     "controls_enabled": false,
@@ -30,7 +30,7 @@
   },
   "runtime": {
     "phase": "open",
-    "at": "2026-11-09T12:56:51.381Z",
+    "at": "2026-11-09T13:12:09.159Z",
     "fresh": true,
     "armed": true,
     "ready": true,
@@ -43,53 +43,53 @@
     "pair": "BNCB/USDT",
     "token": "BNC",
     "lp_entry_usd": 29.849037611313104,
-    "lp_observed_nav_usd": 29.6715238573908,
-    "lp_nav_at": "2026-11-09T12:57:08+00:00",
+    "lp_observed_nav_usd": 29.672296022770247,
+    "lp_nav_at": "2026-11-09T13:12:07+00:00",
     "short_qty": 3.12,
     "leverage": 2,
     "entered_at": "2026-11-09T09:20:10.694000+00:00",
     "fee_apr_pct": 0.0,
-    "fee_sample_at": "2026-11-09T12:46:49+00:00",
+    "fee_sample_at": "2026-11-09T13:07:07+00:00",
     "fee_sample_fresh": true,
-    "low_since": "2026-11-09T12:31:24+00:00",
-    "low_confirm_at": "2026-11-09T13:31:24+00:00",
+    "low_since": "2026-11-09T13:07:07+00:00",
+    "low_confirm_at": "2026-11-09T14:07:07+00:00",
     "net_pnl_usd": null,
     "net_pnl_status": "LP·숏·거래비용·펀딩·가스 합산 정산 전 미확정"
   },
   "profit": {
     "available": true,
-    "at": "2026-11-09T12:57:10.282Z",
-    "lp_fee_usd": 0.06903080749737198,
+    "at": "2026-11-09T13:12:10.031Z",
+    "lp_fee_usd": 0.06888505125581912,
     "fee_last_hour_usd": 0.0,
     "entry_price_usd": 4.783423905500611,
-    "token_price_usd": 4.789949459837846,
-    "price_change_pct": 0.13642015564898635,
-    "lp_price_inventory_pnl_usd": -0.24624122394271294,
-    "short_pnl_usd": -0.024915338268287998,
-    "net_pnl_usd": -0.21019043254118053,
-    "exit_cost_usd": 0.04945813018358067
+    "token_price_usd": 4.767696112349461,
+    "price_change_pct": -0.3287978122337054,
+    "lp_price_inventory_pnl_usd": -0.24532330232171173,
+    "short_pnl_usd": 0.03114384,
+    "net_pnl_usd": -0.15464815695377246,
+    "exit_cost_usd": 0.021341299833870238
   },
   "assets": {
     "available": true,
-    "at": "2026-11-09T12:57:11.902000+00:00",
-    "total_usd": 52.43999709190608,
+    "at": "2026-11-09T13:12:11.780000+00:00",
+    "total_usd": 52.493295978121125,
     "scope": "LP + 운용 지갑(대기자금·토큰) + Aster 순자산 · 가스 예치금 제외",
     "components": {
-      "lp_usd": 29.673097886818134,
-      "wallet_stable_usd": 12.256659545529727,
-      "wallet_tokens_usd": 0.35721973113506167,
-      "gas_asset_usd": 12.775720735567022,
-      "aster_equity_usd": 10.153019928423157
+      "lp_usd": 29.672296022770247,
+      "wallet_stable_usd": 12.256328330545898,
+      "wallet_tokens_usd": 0.3557101443905758,
+      "gas_asset_usd": 12.748004506292785,
+      "aster_equity_usd": 10.208961480414398
     },
     "day": {
-      "pnl_usd": -0.07215954429167226,
-      "return_pct": -0.13741493192060436,
+      "pnl_usd": -0.01886065807662618,
+      "return_pct": -0.035916746301798474,
       "since": "2026-11-09T11:54:30.394000+00:00",
       "complete": false
     },
     "week": {
-      "pnl_usd": -0.07215954429167226,
-      "return_pct": -0.13741493192060436,
+      "pnl_usd": -0.01886065807662618,
+      "return_pct": -0.035916746301798474,
       "since": "2026-11-09T11:54:30.394000+00:00",
       "complete": false
     }
