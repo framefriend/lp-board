@@ -1,6 +1,6 @@
 {
   "schema_version": "lp-minimal-dashboard-v1",
-  "generated_at": "2026-11-09T18:27:08.520958+00:00",
+  "generated_at": "2026-11-09T18:42:08.550315+00:00",
   "publication": {
     "read_only": true,
     "controls_enabled": false,
@@ -30,12 +30,12 @@
   },
   "runtime": {
     "phase": "open",
-    "at": "2026-11-09T18:26:55.933Z",
+    "at": "2026-11-09T18:41:42.058Z",
     "fresh": true,
     "armed": true,
     "ready": true,
     "error": false,
-    "decision": "수수료 기준 감시 중"
+    "decision": "자료 재조회 중 · 미확인을 0수익으로 처리하지 않음"
   },
   "position": {
     "present": true,
@@ -43,14 +43,14 @@
     "pair": "NVDAB/USDT",
     "token": "NVDA",
     "lp_entry_usd": 28.584181016060505,
-    "lp_observed_nav_usd": 28.521026664027524,
-    "lp_nav_at": "2026-11-09T18:10:27+00:00",
+    "lp_observed_nav_usd": null,
+    "lp_nav_at": null,
     "short_qty": 0.08,
     "leverage": 2,
     "entered_at": "2026-11-09T15:09:29.257000+00:00",
-    "fee_apr_pct": 221.7659929929393,
-    "fee_sample_at": "2026-11-09T18:10:27+00:00",
-    "fee_sample_fresh": true,
+    "fee_apr_pct": null,
+    "fee_sample_at": null,
+    "fee_sample_fresh": false,
     "low_since": null,
     "low_confirm_at": null,
     "net_pnl_usd": null,
