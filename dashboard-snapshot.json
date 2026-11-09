@@ -1,6 +1,6 @@
 {
   "schema_version": "lp-minimal-dashboard-v1",
-  "generated_at": "2026-11-09T15:56:56.254584+00:00",
+  "generated_at": "2026-11-09T15:57:08.657354+00:00",
   "publication": {
     "read_only": true,
     "controls_enabled": false,
@@ -43,8 +43,8 @@
     "pair": "NVDAB/USDT",
     "token": "NVDA",
     "lp_entry_usd": 28.584181016060505,
-    "lp_observed_nav_usd": 28.71433106690384,
-    "lp_nav_at": "2026-11-09T15:56:45+00:00",
+    "lp_observed_nav_usd": 28.72555521677753,
+    "lp_nav_at": "2026-11-09T15:57:03+00:00",
     "short_qty": 0.08,
     "leverage": 2,
     "entered_at": "2026-11-09T15:09:29.257000+00:00",
@@ -58,43 +58,43 @@
   },
   "profit": {
     "available": true,
-    "at": "2026-11-09T15:56:52.801Z",
-    "lp_nav_change_usd": 0.13015005084333353,
-    "entry_execution_pnl_usd": -0.04965289216595217,
+    "at": "2026-11-09T15:57:06.704Z",
+    "lp_nav_change_usd": 0.14137420071702422,
+    "entry_execution_pnl_usd": -0.04958845358968811,
     "commission_usd": 0.0017871555391402649,
     "gas_usd": 0.02648360946,
     "funding_usd": 0.0,
-    "lp_fee_usd": 0.06860603112371355,
-    "fee_last_hour_usd": 0.06860603112371355,
+    "lp_fee_usd": 0.06938352561350573,
+    "fee_last_hour_usd": 0.06938352561350575,
     "entry_price_usd": 178.7317468037507,
-    "token_price_usd": 179.6355981944658,
-    "price_change_pct": 0.5057027679070014,
-    "lp_price_inventory_pnl_usd": 0.06154401971961998,
-    "short_pnl_usd": -0.07160346966417576,
-    "net_pnl_usd": -0.019377075985934668,
-    "exit_cost_usd": 0.044823446714598175
+    "token_price_usd": 179.8011126743127,
+    "price_change_pct": 0.5983077375370627,
+    "lp_price_inventory_pnl_usd": 0.07199067510351849,
+    "short_pnl_usd": -0.08362178886477648,
+    "net_pnl_usd": -0.020106806736580628,
+    "exit_cost_usd": 0.04224406294000705
   },
   "assets": {
     "available": true,
-    "at": "2026-11-09T15:56:54.983000+00:00",
-    "total_usd": 52.492759338893336,
+    "at": "2026-11-09T15:57:08.140000+00:00",
+    "total_usd": 52.489437592111784,
     "scope": "LP + 운용 지갑(대기자금·토큰) + Aster 순자산 · 가스 예치금 제외",
     "components": {
       "lp_usd": 28.716032539352653,
       "wallet_stable_usd": 13.339125072740117,
       "wallet_tokens_usd": 0.3059496442070488,
       "gas_asset_usd": 12.737424076435968,
-      "aster_equity_usd": 10.131652082593515
+      "aster_equity_usd": 10.128330335811967
     },
     "day": {
-      "pnl_usd": -0.015551613538751313,
-      "return_pct": -0.029632265347642114,
+      "pnl_usd": -0.01887336032030315,
+      "return_pct": -0.03596156885067422,
       "since": "2026-11-09T14:57:09.904000+00:00",
       "complete": true
     },
     "week": {
-      "pnl_usd": -0.13418006721172587,
-      "return_pct": -0.25552191303305316,
+      "pnl_usd": -0.1375018139932777,
+      "return_pct": -0.2618475850189988,
       "since": "2026-11-09T11:54:30.394000+00:00",
       "complete": false
     }
