@@ -1,6 +1,6 @@
 {
   "schema_version": "lp-minimal-dashboard-v1",
-  "generated_at": "2026-11-09T08:42:08.152640+00:00",
+  "generated_at": "2026-11-09T08:57:10.488242+00:00",
   "publication": {
     "read_only": true,
     "controls_enabled": false,
@@ -30,7 +30,7 @@
   },
   "runtime": {
     "phase": "open",
-    "at": "2026-11-09T08:42:07.177Z",
+    "at": "2026-11-09T08:56:51.700Z",
     "fresh": true,
     "armed": true,
     "ready": true,
@@ -43,13 +43,13 @@
     "pair": "CRCLB/USDT",
     "token": "CRCL",
     "lp_entry_usd": 29.26794411304227,
-    "lp_observed_nav_usd": 29.22992577953711,
-    "lp_nav_at": "2026-11-09T08:42:05+00:00",
+    "lp_observed_nav_usd": 29.22945767615487,
+    "lp_nav_at": "2026-11-09T08:57:08+00:00",
     "short_qty": 0.22,
     "leverage": 2,
     "entered_at": "2026-11-09T03:48:45.773000+00:00",
     "fee_apr_pct": 0.0,
-    "fee_sample_at": "2026-11-09T08:37:49+00:00",
+    "fee_sample_at": "2026-11-09T08:53:05+00:00",
     "fee_sample_fresh": true,
     "low_since": "2026-11-09T05:50:57+00:00",
     "low_confirm_at": "2026-11-09T06:50:57+00:00",
@@ -58,16 +58,16 @@
   },
   "profit": {
     "available": true,
-    "at": "2026-11-09T08:42:08.008Z",
-    "lp_fee_usd": 0.04150257381578236,
+    "at": "2026-11-09T08:57:10.352Z",
+    "lp_fee_usd": 0.041524425762235403,
     "fee_last_hour_usd": 0.0,
     "entry_price_usd": 66.51325751500113,
-    "token_price_usd": 65.3621085233851,
-    "price_change_pct": -1.730706079696065,
-    "lp_price_inventory_pnl_usd": -0.07846458051892789,
-    "short_pnl_usd": 0.26123240710907997,
-    "net_pnl_usd": 0.19631225025275792,
-    "exit_cost_usd": 0.02753336074715287
+    "token_price_usd": 65.50424388136251,
+    "price_change_pct": -1.5170113017108577,
+    "lp_price_inventory_pnl_usd": -0.07895453584762029,
+    "short_pnl_usd": 0.2223004271466,
+    "net_pnl_usd": 0.15751225729611398,
+    "exit_cost_usd": 0.027567965800046335
   },
   "discovery": {
     "source": "operating_scan",
