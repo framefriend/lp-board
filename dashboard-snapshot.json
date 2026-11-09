@@ -1,6 +1,6 @@
 {
   "schema_version": "lp-minimal-dashboard-v1",
-  "generated_at": "2026-11-09T10:49:25.351426+00:00",
+  "generated_at": "2026-11-09T10:57:04.098013+00:00",
   "publication": {
     "read_only": true,
     "controls_enabled": false,
@@ -30,7 +30,7 @@
   },
   "runtime": {
     "phase": "open",
-    "at": "2026-11-09T10:49:09.137Z",
+    "at": "2026-11-09T10:57:03.697Z",
     "fresh": true,
     "armed": true,
     "ready": true,
@@ -43,13 +43,13 @@
     "pair": "BNCB/USDT",
     "token": "BNC",
     "lp_entry_usd": 29.849037611313104,
-    "lp_observed_nav_usd": 29.670509349210267,
-    "lp_nav_at": "2026-11-09T10:49:22+00:00",
+    "lp_observed_nav_usd": 29.671905165446226,
+    "lp_nav_at": "2026-11-09T10:57:01+00:00",
     "short_qty": 3.12,
     "leverage": 2,
     "entered_at": "2026-11-09T09:20:10.694000+00:00",
-    "fee_apr_pct": 933.1221724925117,
-    "fee_sample_at": "2026-11-09T10:39:41+00:00",
+    "fee_apr_pct": 498.3889696539336,
+    "fee_sample_at": "2026-11-09T10:54:56+00:00",
     "fee_sample_fresh": true,
     "low_since": null,
     "low_confirm_at": null,
@@ -58,31 +58,31 @@
   },
   "profit": {
     "available": true,
-    "at": "2026-11-09T10:49:24.881Z",
-    "lp_fee_usd": 0.056138179174410996,
-    "fee_last_hour_usd": 0.016867369086691893,
+    "at": "2026-11-09T10:57:03.493Z",
+    "lp_fee_usd": 0.056218452470004995,
+    "fee_last_hour_usd": 0.016883459472071455,
     "entry_price_usd": 4.783423905500611,
-    "token_price_usd": 4.748895543930601,
-    "price_change_pct": -0.7218336123274605,
-    "lp_price_inventory_pnl_usd": -0.2343631038002839,
-    "short_pnl_usd": 0.09745328888754498,
-    "net_pnl_usd": -0.08909907833962807,
-    "exit_cost_usd": 0.04411340301257663
+    "token_price_usd": 4.763724493723272,
+    "price_change_pct": -0.41182659464251703,
+    "lp_price_inventory_pnl_usd": -0.23304756085991862,
+    "short_pnl_usd": 0.06771418983966697,
+    "net_pnl_usd": -0.11849859491597362,
+    "exit_cost_usd": 0.039595741123874734
   },
   "assets": {
     "available": true,
-    "at": "2026-11-09T10:49:25.192000+00:00",
-    "total_usd": 37.20687360443532,
+    "at": "2026-11-09T10:57:03.912000+00:00",
+    "total_usd": 37.1797908467638,
     "scope": "전략 배정자금 기준 · 개인 지갑·공용 담보 제외",
     "day": {
-      "pnl_usd": 0.00477432011465595,
-      "return_pct": 0.01283346963344123,
+      "pnl_usd": -0.022308437556866068,
+      "return_pct": -0.05996553416615461,
       "since": "2026-11-09T10:47:23.056000+00:00",
       "complete": false
     },
     "week": {
-      "pnl_usd": 0.00477432011465595,
-      "return_pct": 0.01283346963344123,
+      "pnl_usd": -0.022308437556866068,
+      "return_pct": -0.05996553416615461,
       "since": "2026-11-09T10:47:23.056000+00:00",
       "complete": false
     }
