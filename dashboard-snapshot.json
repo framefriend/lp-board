@@ -1,6 +1,6 @@
 {
   "schema_version": "lp-minimal-dashboard-v1",
-  "generated_at": "2026-11-10T03:57:11.603288+00:00",
+  "generated_at": "2026-11-10T04:00:17.152327+00:00",
   "publication": {
     "read_only": true,
     "controls_enabled": false,
@@ -30,10 +30,10 @@
   },
   "runtime": {
     "phase": "idle",
-    "at": "2026-11-10T03:56:49.087Z",
+    "at": "2026-11-10T03:58:23.018Z",
     "fresh": true,
-    "armed": true,
-    "ready": true,
+    "armed": false,
+    "ready": false,
     "error": false,
     "decision": "진입 조건 충족 대기"
   },
