@@ -1,6 +1,6 @@
 {
   "schema_version": "lp-minimal-dashboard-v1",
-  "generated_at": "2026-11-10T00:27:12.753383+00:00",
+  "generated_at": "2026-11-10T00:42:05.325885+00:00",
   "publication": {
     "read_only": true,
     "controls_enabled": false,
@@ -30,7 +30,7 @@
   },
   "runtime": {
     "phase": "idle",
-    "at": "2026-11-10T00:26:49.113Z",
+    "at": "2026-11-10T00:41:59.516Z",
     "fresh": true,
     "armed": true,
     "ready": true,
@@ -76,62 +76,52 @@
   },
   "assets": {
     "available": true,
-    "at": "2026-11-10T00:27:11.459000+00:00",
-    "total_usd": 52.370816725861985,
+    "at": "2026-11-10T00:42:04.159000+00:00",
+    "total_usd": 52.3717955872649,
     "scope": "LP + 운용 지갑(대기자금·토큰) + Aster 순자산 · 가스 예치금 제외",
     "components": {
       "lp_usd": 0.0,
-      "wallet_stable_usd": 42.053238012446485,
-      "wallet_tokens_usd": 0.23311717233125276,
-      "gas_asset_usd": 12.70449640533722,
-      "aster_equity_usd": 10.084461541084249
+      "wallet_stable_usd": 42.0541599154869,
+      "wallet_tokens_usd": 0.2330670736633604,
+      "gas_asset_usd": 12.698915691381279,
+      "aster_equity_usd": 10.084568598114634
     },
     "day": {
-      "pnl_usd": -0.15584399908020802,
-      "return_pct": -0.29694736961379065,
+      "pnl_usd": -0.15486513767729465,
+      "return_pct": -0.29508223319193855,
       "since": "2026-11-09T14:57:09.904000+00:00",
       "complete": true
     },
     "week": {
-      "pnl_usd": -0.27447245275318255,
-      "return_pct": -0.5226836419130857,
+      "pnl_usd": -0.2734935913502692,
+      "return_pct": -0.520819575636595,
       "since": "2026-11-09T11:54:30.394000+00:00",
       "complete": false
     }
   },
   "discovery": {
     "source": "operating_scan",
-    "at": "2026-11-10T00:19:20.233000+00:00",
+    "at": "2026-11-10T00:35:02.853000+00:00",
     "current_policy_scan": true,
     "complete": true,
     "total_pools": 61,
     "fee_pass_count": 6,
-    "next_scan_at": "2026-11-10T00:34:20.233000+00:00",
+    "next_scan_at": "2026-11-10T00:50:02.853000+00:00",
     "paused_while_holding": false,
     "rows": [
       {
         "id": "5359e9235c",
         "pair": "WETH/USDT",
         "hedge": "ETHUSDT",
-        "apr_pct": 733.8699387315511,
+        "apr_pct": 861.2980140699553,
         "status": "fee_pass",
         "reasons": []
       },
       {
-        "id": "df1bcda102",
-        "pair": "GOOGLB/USDT",
-        "hedge": "GOOGLUSDT",
-        "apr_pct": 456.54719977128696,
-        "status": "fee_pass",
-        "reasons": [
-          "2배 설정 확인 필요"
-        ]
-      },
-      {
-        "id": "da000e84f9",
-        "pair": "BNCB/USDT",
-        "hedge": "BNCUSD1",
-        "apr_pct": 426.0379516494797,
+        "id": "a39e4586a0",
+        "pair": "SPCXB/USDT",
+        "hedge": "SPCXUSD1",
+        "apr_pct": 486.2137644170618,
         "status": "fee_pass",
         "reasons": []
       },
@@ -139,37 +129,56 @@
         "id": "56fdd36978",
         "pair": "NVDAB/USDT",
         "hedge": "NVDAUSDT",
-        "apr_pct": 345.9029889860943,
+        "apr_pct": 485.4897984497617,
         "status": "fee_pass",
         "reasons": [
           "2배 설정 확인 필요"
         ]
       },
       {
-        "id": "a39e4586a0",
-        "pair": "SPCXB/USDT",
-        "hedge": "SPCXUSD1",
-        "apr_pct": 295.9282736707825,
+        "id": "ec23371f16",
+        "pair": "BNCB/USDT",
+        "hedge": "BNCUSD1",
+        "apr_pct": 465.95144585459093,
         "status": "fee_pass",
         "reasons": []
       },
       {
-        "id": "ec23371f16",
-        "pair": "BNCB/USDT",
-        "hedge": "BNCUSD1",
-        "apr_pct": 293.43902784543496,
+        "id": "df1bcda102",
+        "pair": "GOOGLB/USDT",
+        "hedge": "GOOGLUSDT",
+        "apr_pct": 420.41401095685467,
         "status": "fee_pass",
         "reasons": [
-          "실행 또는 자료 재확인 필요"
+          "2배 설정 확인 필요"
         ]
       },
       {
-        "id": "9a07e59022",
+        "id": "5cb2ec15fb",
+        "pair": "CRCLB/USDT",
+        "hedge": "CRCLUSDT",
+        "apr_pct": 336.29454034313756,
+        "status": "fee_pass",
+        "reasons": []
+      },
+      {
+        "id": "da000e84f9",
         "pair": "BNCB/USDT",
         "hedge": "BNCUSD1",
-        "apr_pct": 180.5995970523235,
+        "apr_pct": 234.5531274286453,
         "status": "below_apr",
         "reasons": [
+          "APR 240% 미달"
+        ]
+      },
+      {
+        "id": "191609681c",
+        "pair": "HOODB/USDT",
+        "hedge": "HOODUSDT",
+        "apr_pct": 216.3604966032361,
+        "status": "below_apr",
+        "reasons": [
+          "2배 설정 확인 필요",
           "APR 240% 미달"
         ]
       },
@@ -177,9 +186,30 @@
         "id": "b63bf582d0",
         "pair": "BABAB/USDT",
         "hedge": "BABAUSDT",
-        "apr_pct": 167.54694524821542,
+        "apr_pct": 210.21565459940956,
         "status": "below_apr",
         "reasons": [
+          "APR 240% 미달"
+        ]
+      },
+      {
+        "id": "9a07e59022",
+        "pair": "BNCB/USDT",
+        "hedge": "BNCUSD1",
+        "apr_pct": 182.4285872396697,
+        "status": "below_apr",
+        "reasons": [
+          "APR 240% 미달"
+        ]
+      },
+      {
+        "id": "aa08ad30e6",
+        "pair": "AAPLB/USDT",
+        "hedge": "AAPLUSDT",
+        "apr_pct": 146.43227890653273,
+        "status": "below_apr",
+        "reasons": [
+          "2배 설정 확인 필요",
           "APR 240% 미달"
         ]
       },
@@ -187,27 +217,7 @@
         "id": "ca0da9da00",
         "pair": "WBNB/USDT",
         "hedge": "BNBUSDT",
-        "apr_pct": 164.17096374755795,
-        "status": "below_apr",
-        "reasons": [
-          "APR 240% 미달"
-        ]
-      },
-      {
-        "id": "09bbc7cb1e",
-        "pair": "DRAMB/USDT",
-        "hedge": "DRAMUSDT",
-        "apr_pct": 162.5195185743855,
-        "status": "below_apr",
-        "reasons": [
-          "APR 240% 미달"
-        ]
-      },
-      {
-        "id": "5cb2ec15fb",
-        "pair": "CRCLB/USDT",
-        "hedge": "CRCLUSDT",
-        "apr_pct": 156.82281385647124,
+        "apr_pct": 114.00084993569624,
         "status": "below_apr",
         "reasons": [
           "APR 240% 미달"
@@ -217,18 +227,7 @@
         "id": "8ef1a39023",
         "pair": "GMEB/USDT",
         "hedge": "GMEUSDT",
-        "apr_pct": 136.50610984053108,
-        "status": "below_apr",
-        "reasons": [
-          "2배 설정 확인 필요",
-          "APR 240% 미달"
-        ]
-      },
-      {
-        "id": "aa08ad30e6",
-        "pair": "AAPLB/USDT",
-        "hedge": "AAPLUSDT",
-        "apr_pct": 99.18212680442437,
+        "apr_pct": 92.06201896023745,
         "status": "below_apr",
         "reasons": [
           "2배 설정 확인 필요",
@@ -239,7 +238,7 @@
         "id": "6316094093",
         "pair": "QQQB/USDT",
         "hedge": "QQQUSDT",
-        "apr_pct": 91.54559345152076,
+        "apr_pct": 89.11607308980153,
         "status": "below_apr",
         "reasons": [
           "2배 설정 확인 필요",
@@ -250,7 +249,7 @@
         "id": "22711876c5",
         "pair": "MUB/USDT",
         "hedge": "MUUSDT",
-        "apr_pct": 76.85325625841425,
+        "apr_pct": 85.67815490101142,
         "status": "below_apr",
         "reasons": [
           "APR 240% 미달"
@@ -260,7 +259,7 @@
         "id": "1f609fe7eb",
         "pair": "TSLAB/USDT",
         "hedge": "TSLAUSDT",
-        "apr_pct": 57.49891060664617,
+        "apr_pct": 61.573867939543625,
         "status": "below_apr",
         "reasons": [
           "2배 설정 확인 필요",
@@ -271,7 +270,7 @@
         "id": "2320037e60",
         "pair": "METAB/USDT",
         "hedge": "METAUSD1",
-        "apr_pct": 20.45307963337889,
+        "apr_pct": 19.939290262173284,
         "status": "below_apr",
         "reasons": [
           "2배 설정 확인 필요",
@@ -282,7 +281,7 @@
         "id": "2ccc649887",
         "pair": "MSTRB/USDT",
         "hedge": "MSTRUSDT",
-        "apr_pct": 17.7026579972241,
+        "apr_pct": 17.660781055299182,
         "status": "below_apr",
         "reasons": [
           "2배 설정 확인 필요",
@@ -293,20 +292,19 @@
         "id": "b129df5675",
         "pair": "WBNB/USDT",
         "hedge": "BNBUSDT",
-        "apr_pct": 0.9305320742664545,
+        "apr_pct": 0.9188527985380504,
         "status": "below_apr",
         "reasons": [
           "APR 240% 미달"
         ]
       },
       {
-        "id": "191609681c",
-        "pair": "HOODB/USDT",
-        "hedge": "HOODUSDT",
+        "id": "09bbc7cb1e",
+        "pair": "DRAMB/USDT",
+        "hedge": "DRAMUSDT",
         "apr_pct": 0.0,
         "status": "below_apr",
         "reasons": [
-          "2배 설정 확인 필요",
           "APR 240% 미달"
         ]
       },
@@ -525,7 +523,7 @@
       {
         "id": "b69aeb9592",
         "pair": "SNDKB/USDT",
-        "hedge": "SNDKUSD1",
+        "hedge": "SNDKUSDT",
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
@@ -547,7 +545,7 @@
       {
         "id": "ead677bb97",
         "pair": "SOXLB/USDT",
-        "hedge": "SOXLUSDT",
+        "hedge": "SOXLUSD1",
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
