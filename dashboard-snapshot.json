@@ -1,6 +1,6 @@
 {
   "schema_version": "lp-minimal-dashboard-v1",
-  "generated_at": "2026-11-09T23:57:12.682361+00:00",
+  "generated_at": "2026-11-10T00:12:07.938120+00:00",
   "publication": {
     "read_only": true,
     "controls_enabled": false,
@@ -29,85 +29,85 @@
     "switch_while_holding": false
   },
   "runtime": {
-    "phase": "open",
-    "at": "2026-11-09T23:57:09.313Z",
+    "phase": "idle",
+    "at": "2026-11-10T00:11:41.116Z",
     "fresh": true,
     "armed": true,
     "ready": true,
     "error": false,
-    "decision": "수수료 기준 감시 중"
+    "decision": "진입 조건 충족 대기"
   },
   "position": {
-    "present": true,
+    "present": false,
     "verified": true,
-    "pair": "NVDAB/USDT",
-    "token": "NVDA",
-    "lp_entry_usd": 28.584181016060505,
-    "lp_observed_nav_usd": 28.63025147647301,
-    "lp_nav_at": "2026-11-09T23:57:06+00:00",
-    "short_qty": 0.08,
+    "pair": null,
+    "token": null,
+    "lp_entry_usd": null,
+    "lp_observed_nav_usd": null,
+    "lp_nav_at": null,
+    "short_qty": null,
     "leverage": 2,
-    "entered_at": "2026-11-09T15:09:29.257000+00:00",
-    "fee_apr_pct": 213.60984121147735,
-    "fee_sample_at": "2026-11-09T23:45:17+00:00",
-    "fee_sample_fresh": true,
+    "entered_at": null,
+    "fee_apr_pct": null,
+    "fee_sample_at": null,
+    "fee_sample_fresh": false,
     "low_since": null,
     "low_confirm_at": null,
     "net_pnl_usd": null,
     "net_pnl_status": "LP·숏·거래비용·펀딩·가스 합산 정산 전 미확정"
   },
   "profit": {
-    "available": true,
-    "at": "2026-11-09T23:57:10.029Z",
-    "lp_nav_change_usd": 0.04607046041250484,
-    "entry_execution_pnl_usd": -0.045807726480834046,
-    "commission_usd": 0.00178682314219836,
-    "gas_usd": 0.0264889716,
-    "funding_usd": 0.00473653269045648,
-    "lp_fee_usd": 0.24753549619756832,
-    "fee_last_hour_usd": 0.0073151209505652615,
-    "entry_price_usd": 178.7317468037507,
-    "token_price_usd": 179.91997434114424,
-    "price_change_pct": 0.6648105659137427,
-    "lp_price_inventory_pnl_usd": -0.20146503578506347,
-    "short_pnl_usd": -0.09181619593833773,
-    "net_pnl_usd": -0.11509272405840881,
-    "exit_cost_usd": 0.03317081871801898
+    "available": false,
+    "at": null,
+    "lp_nav_change_usd": null,
+    "entry_execution_pnl_usd": null,
+    "commission_usd": null,
+    "gas_usd": null,
+    "funding_usd": null,
+    "lp_fee_usd": null,
+    "fee_last_hour_usd": null,
+    "entry_price_usd": null,
+    "token_price_usd": null,
+    "price_change_pct": null,
+    "lp_price_inventory_pnl_usd": null,
+    "short_pnl_usd": null,
+    "net_pnl_usd": null,
+    "exit_cost_usd": null
   },
   "assets": {
     "available": true,
-    "at": "2026-11-09T23:57:11.525000+00:00",
-    "total_usd": 52.39064663133284,
+    "at": "2026-11-10T00:12:06.207000+00:00",
+    "total_usd": 52.36699063304479,
     "scope": "LP + 운용 지갑(대기자금·토큰) + Aster 순자산 · 가스 예치금 제외",
     "components": {
-      "lp_usd": 28.630251477040467,
-      "wallet_stable_usd": 13.337136003564735,
-      "wallet_tokens_usd": 0.30357165471181824,
-      "gas_asset_usd": 12.732633502490176,
-      "aster_equity_usd": 10.119687496015825
+      "lp_usd": 0.0,
+      "wallet_stable_usd": 42.04940213428695,
+      "wallet_tokens_usd": 0.2340361675247465,
+      "gas_asset_usd": 12.741289302456051,
+      "aster_equity_usd": 10.08355233123309
     },
     "day": {
-      "pnl_usd": -0.11766432109924505,
-      "return_pct": -0.22419926884596109,
+      "pnl_usd": -0.15967009189740028,
+      "return_pct": -0.3042376612173751,
       "since": "2026-11-09T14:57:09.904000+00:00",
       "complete": true
     },
     "week": {
-      "pnl_usd": -0.2362927747722196,
-      "return_pct": -0.44997728127840386,
+      "pnl_usd": -0.2782985455703748,
+      "return_pct": -0.5299697506206357,
       "since": "2026-11-09T11:54:30.394000+00:00",
       "complete": false
     }
   },
   "discovery": {
     "source": "operating_scan",
-    "at": "2026-11-09T15:09:17.980000+00:00",
+    "at": "2026-11-10T00:01:19.479000+00:00",
     "current_policy_scan": true,
     "complete": true,
     "total_pools": 60,
     "fee_pass_count": 10,
-    "next_scan_at": null,
-    "paused_while_holding": true,
+    "next_scan_at": "2026-11-10T00:16:19.479000+00:00",
+    "paused_while_holding": false,
     "rows": [
       {
         "id": "56fdd36978",
@@ -727,8 +727,8 @@
     ]
   },
   "last_settlement": {
-    "closed_at": "2026-11-09T14:51:33.723000+00:00",
-    "reason": "진입 실패 공동 복구",
+    "closed_at": "2026-11-10T00:01:19.479000+00:00",
+    "reason": "실행·안전 상태에 따른 공동 정산",
     "accounting_complete": true
   }
 }
