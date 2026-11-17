@@ -1,6 +1,6 @@
 {
   "schema_version": "lp-minimal-dashboard-v1",
-  "generated_at": "2026-11-17T18:42:11.252459+00:00",
+  "generated_at": "2026-11-17T18:57:04.292209+00:00",
   "publication": {
     "read_only": true,
     "controls_enabled": false,
@@ -36,7 +36,7 @@
       "LP 운용 지갑 USDT 없음"
     ],
     "phase": "idle",
-    "at": "2026-11-17T18:41:47.322Z",
+    "at": "2026-11-17T18:57:01.689Z",
     "fresh": true,
     "armed": false,
     "ready": false,
@@ -96,19 +96,19 @@
   },
   "assets": {
     "available": true,
-    "at": "2026-11-17T18:42:09.957000+00:00",
-    "total_usd": 10.095674479121982,
+    "at": "2026-11-17T18:57:03.151000+00:00",
+    "total_usd": 10.096645876771964,
     "scope": "LP + 운용 지갑(대기자금·토큰) + Aster 순자산 · 가스 예치금 제외",
     "components": {
       "lp_usd": 0.0,
       "wallet_stable_usd": 0.0,
       "wallet_tokens_usd": 0.0,
-      "gas_asset_usd": 0.07852609256955338,
-      "aster_equity_usd": 10.095674479121982
+      "gas_asset_usd": 0.0786490639894333,
+      "aster_equity_usd": 10.096645876771964
     },
     "day": {
-      "pnl_usd": 0.001205580686070462,
-      "return_pct": 0.011942982817622638,
+      "pnl_usd": 0.0021769783360525707,
+      "return_pct": 0.021566051250005665,
       "since": "2026-11-17T14:57:10.152000+00:00",
       "complete": true
     },
@@ -122,12 +122,12 @@
   "discovery": {
     "research_only": true,
     "source": "operating_scan",
-    "at": "2026-11-17T18:32:52.714000+00:00",
+    "at": "2026-11-17T18:49:07.460000+00:00",
     "current_policy_scan": true,
     "complete": true,
-    "total_pools": 69,
+    "total_pools": 70,
     "fee_pass_count": 0,
-    "next_scan_at": "2026-11-17T18:47:52.714000+00:00",
+    "next_scan_at": "2026-11-17T19:04:07.460000+00:00",
     "paused_while_holding": false,
     "rows": [
       {
@@ -358,6 +358,16 @@
         ]
       },
       {
+        "id": "0d4b81b56e",
+        "pair": "BULLA/USDT",
+        "hedge": "BULLAUSDT",
+        "apr_pct": null,
+        "status": "excluded",
+        "reasons": [
+          "동일 기초자산 확인 필요"
+        ]
+      },
+      {
         "id": "8f6f6b74b0",
         "pair": "CAP/USDT",
         "hedge": "CAPUSDT",
@@ -486,7 +496,7 @@
       {
         "id": "2320037e60",
         "pair": "METAB/USDT",
-        "hedge": "METAUSD1",
+        "hedge": "METAUSDT",
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
@@ -556,7 +566,7 @@
       {
         "id": "6316094093",
         "pair": "QQQB/USDT",
-        "hedge": "QQQUSD1",
+        "hedge": "QQQUSDT",
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
@@ -599,7 +609,7 @@
       {
         "id": "b69aeb9592",
         "pair": "SNDKB/USDT",
-        "hedge": "SNDKUSD1",
+        "hedge": "SNDKUSDT",
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
@@ -621,7 +631,7 @@
       {
         "id": "ead677bb97",
         "pair": "SOXLB/USDT",
-        "hedge": "SOXLUSD1",
+        "hedge": "SOXLUSDT",
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
