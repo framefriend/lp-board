@@ -1,6 +1,6 @@
 {
   "schema_version": "lp-minimal-dashboard-v1",
-  "generated_at": "2026-11-17T13:57:06.591274+00:00",
+  "generated_at": "2026-11-17T14:12:06.272158+00:00",
   "publication": {
     "read_only": true,
     "controls_enabled": false,
@@ -36,7 +36,7 @@
       "LP 운용 지갑 USDT 없음"
     ],
     "phase": "idle",
-    "at": "2026-11-17T13:57:03.555Z",
+    "at": "2026-11-17T14:11:12.418Z",
     "fresh": true,
     "armed": false,
     "ready": false,
@@ -96,15 +96,15 @@
   },
   "assets": {
     "available": true,
-    "at": "2026-11-17T13:57:05.165000+00:00",
-    "total_usd": 10.09436929976904,
+    "at": "2026-11-17T14:12:04.442000+00:00",
+    "total_usd": 10.094187719782855,
     "scope": "LP + 운용 지갑(대기자금·토큰) + Aster 순자산 · 가스 예치금 제외",
     "components": {
       "lp_usd": 0.0,
       "wallet_stable_usd": 0.0,
       "wallet_tokens_usd": 0.0,
-      "gas_asset_usd": 0.07918735458844617,
-      "aster_equity_usd": 10.09436929976904
+      "gas_asset_usd": 0.07925113682214156,
+      "aster_equity_usd": 10.094187719782855
     },
     "day": {
       "pnl_usd": null,
@@ -122,12 +122,12 @@
   "discovery": {
     "research_only": true,
     "source": "operating_scan",
-    "at": "2026-11-17T13:53:16.479000+00:00",
+    "at": "2026-11-17T14:10:28.668000+00:00",
     "current_policy_scan": true,
     "complete": true,
     "total_pools": 69,
     "fee_pass_count": 0,
-    "next_scan_at": "2026-11-17T14:08:16.479000+00:00",
+    "next_scan_at": "2026-11-17T14:25:28.668000+00:00",
     "paused_while_holding": false,
     "rows": [
       {
@@ -481,7 +481,7 @@
       {
         "id": "2320037e60",
         "pair": "METAB/USDT",
-        "hedge": "METAUSD1",
+        "hedge": "METAUSDT",
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
@@ -594,7 +594,7 @@
       {
         "id": "b69aeb9592",
         "pair": "SNDKB/USDT",
-        "hedge": "SNDKUSD1",
+        "hedge": "SNDKUSDT",
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
