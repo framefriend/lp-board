@@ -1,6 +1,6 @@
 {
   "schema_version": "lp-minimal-dashboard-v1",
-  "generated_at": "2026-11-17T19:27:05.968029+00:00",
+  "generated_at": "2026-11-17T19:42:11.133339+00:00",
   "publication": {
     "read_only": true,
     "controls_enabled": false,
@@ -36,7 +36,7 @@
       "LP 운용 지갑 USDT 없음"
     ],
     "phase": "idle",
-    "at": "2026-11-17T19:26:24.364Z",
+    "at": "2026-11-17T19:41:36.904Z",
     "fresh": true,
     "armed": false,
     "ready": false,
@@ -96,19 +96,19 @@
   },
   "assets": {
     "available": true,
-    "at": "2026-11-17T19:27:04.633000+00:00",
-    "total_usd": 10.095851606114437,
+    "at": "2026-11-17T19:42:09.729000+00:00",
+    "total_usd": 10.096404031275378,
     "scope": "LP + 운용 지갑(대기자금·토큰) + Aster 순자산 · 가스 예치금 제외",
     "components": {
       "lp_usd": 0.0,
       "wallet_stable_usd": 0.0,
       "wallet_tokens_usd": 0.0,
-      "gas_asset_usd": 0.07864382436293157,
-      "aster_equity_usd": 10.095851606114437
+      "gas_asset_usd": 0.07854902162715222,
+      "aster_equity_usd": 10.096404031275378
     },
     "day": {
-      "pnl_usd": 0.001382707678525108,
-      "return_pct": 0.013697676345700087,
+      "pnl_usd": 0.001935132839467002,
+      "return_pct": 0.019170229349726772,
       "since": "2026-11-17T14:57:10.152000+00:00",
       "complete": true
     },
@@ -122,12 +122,12 @@
   "discovery": {
     "research_only": true,
     "source": "operating_scan",
-    "at": "2026-11-17T19:21:35.672000+00:00",
+    "at": "2026-11-17T19:38:01.562000+00:00",
     "current_policy_scan": true,
     "complete": true,
     "total_pools": 70,
     "fee_pass_count": 0,
-    "next_scan_at": "2026-11-17T19:36:35.672000+00:00",
+    "next_scan_at": "2026-11-17T19:53:01.562000+00:00",
     "paused_while_holding": false,
     "rows": [
       {
@@ -291,7 +291,6 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "가격 피드 조건 미달",
           "최소 주문이 운용 한도 초과"
         ]
       },
@@ -561,7 +560,7 @@
       {
         "id": "6316094093",
         "pair": "QQQB/USDT",
-        "hedge": "QQQUSDT",
+        "hedge": "QQQUSD1",
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
@@ -604,7 +603,7 @@
       {
         "id": "b69aeb9592",
         "pair": "SNDKB/USDT",
-        "hedge": "SNDKUSDT",
+        "hedge": "SNDKUSD1",
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
@@ -814,7 +813,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "가격 피드 조건 미달"
+          "실행 또는 자료 재확인 필요"
         ]
       },
       {
@@ -856,7 +855,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "가격 피드 조건 미달"
+          "실행 또는 자료 재확인 필요"
         ]
       },
       {
