@@ -1,6 +1,6 @@
 {
   "schema_version": "lp-minimal-dashboard-v1",
-  "generated_at": "2026-11-17T06:01:58.871726+00:00",
+  "generated_at": "2026-11-17T06:02:25.395796+00:00",
   "publication": {
     "read_only": true,
     "controls_enabled": false,
@@ -41,7 +41,7 @@
     "armed": false,
     "ready": false,
     "error": false,
-    "decision": "실거래 중지 · 자금 및 인증 확인 필요"
+    "decision": "실거래 중지 · LP 운용 지갑 USDT 없음"
   },
   "position": {
     "present": false,
