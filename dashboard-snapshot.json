@@ -1,6 +1,6 @@
 {
   "schema_version": "lp-minimal-dashboard-v1",
-  "generated_at": "2026-11-17T13:42:06.758422+00:00",
+  "generated_at": "2026-11-17T13:57:06.591274+00:00",
   "publication": {
     "read_only": true,
     "controls_enabled": false,
@@ -36,7 +36,7 @@
       "LP 운용 지갑 USDT 없음"
     ],
     "phase": "idle",
-    "at": "2026-11-17T13:41:50.798Z",
+    "at": "2026-11-17T13:57:03.555Z",
     "fresh": true,
     "armed": false,
     "ready": false,
@@ -96,15 +96,15 @@
   },
   "assets": {
     "available": true,
-    "at": "2026-11-17T13:42:05.401000+00:00",
-    "total_usd": 10.09369562218515,
+    "at": "2026-11-17T13:57:05.165000+00:00",
+    "total_usd": 10.09436929976904,
     "scope": "LP + 운용 지갑(대기자금·토큰) + Aster 순자산 · 가스 예치금 제외",
     "components": {
       "lp_usd": 0.0,
       "wallet_stable_usd": 0.0,
       "wallet_tokens_usd": 0.0,
-      "gas_asset_usd": 0.07921397365972872,
-      "aster_equity_usd": 10.09369562218515
+      "gas_asset_usd": 0.07918735458844617,
+      "aster_equity_usd": 10.09436929976904
     },
     "day": {
       "pnl_usd": null,
@@ -122,12 +122,12 @@
   "discovery": {
     "research_only": true,
     "source": "operating_scan",
-    "at": "2026-11-17T13:37:25.504000+00:00",
+    "at": "2026-11-17T13:53:16.479000+00:00",
     "current_policy_scan": true,
     "complete": true,
-    "total_pools": 68,
+    "total_pools": 69,
     "fee_pass_count": 0,
-    "next_scan_at": "2026-11-17T13:52:25.504000+00:00",
+    "next_scan_at": "2026-11-17T14:08:16.479000+00:00",
     "paused_while_holding": false,
     "rows": [
       {
@@ -343,6 +343,16 @@
         ]
       },
       {
+        "id": "d37a34f66f",
+        "pair": "BULLA/USDT",
+        "hedge": "BULLAUSDT",
+        "apr_pct": null,
+        "status": "excluded",
+        "reasons": [
+          "동일 기초자산 확인 필요"
+        ]
+      },
+      {
         "id": "8f6f6b74b0",
         "pair": "CAP/USDT",
         "hedge": "CAPUSDT",
@@ -471,7 +481,7 @@
       {
         "id": "2320037e60",
         "pair": "METAB/USDT",
-        "hedge": "METAUSDT",
+        "hedge": "METAUSD1",
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
