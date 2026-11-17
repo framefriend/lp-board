@@ -1,6 +1,6 @@
 {
   "schema_version": "lp-minimal-dashboard-v1",
-  "generated_at": "2026-11-17T18:27:04.043533+00:00",
+  "generated_at": "2026-11-17T18:42:11.252459+00:00",
   "publication": {
     "read_only": true,
     "controls_enabled": false,
@@ -36,7 +36,7 @@
       "LP 운용 지갑 USDT 없음"
     ],
     "phase": "idle",
-    "at": "2026-11-17T18:26:32.399Z",
+    "at": "2026-11-17T18:41:47.322Z",
     "fresh": true,
     "armed": false,
     "ready": false,
@@ -96,19 +96,19 @@
   },
   "assets": {
     "available": true,
-    "at": "2026-11-17T18:27:02.747000+00:00",
-    "total_usd": 10.095113709278984,
+    "at": "2026-11-17T18:42:09.957000+00:00",
+    "total_usd": 10.095674479121982,
     "scope": "LP + 운용 지갑(대기자금·토큰) + Aster 순자산 · 가스 예치금 제외",
     "components": {
       "lp_usd": 0.0,
       "wallet_stable_usd": 0.0,
       "wallet_tokens_usd": 0.0,
-      "gas_asset_usd": 0.0786426415142867,
-      "aster_equity_usd": 10.095113709278984
+      "gas_asset_usd": 0.07852609256955338,
+      "aster_equity_usd": 10.095674479121982
     },
     "day": {
-      "pnl_usd": 0.0006448108430721078,
-      "return_pct": 0.006387763928541282,
+      "pnl_usd": 0.001205580686070462,
+      "return_pct": 0.011942982817622638,
       "since": "2026-11-17T14:57:10.152000+00:00",
       "complete": true
     },
@@ -122,12 +122,12 @@
   "discovery": {
     "research_only": true,
     "source": "operating_scan",
-    "at": "2026-11-17T18:16:58.441000+00:00",
+    "at": "2026-11-17T18:32:52.714000+00:00",
     "current_policy_scan": true,
     "complete": true,
-    "total_pools": 70,
+    "total_pools": 69,
     "fee_pass_count": 0,
-    "next_scan_at": "2026-11-17T18:31:58.441000+00:00",
+    "next_scan_at": "2026-11-17T18:47:52.714000+00:00",
     "paused_while_holding": false,
     "rows": [
       {
@@ -280,6 +280,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
+          "가격 피드 조건 미달",
           "두 자산 헤지 필요",
           "USDT 결제 경로 미연결"
         ]
@@ -303,6 +304,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
+          "가격 피드 조건 미달",
           "최소 주문이 운용 한도 초과"
         ]
       },
@@ -313,6 +315,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
+          "가격 피드 조건 미달",
           "두 자산 헤지 필요",
           "최소 주문이 운용 한도 초과",
           "USDT 결제 경로 미연결"
@@ -325,6 +328,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
+          "가격 피드 조건 미달",
           "두 자산 헤지 필요",
           "최소 주문이 운용 한도 초과",
           "USDT 결제 경로 미연결"
@@ -337,6 +341,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
+          "가격 피드 조건 미달",
           "두 자산 헤지 필요",
           "최소 주문이 운용 한도 초과",
           "USDT 결제 경로 미연결"
@@ -344,16 +349,6 @@
       },
       {
         "id": "ebe7fc3d4c",
-        "pair": "BULLA/USDT",
-        "hedge": "BULLAUSDT",
-        "apr_pct": null,
-        "status": "excluded",
-        "reasons": [
-          "동일 기초자산 확인 필요"
-        ]
-      },
-      {
-        "id": "310c890417",
         "pair": "BULLA/USDT",
         "hedge": "BULLAUSDT",
         "apr_pct": null,
@@ -412,6 +407,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
+          "가격 피드 조건 미달",
           "동일 기초자산 확인 필요"
         ]
       },
@@ -538,7 +534,7 @@
       {
         "id": "a2749f092b",
         "pair": "NVDAB/BNCB",
-        "hedge": "NVDAUSD1",
+        "hedge": "NVDAUSDT",
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
@@ -549,7 +545,7 @@
       {
         "id": "56fdd36978",
         "pair": "NVDAB/USDT",
-        "hedge": "NVDAUSD1",
+        "hedge": "NVDAUSDT",
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
@@ -560,7 +556,7 @@
       {
         "id": "6316094093",
         "pair": "QQQB/USDT",
-        "hedge": "QQQUSDT",
+        "hedge": "QQQUSD1",
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
@@ -625,7 +621,7 @@
       {
         "id": "ead677bb97",
         "pair": "SOXLB/USDT",
-        "hedge": "SOXLUSDT",
+        "hedge": "SOXLUSD1",
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
@@ -731,6 +727,8 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
+          "풀 일시중단",
+          "가격 피드 조건 미달",
           "대응 Aster 숏 없음"
         ]
       },
@@ -793,6 +791,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
+          "가격 피드 조건 미달",
           "USDT 결제 경로 미연결"
         ]
       },
@@ -803,6 +802,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
+          "가격 피드 조건 미달",
           "USDT 결제 경로 미연결"
         ]
       },
@@ -867,6 +867,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
+          "가격 피드 조건 미달",
           "두 자산 헤지 필요",
           "USDT 결제 경로 미연결"
         ]
