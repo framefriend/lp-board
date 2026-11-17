@@ -1,6 +1,6 @@
 {
   "schema_version": "lp-minimal-dashboard-v1",
-  "generated_at": "2026-11-17T06:02:25.395796+00:00",
+  "generated_at": "2026-11-17T12:01:43.893673+00:00",
   "publication": {
     "read_only": true,
     "controls_enabled": false,
@@ -36,7 +36,7 @@
       "LP 운용 지갑 USDT 없음"
     ],
     "phase": "idle",
-    "at": "2026-11-17T06:01:58.753625+00:00",
+    "at": "2026-11-17T12:01:43.700Z",
     "fresh": true,
     "armed": false,
     "ready": false,
@@ -70,11 +70,11 @@
     "lastAdjustedAt": null
   },
   "points": {
-    "available": false,
-    "total_points": null,
+    "available": true,
+    "total_points": 2.0,
     "period_point_delta": null,
     "lp_only_attribution_verified": false,
-    "reason": "개인 포인트 조회 연동 미확인 · 0으로 간주하지 않음"
+    "reason": "계정 전체 포인트 · LP 단독 기여 미확인"
   },
   "profit": {
     "available": false,
@@ -126,7 +126,7 @@
     "complete": true,
     "total_pools": 60,
     "fee_pass_count": 9,
-    "next_scan_at": null,
+    "next_scan_at": "2026-11-17T12:15:06.115000+00:00",
     "paused_while_holding": false,
     "rows": [
       {
