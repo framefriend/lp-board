@@ -1,6 +1,6 @@
 {
   "schema_version": "lp-minimal-dashboard-v1",
-  "generated_at": "2026-11-17T15:57:06.527901+00:00",
+  "generated_at": "2026-11-17T16:12:12.351828+00:00",
   "publication": {
     "read_only": true,
     "controls_enabled": false,
@@ -36,7 +36,7 @@
       "LP 운용 지갑 USDT 없음"
     ],
     "phase": "idle",
-    "at": "2026-11-17T15:56:26.471Z",
+    "at": "2026-11-17T16:11:40.396Z",
     "fresh": true,
     "armed": false,
     "ready": false,
@@ -96,19 +96,19 @@
   },
   "assets": {
     "available": true,
-    "at": "2026-11-17T15:57:05.195000+00:00",
-    "total_usd": 10.096217226643542,
+    "at": "2026-11-17T16:12:09.917000+00:00",
+    "total_usd": 10.095430099966729,
     "scope": "LP + 운용 지갑(대기자금·토큰) + Aster 순자산 · 가스 예치금 제외",
     "components": {
       "lp_usd": 0.0,
       "wallet_stable_usd": 0.0,
       "wallet_tokens_usd": 0.0,
-      "gas_asset_usd": 0.07791147120137773,
-      "aster_equity_usd": 10.096217226643542
+      "gas_asset_usd": 0.07874030990017195,
+      "aster_equity_usd": 10.095430099966729
     },
     "day": {
-      "pnl_usd": 0.0017483282076309337,
-      "return_pct": 0.01731966510790705,
+      "pnl_usd": 0.0009612015308171351,
+      "return_pct": 0.009522061442638835,
       "since": "2026-11-17T14:57:10.152000+00:00",
       "complete": true
     },
@@ -122,12 +122,12 @@
   "discovery": {
     "research_only": true,
     "source": "operating_scan",
-    "at": "2026-11-17T15:48:16.177000+00:00",
+    "at": "2026-11-17T16:05:31.430000+00:00",
     "current_policy_scan": true,
     "complete": true,
     "total_pools": 69,
     "fee_pass_count": 0,
-    "next_scan_at": "2026-11-17T16:03:16.177000+00:00",
+    "next_scan_at": "2026-11-17T16:20:31.430000+00:00",
     "paused_while_holding": false,
     "rows": [
       {
@@ -393,7 +393,6 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "가격 피드 조건 미달",
           "동일 기초자산 확인 필요"
         ]
       },
@@ -404,7 +403,9 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "실행 또는 자료 재확인 필요"
+          "실행 또는 자료 재확인 필요",
+          "수수료 자료 확인 필요",
+          "APR 240% 미달"
         ]
       },
       {
@@ -444,6 +445,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
+          "가격 피드 조건 미달",
           "동일 수량 헤지 불가 상품",
           "동일 기초자산 확인 필요"
         ]
@@ -589,6 +591,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
+          "가격 피드 조건 미달",
           "동일 수량 헤지 불가 상품",
           "동일 기초자산 확인 필요"
         ]
@@ -600,6 +603,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
+          "가격 피드 조건 미달",
           "대응 Aster 숏 없음",
           "동일 수량 헤지 불가 상품"
         ]
@@ -607,7 +611,7 @@
       {
         "id": "81b7030377",
         "pair": "SPCXB/BNCB",
-        "hedge": "SPCXUSDT",
+        "hedge": "SPCXUSD1",
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
@@ -618,7 +622,7 @@
       {
         "id": "a39e4586a0",
         "pair": "SPCXB/USDT",
-        "hedge": "SPCXUSDT",
+        "hedge": "SPCXUSD1",
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
@@ -652,7 +656,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "실행 또는 자료 재확인 필요"
+          "가격 피드 조건 미달"
         ]
       },
       {
