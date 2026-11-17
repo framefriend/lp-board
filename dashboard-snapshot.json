@@ -1,6 +1,6 @@
 {
   "schema_version": "lp-minimal-dashboard-v1",
-  "generated_at": "2026-11-17T21:27:08.061964+00:00",
+  "generated_at": "2026-11-17T21:42:08.987337+00:00",
   "publication": {
     "read_only": true,
     "controls_enabled": false,
@@ -36,7 +36,7 @@
       "LP 운용 지갑 USDT 없음"
     ],
     "phase": "idle",
-    "at": "2026-11-17T21:27:05.473Z",
+    "at": "2026-11-17T21:41:15.498Z",
     "fresh": true,
     "armed": false,
     "ready": false,
@@ -96,19 +96,19 @@
   },
   "assets": {
     "available": true,
-    "at": "2026-11-17T21:27:06.782000+00:00",
-    "total_usd": 10.096992831205133,
+    "at": "2026-11-17T21:42:07.708000+00:00",
+    "total_usd": 10.097308671766953,
     "scope": "LP + 운용 지갑(대기자금·토큰) + Aster 순자산 · 가스 예치금 제외",
     "components": {
       "lp_usd": 0.0,
       "wallet_stable_usd": 0.0,
       "wallet_tokens_usd": 0.0,
-      "gas_asset_usd": 0.07917164664934677,
-      "aster_equity_usd": 10.096992831205133
+      "gas_asset_usd": 0.07922500671751352,
+      "aster_equity_usd": 10.097308671766953
     },
     "day": {
-      "pnl_usd": 0.002523932769221915,
-      "return_pct": 0.025003125915945768,
+      "pnl_usd": 0.002839773331041684,
+      "return_pct": 0.02813197365422259,
       "since": "2026-11-17T14:57:10.152000+00:00",
       "complete": true
     },
@@ -122,12 +122,12 @@
   "discovery": {
     "research_only": true,
     "source": "operating_scan",
-    "at": "2026-11-17T21:15:17.639000+00:00",
+    "at": "2026-11-17T21:31:29.043000+00:00",
     "current_policy_scan": true,
     "complete": true,
     "total_pools": 71,
     "fee_pass_count": 0,
-    "next_scan_at": "2026-11-17T21:30:17.639000+00:00",
+    "next_scan_at": "2026-11-17T21:46:29.043000+00:00",
     "paused_while_holding": false,
     "rows": [
       {
@@ -388,9 +388,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "실행 또는 자료 재확인 필요",
-          "수수료 자료 확인 필요",
-          "APR 240% 미달"
+          "가격 피드 조건 미달"
         ]
       },
       {
@@ -410,6 +408,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
+          "가격 피드 조건 미달",
           "동일 기초자산 확인 필요"
         ]
       },
@@ -638,6 +637,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
+          "가격 피드 조건 미달",
           "대응 Aster 숏 없음",
           "동일 수량 헤지 불가 상품"
         ]
