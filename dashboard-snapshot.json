@@ -1,6 +1,6 @@
 {
   "schema_version": "lp-minimal-dashboard-v1",
-  "generated_at": "2026-11-17T22:26:50.053775+00:00",
+  "generated_at": "2026-11-17T22:27:02.778969+00:00",
   "publication": {
     "read_only": true,
     "controls_enabled": false,
@@ -96,7 +96,7 @@
   },
   "assets": {
     "available": true,
-    "at": "2026-11-17T22:26:48.898000+00:00",
+    "at": "2026-11-17T22:27:02.274000+00:00",
     "total_usd": 10.096996404356172,
     "scope": "LP + 운용 지갑(대기자금·토큰) + Aster 순자산 · 가스 예치금 제외",
     "components": {
