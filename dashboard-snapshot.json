@@ -1,6 +1,6 @@
 {
   "schema_version": "lp-minimal-dashboard-v1",
-  "generated_at": "2026-11-17T12:12:11.039581+00:00",
+  "generated_at": "2026-11-17T12:27:05.387055+00:00",
   "publication": {
     "read_only": true,
     "controls_enabled": false,
@@ -36,7 +36,7 @@
       "LP 운용 지갑 USDT 없음"
     ],
     "phase": "idle",
-    "at": "2026-11-17T12:11:56.416Z",
+    "at": "2026-11-17T12:26:15.810Z",
     "fresh": true,
     "armed": false,
     "ready": false,
@@ -96,15 +96,15 @@
   },
   "assets": {
     "available": true,
-    "at": "2026-11-17T12:12:09.892000+00:00",
-    "total_usd": 10.093103983998585,
+    "at": "2026-11-17T12:27:04.046000+00:00",
+    "total_usd": 10.093458946412033,
     "scope": "LP + 운용 지갑(대기자금·토큰) + Aster 순자산 · 가스 예치금 제외",
     "components": {
       "lp_usd": 0.0,
       "wallet_stable_usd": 0.0,
       "wallet_tokens_usd": 0.0,
-      "gas_asset_usd": 0.07933750806888223,
-      "aster_equity_usd": 10.093103983998585
+      "gas_asset_usd": 0.07937213525223229,
+      "aster_equity_usd": 10.093458946412033
     },
     "day": {
       "pnl_usd": null,
@@ -122,16 +122,26 @@
   "discovery": {
     "research_only": true,
     "source": "operating_scan",
-    "at": "2026-11-17T12:00:06.115000+00:00",
+    "at": "2026-11-17T12:16:23.574000+00:00",
     "current_policy_scan": true,
     "complete": true,
-    "total_pools": 67,
+    "total_pools": 68,
     "fee_pass_count": 0,
-    "next_scan_at": "2026-11-17T12:15:06.115000+00:00",
+    "next_scan_at": "2026-11-17T12:31:23.574000+00:00",
     "paused_while_holding": false,
     "rows": [
       {
         "id": "b952a749f9",
+        "pair": "/USDT",
+        "hedge": "USDT",
+        "apr_pct": null,
+        "status": "excluded",
+        "reasons": [
+          "동일 기초자산 확인 필요"
+        ]
+      },
+      {
+        "id": "a0fb6df3bc",
         "pair": "/USDT",
         "hedge": "USDT",
         "apr_pct": null,
@@ -571,7 +581,7 @@
       {
         "id": "b69aeb9592",
         "pair": "SNDKB/USDT",
-        "hedge": "SNDKUSDT",
+        "hedge": "SNDKUSD1",
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
