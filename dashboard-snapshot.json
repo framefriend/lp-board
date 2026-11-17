@@ -1,6 +1,6 @@
 {
   "schema_version": "lp-minimal-dashboard-v1",
-  "generated_at": "2026-11-17T05:48:08.315445+00:00",
+  "generated_at": "2026-11-17T06:01:58.871726+00:00",
   "publication": {
     "read_only": true,
     "controls_enabled": false,
@@ -33,11 +33,10 @@
   "runtime": {
     "execution_blocked": true,
     "blockers": [
-      "LP 운용 지갑 USDT 없음",
-      "Aster 인증 조회 복구 필요"
+      "LP 운용 지갑 USDT 없음"
     ],
     "phase": "idle",
-    "at": "2026-11-17T05:46:12.850475+00:00",
+    "at": "2026-11-17T06:01:58.753625+00:00",
     "fresh": true,
     "armed": false,
     "ready": false,
