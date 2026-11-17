@@ -1,6 +1,6 @@
 {
   "schema_version": "lp-minimal-dashboard-v1",
-  "generated_at": "2026-11-17T15:42:11.755881+00:00",
+  "generated_at": "2026-11-17T15:57:06.527901+00:00",
   "publication": {
     "read_only": true,
     "controls_enabled": false,
@@ -36,7 +36,7 @@
       "LP 운용 지갑 USDT 없음"
     ],
     "phase": "idle",
-    "at": "2026-11-17T15:41:25.336Z",
+    "at": "2026-11-17T15:56:26.471Z",
     "fresh": true,
     "armed": false,
     "ready": false,
@@ -96,19 +96,19 @@
   },
   "assets": {
     "available": true,
-    "at": "2026-11-17T15:42:09.892000+00:00",
-    "total_usd": 10.095635145938623,
+    "at": "2026-11-17T15:57:05.195000+00:00",
+    "total_usd": 10.096217226643542,
     "scope": "LP + 운용 지갑(대기자금·토큰) + Aster 순자산 · 가스 예치금 제외",
     "components": {
       "lp_usd": 0.0,
       "wallet_stable_usd": 0.0,
       "wallet_tokens_usd": 0.0,
-      "gas_asset_usd": 0.07892337354537696,
-      "aster_equity_usd": 10.095635145938623
+      "gas_asset_usd": 0.07791147120137773,
+      "aster_equity_usd": 10.096217226643542
     },
     "day": {
-      "pnl_usd": 0.0011662475027112151,
-      "return_pct": 0.01155333197264018,
+      "pnl_usd": 0.0017483282076309337,
+      "return_pct": 0.01731966510790705,
       "since": "2026-11-17T14:57:10.152000+00:00",
       "complete": true
     },
@@ -122,12 +122,12 @@
   "discovery": {
     "research_only": true,
     "source": "operating_scan",
-    "at": "2026-11-17T15:31:22.652000+00:00",
+    "at": "2026-11-17T15:48:16.177000+00:00",
     "current_policy_scan": true,
     "complete": true,
     "total_pools": 69,
     "fee_pass_count": 0,
-    "next_scan_at": "2026-11-17T15:46:22.652000+00:00",
+    "next_scan_at": "2026-11-17T16:03:16.177000+00:00",
     "paused_while_holding": false,
     "rows": [
       {
@@ -167,7 +167,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "가격 피드 조건 미달"
+          "실행 또는 자료 재확인 필요"
         ]
       },
       {
@@ -197,7 +197,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "가격 피드 조건 미달"
+          "실행 또는 자료 재확인 필요"
         ]
       },
       {
@@ -230,7 +230,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "가격 피드 조건 미달"
+          "실행 또는 자료 재확인 필요"
         ]
       },
       {
@@ -270,7 +270,7 @@
       {
         "id": "446bdfb552",
         "pair": "BTCB/USDT",
-        "hedge": "BTCUSD1",
+        "hedge": "BTCUSDT",
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
@@ -282,7 +282,7 @@
       {
         "id": "6d596e3180",
         "pair": "BTCB/USDT",
-        "hedge": "BTCUSD1",
+        "hedge": "BTCUSDT",
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
@@ -292,7 +292,7 @@
       {
         "id": "2c167feaef",
         "pair": "BTCB/WBNB",
-        "hedge": "BTCUSD1",
+        "hedge": "BTCUSDT",
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
@@ -304,7 +304,7 @@
       {
         "id": "e41d9f4da2",
         "pair": "BTCB/WBNB",
-        "hedge": "BTCUSD1",
+        "hedge": "BTCUSDT",
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
@@ -316,7 +316,7 @@
       {
         "id": "f507522834",
         "pair": "BTCB/WBNB",
-        "hedge": "BTCUSD1",
+        "hedge": "BTCUSDT",
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
@@ -362,7 +362,6 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "가격 피드 조건 미달",
           "두 자산 헤지 필요",
           "USDT 결제 경로 미연결"
         ]
@@ -394,6 +393,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
+          "가격 피드 조건 미달",
           "동일 기초자산 확인 필요"
         ]
       },
@@ -404,7 +404,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "가격 피드 조건 미달"
+          "실행 또는 자료 재확인 필요"
         ]
       },
       {
@@ -414,7 +414,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "가격 피드 조건 미달"
+          "실행 또는 자료 재확인 필요"
         ]
       },
       {
@@ -424,7 +424,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "가격 피드 조건 미달"
+          "실행 또는 자료 재확인 필요"
         ]
       },
       {
@@ -434,7 +434,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "가격 피드 조건 미달"
+          "실행 또는 자료 재확인 필요"
         ]
       },
       {
@@ -444,7 +444,6 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "가격 피드 조건 미달",
           "동일 수량 헤지 불가 상품",
           "동일 기초자산 확인 필요"
         ]
@@ -462,11 +461,11 @@
       {
         "id": "2320037e60",
         "pair": "METAB/USDT",
-        "hedge": "METAUSDT",
+        "hedge": "METAUSD1",
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "가격 피드 조건 미달"
+          "실행 또는 자료 재확인 필요"
         ]
       },
       {
@@ -476,7 +475,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "가격 피드 조건 미달"
+          "실행 또는 자료 재확인 필요"
         ]
       },
       {
@@ -486,7 +485,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "가격 피드 조건 미달"
+          "실행 또는 자료 재확인 필요"
         ]
       },
       {
@@ -506,7 +505,6 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "가격 피드 조건 미달",
           "두 자산 헤지 필요",
           "USDT 결제 경로 미연결"
         ]
@@ -529,7 +527,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "가격 피드 조건 미달"
+          "실행 또는 자료 재확인 필요"
         ]
       },
       {
@@ -549,7 +547,6 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "가격 피드 조건 미달",
           "대응 Aster 숏 없음"
         ]
       },
@@ -566,7 +563,7 @@
       {
         "id": "b69aeb9592",
         "pair": "SNDKB/USDT",
-        "hedge": "SNDKUSD1",
+        "hedge": "SNDKUSDT",
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
@@ -592,7 +589,6 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "가격 피드 조건 미달",
           "동일 수량 헤지 불가 상품",
           "동일 기초자산 확인 필요"
         ]
@@ -611,11 +607,10 @@
       {
         "id": "81b7030377",
         "pair": "SPCXB/BNCB",
-        "hedge": "SPCXUSD1",
+        "hedge": "SPCXUSDT",
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "가격 피드 조건 미달",
           "두 자산 헤지 필요",
           "USDT 결제 경로 미연결"
         ]
@@ -623,11 +618,11 @@
       {
         "id": "a39e4586a0",
         "pair": "SPCXB/USDT",
-        "hedge": "SPCXUSD1",
+        "hedge": "SPCXUSDT",
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "가격 피드 조건 미달"
+          "실행 또는 자료 재확인 필요"
         ]
       },
       {
@@ -637,7 +632,6 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "가격 피드 조건 미달",
           "동일 기초자산 확인 필요"
         ]
       },
@@ -648,7 +642,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "가격 피드 조건 미달"
+          "실행 또는 자료 재확인 필요"
         ]
       },
       {
@@ -658,7 +652,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "가격 피드 조건 미달"
+          "실행 또는 자료 재확인 필요"
         ]
       },
       {
