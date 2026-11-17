@@ -1,6 +1,6 @@
 {
   "schema_version": "lp-minimal-dashboard-v1",
-  "generated_at": "2026-11-17T20:12:05.071788+00:00",
+  "generated_at": "2026-11-17T20:27:11.091402+00:00",
   "publication": {
     "read_only": true,
     "controls_enabled": false,
@@ -36,7 +36,7 @@
       "LP 운용 지갑 USDT 없음"
     ],
     "phase": "idle",
-    "at": "2026-11-17T20:12:02.681Z",
+    "at": "2026-11-17T20:26:41.726Z",
     "fresh": true,
     "armed": false,
     "ready": false,
@@ -96,19 +96,19 @@
   },
   "assets": {
     "available": true,
-    "at": "2026-11-17T20:12:03.909000+00:00",
-    "total_usd": 10.0960009552108,
+    "at": "2026-11-17T20:27:09.475000+00:00",
+    "total_usd": 10.097194235147962,
     "scope": "LP + 운용 지갑(대기자금·토큰) + Aster 순자산 · 가스 예치금 제외",
     "components": {
       "lp_usd": 0.0,
       "wallet_stable_usd": 0.0,
       "wallet_tokens_usd": 0.0,
-      "gas_asset_usd": 0.0786057458574928,
-      "aster_equity_usd": 10.0960009552108
+      "gas_asset_usd": 0.07884975355692397,
+      "aster_equity_usd": 10.097194235147962
     },
     "day": {
-      "pnl_usd": 0.001532056774887991,
-      "return_pct": 0.015177190502071641,
+      "pnl_usd": 0.002725336712050108,
+      "return_pct": 0.026998316993897375,
       "since": "2026-11-17T14:57:10.152000+00:00",
       "complete": true
     },
@@ -122,12 +122,12 @@
   "discovery": {
     "research_only": true,
     "source": "operating_scan",
-    "at": "2026-11-17T20:10:30.149000+00:00",
+    "at": "2026-11-17T20:26:41.528000+00:00",
     "current_policy_scan": true,
     "complete": true,
     "total_pools": 71,
     "fee_pass_count": 0,
-    "next_scan_at": "2026-11-17T20:25:30.149000+00:00",
+    "next_scan_at": "2026-11-17T20:41:41.528000+00:00",
     "paused_while_holding": false,
     "rows": [
       {
@@ -280,6 +280,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
+          "가격 피드 조건 미달",
           "두 자산 헤지 필요",
           "USDT 결제 경로 미연결"
         ]
@@ -301,6 +302,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
+          "가격 피드 조건 미달",
           "최소 주문이 운용 한도 초과"
         ]
       },
@@ -311,6 +313,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
+          "가격 피드 조건 미달",
           "두 자산 헤지 필요",
           "최소 주문이 운용 한도 초과",
           "USDT 결제 경로 미연결"
@@ -323,6 +326,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
+          "가격 피드 조건 미달",
           "두 자산 헤지 필요",
           "최소 주문이 운용 한도 초과",
           "USDT 결제 경로 미연결"
@@ -335,6 +339,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
+          "가격 피드 조건 미달",
           "두 자산 헤지 필요",
           "최소 주문이 운용 한도 초과",
           "USDT 결제 경로 미연결"
@@ -559,7 +564,7 @@
       {
         "id": "6316094093",
         "pair": "QQQB/USDT",
-        "hedge": "QQQUSD1",
+        "hedge": "QQQUSDT",
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
@@ -802,6 +807,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
+          "가격 피드 조건 미달",
           "USDT 결제 경로 미연결"
         ]
       },
@@ -812,6 +818,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
+          "가격 피드 조건 미달",
           "USDT 결제 경로 미연결"
         ]
       },
