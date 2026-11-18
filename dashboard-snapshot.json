@@ -1,6 +1,6 @@
 {
   "schema_version": "lp-minimal-dashboard-v1",
-  "generated_at": "2026-11-17T23:57:10.171778+00:00",
+  "generated_at": "2026-11-18T00:12:11.553793+00:00",
   "publication": {
     "read_only": true,
     "controls_enabled": false,
@@ -36,7 +36,7 @@
       "LP 운용 지갑 USDT 없음"
     ],
     "phase": "idle",
-    "at": "2026-11-17T23:57:07.512Z",
+    "at": "2026-11-18T00:10:18.496Z",
     "fresh": true,
     "armed": false,
     "ready": false,
@@ -96,19 +96,19 @@
   },
   "assets": {
     "available": true,
-    "at": "2026-11-17T23:57:08.841000+00:00",
-    "total_usd": 10.097043215803946,
+    "at": "2026-11-18T00:12:09.856000+00:00",
+    "total_usd": 10.097525461649417,
     "scope": "LP + 운용 지갑(대기자금·토큰) + Aster 순자산 · 가스 예치금 제외",
     "components": {
       "lp_usd": 0.0,
       "wallet_stable_usd": 0.0,
       "wallet_tokens_usd": 0.0,
-      "gas_asset_usd": 0.07975857537065466,
-      "aster_equity_usd": 10.097043215803946
+      "gas_asset_usd": 0.0799271496260133,
+      "aster_equity_usd": 10.097525461649417
     },
     "day": {
-      "pnl_usd": 0.0025743173680350395,
-      "return_pct": 0.02550225667081819,
+      "pnl_usd": 0.0030565632135051146,
+      "return_pct": 0.03027958423824273,
       "since": "2026-11-17T14:57:10.152000+00:00",
       "complete": true
     },
@@ -122,12 +122,12 @@
   "discovery": {
     "research_only": true,
     "source": "operating_scan",
-    "at": "2026-11-17T23:42:14.930000+00:00",
+    "at": "2026-11-17T23:58:24.558000+00:00",
     "current_policy_scan": true,
     "complete": true,
     "total_pools": 72,
     "fee_pass_count": 0,
-    "next_scan_at": "2026-11-17T23:57:14.930000+00:00",
+    "next_scan_at": "2026-11-18T00:13:24.558000+00:00",
     "paused_while_holding": false,
     "rows": [
       {
@@ -341,7 +341,7 @@
         ]
       },
       {
-        "id": "ebe7fc3d4c",
+        "id": "0d4b81b56e",
         "pair": "BULLA/USDT",
         "hedge": "BULLAUSDT",
         "apr_pct": null,
@@ -351,7 +351,7 @@
         ]
       },
       {
-        "id": "0d4b81b56e",
+        "id": "ebe7fc3d4c",
         "pair": "BULLA/USDT",
         "hedge": "BULLAUSDT",
         "apr_pct": null,
@@ -410,6 +410,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
+          "가격 피드 조건 미달",
           "동일 기초자산 확인 필요"
         ]
       },
@@ -488,7 +489,7 @@
       {
         "id": "2320037e60",
         "pair": "METAB/USDT",
-        "hedge": "METAUSDT",
+        "hedge": "METAUSD1",
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
@@ -585,7 +586,6 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "가격 피드 조건 미달",
           "대응 Aster 숏 없음"
         ]
       },
@@ -596,7 +596,6 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "가격 피드 조건 미달",
           "대응 Aster 숏 없음"
         ]
       },
@@ -625,7 +624,7 @@
       {
         "id": "ead677bb97",
         "pair": "SOXLB/USDT",
-        "hedge": "SOXLUSD1",
+        "hedge": "SOXLUSDT",
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
