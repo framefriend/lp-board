@@ -1,6 +1,6 @@
 {
   "schema_version": "lp-minimal-dashboard-v1",
-  "generated_at": "2026-11-18T19:12:09.308472+00:00",
+  "generated_at": "2026-11-18T19:27:12.164017+00:00",
   "publication": {
     "read_only": true,
     "controls_enabled": false,
@@ -96,19 +96,19 @@
   },
   "assets": {
     "available": true,
-    "at": "2026-11-18T19:12:07.799000+00:00",
-    "total_usd": 149.00618664222736,
+    "at": "2026-11-18T19:27:10.854000+00:00",
+    "total_usd": 148.99868890215834,
     "scope": "LP + 운용 지갑(대기자금·토큰) + Aster 순자산 · 가스 예치금 제외",
     "components": {
       "lp_usd": 0.0,
-      "wallet_stable_usd": 98.17251046351916,
+      "wallet_stable_usd": 98.16817268385803,
       "wallet_tokens_usd": 0.0,
-      "gas_asset_usd": 7.9900248591244765,
-      "aster_equity_usd": 50.833676178708195
+      "gas_asset_usd": 7.987572424596364,
+      "aster_equity_usd": 50.8305162183003
     },
     "day": {
-      "pnl_usd": -0.41776448037008707,
-      "return_pct": -0.27970902687823995,
+      "pnl_usd": -0.4252622204391143,
+      "return_pct": -0.28472904575738395,
       "since": "2026-11-18T14:57:10.318000+00:00",
       "complete": true
     },
