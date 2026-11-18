@@ -1,6 +1,6 @@
 {
   "schema_version": "lp-minimal-dashboard-v1",
-  "generated_at": "2026-11-18T14:27:07.418519+00:00",
+  "generated_at": "2026-11-18T14:42:08.511074+00:00",
   "publication": {
     "read_only": true,
     "controls_enabled": false,
@@ -33,13 +33,13 @@
   "runtime": {
     "execution_blocked": false,
     "blockers": [],
-    "phase": "open",
-    "at": "2026-11-18T14:26:27.344Z",
+    "phase": "closing",
+    "at": "2026-11-18T14:41:38.876Z",
     "fresh": true,
     "armed": true,
-    "ready": true,
-    "error": false,
-    "decision": "APR 120% 미만 지속시간 확인 중",
+    "ready": false,
+    "error": true,
+    "decision": "운영 상태 재확인 필요",
     "retry_wait": false,
     "retry_after": null
   },
@@ -49,24 +49,24 @@
     "pair": "CRCLB/USDT",
     "token": "CRCL",
     "lp_entry_usd": 96.99204371030679,
-    "lp_observed_nav_usd": 96.79756865109597,
-    "lp_nav_at": "2026-11-18T14:27:00+00:00",
+    "lp_observed_nav_usd": null,
+    "lp_nav_at": null,
     "short_qty": 0.01,
     "leverage": 2,
     "entered_at": "2026-11-18T10:37:40.398000+00:00",
-    "fee_apr_pct": 0.0,
-    "fee_sample_at": "2026-11-18T14:12:08+00:00",
-    "fee_sample_fresh": true,
-    "low_since": "2026-11-18T13:56:47+00:00",
-    "low_confirm_at": "2026-11-19T13:56:47+00:00",
+    "fee_apr_pct": null,
+    "fee_sample_at": null,
+    "fee_sample_fresh": false,
+    "low_since": null,
+    "low_confirm_at": null,
     "net_pnl_usd": null,
     "net_pnl_status": "LP·숏·거래비용·펀딩·가스 합산 정산 전 미확정"
   },
   "hedge": {
     "targetQty": 0.01,
     "actualQty": 0.01,
-    "residualUsd": 0.22649229387899505,
-    "lastObservedAt": 1795011929.1,
+    "residualUsd": 0.2271287313143057,
+    "lastObservedAt": 1795012110.902,
     "lastAdjustedAt": 1795006277.327
   },
   "points": {
@@ -77,45 +77,45 @@
     "reason": "계정 전체 포인트 · LP 단독 기여 미확인"
   },
   "profit": {
-    "available": true,
-    "at": "2026-11-18T14:27:03.354Z",
-    "lp_nav_change_usd": -0.19447505921081643,
-    "entry_execution_pnl_usd": -0.093327983828003,
-    "commission_usd": 0.045326186026699994,
-    "gas_usd": 0.024123925136298876,
-    "funding_usd": 0.0,
-    "lp_fee_usd": 0.22692191098535222,
-    "fee_last_hour_usd": 0.0,
-    "entry_price_usd": 55.69703788069438,
-    "token_price_usd": 55.04078031439132,
-    "price_change_pct": -1.1782629584517479,
-    "lp_price_inventory_pnl_usd": -0.4213969701961686,
-    "short_pnl_usd": 0.14335787598709995,
-    "net_pnl_usd": -0.21389527821471838,
-    "exit_cost_usd": 0.01808812104400575
+    "available": false,
+    "at": null,
+    "lp_nav_change_usd": null,
+    "entry_execution_pnl_usd": null,
+    "commission_usd": null,
+    "gas_usd": null,
+    "funding_usd": null,
+    "lp_fee_usd": null,
+    "fee_last_hour_usd": null,
+    "entry_price_usd": null,
+    "token_price_usd": null,
+    "price_change_pct": null,
+    "lp_price_inventory_pnl_usd": null,
+    "short_pnl_usd": null,
+    "net_pnl_usd": null,
+    "exit_cost_usd": null
   },
   "assets": {
-    "available": true,
-    "at": "2026-11-18T14:27:05.171000+00:00",
-    "total_usd": 149.37794337822478,
+    "available": false,
+    "at": null,
+    "total_usd": null,
     "scope": "LP + 운용 지갑(대기자금·토큰) + Aster 순자산 · 가스 예치금 제외",
     "components": {
-      "lp_usd": 96.79592175844584,
-      "wallet_stable_usd": 0.6614908841186716,
-      "wallet_tokens_usd": 0.775641071492181,
-      "gas_asset_usd": 8.191994689562376,
-      "aster_equity_usd": 51.1448896641681
+      "lp_usd": null,
+      "wallet_stable_usd": null,
+      "wallet_tokens_usd": null,
+      "gas_asset_usd": null,
+      "aster_equity_usd": null
     },
     "day": {
       "pnl_usd": null,
       "return_pct": null,
-      "since": "2026-11-17T14:57:10.152000+00:00",
-      "complete": true
+      "since": null,
+      "complete": false
     },
     "week": {
       "pnl_usd": null,
       "return_pct": null,
-      "since": "2026-11-10T03:57:10.248000+00:00",
+      "since": null,
       "complete": false
     }
   },
