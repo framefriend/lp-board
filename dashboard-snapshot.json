@@ -1,6 +1,6 @@
 {
   "schema_version": "lp-minimal-dashboard-v1",
-  "generated_at": "2026-11-18T00:12:11.553793+00:00",
+  "generated_at": "2026-11-18T00:27:11.006014+00:00",
   "publication": {
     "read_only": true,
     "controls_enabled": false,
@@ -36,7 +36,7 @@
       "LP 운용 지갑 USDT 없음"
     ],
     "phase": "idle",
-    "at": "2026-11-18T00:10:18.496Z",
+    "at": "2026-11-18T00:26:31.281Z",
     "fresh": true,
     "armed": false,
     "ready": false,
@@ -96,19 +96,19 @@
   },
   "assets": {
     "available": true,
-    "at": "2026-11-18T00:12:09.856000+00:00",
-    "total_usd": 10.097525461649417,
+    "at": "2026-11-18T00:27:09.759000+00:00",
+    "total_usd": 10.0979268823197,
     "scope": "LP + 운용 지갑(대기자금·토큰) + Aster 순자산 · 가스 예치금 제외",
     "components": {
       "lp_usd": 0.0,
       "wallet_stable_usd": 0.0,
       "wallet_tokens_usd": 0.0,
-      "gas_asset_usd": 0.0799271496260133,
-      "aster_equity_usd": 10.097525461649417
+      "gas_asset_usd": 0.07984873283522612,
+      "aster_equity_usd": 10.0979268823197
     },
     "day": {
-      "pnl_usd": 0.0030565632135051146,
-      "return_pct": 0.03027958423824273,
+      "pnl_usd": 0.0034579838837878185,
+      "return_pct": 0.03425622406270048,
       "since": "2026-11-17T14:57:10.152000+00:00",
       "complete": true
     },
@@ -122,12 +122,12 @@
   "discovery": {
     "research_only": true,
     "source": "operating_scan",
-    "at": "2026-11-17T23:58:24.558000+00:00",
+    "at": "2026-11-18T00:14:38.304000+00:00",
     "current_policy_scan": true,
     "complete": true,
     "total_pools": 72,
     "fee_pass_count": 0,
-    "next_scan_at": "2026-11-18T00:13:24.558000+00:00",
+    "next_scan_at": "2026-11-18T00:29:38.304000+00:00",
     "paused_while_holding": false,
     "rows": [
       {
@@ -586,6 +586,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
+          "가격 피드 조건 미달",
           "대응 Aster 숏 없음"
         ]
       },
@@ -596,6 +597,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
+          "가격 피드 조건 미달",
           "대응 Aster 숏 없음"
         ]
       },
