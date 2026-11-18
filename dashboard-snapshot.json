@@ -1,6 +1,6 @@
 {
   "schema_version": "lp-minimal-dashboard-v1",
-  "generated_at": "2026-11-18T03:27:04.485352+00:00",
+  "generated_at": "2026-11-18T03:42:05.043545+00:00",
   "publication": {
     "read_only": true,
     "controls_enabled": false,
@@ -36,7 +36,7 @@
       "LP 운용 지갑 USDT 없음"
     ],
     "phase": "idle",
-    "at": "2026-11-18T03:26:59.387Z",
+    "at": "2026-11-18T03:41:12.367Z",
     "fresh": true,
     "armed": false,
     "ready": false,
@@ -96,19 +96,19 @@
   },
   "assets": {
     "available": true,
-    "at": "2026-11-18T03:27:03.181000+00:00",
-    "total_usd": 10.097600196915804,
+    "at": "2026-11-18T03:42:03.848000+00:00",
+    "total_usd": 10.096781687255433,
     "scope": "LP + 운용 지갑(대기자금·토큰) + Aster 순자산 · 가스 예치금 제외",
     "components": {
       "lp_usd": 0.0,
       "wallet_stable_usd": 0.0,
       "wallet_tokens_usd": 0.0,
-      "gas_asset_usd": 149.4253306542258,
-      "aster_equity_usd": 10.097600196915804
+      "gas_asset_usd": 149.501399723554,
+      "aster_equity_usd": 10.096781687255433
     },
     "day": {
-      "pnl_usd": 0.003131298479893019,
-      "return_pct": 0.031019942816191134,
+      "pnl_usd": 0.0023127888195215718,
+      "return_pct": 0.022911446285994574,
       "since": "2026-11-17T14:57:10.152000+00:00",
       "complete": true
     },
@@ -122,12 +122,12 @@
   "discovery": {
     "research_only": true,
     "source": "operating_scan",
-    "at": "2026-11-18T03:13:08.786000+00:00",
+    "at": "2026-11-18T03:29:26.013000+00:00",
     "current_policy_scan": true,
     "complete": true,
     "total_pools": 73,
     "fee_pass_count": 0,
-    "next_scan_at": "2026-11-18T03:28:08.786000+00:00",
+    "next_scan_at": "2026-11-18T03:44:26.013000+00:00",
     "paused_while_holding": false,
     "rows": [
       {
@@ -411,7 +411,6 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "가격 피드 조건 미달",
           "동일 기초자산 확인 필요"
         ]
       },
@@ -490,7 +489,7 @@
       {
         "id": "2320037e60",
         "pair": "METAB/USDT",
-        "hedge": "METAUSDT",
+        "hedge": "METAUSD1",
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
@@ -553,7 +552,7 @@
         "apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "가격 피드 조건 미달"
+          "실행 또는 자료 재확인 필요"
         ]
       },
       {
