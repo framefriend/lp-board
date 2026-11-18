@@ -1,6 +1,6 @@
 {
   "schema_version": "lp-minimal-dashboard-v1",
-  "generated_at": "2026-11-18T04:53:22.311571+00:00",
+  "generated_at": "2026-11-18T04:56:57.742308+00:00",
   "publication": {
     "read_only": true,
     "controls_enabled": false,
@@ -33,27 +33,27 @@
   "runtime": {
     "execution_blocked": false,
     "blockers": [],
-    "phase": "idle",
-    "at": "2026-11-18T04:52:45.356Z",
+    "phase": "open",
+    "at": "2026-11-18T04:56:55.040Z",
     "fresh": true,
     "armed": true,
     "ready": true,
     "error": false,
-    "decision": "진입 조건 충족 대기",
+    "decision": "수수료 기준 감시 중",
     "retry_wait": false,
     "retry_after": null
   },
   "position": {
-    "present": false,
+    "present": true,
     "verified": true,
-    "pair": null,
-    "token": null,
-    "lp_entry_usd": null,
-    "lp_observed_nav_usd": null,
-    "lp_nav_at": null,
-    "short_qty": null,
+    "pair": "CRCLB/USDT",
+    "token": "CRCL",
+    "lp_entry_usd": 97.81424993544238,
+    "lp_observed_nav_usd": 97.88289861374004,
+    "lp_nav_at": "2026-11-18T04:56:51+00:00",
+    "short_qty": 0.88,
     "leverage": 2,
-    "entered_at": null,
+    "entered_at": "2026-11-18T04:54:47.536000+00:00",
     "fee_apr_pct": null,
     "fee_sample_at": null,
     "fee_sample_fresh": false,
@@ -63,10 +63,10 @@
     "net_pnl_status": "LP·숏·거래비용·펀딩·가스 합산 정산 전 미확정"
   },
   "hedge": {
-    "targetQty": null,
-    "actualQty": null,
-    "residualUsd": null,
-    "lastObservedAt": null,
+    "targetQty": 0.88,
+    "actualQty": 0.88,
+    "residualUsd": 0.24488733164225185,
+    "lastObservedAt": 1794977814.323,
     "lastAdjustedAt": null
   },
   "points": {
@@ -77,34 +77,34 @@
     "reason": "계정 전체 포인트 · LP 단독 기여 미확인"
   },
   "profit": {
-    "available": false,
-    "at": null,
-    "lp_nav_change_usd": null,
-    "entry_execution_pnl_usd": null,
-    "commission_usd": null,
-    "gas_usd": null,
-    "funding_usd": null,
-    "lp_fee_usd": null,
-    "fee_last_hour_usd": null,
-    "entry_price_usd": null,
-    "token_price_usd": null,
-    "price_change_pct": null,
-    "lp_price_inventory_pnl_usd": null,
-    "short_pnl_usd": null,
-    "net_pnl_usd": null,
-    "exit_cost_usd": null
+    "available": true,
+    "at": "2026-11-18T04:56:54.269Z",
+    "lp_nav_change_usd": 0.06864867829766297,
+    "entry_execution_pnl_usd": -0.10274841076860808,
+    "commission_usd": 0.0061152649843999995,
+    "gas_usd": 0.025424939806478628,
+    "funding_usd": 0.0,
+    "lp_fee_usd": 0.0,
+    "fee_last_hour_usd": 0.0,
+    "entry_price_usd": 55.57623107439512,
+    "token_price_usd": 55.65604462853815,
+    "price_change_pct": 0.1436109513007322,
+    "lp_price_inventory_pnl_usd": 0.06864867829766297,
+    "short_pnl_usd": -0.054094936237959995,
+    "net_pnl_usd": -0.11973487349978373,
+    "exit_cost_usd": 0.1152441003606956
   },
   "assets": {
     "available": true,
-    "at": "2026-11-18T04:53:21.843000+00:00",
-    "total_usd": 150.8569766912896,
+    "at": "2026-11-18T04:56:56.001000+00:00",
+    "total_usd": 150.7639536219268,
     "scope": "LP + 운용 지갑(대기자금·토큰) + Aster 순자산 · 가스 예치금 제외",
     "components": {
-      "lp_usd": 0.0,
-      "wallet_stable_usd": 99.84988777617119,
-      "wallet_tokens_usd": 0.0,
-      "gas_asset_usd": 8.36150074775752,
-      "aster_equity_usd": 51.007088915118395
+      "lp_usd": 97.88289861374004,
+      "wallet_stable_usd": 1.1001679440553551,
+      "wallet_tokens_usd": 0.833577265626563,
+      "gas_asset_usd": 8.342267305639563,
+      "aster_equity_usd": 50.947309798504826
     },
     "day": {
       "pnl_usd": null,
@@ -122,38 +122,40 @@
   "discovery": {
     "research_only": false,
     "source": "operating_scan",
-    "at": "2026-11-18T04:37:47.489000+00:00",
+    "at": "2026-11-18T04:54:30.903000+00:00",
     "current_policy_scan": true,
     "complete": true,
     "total_pools": 73,
-    "fee_pass_count": 6,
-    "next_scan_at": "2026-11-18T04:52:47.489000+00:00",
-    "paused_while_holding": false,
+    "fee_pass_count": 8,
+    "next_scan_at": null,
+    "paused_while_holding": true,
     "rows": [
-      {
-        "id": "da000e84f9",
-        "pair": "BNCB/USDT",
-        "hedge": "BNCUSD1",
-        "apr_pct": 751.8571639874176,
-        "persistence_apr_pct": 0.0,
-        "status": "fee_pass",
-        "reasons": []
-      },
       {
         "id": "ec23371f16",
         "pair": "BNCB/USDT",
         "hedge": "BNCUSD1",
-        "apr_pct": 735.3038058428041,
-        "persistence_apr_pct": 361.6542469002005,
+        "apr_pct": 1008.3341399264482,
+        "persistence_apr_pct": 177.3716098843134,
+        "status": "fee_pass",
+        "reasons": [
+          "이 지갑의 LP 예치 권한 없음"
+        ]
+      },
+      {
+        "id": "da000e84f9",
+        "pair": "BNCB/USDT",
+        "hedge": "BNCUSD1",
+        "apr_pct": 843.8047915874456,
+        "persistence_apr_pct": 23.82241207320553,
         "status": "fee_pass",
         "reasons": []
       },
       {
-        "id": "aa08ad30e6",
-        "pair": "AAPLB/USDT",
-        "hedge": "AAPLUSDT",
-        "apr_pct": 418.57192303033077,
-        "persistence_apr_pct": 281.5826602707352,
+        "id": "5cb2ec15fb",
+        "pair": "CRCLB/USDT",
+        "hedge": "CRCLUSDT",
+        "apr_pct": 406.88449160838684,
+        "persistence_apr_pct": 406.88449160838684,
         "status": "fee_pass",
         "reasons": []
       },
@@ -161,8 +163,26 @@
         "id": "9a07e59022",
         "pair": "BNCB/USDT",
         "hedge": "BNCUSD1",
-        "apr_pct": 406.6845848772884,
-        "persistence_apr_pct": 84.53619720298,
+        "apr_pct": 375.66584039358736,
+        "persistence_apr_pct": 232.3664185721466,
+        "status": "fee_pass",
+        "reasons": []
+      },
+      {
+        "id": "a39e4586a0",
+        "pair": "SPCXB/USDT",
+        "hedge": "SPCXUSD1",
+        "apr_pct": 345.1116764117527,
+        "persistence_apr_pct": 65.35986491413908,
+        "status": "fee_pass",
+        "reasons": []
+      },
+      {
+        "id": "aa08ad30e6",
+        "pair": "AAPLB/USDT",
+        "hedge": "AAPLUSDT",
+        "apr_pct": 328.7505386306022,
+        "persistence_apr_pct": 328.7505386306022,
         "status": "fee_pass",
         "reasons": []
       },
@@ -170,51 +190,41 @@
         "id": "ca0da9da00",
         "pair": "WBNB/USDT",
         "hedge": "BNBUSDT",
-        "apr_pct": 308.28411220635894,
-        "persistence_apr_pct": 308.28411220635894,
+        "apr_pct": 295.09817358733955,
+        "persistence_apr_pct": 295.09817358733955,
         "status": "fee_pass",
         "reasons": []
       },
       {
-        "id": "1f609fe7eb",
-        "pair": "TSLAB/USDT",
-        "hedge": "TSLAUSDT",
-        "apr_pct": 264.1482484587695,
-        "persistence_apr_pct": 264.1482484587695,
+        "id": "6316094093",
+        "pair": "QQQB/USDT",
+        "hedge": "QQQUSDT",
+        "apr_pct": 285.2515722296631,
+        "persistence_apr_pct": 152.03155841254758,
         "status": "fee_pass",
         "reasons": [
           "2배 설정 확인 필요"
         ]
       },
       {
-        "id": "a39e4586a0",
-        "pair": "SPCXB/USDT",
-        "hedge": "SPCXUSDT",
-        "apr_pct": 227.0108508578317,
-        "persistence_apr_pct": 68.82650095145716,
+        "id": "d785b17c3a",
+        "pair": "TSLAB/USDT",
+        "hedge": "TSLAUSDT",
+        "apr_pct": 189.9665586876618,
+        "persistence_apr_pct": 4.734749947583334,
         "status": "below_apr",
         "reasons": [
           "2배 설정 확인 필요",
-          "APR 240% 미달"
-        ]
-      },
-      {
-        "id": "5cb2ec15fb",
-        "pair": "CRCLB/USDT",
-        "hedge": "CRCLUSDT",
-        "apr_pct": 200.2824490885781,
-        "persistence_apr_pct": 200.2824490885781,
-        "status": "below_apr",
-        "reasons": [
-          "APR 240% 미달"
+          "APR 240% 미달",
+          "이 지갑의 LP 예치 권한 없음"
         ]
       },
       {
         "id": "df1bcda102",
         "pair": "GOOGLB/USDT",
         "hedge": "GOOGLUSDT",
-        "apr_pct": 190.47650150862842,
-        "persistence_apr_pct": 190.47650150862842,
+        "apr_pct": 189.4205941799014,
+        "persistence_apr_pct": 189.4205941799014,
         "status": "below_apr",
         "reasons": [
           "2배 설정 확인 필요",
@@ -222,11 +232,11 @@
         ]
       },
       {
-        "id": "d785b17c3a",
+        "id": "1f609fe7eb",
         "pair": "TSLAB/USDT",
         "hedge": "TSLAUSDT",
-        "apr_pct": 189.7232831112292,
-        "persistence_apr_pct": 189.7232831112292,
+        "apr_pct": 105.66491103894482,
+        "persistence_apr_pct": 105.66491103894482,
         "status": "below_apr",
         "reasons": [
           "2배 설정 확인 필요",
@@ -234,11 +244,11 @@
         ]
       },
       {
-        "id": "6316094093",
-        "pair": "QQQB/USDT",
-        "hedge": "QQQUSDT",
-        "apr_pct": 142.1268656401625,
-        "persistence_apr_pct": 108.28864185578522,
+        "id": "22711876c5",
+        "pair": "MUB/USDT",
+        "hedge": "MUUSD1",
+        "apr_pct": 60.56421742232535,
+        "persistence_apr_pct": 49.94790082557654,
         "status": "below_apr",
         "reasons": [
           "2배 설정 확인 필요",
@@ -249,30 +259,19 @@
         "id": "5359e9235c",
         "pair": "WETH/USDT",
         "hedge": "ETHUSDT",
-        "apr_pct": 90.52404809551003,
-        "persistence_apr_pct": 88.05955784002025,
+        "apr_pct": 53.226451095854046,
+        "persistence_apr_pct": 53.226451095854046,
         "status": "below_apr",
         "reasons": [
           "APR 240% 미달"
         ]
       },
       {
-        "id": "09bbc7cb1e",
-        "pair": "DRAMB/USDT",
-        "hedge": "DRAMUSDT",
-        "apr_pct": 87.32436677458888,
-        "persistence_apr_pct": 85.37595291146417,
-        "status": "below_apr",
-        "reasons": [
-          "APR 240% 미달"
-        ]
-      },
-      {
-        "id": "22711876c5",
-        "pair": "MUB/USDT",
-        "hedge": "MUUSDT",
-        "apr_pct": 60.56347995905953,
-        "persistence_apr_pct": 53.13322533956968,
+        "id": "b63bf582d0",
+        "pair": "BABAB/USDT",
+        "hedge": "BABAUSDT",
+        "apr_pct": 38.64307330055114,
+        "persistence_apr_pct": 38.64307330055114,
         "status": "below_apr",
         "reasons": [
           "APR 240% 미달"
@@ -282,22 +281,11 @@
         "id": "191609681c",
         "pair": "HOODB/USDT",
         "hedge": "HOODUSDT",
-        "apr_pct": 30.039201810115152,
-        "persistence_apr_pct": 7.342424408213574,
+        "apr_pct": 30.031777607965832,
+        "persistence_apr_pct": 5.973106192871349,
         "status": "below_apr",
         "reasons": [
           "2배 설정 확인 필요",
-          "APR 240% 미달"
-        ]
-      },
-      {
-        "id": "b63bf582d0",
-        "pair": "BABAB/USDT",
-        "hedge": "BABAUSDT",
-        "apr_pct": 13.60021905329392,
-        "persistence_apr_pct": 13.60021905329392,
-        "status": "below_apr",
-        "reasons": [
           "APR 240% 미달"
         ]
       },
@@ -305,8 +293,8 @@
         "id": "8ef1a39023",
         "pair": "GMEB/USDT",
         "hedge": "GMEUSDT",
-        "apr_pct": 1.9537320391383708,
-        "persistence_apr_pct": 1.9537320391383708,
+        "apr_pct": 14.548814407968594,
+        "persistence_apr_pct": 14.548814407968594,
         "status": "below_apr",
         "reasons": [
           "2배 설정 확인 필요",
@@ -314,14 +302,38 @@
         ]
       },
       {
-        "id": "2ccc649887",
-        "pair": "MSTRB/USDT",
-        "hedge": "MSTRUSDT",
-        "apr_pct": 0.4044550851376041,
-        "persistence_apr_pct": 0.4044550851376041,
+        "id": "12cc77ef6f",
+        "pair": "TSLAB/USDT",
+        "hedge": "TSLAUSDT",
+        "apr_pct": 4.189296728486567,
+        "persistence_apr_pct": 0.0,
         "status": "below_apr",
         "reasons": [
           "2배 설정 확인 필요",
+          "APR 240% 미달",
+          "이 지갑의 LP 예치 권한 없음"
+        ]
+      },
+      {
+        "id": "2ccc649887",
+        "pair": "MSTRB/USDT",
+        "hedge": "MSTRUSDT",
+        "apr_pct": 0.4046394967794233,
+        "persistence_apr_pct": 0.4046394967794233,
+        "status": "below_apr",
+        "reasons": [
+          "2배 설정 확인 필요",
+          "APR 240% 미달"
+        ]
+      },
+      {
+        "id": "09bbc7cb1e",
+        "pair": "DRAMB/USDT",
+        "hedge": "DRAMUSDT",
+        "apr_pct": 0.0,
+        "persistence_apr_pct": 0.0,
+        "status": "below_apr",
+        "reasons": [
           "APR 240% 미달"
         ]
       },
@@ -435,7 +447,6 @@
         "persistence_apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "가격 피드 조건 미달",
           "두 자산 헤지 필요",
           "USDT 결제 경로 미연결"
         ]
@@ -459,7 +470,6 @@
         "persistence_apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "가격 피드 조건 미달",
           "최소 주문이 운용 한도 초과"
         ]
       },
@@ -471,7 +481,6 @@
         "persistence_apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "가격 피드 조건 미달",
           "두 자산 헤지 필요",
           "최소 주문이 운용 한도 초과",
           "USDT 결제 경로 미연결"
@@ -485,7 +494,6 @@
         "persistence_apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "가격 피드 조건 미달",
           "두 자산 헤지 필요",
           "최소 주문이 운용 한도 초과",
           "USDT 결제 경로 미연결"
@@ -499,7 +507,6 @@
         "persistence_apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "가격 피드 조건 미달",
           "두 자산 헤지 필요",
           "최소 주문이 운용 한도 초과",
           "USDT 결제 경로 미연결"
@@ -666,7 +673,7 @@
       {
         "id": "b69aeb9592",
         "pair": "SNDKB/USDT",
-        "hedge": "SNDKUSDT",
+        "hedge": "SNDKUSD1",
         "apr_pct": null,
         "persistence_apr_pct": null,
         "status": "excluded",
@@ -714,7 +721,7 @@
       {
         "id": "81b7030377",
         "pair": "SPCXB/BNCB",
-        "hedge": "SPCXUSDT",
+        "hedge": "SPCXUSD1",
         "apr_pct": null,
         "persistence_apr_pct": null,
         "status": "excluded",
@@ -745,17 +752,6 @@
           "가격 피드 조건 미달",
           "두 자산 헤지 필요",
           "USDT 결제 경로 미연결"
-        ]
-      },
-      {
-        "id": "12cc77ef6f",
-        "pair": "TSLAB/USDT",
-        "hedge": "TSLAUSDT",
-        "apr_pct": null,
-        "persistence_apr_pct": null,
-        "status": "excluded",
-        "reasons": [
-          "실행 또는 자료 재확인 필요"
         ]
       },
       {
@@ -869,7 +865,6 @@
         "persistence_apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "가격 피드 조건 미달",
           "USDT 결제 경로 미연결"
         ]
       },
@@ -881,7 +876,6 @@
         "persistence_apr_pct": null,
         "status": "excluded",
         "reasons": [
-          "가격 피드 조건 미달",
           "USDT 결제 경로 미연결"
         ]
       },
