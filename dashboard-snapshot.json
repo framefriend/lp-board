@@ -1,6 +1,6 @@
 {
   "schema_version": "lp-minimal-dashboard-v1",
-  "generated_at": "2026-11-19T15:57:10.661433+00:00",
+  "generated_at": "2026-11-19T16:12:05.887203+00:00",
   "publication": {
     "read_only": true,
     "controls_enabled": false,
@@ -70,11 +70,11 @@
     "lastAdjustedAt": 1795017080.279
   },
   "points": {
-    "available": true,
-    "total_points": 2.0,
+    "available": false,
+    "total_points": null,
     "period_point_delta": null,
     "lp_only_attribution_verified": false,
-    "reason": "계정 전체 포인트 · LP 단독 기여 미확인"
+    "reason": "개인 포인트 조회 연동 미확인 · 0으로 간주하지 않음"
   },
   "profit": {
     "available": false,
